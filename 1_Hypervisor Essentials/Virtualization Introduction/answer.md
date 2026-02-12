@@ -58,7 +58,7 @@ Download Links (as of current version):
 - Linux: Select your distribution (Ubuntu, Fedora, etc.)
 
 <p align="center">
-  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20installation%20wizard%20(feature%20selection).png" alt="VirtualBox installation wizard (feature selection)" width="1080">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20download%20page.png" alt="VirtualBox download page" width="1080">
 </p>
 
 STEP 2: Install VirtualBox (Windows)
@@ -81,20 +81,14 @@ Installation Notes:
 - Restart may be required
 
 <p align="center">
-  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20download%20page.png" alt="VirtualBox manual webpage in browser" width="1080">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20installation%20wizard%20(feature%20selection).png" alt="VirtualBox installation wizard (feature selection)" width="1080">
 </p>
 
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2c <<<                         |
-|                                                                  |
-|  Installation complete showing:                                  |
-|  - "Installation complete" message                               |
-|  - "Finish" button visible                                       |
-|  - Checkbox "Start Oracle VM VirtualBox after installation"      |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20installation%20complete.png" alt="VirtualBox installation complete" width="1080">
+</p>
+
 
 STEP 3: Verify Installation
 ---------------------------
@@ -102,18 +96,9 @@ STEP 3: Verify Installation
 2. VirtualBox Manager window should appear
 3. Check version: Help > About VirtualBox
 
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2d <<<                         |
-|                                                                  |
-|  VirtualBox Manager showing:                                     |
-|  - Main VirtualBox window open                                   |
-|  - Welcome message or empty VM list                              |
-|  - Menu bar visible (File, Machine, Help)                        |
-|  - Version number visible in title bar or About dialog           |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20Manager%20main%20window.png" alt="VirtualBox Manager main window" width="1080">
+</p>
 
 ## TASK 3: Download Ubuntu Server or Desktop
 
@@ -138,31 +123,13 @@ LTS Explained:
 - 5 years of security updates and support
 - Recommended for stability
 
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 3a <<<                         |
-|                                                                  |
-|  Browser showing:                                                |
-|  - Ubuntu download page                                          |
-|  - URL: https://ubuntu.com/download/desktop                      |
-|    OR https://ubuntu.com/download/server                         |
-|  - Ubuntu version visible (e.g., 24.04 LTS)                      |
-|  - Download button visible                                       |
-|                                                                  |
-+------------------------------------------------------------------+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Ubuntu%20download%20page%20.png" alt="Ubuntu download page" width="1080">
+</p>
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 3b <<<                         |
-|                                                                  |
-|  File explorer showing:                                          |
-|  - Downloaded ISO file                                           |
-|  - File name: ubuntu-xx.xx-desktop-amd64.iso                     |
-|    OR ubuntu-xx.xx-live-server-amd64.iso                         |
-|  - File size visible (approximately 4-5 GB for Desktop           |
-|    or 2 GB for Server)                                           |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Downloaded%20Ubuntu%20ISO%20file.png" alt="Downloaded Ubuntu ISO file" width="1080">
+</p>
 
 ## TASK 4: Create VM1 and install Ubuntu
 
@@ -784,10 +751,10 @@ Print this checklist and mark each screenshot as you take it:
 
 [✓] SCREENSHOT 1   - VirtualBox manual webpage in browser
 [✓] SCREENSHOT 2a  - VirtualBox download page
-[ ] SCREENSHOT 2b  - VirtualBox installation wizard (feature selection)
-[ ] SCREENSHOT 2c  - VirtualBox installation complete
-[ ] SCREENSHOT 2d  - VirtualBox Manager main window
-[ ] SCREENSHOT 3a  - Ubuntu download page
+[✓] SCREENSHOT 2b  - VirtualBox installation wizard (feature selection)
+[✓] SCREENSHOT 2c  - VirtualBox installation complete
+[✓] SCREENSHOT 2d  - VirtualBox Manager main window
+[✓] SCREENSHOT 3a  - Ubuntu download page
 [ ] SCREENSHOT 3b  - Downloaded Ubuntu ISO file
 [ ] SCREENSHOT 4a  - Create VM dialog - Name and OS
 [ ] SCREENSHOT 4b  - Create VM dialog - Hardware (RAM, CPU)
