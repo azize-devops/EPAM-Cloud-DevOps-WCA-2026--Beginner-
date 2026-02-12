@@ -145,7 +145,6 @@ LTS Explained:
 5. Version: Ubuntu (64-bit)
 6. Check "Skip Unattended Installation" if you want manual install
 
-Create VM dialog - Name and OS
 <p align="center">
   <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Create%20VM%20dialog%20-%20Name%20and%20OS.png" alt="Create VM dialog - Name and OS" width="900">
 </p>
@@ -154,49 +153,29 @@ Create VM dialog - Name and OS
 1. Base Memory: 2048 MB (minimum) - 4096 MB (recommended)
 2. Processors: 2 CPUs (or more if available)
 3. Enable EFI: Optional (check if needed)
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4b <<<                         |
-|                                                                  |
-|  Hardware configuration showing:                                 |
-|  - Memory (RAM) slider: 2048 MB or 4096 MB                       |
-|  - Processors slider: 2 CPUs                                     |
-|  - Green zone indicator for safe allocation                      |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Create%20VM%20dialog%20-%20Hardware%20(RAM,%20CPU).png" alt="Create VM dialog - Hardware (RAM, CPU)" width="900">
+</p>
+
 #### Step 4: Virtual Hard Disk
 1. Select "Create a virtual hard disk now"
 2. Disk Size: 25 GB (minimum) - 50 GB (recommended)
 3. Pre-allocate Full Size: Optional (better performance if checked)
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4c <<<                         |
-|                                                                  |
-|  Virtual Hard Disk configuration showing:                        |
-|  - "Create a Virtual Hard Disk Now" selected                     |
-|  - Disk Size: 25 GB or more                                      |
-|  - Disk file location visible                                    |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+
+Create VM dialog - Virtual Hard Disk
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Create%20VM%20dialog%20-%20Virtual%20Hard%20Disk.png" alt="Create VM dialog - Virtual Hard Disk" width="900">
+</p>
+
 #### Step 5: Review and Finish
 1. Review all settings in Summary
 2. Click "Finish"
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4d <<<                         |
-|                                                                  |
-|  Summary screen showing:                                         |
-|  - Name: VM1                                                     |
-|  - Operating System: Ubuntu (64-bit)                             |
-|  - Memory: 2048 MB or 4096 MB                                    |
-|  - Processors: 2                                                 |
-|  - Storage: 25 GB or more                                        |
-|  - "Finish" button visible                                       |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+
+Create VM dialog - Summary
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Create%20VM%20dialog%20-%20Summary.png" alt="Create VM dialog - Summary" width="900">
+</p>
 
 ### PART B: Install Ubuntu on VM1
 
@@ -755,9 +734,9 @@ Print this checklist and mark each screenshot as you take it:
 - [**✓**] SCREENSHOT 3a  - Ubuntu download page
 - [**✓** ] SCREENSHOT 3b  - Downloaded Ubuntu ISO file
 - [**✓**] SCREENSHOT 4a  - Create VM dialog - Name and OS
-- [ ] SCREENSHOT 4b  - Create VM dialog - Hardware (RAM, CPU)
-- [ ] SCREENSHOT 4c  - Create VM dialog - Virtual Hard Disk
-- [ ] SCREENSHOT 4d  - Create VM dialog - Summary
+- [**✓**] SCREENSHOT 4b  - Create VM dialog - Hardware (RAM, CPU)
+- [**✓**] SCREENSHOT 4c  - Create VM dialog - Virtual Hard Disk
+- [**✓**] SCREENSHOT 4d  - Create VM dialog - Summary
 - [ ] SCREENSHOT 4e  - Ubuntu installer - Welcome screen
 - [ ] SCREENSHOT 4f  - Ubuntu installer - Installation type
 - [ ] SCREENSHOT 4g  - Ubuntu installer - User account creation
