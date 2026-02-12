@@ -1,8 +1,8 @@
 # VIRTUALIZATION INTRODUCTION - ANSWERS
 
-================================================================================
+==================================================
 TASK 1: Get acquainted with VirtualBox user manual
-================================================================================
+==================================================
 
 Open the official VirtualBox user manual:
 https://www.virtualbox.org/manual/
