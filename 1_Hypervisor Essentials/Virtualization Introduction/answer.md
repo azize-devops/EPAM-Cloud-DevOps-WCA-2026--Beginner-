@@ -37,8 +37,9 @@ Important Concepts to Understand:
 - Host Key: Special key for controlling VM (default: Right Ctrl)
 
 <p align="center">
-  <img src="docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBoxmanualwebpageinbrowser.png" alt="VirtualBox manual webpage in browser">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBoxmanualwebpageinbrowser.png" alt="VirtualBox manual webpage in browser" width="700">
 </p>
+
 
 ## TASK 2: Download and install VirtualBox
 
