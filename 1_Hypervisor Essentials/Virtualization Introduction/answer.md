@@ -1,4 +1,4 @@
-# VIRTUALIZATION INTRODUCTION - ANSWERS
+﻿# VIRTUALIZATION INTRODUCTION - ANSWERS
 
 ## TASK 1: Get acquainted with VirtualBox user manual
 
@@ -57,18 +57,10 @@ Download Links (as of current version):
 - macOS: VirtualBox-7.x.x-xxxxx-OSX.dmg
 - Linux: Select your distribution (Ubuntu, Fedora, etc.)
 
-```
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2a <<<                         |
-|                                                                  |
-|  Browser showing:                                                |
-|  - VirtualBox download page                                      |
-|  - URL: https://www.virtualbox.org/wiki/Downloads                |
-|  - Platform packages section visible                             |
-|  - "Windows hosts" link highlighted/visible                      |
-|                                                                  |
-+------------------------------------------------------------------+
-```
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBoxmanualwebpageinbrowser.png" alt="VirtualBox manual webpage in browser" width="1080">
+</p>
+
 STEP 2: Install VirtualBox (Windows)
 ------------------------------------
 1. Locate downloaded file (e.g., VirtualBox-7.0.14-161095-Win.exe)
@@ -796,7 +788,7 @@ SCREENSHOTS CHECKLIST
 
 Print this checklist and mark each screenshot as you take it:
 
-[ ] SCREENSHOT 1   - VirtualBox manual webpage in browser
+[✓] SCREENSHOT 1   - VirtualBox manual webpage in browser
 [ ] SCREENSHOT 2a  - VirtualBox download page
 [ ] SCREENSHOT 2b  - VirtualBox installation wizard (feature selection)
 [ ] SCREENSHOT 2c  - VirtualBox installation complete
