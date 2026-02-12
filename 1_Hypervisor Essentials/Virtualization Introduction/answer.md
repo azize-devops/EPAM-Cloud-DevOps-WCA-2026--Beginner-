@@ -75,9 +75,9 @@ Download Links (as of current version):
 7. Click "Install"
 8. Click "Finish" when complete    
         Installation Notes:
-            - During installation, network connectivity may be temporarily interrupted
-            - Windows may ask for permission to install device software - click "Install"
-            - Restart may be required
+        -   During installation, network connectivity may be temporarily interrupted
+        -   Windows may ask for permission to install device software - click "Install"
+        -   Restart may be required
 
 <p align="center">
   <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20installation%20wizard%20(feature%20selection).png" alt="VirtualBox installation wizard (feature selection)" width="900">
@@ -144,18 +144,12 @@ LTS Explained:
 4. Type: Linux
 5. Version: Ubuntu (64-bit)
 6. Check "Skip Unattended Installation" if you want manual install
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4a <<<                         |
-|                                                                  |
-|  VirtualBox "Create Virtual Machine" dialog showing:             |
-|  - Name: VM1                                                     |
-|  - ISO Image: path to ubuntu ISO file                            |
-|  - Type: Linux                                                   |
-|  - Version: Ubuntu (64-bit)                                      |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+
+Create VM dialog - Name and OS
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Create%20VM%20dialog%20-%20Name%20and%20OS.png" alt="Create VM dialog - Name and OS" width="900">
+</p>
+
 #### Step 3: Hardware Configuration
 1. Base Memory: 2048 MB (minimum) - 4096 MB (recommended)
 2. Processors: 2 CPUs (or more if available)
@@ -760,7 +754,7 @@ Print this checklist and mark each screenshot as you take it:
 - [**✓**] SCREENSHOT 2d  - VirtualBox Manager main window
 - [**✓**] SCREENSHOT 3a  - Ubuntu download page
 - [**✓** ] SCREENSHOT 3b  - Downloaded Ubuntu ISO file
-- [ ] SCREENSHOT 4a  - Create VM dialog - Name and OS
+- [**✓**] SCREENSHOT 4a  - Create VM dialog - Name and OS
 - [ ] SCREENSHOT 4b  - Create VM dialog - Hardware (RAM, CPU)
 - [ ] SCREENSHOT 4c  - Create VM dialog - Virtual Hard Disk
 - [ ] SCREENSHOT 4d  - Create VM dialog - Summary
