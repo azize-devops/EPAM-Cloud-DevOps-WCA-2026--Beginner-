@@ -124,7 +124,7 @@ LTS Explained:
 - Recommended for stability
 
 <p align="center">
-  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Ubuntu%20download%20page%20.png" alt="Ubuntu download page" width="1080">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Ubuntu%20download%20page.png" alt="Ubuntu download page" width="1080">
 </p>
 
 <p align="center">
