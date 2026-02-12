@@ -58,7 +58,7 @@ Download Links (as of current version):
 - Linux: Select your distribution (Ubuntu, Fedora, etc.)
 
 <p align="center">
-  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBoxmanualwebpageinbrowser.png" alt="VirtualBox manual webpage in browser" width="1080">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20installation%20wizard%20(feature%20selection).png" alt="VirtualBox installation wizard (feature selection)" width="1080">
 </p>
 
 STEP 2: Install VirtualBox (Windows)
@@ -79,17 +79,11 @@ Installation Notes:
 - During installation, network connectivity may be temporarily interrupted
 - Windows may ask for permission to install device software - click "Install"
 - Restart may be required
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2b <<<                         |
-|                                                                  |
-|  Installation wizard showing:                                    |
-|  - VirtualBox Setup window                                       |
-|  - Feature selection screen                                      |
-|  - All features checked                                          |
-|  - Installation path visible                                     |
-|                                                                  |
-+------------------------------------------------------------------+
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20download%20page.png" alt="VirtualBox manual webpage in browser" width="1080">
+</p>
+
 
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 2c <<<                         |
@@ -789,7 +783,7 @@ SCREENSHOTS CHECKLIST
 Print this checklist and mark each screenshot as you take it:
 
 [✓] SCREENSHOT 1   - VirtualBox manual webpage in browser
-[ ] SCREENSHOT 2a  - VirtualBox download page
+[✓] SCREENSHOT 2a  - VirtualBox download page
 [ ] SCREENSHOT 2b  - VirtualBox installation wizard (feature selection)
 [ ] SCREENSHOT 2c  - VirtualBox installation complete
 [ ] SCREENSHOT 2d  - VirtualBox Manager main window
