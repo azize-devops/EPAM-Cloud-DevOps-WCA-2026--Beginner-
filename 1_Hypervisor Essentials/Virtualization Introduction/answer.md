@@ -8,32 +8,32 @@ https://www.virtualbox.org/manual/
 ### Key Chapters to Review:
 
 ####    1. Chapter 1 - First Steps
-    - 1.1 Why is Virtualization Useful?
-    - 1.2 Some Terminology
-    - 1.3 Features Overview
-    - 1.4 Supported Host Operating Systems
-    - 1.5 Installing Oracle VM VirtualBox
+- 1.1 Why is Virtualization Useful?
+- 1.2 Some Terminology
+- 1.3 Features Overview
+- 1.4 Supported Host Operating Systems
+- 1.5 Installing Oracle VM VirtualBox
 
 ####    2. Chapter 1.8 - Creating Your First Virtual Machine
-    - Step-by-step VM creation guide
-    - Hardware allocation (RAM, CPU, Disk)
-    - Installation media setup
+- Step-by-step VM creation guide
+- Hardware allocation (RAM, CPU, Disk)
+- Installation media setup
 
 ####    3. Chapter 1.9 - Running Your Virtual Machine
-    - Starting and stopping VMs
-    - Keyboard and mouse capture
-    - Host key usage
+- Starting and stopping VMs
+- Keyboard and mouse capture
+- Host key usage
 
 ####    4. Chapter 1.14 - Cloning Virtual Machines
-    - Full clone vs Linked clone
-    - Cloning process
+- Full clone vs Linked clone
+- Cloning process
 
 ### Important Concepts to Understand:
-    - Host OS: The operating system running on your physical computer
-    - Guest OS: The operating system running inside the virtual machine
-    - Virtual Machine (VM): A software-based computer running inside your physical computer
-    - Hypervisor: Software that creates and manages virtual machines (VirtualBox is a Type 2 hypervisor)
-    - Host Key: Special key for controlling VM (default: Right Ctrl)
+- Host OS: The operating system running on your physical computer
+- Guest OS: The operating system running inside the virtual machine
+- Virtual Machine (VM): A software-based computer running inside your physical computer
+- Hypervisor: Software that creates and manages virtual machines (VirtualBox is a Type 2 hypervisor)
+- Host Key: Special key for controlling VM (default: Right Ctrl)
 
 <p align="center">
   <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBoxmanualwebpageinbrowser.png" alt="VirtualBox manual webpage in browser" width="900">
@@ -43,39 +43,41 @@ https://www.virtualbox.org/manual/
 ## TASK 2: Download and install VirtualBox
 
 ### STEP 1: Download VirtualBox
-    1. Go to https://www.virtualbox.org/
-    2. Click on "Downloads" in the navigation menu
-    3. Select your host operating system:
-        - Windows hosts
-        - macOS / Intel hosts
-        - Linux distributions
+1. Go to https://www.virtualbox.org/
+2. Click on "Downloads" in the navigation menu
+3. Select your host operating system:
+    - Windows hosts
+    - macOS / Intel hosts
+    - Linux distributions
 
-    Download Links (as of current version):
-        - Windows: VirtualBox-7.x.x-xxxxx-Win.exe
-        - macOS: VirtualBox-7.x.x-xxxxx-OSX.dmg
-        - Linux: Select your distribution (Ubuntu, Fedora, etc.)
+
+Download Links (as of current version):
+
+   - Windows: VirtualBox-7.x.x-xxxxx-Win.exe
+   - macOS: VirtualBox-7.x.x-xxxxx-OSX.dmg
+   - Linux: Select your distribution (Ubuntu, Fedora, etc.)
 
 <p align="center">
   <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20download%20page.png" alt="VirtualBox download page" width="1080">
 </p>
 
 ### STEP 2: Install VirtualBox (Windows)
-    1. Locate downloaded file (e.g., VirtualBox-7.0.14-161095-Win.exe)
-    2. Double-click to run installer
-    3. Click "Next" on Welcome screen
-    4. Choose installation location (default is recommended)
-    5. Select features to install:
-        [x] VirtualBox USB Support
-        [x] VirtualBox Networking
-        [x] VirtualBox Python Support
-    6. Click "Next" and then "Yes" for network interface warning
-    7. Click "Install"
-    8. Click "Finish" when complete
-
-    Installation Notes:
-        - During installation, network connectivity may be temporarily interrupted
-        - Windows may ask for permission to install device software - click "Install"
-        - Restart may be required
+1. Locate downloaded file (e.g., VirtualBox-7.0.14-161095-Win.exe)
+2. Double-click to run installer
+3. Click "Next" on Welcome screen
+4. Choose installation location (default is recommended)        
+5. Select features to install:
+    - [**+**] VirtualBox USB Support
+    - [**+**] VirtualBox Networking
+    - [**+**] VirtualBox Python Support
+    
+6. Click "Next" and then "Yes" for network interface warning
+7. Click "Install"
+8. Click "Finish" when complete    
+        Installation Notes:
+            - During installation, network connectivity may be temporarily interrupted
+            - Windows may ask for permission to install device software - click "Install"
+            - Restart may be required
 
 <p align="center">
   <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20installation%20wizard%20(feature%20selection).png" alt="VirtualBox installation wizard (feature selection)" width="1080">
@@ -99,16 +101,14 @@ https://www.virtualbox.org/manual/
 
 ## TASK 3: Download Ubuntu Server or Desktop
 
-Option A: Ubuntu Desktop (Recommended for beginners)
------------------------------------------------------
+### Option A: Ubuntu Desktop (Recommended for beginners)
 1. Go to https://ubuntu.com/download/desktop
 2. Click "Download" for the latest LTS version (e.g., Ubuntu 24.04 LTS)
 3. Save the ISO file (approximately 4-5 GB)
 
 File name example: ubuntu-24.04-desktop-amd64.iso
 
-Option B: Ubuntu Server (Lightweight, no GUI)
-----------------------------------------------
+### Option B: Ubuntu Server (Lightweight, no GUI)
 1. Go to https://ubuntu.com/download/server
 2. Click "Download Ubuntu Server"
 3. Save the ISO file (approximately 2 GB)
@@ -116,9 +116,10 @@ Option B: Ubuntu Server (Lightweight, no GUI)
 File name example: ubuntu-24.04-live-server-amd64.iso
 
 LTS Explained:
-- LTS = Long Term Support
-- 5 years of security updates and support
-- Recommended for stability
+
+   - LTS = Long Term Support
+   - 5 years of security updates and support
+   - Recommended for stability
 
 <p align="center">
   <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Ubuntu%20download%20page.png" alt="Ubuntu download page" width="1080">
@@ -130,14 +131,13 @@ LTS Explained:
 
 ## TASK 4: Create VM1 and install Ubuntu
 
-PART A: Create Virtual Machine
-------------------------------
+### PART A: Create Virtual Machine
 
-Step 1: Open VirtualBox and click "New"
+#### Step 1: Open VirtualBox and click "New"
 1. Open Oracle VM VirtualBox Manager
 2. Click "New" button (or Machine > New)
 
-Step 2: Name and Operating System
+#### Step 2: Name and Operating System
 1. Name: VM1
 2. Folder: (default location or choose)
 3. ISO Image: Select downloaded Ubuntu ISO file
@@ -156,7 +156,7 @@ Step 2: Name and Operating System
 |                                                                  |
 +------------------------------------------------------------------+
 ````
-Step 3: Hardware Configuration
+#### Step 3: Hardware Configuration
 1. Base Memory: 2048 MB (minimum) - 4096 MB (recommended)
 2. Processors: 2 CPUs (or more if available)
 3. Enable EFI: Optional (check if needed)
@@ -171,7 +171,7 @@ Step 3: Hardware Configuration
 |                                                                  |
 +------------------------------------------------------------------+
 ````
-Step 4: Virtual Hard Disk
+#### Step 4: Virtual Hard Disk
 1. Select "Create a virtual hard disk now"
 2. Disk Size: 25 GB (minimum) - 50 GB (recommended)
 3. Pre-allocate Full Size: Optional (better performance if checked)
@@ -186,7 +186,7 @@ Step 4: Virtual Hard Disk
 |                                                                  |
 +------------------------------------------------------------------+
 ````
-Step 5: Review and Finish
+#### Step 5: Review and Finish
 1. Review all settings in Summary
 2. Click "Finish"
 ````
@@ -204,28 +204,33 @@ Step 5: Review and Finish
 +------------------------------------------------------------------+
 ````
 
-PART B: Install Ubuntu on VM1
------------------------------
+### PART B: Install Ubuntu on VM1
 
-Step 1: Start VM1
+#### Step 1: Start VM1
+
 1. Select VM1 in VirtualBox Manager
 2. Click "Start" button
 
-Step 2: Ubuntu Installation Process
+#### Step 2: Ubuntu Installation Process
+
 1. Wait for Ubuntu to boot from ISO
 2. Select "Install Ubuntu" (or "Try Ubuntu" first to test)
 3. Choose language
 4. Select keyboard layout
 5. Choose installation type:
+
    - Normal installation (recommended)
    - Minimal installation
+
 6. Choose "Erase disk and install Ubuntu" (safe for VM)
 7. Set timezone
 8. Create user account:
+
    - Your name: [Your Name]
    - Computer name: VM1
    - Username: [username]
    - Password: [password]
+
 9. Wait for installation to complete
 10. Click "Restart Now" when prompted
 11. Press Enter when asked to remove installation medium
@@ -270,7 +275,8 @@ Step 2: Ubuntu Installation Process
 |                                                                  |
 +------------------------------------------------------------------+
 ````
-Step 3: First Boot and Login
+#### Step 3: First Boot and Login
+
 1. VM1 restarts
 2. Ubuntu login screen appears
 3. Enter password and login
@@ -290,8 +296,8 @@ Step 3: First Boot and Login
 
 ##  TASK 5: VM control options - start, stop, reboot, save state
 
-HOST KEY INFORMATION
---------------------
+### HOST KEY INFORMATION
+
 - Default Host Key: Right Ctrl
 - Host Key is used for:
   - Releasing mouse from VM (Host Key)
@@ -309,8 +315,8 @@ HOST KEY INFORMATION
 +------------------------------------------------------------------+
 ````
 
-START OPTIONS
--------------
+### START OPTIONS
+
 
 1. Normal Start
    - Select VM > Click "Start"
@@ -325,6 +331,7 @@ START OPTIONS
 3. Detachable Start
    - Select VM > Click dropdown arrow next to Start > Detachable Start
    - Can close window while VM keeps running
+
 ````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 5b <<<                         |
@@ -337,8 +344,7 @@ START OPTIONS
 +------------------------------------------------------------------+
 ````
 
-STOP OPTIONS (Machine Menu or Close Window)
--------------------------------------------
+### STOP OPTIONS (Machine Menu or Close Window)
 
 When you close VM window or use Machine menu, you get options:
 
@@ -394,8 +400,8 @@ When you close VM window or use Machine menu, you get options:
 +------------------------------------------------------------------+
 ````
 
-REBOOT/RESET OPTIONS
---------------------
+### REBOOT/RESET OPTIONS
+
 
 1. Soft Reboot (from Guest OS)
    - Inside Ubuntu: Click Power icon > Restart
@@ -418,8 +424,8 @@ REBOOT/RESET OPTIONS
 +------------------------------------------------------------------+
 ````
 
-KEYBOARD SHORTCUTS SUMMARY
---------------------------
+### KEYBOARD SHORTCUTS SUMMARY
+
 ````
 +----------------------+----------------------------------------+
 | Shortcut             | Action                                 |
@@ -449,8 +455,8 @@ KEYBOARD SHORTCUTS SUMMARY
 +------------------------------------------------------------------+
 ````
 
-MOUSE CAPTURE
--------------
+### MOUSE CAPTURE
+
 - When you click inside VM, mouse is "captured"
 - Mouse cursor is confined to VM window
 - Press Host Key to release mouse
@@ -467,8 +473,7 @@ MOUSE CAPTURE
 +------------------------------------------------------------------+
 ````
 
-SAVE STATE DEMONSTRATION
-------------------------
+### SAVE STATE DEMONSTRATION
 
 1. With VM running, press Host Key + Q
 2. Select "Save the machine state"
@@ -495,8 +500,7 @@ To Resume:
 
 ##  TASK 6: Clone VM1 to create VM2
 
-CLONING METHODS
----------------
+### CLONING METHODS
 
 1. Full Clone
    - Creates completely independent copy
@@ -511,14 +515,13 @@ CLONING METHODS
    - VM2 depends on VM1 - don't delete VM1!
    - Faster to create
 
-STEP-BY-STEP: Clone VM1 to VM2
-------------------------------
+### STEP-BY-STEP: Clone VM1 to VM2
 
-Step 1: Ensure VM1 is powered off
+#### Step 1: Ensure VM1 is powered off
 - VM must be in "Powered Off" or "Saved" state to clone
 - If running, shut down VM1 first
 
-Step 2: Select VM1 and start Clone wizard
+#### Step 2: Select VM1 and start Clone wizard
 - Right-click on VM1 > Clone
 - OR select VM1 > Machine menu > Clone
 ````
@@ -532,7 +535,7 @@ Step 2: Select VM1 and start Clone wizard
 |                                                                  |
 +------------------------------------------------------------------+
 ````
-Step 3: Configure Clone Settings
+### Step 3: Configure Clone Settings
 
 Name and Path:
 1. Name: VM2
@@ -551,7 +554,7 @@ Name and Path:
 |                                                                  |
 +------------------------------------------------------------------+
 ````
-Step 4: Select Clone Type
+### Step 4: Select Clone Type
 1. Full Clone (Recommended)
    - Creates independent copy
    - Takes more space but VM2 is standalone
@@ -571,13 +574,13 @@ Step 4: Select Clone Type
 |                                                                  |
 +------------------------------------------------------------------+
 ````
-Step 5: Select Snapshots (if any)
+#### Step 5: Select Snapshots (if any)
 - If VM1 has snapshots:
   - Current machine state
   - Everything (all snapshots)
 - If no snapshots, this step is skipped
 
-Step 6: Click "Finish" and wait
+#### Step 6: Click "Finish" and wait
 - Cloning process begins
 - Progress bar shows status
 - May take several minutes for Full Clone
@@ -592,7 +595,7 @@ Step 6: Click "Finish" and wait
 |                                                                  |
 +------------------------------------------------------------------+
 ````
-Step 7: Verify VM2 in VirtualBox Manager
+#### Step 7: Verify VM2 in VirtualBox Manager
 - VM2 appears in VM list
 - VM2 is separate from VM1
 - Both VMs can run simultaneously (with different MAC addresses)
@@ -608,8 +611,7 @@ Step 7: Verify VM2 in VirtualBox Manager
 +------------------------------------------------------------------+
 ````
 
-VERIFY CLONE WORKS
-------------------
+### VERIFY CLONE WORKS
 
 1. Start VM2
 2. Verify Ubuntu boots correctly
@@ -630,8 +632,7 @@ VERIFY CLONE WORKS
 +------------------------------------------------------------------+
 ````
 
-RUNNING BOTH VMs SIMULTANEOUSLY
--------------------------------
+### RUNNING BOTH VMs SIMULTANEOUSLY
 
 1. Start VM1
 2. Start VM2
@@ -650,30 +651,41 @@ RUNNING BOTH VMs SIMULTANEOUSLY
 +------------------------------------------------------------------+
 ````
 
-================================================================================
-COMPLETE TASK SUMMARY
-================================================================================
+
+# COMPLETE TASK SUMMARY
 
 TASK CHECKLIST:
-[ ] 1. Reviewed VirtualBox user manual
-[ ] 2. Downloaded and installed VirtualBox
-[ ] 3. Downloaded Ubuntu ISO
-[ ] 4. Created VM1 and installed Ubuntu
-[ ] 5. Tested VM control options:
-    [ ] Normal Start
-    [ ] Save State
-    [ ] ACPI Shutdown
-    [ ] Power Off
-    [ ] Pause
-    [ ] Reset
-    [ ] Fullscreen mode (Host Key + F)
-    [ ] Mouse capture/release (Host Key)
-[ ] 6. Cloned VM1 to create VM2
+
+- [**✓**] 1. Reviewed VirtualBox user manual
+
+- [**✓**] 2. Downloaded and installed VirtualBox
+
+- [**✓**] 3. Downloaded Ubuntu ISO
+
+- [ ] 4. Created VM1 and installed Ubuntu
+
+- [ ] 5. Tested VM control options:
+    
+   - [ ] Normal Start
+   
+   - [ ] Save State
+   
+   - [ ] ACPI Shutdown
+   
+   - [ ] Power Off
+   
+   - [ ] Pause
+   
+   - [ ] Reset
+   
+   - [ ] Fullscreen mode (Host Key + F)
+   
+   - [ ] Mouse capture/release (Host Key)
+
+- [ ] 6. Cloned VM1 to create VM2
 
 
-================================================================================
-VIRTUALBOX CONTROLS REFERENCE
-================================================================================
+# VIRTUALBOX CONTROLS REFERENCE
 
 VM STATES:
 +----------------+------------------------------------------+
@@ -713,66 +725,65 @@ RECOMMENDED VM SETTINGS FOR UBUNTU:
 +----------------+------------------------------------------+
 
 
-================================================================================
-TROUBLESHOOTING
-================================================================================
+# TROUBLESHOOTING
 
-PROBLEM: VirtualBox won't start VM - VT-x/AMD-V error
-SOLUTION: Enable virtualization in BIOS/UEFI settings
+- **`PROBLEM:`**  VirtualBox won't start VM - VT-x/AMD-V error
 
-PROBLEM: Ubuntu installation is very slow
-SOLUTION: Allocate more RAM (4 GB+) and enable PAE/NX in VM settings
+  - **`SOLUTION:`** Enable virtualization in BIOS/UEFI settings
 
-PROBLEM: No network in guest OS
-SOLUTION: Check Network adapter settings - try NAT or Bridged Adapter
+- **`PROBLEM:`** Ubuntu installation is very slow
 
-PROBLEM: Cannot exit fullscreen mode
-SOLUTION: Press Host Key + F (default: Right Ctrl + F)
+  - **`SOLUTION:`** Allocate more RAM (4 GB+) and enable PAE/NX in VM settings
 
-PROBLEM: Mouse stuck in VM
-SOLUTION: Press Host Key (default: Right Ctrl) to release
+- **`PROBLEM:`** No network in guest OS
 
-PROBLEM: Clone fails
-SOLUTION: Ensure VM is powered off, not just saved state
+  - **`SOLUTION:`** Check Network adapter settings - try NAT or Bridged Adapter
+
+- **`PROBLEM:`** Cannot exit fullscreen mode
+  - **`SOLUTION:`** Press Host Key + F (default: Right Ctrl + F)
+
+- **`PROBLEM:`** Mouse stuck in VM
+  - **`SOLUTION:`** Press Host Key (default: Right Ctrl) to release
+
+- **`PROBLEM:`** Clone fails
+  - **`SOLUTION:`** Ensure VM is powered off, not just saved state
 
 
-================================================================================
-SCREENSHOTS CHECKLIST
-================================================================================
+# SCREENSHOTS CHECKLIST
 
 Print this checklist and mark each screenshot as you take it:
 
-[✓] SCREENSHOT 1   - VirtualBox manual webpage in browser
-[✓] SCREENSHOT 2a  - VirtualBox download page
-[✓] SCREENSHOT 2b  - VirtualBox installation wizard (feature selection)
-[✓] SCREENSHOT 2c  - VirtualBox installation complete
-[✓] SCREENSHOT 2d  - VirtualBox Manager main window
-[✓] SCREENSHOT 3a  - Ubuntu download page
-[ ] SCREENSHOT 3b  - Downloaded Ubuntu ISO file
-[ ] SCREENSHOT 4a  - Create VM dialog - Name and OS
-[ ] SCREENSHOT 4b  - Create VM dialog - Hardware (RAM, CPU)
-[ ] SCREENSHOT 4c  - Create VM dialog - Virtual Hard Disk
-[ ] SCREENSHOT 4d  - Create VM dialog - Summary
-[ ] SCREENSHOT 4e  - Ubuntu installer - Welcome screen
-[ ] SCREENSHOT 4f  - Ubuntu installer - Installation type
-[ ] SCREENSHOT 4g  - Ubuntu installer - User account creation
-[ ] SCREENSHOT 4h  - Ubuntu installer - Installation complete
-[ ] SCREENSHOT 4i  - Ubuntu desktop after login (VM1)
-[ ] SCREENSHOT 5a  - VirtualBox Preferences - Host Key setting
-[ ] SCREENSHOT 5b  - Start button dropdown menu options
-[ ] SCREENSHOT 5c  - Machine menu with control options
-[ ] SCREENSHOT 5d  - Close VM dialog (Save/Shutdown/Power Off)
-[ ] SCREENSHOT 5e  - Ubuntu restart option or terminal reboot
-[ ] SCREENSHOT 5f  - VM in fullscreen mode
-[ ] SCREENSHOT 5g  - Mouse capture message
-[ ] SCREENSHOT 5h  - VM in "Saved" state in Manager
-[ ] SCREENSHOT 6a  - Clone option in context menu
-[ ] SCREENSHOT 6b  - Clone dialog - Name and MAC address
-[ ] SCREENSHOT 6c  - Clone dialog - Clone type selection
-[ ] SCREENSHOT 6d  - Clone progress bar
-[ ] SCREENSHOT 6e  - Both VM1 and VM2 in VirtualBox Manager
-[ ] SCREENSHOT 6f  - VM2 running with hostname verification
-[ ] SCREENSHOT 6g  - Both VMs running simultaneously
+- [**✓**] SCREENSHOT 1   - VirtualBox manual webpage in browser
+- [**✓**] SCREENSHOT 2a  - VirtualBox download page
+- [**✓**] SCREENSHOT 2b  - VirtualBox installation wizard (feature selection)
+- [**✓**] SCREENSHOT 2c  - VirtualBox installation complete
+- [**✓**] SCREENSHOT 2d  - VirtualBox Manager main window
+- [**✓**] SCREENSHOT 3a  - Ubuntu download page
+- [**✓** ] SCREENSHOT 3b  - Downloaded Ubuntu ISO file
+- [ ] SCREENSHOT 4a  - Create VM dialog - Name and OS
+- [ ] SCREENSHOT 4b  - Create VM dialog - Hardware (RAM, CPU)
+- [ ] SCREENSHOT 4c  - Create VM dialog - Virtual Hard Disk
+- [ ] SCREENSHOT 4d  - Create VM dialog - Summary
+- [ ] SCREENSHOT 4e  - Ubuntu installer - Welcome screen
+- [ ] SCREENSHOT 4f  - Ubuntu installer - Installation type
+- [ ] SCREENSHOT 4g  - Ubuntu installer - User account creation
+- [ ] SCREENSHOT 4h  - Ubuntu installer - Installation complete
+- [ ] SCREENSHOT 4i  - Ubuntu desktop after login (VM1)
+- [ ] SCREENSHOT 5a  - VirtualBox Preferences - Host Key setting
+- [ ] SCREENSHOT 5b  - Start button dropdown menu options
+- [ ] SCREENSHOT 5c  - Machine menu with control options
+- [ ] SCREENSHOT 5d  - Close VM dialog (Save/Shutdown/Power Off)
+- [ ] SCREENSHOT 5e  - Ubuntu restart option or terminal reboot
+- [ ] SCREENSHOT 5f  - VM in fullscreen mode
+- [ ] SCREENSHOT 5g  - Mouse capture message
+- [ ] SCREENSHOT 5h  - VM in "Saved" state in Manager
+- [ ] SCREENSHOT 6a  - Clone option in context menu
+- [ ] SCREENSHOT 6b  - Clone dialog - Name and MAC address
+- [ ] SCREENSHOT 6c  - Clone dialog - Clone type selection
+- [ ] SCREENSHOT 6d  - Clone progress bar
+- [ ] SCREENSHOT 6e  - Both VM1 and VM2 in VirtualBox Manager
+- [ ] SCREENSHOT 6f  - VM2 running with hostname verification
+- [ ] SCREENSHOT 6g  - Both VMs running simultaneously
 
-TOTAL: 31 Screenshots Required
+## TOTAL: 31 Screenshots Required
 
