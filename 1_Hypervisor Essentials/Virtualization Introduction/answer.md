@@ -5,36 +5,35 @@
 Open the official VirtualBox user manual:
 https://www.virtualbox.org/manual/
 
-Key Chapters to Review:
------------------------
-1. Chapter 1 - First Steps
-   - 1.1 Why is Virtualization Useful?
-   - 1.2 Some Terminology
-   - 1.3 Features Overview
-   - 1.4 Supported Host Operating Systems
-   - 1.5 Installing Oracle VM VirtualBox
+### Key Chapters to Review:
 
-2. Chapter 1.8 - Creating Your First Virtual Machine
-   - Step-by-step VM creation guide
-   - Hardware allocation (RAM, CPU, Disk)
-   - Installation media setup
+####    1. Chapter 1 - First Steps
+    - 1.1 Why is Virtualization Useful?
+    - 1.2 Some Terminology
+    - 1.3 Features Overview
+    - 1.4 Supported Host Operating Systems
+    - 1.5 Installing Oracle VM VirtualBox
 
-3. Chapter 1.9 - Running Your Virtual Machine
-   - Starting and stopping VMs
-   - Keyboard and mouse capture
-   - Host key usage
+####    2. Chapter 1.8 - Creating Your First Virtual Machine
+    - Step-by-step VM creation guide
+    - Hardware allocation (RAM, CPU, Disk)
+    - Installation media setup
 
-4. Chapter 1.14 - Cloning Virtual Machines
-   - Full clone vs Linked clone
-   - Cloning process
+####    3. Chapter 1.9 - Running Your Virtual Machine
+    - Starting and stopping VMs
+    - Keyboard and mouse capture
+    - Host key usage
 
-Important Concepts to Understand:
----------------------------------
-- Host OS: The operating system running on your physical computer
-- Guest OS: The operating system running inside the virtual machine
-- Virtual Machine (VM): A software-based computer running inside your physical computer
-- Hypervisor: Software that creates and manages virtual machines (VirtualBox is a Type 2 hypervisor)
-- Host Key: Special key for controlling VM (default: Right Ctrl)
+####    4. Chapter 1.14 - Cloning Virtual Machines
+    - Full clone vs Linked clone
+    - Cloning process
+
+### Important Concepts to Understand:
+    - Host OS: The operating system running on your physical computer
+    - Guest OS: The operating system running inside the virtual machine
+    - Virtual Machine (VM): A software-based computer running inside your physical computer
+    - Hypervisor: Software that creates and manages virtual machines (VirtualBox is a Type 2 hypervisor)
+    - Host Key: Special key for controlling VM (default: Right Ctrl)
 
 <p align="center">
   <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBoxmanualwebpageinbrowser.png" alt="VirtualBox manual webpage in browser" width="900">
@@ -43,42 +42,40 @@ Important Concepts to Understand:
 
 ## TASK 2: Download and install VirtualBox
 
-STEP 1: Download VirtualBox
----------------------------
-1. Go to https://www.virtualbox.org/
-2. Click on "Downloads" in the navigation menu
-3. Select your host operating system:
-   - Windows hosts
-   - macOS / Intel hosts
-   - Linux distributions
+### STEP 1: Download VirtualBox
+    1. Go to https://www.virtualbox.org/
+    2. Click on "Downloads" in the navigation menu
+    3. Select your host operating system:
+        - Windows hosts
+        - macOS / Intel hosts
+        - Linux distributions
 
-Download Links (as of current version):
-- Windows: VirtualBox-7.x.x-xxxxx-Win.exe
-- macOS: VirtualBox-7.x.x-xxxxx-OSX.dmg
-- Linux: Select your distribution (Ubuntu, Fedora, etc.)
+    Download Links (as of current version):
+        - Windows: VirtualBox-7.x.x-xxxxx-Win.exe
+        - macOS: VirtualBox-7.x.x-xxxxx-OSX.dmg
+        - Linux: Select your distribution (Ubuntu, Fedora, etc.)
 
 <p align="center">
   <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20download%20page.png" alt="VirtualBox download page" width="1080">
 </p>
 
-STEP 2: Install VirtualBox (Windows)
-------------------------------------
-1. Locate downloaded file (e.g., VirtualBox-7.0.14-161095-Win.exe)
-2. Double-click to run installer
-3. Click "Next" on Welcome screen
-4. Choose installation location (default is recommended)
-5. Select features to install:
-   [x] VirtualBox USB Support
-   [x] VirtualBox Networking
-   [x] VirtualBox Python Support
-6. Click "Next" and then "Yes" for network interface warning
-7. Click "Install"
-8. Click "Finish" when complete
+### STEP 2: Install VirtualBox (Windows)
+    1. Locate downloaded file (e.g., VirtualBox-7.0.14-161095-Win.exe)
+    2. Double-click to run installer
+    3. Click "Next" on Welcome screen
+    4. Choose installation location (default is recommended)
+    5. Select features to install:
+        [x] VirtualBox USB Support
+        [x] VirtualBox Networking
+        [x] VirtualBox Python Support
+    6. Click "Next" and then "Yes" for network interface warning
+    7. Click "Install"
+    8. Click "Finish" when complete
 
-Installation Notes:
-- During installation, network connectivity may be temporarily interrupted
-- Windows may ask for permission to install device software - click "Install"
-- Restart may be required
+    Installation Notes:
+        - During installation, network connectivity may be temporarily interrupted
+        - Windows may ask for permission to install device software - click "Install"
+        - Restart may be required
 
 <p align="center">
   <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20installation%20wizard%20(feature%20selection).png" alt="VirtualBox installation wizard (feature selection)" width="1080">
@@ -90,8 +87,8 @@ Installation Notes:
 </p>
 
 
-STEP 3: Verify Installation
----------------------------
+### STEP 3: Verify Installation
+
 1. Open VirtualBox from Start Menu or Desktop shortcut
 2. VirtualBox Manager window should appear
 3. Check version: Help > About VirtualBox
@@ -291,9 +288,7 @@ Step 3: First Boot and Login
 +------------------------------------------------------------------+
 ````
 
-================================================================================
-TASK 5: VM control options - start, stop, reboot, save state
-================================================================================
+##  TASK 5: VM control options - start, stop, reboot, save state
 
 HOST KEY INFORMATION
 --------------------
@@ -498,9 +493,7 @@ To Resume:
 +------------------------------------------------------------------+
 ````
 
-================================================================================
-TASK 6: Clone VM1 to create VM2
-================================================================================
+##  TASK 6: Clone VM1 to create VM2
 
 CLONING METHODS
 ---------------
