@@ -58,7 +58,7 @@ Download Links (as of current version):
    - Linux: Select your distribution (Ubuntu, Fedora, etc.)
 
 <p align="center">
-  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20download%20page.png" alt="VirtualBox download page" width="1080">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20download%20page.png" alt="VirtualBox download page" width="900">
 </p>
 
 ### STEP 2: Install VirtualBox (Windows)
@@ -80,12 +80,12 @@ Download Links (as of current version):
             - Restart may be required
 
 <p align="center">
-  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20installation%20wizard%20(feature%20selection).png" alt="VirtualBox installation wizard (feature selection)" width="1080">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20installation%20wizard%20(feature%20selection).png" alt="VirtualBox installation wizard (feature selection)" width="900">
 </p>
 
 
 <p align="center">
-  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20installation%20complete.png" alt="VirtualBox installation complete" width="1080">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20installation%20complete.png" alt="VirtualBox installation complete" width="900">
 </p>
 
 
@@ -96,7 +96,7 @@ Download Links (as of current version):
 3. Check version: Help > About VirtualBox
 
 <p align="center">
-  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20Manager%20main%20window.png" alt="VirtualBox Manager main window" width="1080">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20Manager%20main%20window.png" alt="VirtualBox Manager main window" width="900">
 </p>
 
 ## TASK 3: Download Ubuntu Server or Desktop
@@ -122,11 +122,11 @@ LTS Explained:
    - Recommended for stability
 
 <p align="center">
-  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Ubuntu%20download%20page.png" alt="Ubuntu download page" width="1080">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Ubuntu%20download%20page.png" alt="Ubuntu download page" width="900">
 </p>
 
 <p align="center">
-  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Downloaded%20Ubuntu%20ISO%20file.png" alt="Downloaded Ubuntu ISO file" width="1080">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Downloaded%20Ubuntu%20ISO%20file.png" alt="Downloaded Ubuntu ISO file" width="900">
 </p>
 
 ## TASK 4: Create VM1 and install Ubuntu
