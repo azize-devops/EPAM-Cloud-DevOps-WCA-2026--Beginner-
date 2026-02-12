@@ -36,7 +36,7 @@ Important Concepts to Understand:
 - Hypervisor: Software that creates and manages virtual machines (VirtualBox is a Type 2 hypervisor)
 - Host Key: Special key for controlling VM (default: Right Ctrl)
 
-´´´
+´´´´
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 1 <<<                          |
 |                                                                  |
