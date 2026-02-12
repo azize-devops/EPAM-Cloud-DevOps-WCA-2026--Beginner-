@@ -36,18 +36,10 @@ Important Concepts to Understand:
 - Hypervisor: Software that creates and manages virtual machines (VirtualBox is a Type 2 hypervisor)
 - Host Key: Special key for controlling VM (default: Right Ctrl)
 
-```
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                          |
-|                                                                  |
-|  Browser showing:                                                |
-|  - VirtualBox User Manual webpage                                |
-|  - URL: https://www.virtualbox.org/manual/                       |
-|  - Table of Contents visible                                     |
-|  - Chapter 1 "First Steps" visible                               |
-|                                                                  |
-+------------------------------------------------------------------+
-```
+<p align="center">
+  <img src="docs/images/1_Hypervisor Essentials/Virtualization Introduction/VirtualBoxmanualwebpageinbrowser.png" width="700px" alt="VirtualBox manual webpage in browser">
+</p>
+
 ## TASK 2: Download and install VirtualBox
 
 STEP 1: Download VirtualBox
