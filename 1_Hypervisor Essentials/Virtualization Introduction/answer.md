@@ -36,7 +36,7 @@ Important Concepts to Understand:
 - Hypervisor: Software that creates and manages virtual machines (VirtualBox is a Type 2 hypervisor)
 - Host Key: Special key for controlling VM (default: Right Ctrl)
 
-´´´´
+```
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 1 <<<                          |
 |                                                                  |
@@ -47,7 +47,7 @@ Important Concepts to Understand:
 |  - Chapter 1 "First Steps" visible                               |
 |                                                                  |
 +------------------------------------------------------------------+
-´´´
+```
 ## TASK 2: Download and install VirtualBox
 
 STEP 1: Download VirtualBox
@@ -64,6 +64,7 @@ Download Links (as of current version):
 - macOS: VirtualBox-7.x.x-xxxxx-OSX.dmg
 - Linux: Select your distribution (Ubuntu, Fedora, etc.)
 
+```
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 2a <<<                         |
 |                                                                  |
@@ -74,8 +75,7 @@ Download Links (as of current version):
 |  - "Windows hosts" link highlighted/visible                      |
 |                                                                  |
 +------------------------------------------------------------------+
-
-
+```
 STEP 2: Install VirtualBox (Windows)
 ------------------------------------
 1. Locate downloaded file (e.g., VirtualBox-7.0.14-161095-Win.exe)
@@ -94,7 +94,7 @@ Installation Notes:
 - During installation, network connectivity may be temporarily interrupted
 - Windows may ask for permission to install device software - click "Install"
 - Restart may be required
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 2b <<<                         |
 |                                                                  |
@@ -115,7 +115,7 @@ Installation Notes:
 |  - Checkbox "Start Oracle VM VirtualBox after installation"      |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 
 STEP 3: Verify Installation
 ---------------------------
@@ -123,6 +123,7 @@ STEP 3: Verify Installation
 2. VirtualBox Manager window should appear
 3. Check version: Help > About VirtualBox
 
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 2d <<<                         |
 |                                                                  |
@@ -133,11 +134,9 @@ STEP 3: Verify Installation
 |  - Version number visible in title bar or About dialog           |
 |                                                                  |
 +------------------------------------------------------------------+
+````
 
-
-================================================================================
-TASK 3: Download Ubuntu Server or Desktop
-================================================================================
+## TASK 3: Download Ubuntu Server or Desktop
 
 Option A: Ubuntu Desktop (Recommended for beginners)
 -----------------------------------------------------
@@ -160,6 +159,7 @@ LTS Explained:
 - 5 years of security updates and support
 - Recommended for stability
 
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 3a <<<                         |
 |                                                                  |
@@ -183,11 +183,9 @@ LTS Explained:
 |    or 2 GB for Server)                                           |
 |                                                                  |
 +------------------------------------------------------------------+
+````
 
-
-================================================================================
-TASK 4: Create VM1 and install Ubuntu
-================================================================================
+## TASK 4: Create VM1 and install Ubuntu
 
 PART A: Create Virtual Machine
 ------------------------------
@@ -203,7 +201,7 @@ Step 2: Name and Operating System
 4. Type: Linux
 5. Version: Ubuntu (64-bit)
 6. Check "Skip Unattended Installation" if you want manual install
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 4a <<<                         |
 |                                                                  |
@@ -214,12 +212,12 @@ Step 2: Name and Operating System
 |  - Version: Ubuntu (64-bit)                                      |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 Step 3: Hardware Configuration
 1. Base Memory: 2048 MB (minimum) - 4096 MB (recommended)
 2. Processors: 2 CPUs (or more if available)
 3. Enable EFI: Optional (check if needed)
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 4b <<<                         |
 |                                                                  |
@@ -229,12 +227,12 @@ Step 3: Hardware Configuration
 |  - Green zone indicator for safe allocation                      |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 Step 4: Virtual Hard Disk
 1. Select "Create a virtual hard disk now"
 2. Disk Size: 25 GB (minimum) - 50 GB (recommended)
 3. Pre-allocate Full Size: Optional (better performance if checked)
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 4c <<<                         |
 |                                                                  |
@@ -244,11 +242,11 @@ Step 4: Virtual Hard Disk
 |  - Disk file location visible                                    |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 Step 5: Review and Finish
 1. Review all settings in Summary
 2. Click "Finish"
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 4d <<<                         |
 |                                                                  |
@@ -261,7 +259,7 @@ Step 5: Review and Finish
 |  - "Finish" button visible                                       |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 
 PART B: Install Ubuntu on VM1
 -----------------------------
@@ -288,7 +286,7 @@ Step 2: Ubuntu Installation Process
 9. Wait for installation to complete
 10. Click "Restart Now" when prompted
 11. Press Enter when asked to remove installation medium
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 4e <<<                         |
 |                                                                  |
@@ -328,13 +326,13 @@ Step 2: Ubuntu Installation Process
 |  - "Restart Now" button                                          |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 Step 3: First Boot and Login
 1. VM1 restarts
 2. Ubuntu login screen appears
 3. Enter password and login
 4. Complete initial setup wizard (if shown)
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 4i <<<                         |
 |                                                                  |
@@ -345,7 +343,7 @@ Step 3: First Boot and Login
 |  - This confirms successful installation                         |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 
 ================================================================================
 TASK 5: VM control options - start, stop, reboot, save state
@@ -358,7 +356,7 @@ HOST KEY INFORMATION
   - Releasing mouse from VM (Host Key)
   - Keyboard shortcuts (Host Key + other key)
 - You can change Host Key in: File > Preferences > Input
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 5a <<<                         |
 |                                                                  |
@@ -368,7 +366,7 @@ HOST KEY INFORMATION
 |  - Default: Right Ctrl                                           |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 
 START OPTIONS
 -------------
@@ -386,7 +384,7 @@ START OPTIONS
 3. Detachable Start
    - Select VM > Click dropdown arrow next to Start > Detachable Start
    - Can close window while VM keeps running
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 5b <<<                         |
 |                                                                  |
@@ -396,7 +394,7 @@ START OPTIONS
 |  - Options visible: Normal Start, Headless Start, Detachable     |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 
 STOP OPTIONS (Machine Menu or Close Window)
 -------------------------------------------
@@ -427,7 +425,7 @@ When you close VM window or use Machine menu, you get options:
    - Keyboard: Host Key + P
    - Freezes VM state
    - Can resume with same command
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 5c <<<                         |
 |                                                                  |
@@ -453,7 +451,7 @@ When you close VM window or use Machine menu, you get options:
 |    ( ) Power off the machine                                     |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 
 REBOOT/RESET OPTIONS
 --------------------
@@ -467,7 +465,7 @@ REBOOT/RESET OPTIONS
    - Keyboard: Host Key + R
    - Like pressing reset button on physical PC
    - May cause data loss
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 5e <<<                         |
 |                                                                  |
@@ -477,11 +475,11 @@ REBOOT/RESET OPTIONS
 |  - OR terminal window with "sudo reboot" command                 |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 
 KEYBOARD SHORTCUTS SUMMARY
 --------------------------
-
+````
 +----------------------+----------------------------------------+
 | Shortcut             | Action                                 |
 +----------------------+----------------------------------------+
@@ -497,7 +495,8 @@ KEYBOARD SHORTCUTS SUMMARY
 | Host Key + E         | Take screenshot                        |
 | Host Key + Del       | Send Ctrl+Alt+Del to VM                |
 +----------------------+----------------------------------------+
-
+````
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 5f <<<                         |
 |                                                                  |
@@ -507,7 +506,7 @@ KEYBOARD SHORTCUTS SUMMARY
 |  - (Press Host Key + F to toggle fullscreen)                     |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 
 MOUSE CAPTURE
 -------------
@@ -515,7 +514,7 @@ MOUSE CAPTURE
 - Mouse cursor is confined to VM window
 - Press Host Key to release mouse
 - Auto-capture can be disabled in VM settings
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 5g <<<                         |
 |                                                                  |
@@ -525,7 +524,7 @@ MOUSE CAPTURE
 |  - Mouse cursor inside VM                                        |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 
 SAVE STATE DEMONSTRATION
 ------------------------
@@ -540,7 +539,7 @@ To Resume:
 1. Select VM1
 2. Click "Start"
 3. VM resumes from exact saved state
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 5h <<<                         |
 |                                                                  |
@@ -551,7 +550,7 @@ To Resume:
 |  - Preview/thumbnail shows saved state                           |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 
 ================================================================================
 TASK 6: Clone VM1 to create VM2
@@ -583,7 +582,7 @@ Step 1: Ensure VM1 is powered off
 Step 2: Select VM1 and start Clone wizard
 - Right-click on VM1 > Clone
 - OR select VM1 > Machine menu > Clone
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 6a <<<                         |
 |                                                                  |
@@ -593,7 +592,7 @@ Step 2: Select VM1 and start Clone wizard
 |  - VM1 state: Powered Off or Saved                               |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 Step 3: Configure Clone Settings
 
 Name and Path:
@@ -601,7 +600,7 @@ Name and Path:
 2. Path: (default or choose location)
 3. MAC Address Policy: Generate new MAC addresses for all adapters
    (Important! Each VM needs unique MAC addresses)
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 6b <<<                         |
 |                                                                  |
@@ -612,7 +611,7 @@ Name and Path:
 |    "Generate new MAC addresses for all network adapters"         |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 Step 4: Select Clone Type
 1. Full Clone (Recommended)
    - Creates independent copy
@@ -621,7 +620,7 @@ Step 4: Select Clone Type
 2. Linked Clone
    - Faster and smaller
    - VM2 depends on VM1
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 6c <<<                         |
 |                                                                  |
@@ -632,7 +631,7 @@ Step 4: Select Clone Type
 |  - "Full Clone" selected (recommended)                           |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 Step 5: Select Snapshots (if any)
 - If VM1 has snapshots:
   - Current machine state
@@ -643,7 +642,7 @@ Step 6: Click "Finish" and wait
 - Cloning process begins
 - Progress bar shows status
 - May take several minutes for Full Clone
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 6d <<<                         |
 |                                                                  |
@@ -653,12 +652,12 @@ Step 6: Click "Finish" and wait
 |  - Percentage complete                                           |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 Step 7: Verify VM2 in VirtualBox Manager
 - VM2 appears in VM list
 - VM2 is separate from VM1
 - Both VMs can run simultaneously (with different MAC addresses)
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 6e <<<                         |
 |                                                                  |
@@ -668,7 +667,7 @@ Step 7: Verify VM2 in VirtualBox Manager
 |  - Both VMs show "Powered Off" state                             |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 
 VERIFY CLONE WORKS
 ------------------
@@ -679,7 +678,7 @@ VERIFY CLONE WORKS
 4. Change hostname if needed:
    $ sudo hostnamectl set-hostname VM2
    $ sudo reboot
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 6f <<<                         |
 |                                                                  |
@@ -690,7 +689,7 @@ VERIFY CLONE WORKS
 |  - OR VirtualBox window title showing "VM2"                      |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 
 RUNNING BOTH VMs SIMULTANEOUSLY
 -------------------------------
@@ -699,7 +698,7 @@ RUNNING BOTH VMs SIMULTANEOUSLY
 2. Start VM2
 3. Both VMs run in separate windows
 4. Each VM has independent resources (RAM, CPU, network)
-
+````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 6g <<<                         |
 |                                                                  |
@@ -710,7 +709,7 @@ RUNNING BOTH VMs SIMULTANEOUSLY
 |  - Both running simultaneously                                   |
 |                                                                  |
 +------------------------------------------------------------------+
-
+````
 
 ================================================================================
 COMPLETE TASK SUMMARY
