@@ -1,5 +1,4 @@
-ADVANCED FUNCTIONS AND SCRIPTS - ANSWER
-========================================
+# ADVANCED FUNCTIONS AND SCRIPTS - ANSWER
 
 This guide covers advanced PowerShell functions with CmdletBinding,
 parameter validation, SupportsShouldProcess, and error handling.
@@ -796,3 +795,4 @@ Solution: Set $ConfirmPreference or use ConfirmImpact='High'
 [ ] Know difference between -WhatIf and -Confirm
 
 ================================================================================
+

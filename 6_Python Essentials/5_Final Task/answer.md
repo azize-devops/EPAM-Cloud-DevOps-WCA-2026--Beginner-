@@ -1,5 +1,4 @@
-FINAL TASK - QUADRATIC EQUATION SOLVER - ANSWER
-================================================
+# FINAL TASK - QUADRATIC EQUATION SOLVER - ANSWER
 
 This guide provides a complete solution for the quadratic equation solver
 with all required functions and detailed explanations.
@@ -503,3 +502,4 @@ Solution: Make sure to call main() at the end
 [ ] Test case D < 0 works (no real roots)
 
 ================================================================================
+

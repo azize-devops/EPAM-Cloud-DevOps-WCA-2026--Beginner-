@@ -1,5 +1,4 @@
-NIGHTMARE! - TASK
-=================
+# NIGHTMARE! - TASK
 
 This is the most difficult task in this course.
 
@@ -78,3 +77,4 @@ HELPFUL MATERIALS:
 https://www.vim.org/docs.php
 https://linuxize.com/post/bash-heredoc/
 https://www.gnu.org/software/bash/manual/bash.html
+

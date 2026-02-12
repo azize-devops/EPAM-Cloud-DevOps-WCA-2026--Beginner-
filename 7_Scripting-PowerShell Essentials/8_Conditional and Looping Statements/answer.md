@@ -1,5 +1,4 @@
-CONDITIONAL AND LOOPING STATEMENTS - ANSWER
-===========================================
+# CONDITIONAL AND LOOPING STATEMENTS - ANSWER
 
 This guide covers PowerShell conditional statements (if/else, switch)
 and looping constructs (for, while, foreach) with practical examples.
@@ -689,3 +688,4 @@ Solution: Use [Math]::Round() when needed
 [ ] Know how to join array elements with -join
 
 ================================================================================
+

@@ -1,5 +1,4 @@
-AUTOMATING SQL SERVER MANAGEMENT - ANSWER
-=========================================
+# AUTOMATING SQL SERVER MANAGEMENT - ANSWER
 
 This guide covers SQL Server Agent job automation including credentials,
 proxy accounts, and multi-step job creation with PowerShell integration.
@@ -882,3 +881,4 @@ FILES CREATED:
 
     C:\SQLBackups\AdventureWorks\              - Backup folder (owner: SQLJobProxy)
     C:\SQLBackups\AdventureWorks\AW_*.bak      - Backup files
+

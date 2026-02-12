@@ -1,5 +1,4 @@
-CENTOS INSTALLATION AND BASIC CONFIGURATION - TASK
-===================================================
+# CENTOS INSTALLATION AND BASIC CONFIGURATION - TASK
 
 TASKS:
 ------
@@ -34,3 +33,4 @@ Note: CentOS is now available as "CentOS Stream".
       Current versions:
       - CentOS Stream 10 (EOL: 2030-05-31)
       - CentOS Stream 9 (EOL: 2027-05-31)
+

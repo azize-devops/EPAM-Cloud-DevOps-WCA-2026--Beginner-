@@ -1,5 +1,4 @@
-PROCESSES HIERARCHY - ANSWERS
-==============================
+# PROCESSES HIERARCHY - ANSWERS
 
 ================================================================================
 TASK 1: Open terminal of your choosing
@@ -529,3 +528,4 @@ Print this checklist and mark each screenshot as you take it:
 [ ] SCREENSHOT 7  - ps -p or ps -f showing USER, PID, and COMMAND info
 
 TOTAL: 7-8 Screenshots Required
+

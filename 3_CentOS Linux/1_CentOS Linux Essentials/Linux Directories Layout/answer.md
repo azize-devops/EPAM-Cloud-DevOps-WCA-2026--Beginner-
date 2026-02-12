@@ -1,5 +1,4 @@
-LINUX DIRECTORIES LAYOUT - ANSWERS
-===================================
+# LINUX DIRECTORIES LAYOUT - ANSWERS
 
 ================================================================================
 TASK 1: Open terminal of your choosing
@@ -492,3 +491,4 @@ Print this checklist and mark each screenshot as you take it:
 [ ] SCREENSHOT 10 - tree ~ showing final structure
 
 TOTAL: 10 Screenshots Required
+

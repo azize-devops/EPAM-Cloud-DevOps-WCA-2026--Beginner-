@@ -1,5 +1,4 @@
-LINUX NETWORKING PRACTICAL TASK - ANSWER
-========================================
+# LINUX NETWORKING PRACTICAL TASK - ANSWER
 
 This guide covers advanced Linux networking including multi-interface configuration,
 DHCP server setup, routing, SSH, firewall rules, and NAT configuration.
@@ -807,3 +806,4 @@ Solutions:
 [ ] Client_2 can ping 8.8.8.8
 
 ================================================================================
+

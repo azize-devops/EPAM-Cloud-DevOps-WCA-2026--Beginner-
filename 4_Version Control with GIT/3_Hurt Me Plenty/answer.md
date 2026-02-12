@@ -1,5 +1,4 @@
-HURT ME PLENTY - ANSWER
-=======================
+# HURT ME PLENTY - ANSWER
 
 This guide covers Git tagging and rebasing. Rebasing is an alternative to merging
 that creates a linear commit history by replaying commits on top of another branch.
@@ -557,3 +556,4 @@ Solution: After rebasing a pushed branch, force push:
 [ ] storm.txt still intact after rebase
 
 ================================================================================
+

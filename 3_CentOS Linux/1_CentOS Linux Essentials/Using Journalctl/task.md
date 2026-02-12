@@ -1,5 +1,4 @@
-USING JOURNALCTL - TASK
-=======================
+# USING JOURNALCTL - TASK
 
 TASKS:
 ------
@@ -37,3 +36,4 @@ HELPFUL MATERIALS:
 
 https://linuxconfig.org/bash-scripting-tutorial-for-beginners
 https://www.linode.com/docs/guides/how-to-use-journalctl/
+

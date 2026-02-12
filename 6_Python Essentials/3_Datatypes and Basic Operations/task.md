@@ -1,5 +1,4 @@
-DATATYPES AND BASIC OPERATIONS - TASK
-=====================================
+# DATATYPES AND BASIC OPERATIONS - TASK
 
 GOALS:
 ------
@@ -38,3 +37,4 @@ HELPFUL MATERIALS:
 
 https://docs.python.org/3/tutorial/controlflow.html#defining-functions
 https://www.w3schools.com/python/python_functions.asp
+

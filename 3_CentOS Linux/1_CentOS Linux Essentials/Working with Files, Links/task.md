@@ -1,5 +1,4 @@
-WORKING WITH FILES, LINKS - TASK
-==================================
+# WORKING WITH FILES, LINKS - TASK
 
 TASKS:
 ------
@@ -41,3 +40,4 @@ HELPFUL MATERIALS:
 
 https://linuxconfig.org/bash-scripting-tutorial-for-beginners
 https://medium.com/@307/hard-links-and-symbolic-links-a-comparison-7f2b56864cdd
+

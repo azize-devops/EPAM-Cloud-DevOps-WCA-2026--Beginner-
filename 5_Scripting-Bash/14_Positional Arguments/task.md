@@ -1,5 +1,4 @@
-POSITIONAL ARGUMENTS - TASK
-===========================
+# POSITIONAL ARGUMENTS - TASK
 
 GOALS:
 ------
@@ -40,3 +39,4 @@ HELPFUL MATERIALS:
 
 https://wiki.bash-hackers.org/scripting/posparams
 https://devhints.io/bash
+

@@ -1,5 +1,4 @@
-OBJECT PROPERTIES AND METHODS - TASK
-====================================
+# OBJECT PROPERTIES AND METHODS - TASK
 
 GOALS:
 ------
@@ -54,3 +53,4 @@ HELPFUL MATERIALS:
 
 https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_classes
 https://docs.microsoft.com/en-us/powershell/scripting/lang-spec/chapter-09
+

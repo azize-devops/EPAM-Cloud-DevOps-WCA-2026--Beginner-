@@ -1,5 +1,4 @@
-I CAN WIN - TASK
-================
+# I CAN WIN - TASK
 
 TASKS:
 ------
@@ -38,3 +37,4 @@ HELPFUL MATERIALS:
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh
 https://www.atlassian.com/git/tutorials/setting-up-a-repository
+

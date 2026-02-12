@@ -1,5 +1,4 @@
-PIPELINES & LOGICAL OPERATORS - TASK
-====================================
+# PIPELINES & LOGICAL OPERATORS - TASK
 
 GOALS:
 ------
@@ -47,3 +46,4 @@ HELPFUL MATERIALS:
 
 https://www.poftut.com/linux-bash-pipe-command-usage-examples-redirection/
 https://devhints.io/bash
+

@@ -1,5 +1,4 @@
-WORKING WITH FILES, LINKS - ANSWERS
-=====================================
+# WORKING WITH FILES, LINKS - ANSWERS
 
 ================================================================================
 TASK 1: Open terminal of your choosing
@@ -513,3 +512,4 @@ Print this checklist and mark each screenshot as you take it:
 [ ] SCREENSHOT 9  - Cleanup and verification all files removed
 
 TOTAL: 9 Screenshots Required
+

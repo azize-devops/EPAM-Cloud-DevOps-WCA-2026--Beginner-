@@ -1,5 +1,4 @@
-WHAT IS BASH - TASK
-===================
+# WHAT IS BASH - TASK
 
 GOALS:
 ------

@@ -1,5 +1,4 @@
-BRING IT ON - ANSWER
-====================
+# BRING IT ON - ANSWER
 
 This guide covers Git branching, .gitignore configuration, merging, and
 conflict resolution. This task continues from the "I Can Win" exercise.
@@ -674,3 +673,4 @@ Solution:
 [ ] git log --graph shows merge structure
 
 ================================================================================
+

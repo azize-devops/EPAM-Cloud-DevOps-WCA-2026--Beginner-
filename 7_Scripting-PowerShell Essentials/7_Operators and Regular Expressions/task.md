@@ -1,5 +1,4 @@
-OPERATORS AND REGULAR EXPRESSIONS - TASK
-========================================
+# OPERATORS AND REGULAR EXPRESSIONS - TASK
 
 GOALS:
 ------
@@ -71,3 +70,4 @@ HELPFUL MATERIALS:
 
 https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions
 https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators
+

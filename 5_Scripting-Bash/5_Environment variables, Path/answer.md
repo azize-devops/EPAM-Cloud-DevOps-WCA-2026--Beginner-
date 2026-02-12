@@ -1,5 +1,4 @@
-ENVIRONMENT VARIABLES, PATH - ANSWER
-====================================
+# ENVIRONMENT VARIABLES, PATH - ANSWER
 
 This guide covers environment variables, the export command, PATH manipulation,
 and making scripts globally accessible.
@@ -477,3 +476,4 @@ Solution: Check with 'which' and 'type -a':
 [ ] Script works from any directory
 
 ================================================================================
+

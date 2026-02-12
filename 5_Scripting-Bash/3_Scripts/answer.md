@@ -1,5 +1,4 @@
-SCRIPTS - ANSWER
-================
+# SCRIPTS - ANSWER
 
 This guide covers creating, writing, and executing bash scripts with proper
 shebang declarations and file permissions.
@@ -513,3 +512,4 @@ Debug output example:
 [ ] Output shows Name and Surname files
 
 ================================================================================
+

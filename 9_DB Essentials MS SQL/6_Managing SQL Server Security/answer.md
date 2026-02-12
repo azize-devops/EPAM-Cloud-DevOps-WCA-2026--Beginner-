@@ -1,5 +1,4 @@
-MANAGING SQL SERVER SECURITY - ANSWER
-=====================================
+# MANAGING SQL SERVER SECURITY - ANSWER
 
 This guide covers SQL Server security configuration including creating
 logins, users, roles, and permissions, as well as contained database
@@ -909,3 +908,4 @@ KEY COMMANDS REFERENCE:
 
     -- Enable Contained DB
     EXEC sp_configure 'contained database authentication', 1;
+

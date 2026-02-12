@@ -1,5 +1,4 @@
-CASE STATEMENT - ANSWER
-=======================
+# CASE STATEMENT - ANSWER
 
 This guide covers bash case statements, process management (PID, kill),
 background processes, and creating service-like scripts.
@@ -523,3 +522,4 @@ Solution: Redirect output:
 [ ] which my_service.sh shows correct path
 
 ================================================================================
+

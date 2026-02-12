@@ -1,5 +1,4 @@
-SOFTWARE MANAGEMENT - ANSWER
-============================
+# SOFTWARE MANAGEMENT - ANSWER
 
 This guide covers package management in CentOS using yum (Yellowdog Updater Modified),
 including searching, installing, and removing packages.
@@ -445,3 +444,4 @@ Solution: Use sudo for package management commands
 [ ] nginx service started and status shows "active (running)"
 
 ================================================================================
+

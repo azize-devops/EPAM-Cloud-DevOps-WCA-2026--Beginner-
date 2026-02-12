@@ -1,5 +1,4 @@
-ARRAYS AND HASH TABLES - ANSWER
-===============================
+# ARRAYS AND HASH TABLES - ANSWER
 
 This guide covers PowerShell arrays, multi-dimensional arrays, hash tables,
 nested structures, and sorting techniques.
@@ -457,3 +456,4 @@ Solution: Check if key exists first
 [ ] Know how to enumerate hash table with GetEnumerator()
 
 ================================================================================
+

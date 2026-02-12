@@ -1,5 +1,4 @@
-ENVIRONMENT VARIABLES, PATH - TASK
-==================================
+# ENVIRONMENT VARIABLES, PATH - TASK
 
 GOALS:
 ------
@@ -38,3 +37,4 @@ HELPFUL MATERIALS:
 
 https://linuxize.com/post/how-to-set-and-list-environment-variables-in-linux/
 https://devhints.io/bash
+

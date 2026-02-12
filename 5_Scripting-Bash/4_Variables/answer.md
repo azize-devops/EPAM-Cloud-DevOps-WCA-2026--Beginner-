@@ -1,5 +1,4 @@
-VARIABLES - ANSWER
-==================
+# VARIABLES - ANSWER
 
 This guide covers bash variables including declaration, usage, and sourcing
 variables from external files.
@@ -458,3 +457,4 @@ Solution: Always quote variables: "$VAR"
 [ ] File ~/Name_Surname/new_file exists after execution
 
 ================================================================================
+

@@ -1,5 +1,4 @@
-SPECIAL VARIABLES - ANSWER
-==========================
+# SPECIAL VARIABLES - ANSWER
 
 This guide covers bash special (reserved) variables including positional
 parameters, argument handling, and exit codes.
@@ -449,3 +448,4 @@ Solution: $0 shows exactly how script was called.
 [ ] Understand numeric comparison operators
 
 ================================================================================
+

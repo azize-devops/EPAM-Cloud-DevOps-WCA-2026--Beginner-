@@ -1,5 +1,4 @@
-VARIABLE TYPES AND DECLARATIONS - ANSWER
-========================================
+# VARIABLE TYPES AND DECLARATIONS - ANSWER
 
 This guide covers PowerShell variables, data types, type declarations,
 and how to check the type of objects.
@@ -456,3 +455,4 @@ Solution: Use Select-Object -First 1
 [ ] Know how to use GetType() method
 
 ================================================================================
+

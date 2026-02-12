@@ -1,5 +1,4 @@
-MONITORING SQL SERVER USING ALERTS AND NOTIFICATIONS - ANSWER
-=============================================================
+# MONITORING SQL SERVER USING ALERTS AND NOTIFICATIONS - ANSWER
 
 This guide covers configuring Database Mail, creating operators and alerts,
 and setting up email notifications for SQL Server events like deadlocks.
@@ -801,3 +800,4 @@ FLOW OF DEADLOCK NOTIFICATION:
 6. Notification triggered
 7. Database Mail sends email to operator
 8. DBA receives email notification
+

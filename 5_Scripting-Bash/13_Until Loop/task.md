@@ -1,5 +1,4 @@
-UNTIL LOOP - TASK
-=================
+# UNTIL LOOP - TASK
 
 GOALS:
 ------
@@ -42,3 +41,4 @@ HELPFUL MATERIALS:
 
 https://linuxize.com/post/bash-until-loop/
 https://devhints.io/bash
+

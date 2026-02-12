@@ -1,5 +1,4 @@
-CASE STATEMENT - TASK
-=====================
+# CASE STATEMENT - TASK
 
 GOALS:
 ------
@@ -52,3 +51,4 @@ HELPFUL MATERIALS:
 
 https://linuxize.com/post/bash-case-statement/
 https://devhints.io/bash
+

@@ -1,5 +1,4 @@
-SSH OVERVIEW, SSH CLIENTS - ANSWER
-===================================
+# SSH OVERVIEW, SSH CLIENTS - ANSWER
 
 This guide covers SSH (Secure Shell) configuration including key-based authentication,
 SSH config file setup, and secure file transfer using scp.
@@ -553,3 +552,4 @@ Solutions:
 [ ] File present in Name_Surname's home directory on VM2
 
 ================================================================================
+

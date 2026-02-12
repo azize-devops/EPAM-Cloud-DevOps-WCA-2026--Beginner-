@@ -1,5 +1,4 @@
-MSSQL SERVER INSTALLATION - ANSWER
-==================================
+# MSSQL SERVER INSTALLATION - ANSWER
 
 This guide walks you through installing SQL Server 2019 Developer Edition
 with two instances: a default instance via GUI and a named instance via
@@ -849,3 +848,4 @@ Firewall Ports:
 - TCP 1433 - Default Instance
 - TCP 1434 - Named Instance (if static)
 - UDP 1434 - SQL Server Browser
+

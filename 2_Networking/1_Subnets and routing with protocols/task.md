@@ -1,5 +1,4 @@
-PRACTICAL TASK ON IP ADDRESSING AND SUBNETTING
-===============================================
+# PRACTICAL TASK ON IP ADDRESSING AND SUBNETTING
 
 1. For each IP address 120.156.21.95/12, 172.18.54.141/19, 192.167.43.58/27:
 
@@ -57,3 +56,4 @@ PRACTICAL TASK ON IP ADDRESSING AND SUBNETTING
 
    2.3. Optional extra task: perform steps 2.1 to 2.2 using a variable length
         subnet mask (VLSM).
+

@@ -1,5 +1,4 @@
-LISTS, SETS, TUPLES AND DICTS - TASK
-====================================
+# LISTS, SETS, TUPLES AND DICTS - TASK
 
 GOALS:
 ------
@@ -42,3 +41,4 @@ HELPFUL MATERIALS:
 
 https://docs.python.org/3/tutorial/datastructures.html
 https://www.w3schools.com/python/python_lists.asp
+

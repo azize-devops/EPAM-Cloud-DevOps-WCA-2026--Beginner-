@@ -1,5 +1,4 @@
-STRING MANIPULATIONS - TASK
-===========================
+# STRING MANIPULATIONS - TASK
 
 GOALS:
 ------
@@ -46,3 +45,4 @@ HELPFUL MATERIALS:
 
 https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_split
 https://docs.microsoft.com/en-us/dotnet/api/system.string
+

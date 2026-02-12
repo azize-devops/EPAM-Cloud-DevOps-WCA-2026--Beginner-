@@ -1,5 +1,4 @@
-NETWORK CONFIGURATION - TASK
-============================
+# NETWORK CONFIGURATION - TASK
 
 TASKS:
 ------
@@ -30,3 +29,4 @@ HELPFUL MATERIALS:
 https://linuxconfig.org/bash-scripting-tutorial-for-beginners
 https://www.tecmint.com/ip-command-examples/
 https://www.tecmint.com/setup-local-dns-using-etc-hosts-file-in-linux/
+

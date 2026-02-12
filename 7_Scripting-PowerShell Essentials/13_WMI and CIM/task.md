@@ -1,5 +1,4 @@
-WMI AND CIM - TASK
-==================
+# WMI AND CIM - TASK
 
 GOALS:
 ------
@@ -46,3 +45,4 @@ HELPFUL MATERIALS:
 https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/get-ciminstance
 https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-processor
 https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-logonsession
+

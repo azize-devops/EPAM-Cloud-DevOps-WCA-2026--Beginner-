@@ -1,5 +1,4 @@
-NIGHTMARE! - ANSWER
-===================
+# NIGHTMARE! - ANSWER
 
 Complete guide to performing all 4 previous tasks using ONLY the command line.
 No GUI editors, file managers, or git GUI tools allowed!
@@ -698,3 +697,4 @@ PART 4 - HARDCORE:
 [ ] Remote restored via command line
 
 ================================================================================
+

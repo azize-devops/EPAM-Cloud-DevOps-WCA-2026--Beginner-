@@ -1,5 +1,4 @@
-PROVIDERS - ANSWER
-==================
+# PROVIDERS - ANSWER
 
 This guide covers PowerShell providers, file system operations,
 and reading/writing files using provider cmdlets.
@@ -708,3 +707,4 @@ Solution: Filter empty strings
 [ ] Understand Join-Path for path construction
 
 ================================================================================
+

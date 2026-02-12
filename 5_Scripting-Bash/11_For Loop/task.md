@@ -1,5 +1,4 @@
-FOR LOOP - TASK
-===============
+# FOR LOOP - TASK
 
 GOALS:
 ------
@@ -34,3 +33,4 @@ HELPFUL MATERIALS:
 
 https://linuxize.com/post/bash-for-loop/
 https://devhints.io/bash
+

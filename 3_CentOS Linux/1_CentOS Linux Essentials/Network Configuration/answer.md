@@ -1,5 +1,4 @@
-NETWORK CONFIGURATION - ANSWER
-==============================
+# NETWORK CONFIGURATION - ANSWER
 
 This guide covers basic network configuration including setting up communication
 between two VMs, configuring local DNS resolution using /etc/hosts, and testing
@@ -436,3 +435,4 @@ Solutions:
 [ ] curl -L myserver.local from VM2 returns "Hello"
 
 ================================================================================
+

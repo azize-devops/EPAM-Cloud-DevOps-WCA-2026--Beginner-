@@ -1,5 +1,4 @@
-USING JOURNALCTL - ANSWERS
-==========================
+# USING JOURNALCTL - ANSWERS
 
 ================================================================================
 TASK 1: Open terminal of your choosing
@@ -740,3 +739,4 @@ Print this checklist and mark each screenshot as you take it:
 [ ] SCREENSHOT 9  - (Optional) Restored nginx running again
 
 TOTAL: 12-13 Screenshots Required
+

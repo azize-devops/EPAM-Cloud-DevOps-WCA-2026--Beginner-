@@ -1,5 +1,4 @@
-MANAGING SQL SERVER SECURITY - TASK
-===================================
+# MANAGING SQL SERVER SECURITY - TASK
 
 GOALS:
 ------
@@ -108,3 +107,4 @@ https://docs.microsoft.com/en-us/sql/relational-databases/databases/contained-da
 https://docs.microsoft.com/en-us/sql/relational-databases/databases/contained-database-users-making-your-database-portable
 https://docs.microsoft.com/en-us/sql/relational-databases/security/permissions-database-engine
 https://docs.microsoft.com/en-us/sql/t-sql/statements/grant-transact-sql
+

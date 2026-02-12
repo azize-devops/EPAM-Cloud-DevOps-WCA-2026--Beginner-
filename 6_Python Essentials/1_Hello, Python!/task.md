@@ -1,5 +1,4 @@
-HELLO, PYTHON! - TASK
-=====================
+# HELLO, PYTHON! - TASK
 
 GOALS:
 ------
@@ -40,3 +39,4 @@ HELPFUL MATERIALS:
 
 https://code.visualstudio.com/docs/python/python-tutorial
 https://www.python.org/downloads/
+

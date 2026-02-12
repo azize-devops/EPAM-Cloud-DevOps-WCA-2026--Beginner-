@@ -1,5 +1,4 @@
-SPECIAL VARIABLES - TASK
-========================
+# SPECIAL VARIABLES - TASK
 
 GOALS:
 ------
@@ -44,3 +43,4 @@ HELPFUL MATERIALS:
 
 https://tldp.org/LDP/abs/html/internalvariables.html
 https://devhints.io/bash
+

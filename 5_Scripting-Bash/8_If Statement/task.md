@@ -1,5 +1,4 @@
-IF STATEMENT - TASK
-===================
+# IF STATEMENT - TASK
 
 GOALS:
 ------
@@ -49,3 +48,4 @@ HELPFUL MATERIALS:
 
 https://linuxize.com/post/bash-if-else-statement/
 https://devhints.io/bash
+

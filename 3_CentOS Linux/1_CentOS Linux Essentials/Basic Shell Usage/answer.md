@@ -1,5 +1,4 @@
-BASIC SHELL USAGE - ANSWERS
-============================
+# BASIC SHELL USAGE - ANSWERS
 
 ================================================================================
 TASK 1: Open terminal of your choosing
@@ -515,3 +514,4 @@ Print this checklist and mark each screenshot as you take it:
 [ ] SCREENSHOT 11 - rm -rf ~/homework and verification folder is gone
 
 TOTAL: 11 Screenshots Required
+

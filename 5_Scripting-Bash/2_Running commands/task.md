@@ -1,5 +1,4 @@
-RUNNING COMMANDS - TASK
-=======================
+# RUNNING COMMANDS - TASK
 
 GOALS:
 ------
@@ -44,3 +43,4 @@ HELPFUL MATERIALS:
 ------------------
 
 https://devhints.io/bash
+

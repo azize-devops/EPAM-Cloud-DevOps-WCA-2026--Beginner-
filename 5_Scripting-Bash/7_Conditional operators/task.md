@@ -1,5 +1,4 @@
-CONDITIONAL OPERATORS - TASK
-============================
+# CONDITIONAL OPERATORS - TASK
 
 GOALS:
 ------
@@ -47,3 +46,4 @@ HELPFUL MATERIALS:
 
 https://tldp.org/LDP/abs/html/testconstructs.html
 https://devhints.io/bash
+

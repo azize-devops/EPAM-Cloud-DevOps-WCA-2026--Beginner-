@@ -1,5 +1,4 @@
-STRING MANIPULATIONS - ANSWER
-=============================
+# STRING MANIPULATIONS - ANSWER
 
 This guide covers PowerShell string manipulation techniques including
 sorting, removing duplicates, and case conversion.
@@ -480,3 +479,4 @@ Solution: Use .Trim() and check join separator
 [ ] Know difference between -split operator and .Split() method
 
 ================================================================================
+

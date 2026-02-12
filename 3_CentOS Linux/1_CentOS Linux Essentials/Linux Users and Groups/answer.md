@@ -1,5 +1,4 @@
-LINUX USERS AND GROUPS - ANSWERS
-==================================
+# LINUX USERS AND GROUPS - ANSWERS
 
 ================================================================================
 TASK 1: Open terminal of your choosing
@@ -604,3 +603,4 @@ Print this checklist and mark each screenshot as you take it:
 [ ] SCREENSHOT 10 - Cleanup commands and verification
 
 TOTAL: 10 Screenshots Required
+

@@ -1,5 +1,4 @@
-FOR LOOP - ANSWER
-=================
+# FOR LOOP - ANSWER
 
 This guide covers bash for loops, iterating over arguments,
 arithmetic operations, and calculating sum/average.
@@ -467,3 +466,4 @@ Solution: Bash only does integer math. Use bc:
 [ ] Understand $(( )) for arithmetic
 
 ================================================================================
+

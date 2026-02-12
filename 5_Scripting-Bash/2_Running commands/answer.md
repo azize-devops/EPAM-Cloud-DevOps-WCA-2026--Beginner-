@@ -1,5 +1,4 @@
-RUNNING COMMANDS - ANSWER
-=========================
+# RUNNING COMMANDS - ANSWER
 
 This guide covers basic command-line operations including navigation,
 file creation, copying, editing, and script execution.
@@ -464,3 +463,4 @@ Solutions:
 [ ] ls ~/homework/ shows: file1 file2
 
 ================================================================================
+

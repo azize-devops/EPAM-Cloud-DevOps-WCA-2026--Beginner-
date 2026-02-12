@@ -1,5 +1,4 @@
-FUNCTIONS - ANSWER
-==================
+# FUNCTIONS - ANSWER
 
 This guide covers bash functions, function arguments, return values,
 nested function calls, and local variables.
@@ -540,3 +539,4 @@ Solution: Explicitly pass them
 [ ] Understand function arguments ($1, $@, $#)
 
 ================================================================================
+

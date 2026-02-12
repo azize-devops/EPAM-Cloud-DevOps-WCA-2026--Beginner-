@@ -1,5 +1,4 @@
-FUNDAMENTALS OF POWERSHELL FUNCTIONS - TASK
-============================================
+# FUNDAMENTALS OF POWERSHELL FUNCTIONS - TASK
 
 GOALS:
 ------
@@ -57,3 +56,4 @@ HELPFUL MATERIALS:
 https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions
 https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters
 https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pipelines
+

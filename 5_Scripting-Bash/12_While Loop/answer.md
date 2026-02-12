@@ -1,5 +1,4 @@
-WHILE LOOP - ANSWER
-===================
+# WHILE LOOP - ANSWER
 
 This guide covers bash while loops, infinite loops, reading user input,
 and implementing a simple console/shell functionality.
@@ -548,3 +547,4 @@ Solution: Check for syntax errors
 [ ] Understand break vs exit in loops
 
 ================================================================================
+

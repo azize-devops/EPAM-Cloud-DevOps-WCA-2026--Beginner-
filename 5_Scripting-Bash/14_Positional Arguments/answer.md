@@ -1,5 +1,4 @@
-POSITIONAL ARGUMENTS - ANSWER
-=============================
+# POSITIONAL ARGUMENTS - ANSWER
 
 This guide covers bash positional arguments, arrays, indexing,
 and circular iteration through arguments.
@@ -437,3 +436,4 @@ Solution: Check loop logic and string concatenation
 [ ] Understand difference between $@ and $*
 
 ================================================================================
+

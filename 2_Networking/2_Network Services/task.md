@@ -1,5 +1,4 @@
-PRACTICAL TASK ON TRAFFIC ANALYSIS
-====================================
+# PRACTICAL TASK ON TRAFFIC ANALYSIS
 
 1. Install Wireshark packet analyzer and see how it works
 
@@ -38,3 +37,4 @@ PRACTICAL TASK ON TRAFFIC ANALYSIS
 17. In one of the segments, find the source and destination ports, the size of the
     window, the sequence number, and the acknowledgment number. Explain
     the purpose of these fields.
+

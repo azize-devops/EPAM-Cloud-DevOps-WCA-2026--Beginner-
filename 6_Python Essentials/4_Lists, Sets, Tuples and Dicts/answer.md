@@ -1,5 +1,4 @@
-LISTS, SETS, TUPLES AND DICTS - ANSWER
-======================================
+# LISTS, SETS, TUPLES AND DICTS - ANSWER
 
 This guide covers Python data structures and how to modify the maze script
 to show only the final result instead of step-by-step journey.
@@ -394,3 +393,4 @@ Solution: Ensure path list is properly maintained
 [ ] Understand the data structures used (list, set, tuple)
 
 ================================================================================
+

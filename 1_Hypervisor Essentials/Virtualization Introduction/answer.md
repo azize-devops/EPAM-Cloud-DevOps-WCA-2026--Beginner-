@@ -1,5 +1,4 @@
-VIRTUALIZATION INTRODUCTION - ANSWERS
-=====================================
+# VIRTUALIZATION INTRODUCTION - ANSWERS
 
 ================================================================================
 TASK 1: Get acquainted with VirtualBox user manual
@@ -842,3 +841,4 @@ Print this checklist and mark each screenshot as you take it:
 [ ] SCREENSHOT 6g  - Both VMs running simultaneously
 
 TOTAL: 31 Screenshots Required
+

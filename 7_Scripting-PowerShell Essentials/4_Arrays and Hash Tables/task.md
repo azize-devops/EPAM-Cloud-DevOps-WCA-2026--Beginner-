@@ -1,5 +1,4 @@
-ARRAYS AND HASH TABLES - TASK
-=============================
+# ARRAYS AND HASH TABLES - TASK
 
 GOALS:
 ------
@@ -48,3 +47,4 @@ HELPFUL MATERIALS:
 
 https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_arrays
 https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_hash_tables
+

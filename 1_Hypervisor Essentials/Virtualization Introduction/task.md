@@ -1,5 +1,4 @@
-VIRTUALIZATION INTRODUCTION - TASKS
-====================================
+# VIRTUALIZATION INTRODUCTION - TASKS
 
 1. Get acquainted with the structure of the user manual VirtualBox
    https://www.virtualbox.org/manual/

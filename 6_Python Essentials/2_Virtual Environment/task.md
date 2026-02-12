@@ -1,5 +1,4 @@
-VIRTUAL ENVIRONMENT - TASK
-==========================
+# VIRTUAL ENVIRONMENT - TASK
 
 GOALS:
 ------
@@ -45,3 +44,4 @@ HELPFUL MATERIALS:
 
 https://docs.python.org/3/library/venv.html
 https://pypi.org/project/emoji/
+

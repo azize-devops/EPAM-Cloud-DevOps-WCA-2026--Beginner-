@@ -1,5 +1,4 @@
-RESTORING SQL SERVER DATABASES - ANSWER
-=======================================
+# RESTORING SQL SERVER DATABASES - ANSWER
 
 This guide covers SQL Server backup and restore operations including
 Full, Differential, and Transaction Log backups, along with point-in-time
@@ -1086,3 +1085,4 @@ Key Concepts:
 - STOPAT: Point-in-time recovery to specific datetime
 - NO_TRUNCATE: Capture log tail even from damaged database
 - Tail-log backup: Critical for recovering to point of failure
+

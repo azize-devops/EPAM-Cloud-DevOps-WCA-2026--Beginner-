@@ -1,5 +1,4 @@
-POWERSHELL CONSOLE - ANSWER
-===========================
+# POWERSHELL CONSOLE - ANSWER
 
 This guide covers PowerShell execution policies, how to configure them,
 and how to bypass restrictions when necessary.
@@ -350,3 +349,4 @@ Solution: PowerShell not in PATH or not installed
 [ ] Understand execution policy scopes
 
 ================================================================================
+

@@ -1,5 +1,4 @@
-VARIABLES - TASK
-================
+# VARIABLES - TASK
 
 GOALS:
 ------
@@ -40,3 +39,4 @@ HELPFUL MATERIALS:
 
 https://linuxhint.com/variables_bash/
 https://devhints.io/bash
+

@@ -1,5 +1,4 @@
-UNTIL LOOP - ANSWER
-===================
+# UNTIL LOOP - ANSWER
 
 This guide covers bash until loops, file size checking, file manipulation,
 and the difference between while and until loops.
@@ -485,3 +484,4 @@ Solution: Use alternative method
 [ ] Understand difference between while and until
 
 ================================================================================
+

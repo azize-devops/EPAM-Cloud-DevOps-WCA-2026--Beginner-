@@ -1,5 +1,4 @@
-PERFORMING DATABASE MAINTENANCE - ANSWER
-========================================
+# PERFORMING DATABASE MAINTENANCE - ANSWER
 
 This guide covers database integrity checking with DBCC CHECKDB,
 corruption repair, and index fragmentation management with
@@ -836,3 +835,4 @@ KEY TAKEAWAYS:
    - Run DBCC CHECKDB weekly (at minimum)
    - Run index maintenance weekly
    - Update statistics after REORGANIZE
+

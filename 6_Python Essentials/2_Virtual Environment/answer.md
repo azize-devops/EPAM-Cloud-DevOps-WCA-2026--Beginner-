@@ -1,5 +1,4 @@
-VIRTUAL ENVIRONMENT - ANSWER
-============================
+# VIRTUAL ENVIRONMENT - ANSWER
 
 This guide covers Python virtual environments, package installation with pip,
 and using the Python interactive shell.
@@ -460,3 +459,4 @@ Solution: You're not in virtual environment
 [ ] Know how to activate/deactivate venv
 
 ================================================================================
+

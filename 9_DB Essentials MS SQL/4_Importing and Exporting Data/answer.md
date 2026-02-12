@@ -1,5 +1,4 @@
-IMPORTING AND EXPORTING DATA - ANSWER
-=====================================
+# IMPORTING AND EXPORTING DATA - ANSWER
 
 This guide covers various methods of importing and exporting data in
 SQL Server, including CSV import, bcp utility, BULK INSERT, OPENROWSET,
@@ -893,3 +892,4 @@ BULK INSERT table FROM 'file' WITH (FIELDTERMINATOR=',', ROWTERMINATOR='\n')
 
 # OPENROWSET (creates table)
 SELECT * INTO table FROM OPENROWSET(BULK 'file', FORMATFILE='fmt') AS f
+

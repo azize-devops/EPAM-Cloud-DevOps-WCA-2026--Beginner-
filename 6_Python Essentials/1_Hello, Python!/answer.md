@@ -1,5 +1,4 @@
-HELLO, PYTHON! - ANSWER
-=======================
+# HELLO, PYTHON! - ANSWER
 
 This guide covers installing Visual Studio Code, Python extensions,
 and running your first Python program.
@@ -364,3 +363,4 @@ Solution: Select correct interpreter
 [ ] Understand how to run Python scripts in VS Code
 
 ================================================================================
+

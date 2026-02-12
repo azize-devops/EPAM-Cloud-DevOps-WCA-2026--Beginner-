@@ -1,5 +1,4 @@
-FINAL TASK - QUADRATIC EQUATION SOLVER
-======================================
+# FINAL TASK - QUADRATIC EQUATION SOLVER
 
 GOALS:
 ------
@@ -58,3 +57,4 @@ HELPFUL MATERIALS:
 
 https://en.wikipedia.org/wiki/Quadratic_equation
 https://docs.python.org/3/library/math.html
+

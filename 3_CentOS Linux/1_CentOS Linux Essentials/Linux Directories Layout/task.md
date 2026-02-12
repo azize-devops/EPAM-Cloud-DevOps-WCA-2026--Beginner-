@@ -1,5 +1,4 @@
-LINUX DIRECTORIES LAYOUT - TASK
-================================
+# LINUX DIRECTORIES LAYOUT - TASK
 
 TASKS:
 ------
@@ -48,3 +47,4 @@ HELPFUL MATERIALS:
 ------------------
 
 https://linuxconfig.org/bash-scripting-tutorial-for-beginners
+

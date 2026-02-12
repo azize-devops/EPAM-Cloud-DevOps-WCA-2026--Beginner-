@@ -1,5 +1,4 @@
-VARIABLE TYPES AND DECLARATIONS - TASK
-======================================
+# VARIABLE TYPES AND DECLARATIONS - TASK
 
 GOALS:
 ------
@@ -35,3 +34,4 @@ HELPFUL MATERIALS:
 
 https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_variables
 https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-string-substitutions
+

@@ -1,5 +1,4 @@
-HARDCORE - TASK
-===============
+# HARDCORE - TASK
 
 NOTE: This task is carried out immediately after the previous one (Hurt Me Plenty).
 
@@ -39,3 +38,4 @@ HELPFUL MATERIALS:
 https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes
 https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories
 https://www.atlassian.com/git/tutorials/syncing
+

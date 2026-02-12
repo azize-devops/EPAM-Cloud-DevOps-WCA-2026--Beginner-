@@ -1,5 +1,4 @@
-OUTPUT AND FORMAT VIEW - TASK
-=============================
+# OUTPUT AND FORMAT VIEW - TASK
 
 GOALS:
 ------
@@ -37,3 +36,4 @@ HELPFUL MATERIALS:
 https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/format-table
 https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/format-list
 https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-verbose
+

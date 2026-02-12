@@ -1,5 +1,4 @@
-WHAT IS BASH - ANSWER
-=====================
+# WHAT IS BASH - ANSWER
 
 This guide introduces Bash (Bourne Again SHell), the most widely used
 command-line interpreter in Linux/Unix systems.
@@ -382,3 +381,4 @@ Solutions:
 [ ] Basic keyboard shortcuts work (Ctrl+L, Tab)
 
 ================================================================================
+

@@ -1,5 +1,4 @@
-FUNDAMENTALS OF POWERSHELL FUNCTIONS - ANSWER
-==============================================
+# FUNDAMENTALS OF POWERSHELL FUNCTIONS - ANSWER
 
 This guide covers PowerShell function creation, parameters,
 switch parameters, and pipeline input handling.
@@ -756,3 +755,4 @@ Solution: Switches are $false by default, check logic
 [ ] Know difference between Write-Host and Write-Output
 
 ================================================================================
+

@@ -1,5 +1,4 @@
-TRACING SQL SERVER ACTIVITY - ANSWER
-====================================
+# TRACING SQL SERVER ACTIVITY - ANSWER
 
 This guide covers SQL Server Profiler usage, creating deadlock scenarios,
 and analyzing deadlock graphs to understand how SQL Server handles
@@ -678,3 +677,4 @@ Files Created (if saved traces):
 C:\Traces\DeadlockDemo.trc    - Profiler trace file
 C:\Traces\DeadlockGraph.xdl   - Extracted deadlock XML
 C:\Traces\Deadlocks.xel       - Extended Events file
+

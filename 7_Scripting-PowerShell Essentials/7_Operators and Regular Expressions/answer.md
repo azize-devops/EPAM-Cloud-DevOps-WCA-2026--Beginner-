@@ -1,5 +1,4 @@
-OPERATORS AND REGULAR EXPRESSIONS - ANSWER
-==========================================
+# OPERATORS AND REGULAR EXPRESSIONS - ANSWER
 
 This guide covers PowerShell regular expressions, pattern matching,
 and text transformation techniques.
@@ -634,3 +633,4 @@ Solution: Add param() block at top of script
 [ ] Scripts accept command line arguments with param()
 
 ================================================================================
+

@@ -1,5 +1,4 @@
-WMI AND CIM - ANSWER
-====================
+# WMI AND CIM - ANSWER
 
 This guide covers Windows Management Instrumentation (WMI) and
 Common Information Model (CIM) for system management and querying.
@@ -870,3 +869,4 @@ Solution: Use CIM session for multiple queries
 [ ] Know common Win32 class names
 
 ================================================================================
+

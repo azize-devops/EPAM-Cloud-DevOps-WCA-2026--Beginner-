@@ -1,5 +1,4 @@
-INPUT/OUTPUT - ANSWER
-=====================
+# INPUT/OUTPUT - ANSWER
 
 This guide covers bash data streams (stdin, stdout, stderr),
 redirection operators, and writing to files and terminal.
@@ -500,3 +499,4 @@ Problem: Redirect order matters
 [ ] Understand file descriptors (0, 1, 2)
 
 ================================================================================
+

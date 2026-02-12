@@ -1,5 +1,4 @@
-LINUX USERS AND GROUPS - TASK
-==============================
+# LINUX USERS AND GROUPS - TASK
 
 TASKS:
 ------
@@ -44,3 +43,4 @@ HELPFUL MATERIALS:
 
 https://linuxconfig.org/bash-scripting-tutorial-for-beginners
 https://www.tecmint.com/manage-users-and-groups-in-linux/
+

@@ -1,5 +1,4 @@
-I CAN WIN - ANSWER
-==================
+# I CAN WIN - ANSWER
 
 This guide covers Git basics including installation, SSH key configuration,
 repository management, commits, and synchronization with GitHub.
@@ -608,3 +607,4 @@ Solutions:
 [ ] Both commits visible in git log
 
 ================================================================================
+

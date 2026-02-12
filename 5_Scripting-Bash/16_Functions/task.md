@@ -1,5 +1,4 @@
-FUNCTIONS - TASK
-================
+# FUNCTIONS - TASK
 
 GOALS:
 ------
@@ -36,3 +35,4 @@ HELPFUL MATERIALS:
 
 https://linuxize.com/post/bash-functions/
 https://devhints.io/bash
+

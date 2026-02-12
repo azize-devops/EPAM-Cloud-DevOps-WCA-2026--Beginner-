@@ -1,5 +1,4 @@
-POWERSHELL COMMANDS - ANSWER
-============================
+# POWERSHELL COMMANDS - ANSWER
 
 This guide covers PowerShell cmdlets, filtering processes, finding commands,
 and using the PowerShell help system.
@@ -386,3 +385,4 @@ Solution: Update help files first
 [ ] Know common comparison operators (-eq, -like, -gt, etc.)
 
 ================================================================================
+

@@ -1,5 +1,4 @@
-INPUT/OUTPUT - TASK
-===================
+# INPUT/OUTPUT - TASK
 
 GOALS:
 ------
@@ -62,3 +61,4 @@ HELPFUL MATERIALS:
 
 https://linuxize.com/post/bash-redirect-stderr-stdout/
 https://devhints.io/bash
+

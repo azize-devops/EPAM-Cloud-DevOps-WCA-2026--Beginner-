@@ -1,5 +1,4 @@
-PRACTICAL TASK ON IP ADDRESSING AND SUBNETTING - ANSWERS
-==========================================================
+# PRACTICAL TASK ON IP ADDRESSING AND SUBNETTING - ANSWERS
 
 ================================================================================
 TASK 1: IP ADDRESS ANALYSIS
@@ -185,3 +184,4 @@ COMPARISON: FLSM vs VLSM
 | VLSM   |          684         |          171           |    75.0%   |
 
 VLSM is more efficient, saving 724 addresses compared to FLSM.
+

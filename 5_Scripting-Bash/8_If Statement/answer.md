@@ -1,5 +1,4 @@
-IF STATEMENT - ANSWER
-=====================
+# IF STATEMENT - ANSWER
 
 This guide covers bash if/else/elif statements, conditional expressions,
 and practical scripting examples.
@@ -541,3 +540,4 @@ Solution: Use -a and -o in [ ], or use [[ ]]
 [ ] ./my_script.sh keep calm and procrastinate outputs "Invalid..."
 
 ================================================================================
+

@@ -1,5 +1,4 @@
-TRACING SQL SERVER ACTIVITY - TASK
-==================================
+# TRACING SQL SERVER ACTIVITY - TASK
 
 GOALS:
 ------
@@ -112,3 +111,4 @@ https://docs.microsoft.com/en-us/sql/relational-databases/sql-trace/sql-server-p
 https://docs.microsoft.com/en-us/sql/relational-databases/performance/deadlocks
 https://docs.microsoft.com/en-us/sql/relational-databases/sql-trace/analyze-deadlocks-with-sql-server-profiler
 https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-locks-transact-sql
+

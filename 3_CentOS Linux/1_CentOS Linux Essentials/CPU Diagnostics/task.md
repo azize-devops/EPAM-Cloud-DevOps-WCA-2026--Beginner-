@@ -1,5 +1,4 @@
-CPU DIAGNOSTICS - TASK
-======================
+# CPU DIAGNOSTICS - TASK
 
 TASKS:
 ------
@@ -33,3 +32,4 @@ HELPFUL MATERIALS:
 https://linuxconfig.org/bash-scripting-tutorial-for-beginners
 https://en.wikipedia.org/wiki/Load_(computing)#Other_system_performance_commands
 https://www.tecmint.com/12-top-command-examples-in-linux/
+

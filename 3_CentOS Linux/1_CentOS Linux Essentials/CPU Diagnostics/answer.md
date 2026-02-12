@@ -1,5 +1,4 @@
-CPU DIAGNOSTICS - ANSWERS
-=========================
+# CPU DIAGNOSTICS - ANSWERS
 
 ================================================================================
 TASK 1: Open terminal of your choosing
@@ -794,3 +793,4 @@ Print this checklist and mark each screenshot as you take it:
 [ ] SCREENSHOT 5e - Top 5 CPU processes analysis
 
 TOTAL: 20 Screenshots Required
+

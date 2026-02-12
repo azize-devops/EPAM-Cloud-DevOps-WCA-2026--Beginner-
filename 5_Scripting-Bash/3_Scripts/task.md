@@ -1,5 +1,4 @@
-SCRIPTS - TASK
-==============
+# SCRIPTS - TASK
 
 GOALS:
 ------
@@ -47,3 +46,4 @@ HELPFUL MATERIALS:
 
 https://linuxhint.com/30_bash_script_examples/
 https://devhints.io/bash
+

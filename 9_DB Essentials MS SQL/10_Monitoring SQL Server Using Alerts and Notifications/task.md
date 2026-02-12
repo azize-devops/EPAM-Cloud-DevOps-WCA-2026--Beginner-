@@ -1,5 +1,4 @@
-MONITORING SQL SERVER USING ALERTS AND NOTIFICATIONS - TASK
-===========================================================
+# MONITORING SQL SERVER USING ALERTS AND NOTIFICATIONS - TASK
 
 GOALS:
 ------
@@ -145,3 +144,4 @@ https://docs.microsoft.com/en-us/sql/ssms/agent/create-an-operator
 https://docs.microsoft.com/en-us/sql/ssms/agent/create-an-alert-using-an-error-number
 https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-altermessage-transact-sql
 https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceon-transact-sql
+

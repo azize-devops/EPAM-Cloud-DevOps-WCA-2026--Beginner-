@@ -1,5 +1,4 @@
-CENTOS INSTALLATION AND BASIC CONFIGURATION - ANSWERS
-======================================================
+# CENTOS INSTALLATION AND BASIC CONFIGURATION - ANSWERS
 
 ================================================================================
 TASK 1: Install latest CentOS distribution on hypervisor
@@ -394,3 +393,4 @@ SUMMARY OF REQUIRED SCREENSHOTS
 |  14  | Terminal: lsblk output                                        |
 
 TOTAL: 14 Screenshots Required
+

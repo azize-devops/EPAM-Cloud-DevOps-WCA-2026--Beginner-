@@ -1,5 +1,4 @@
-FILE PERMISSION - ANSWERS
-==========================
+# FILE PERMISSION - ANSWERS
 
 ================================================================================
 TASK 1: Open terminal of your choosing
@@ -738,3 +737,4 @@ Print this checklist and mark each screenshot as you take it:
 [ ] SCREENSHOT 13 - chattr +i, failed rm, chattr -i, successful rm
 
 TOTAL: 13 Screenshots Required
+

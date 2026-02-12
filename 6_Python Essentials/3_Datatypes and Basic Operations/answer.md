@@ -1,5 +1,4 @@
-DATATYPES AND BASIC OPERATIONS - ANSWER
-=======================================
+# DATATYPES AND BASIC OPERATIONS - ANSWER
 
 This guide covers Python functions, data types, basic arithmetic operations,
 and using the Python interactive shell for function definitions.
@@ -460,3 +459,4 @@ Reason: print() returns None, function also returns None
 [ ] Understand difference between print and return
 
 ================================================================================
+

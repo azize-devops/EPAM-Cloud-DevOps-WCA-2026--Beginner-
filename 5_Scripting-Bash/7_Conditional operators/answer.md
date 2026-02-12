@@ -1,5 +1,4 @@
-CONDITIONAL OPERATORS - ANSWER
-==============================
+# CONDITIONAL OPERATORS - ANSWER
 
 This guide covers bash conditional operators for string comparison,
 integer comparison, and environment variable testing.
@@ -448,3 +447,4 @@ Solution: Use ${#var} syntax with numeric operators
 [ ] Understand that 0 = true, 1 = false in bash
 
 ================================================================================
+

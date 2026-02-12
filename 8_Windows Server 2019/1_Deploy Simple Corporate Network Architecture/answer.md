@@ -1,5 +1,4 @@
-DEPLOY SIMPLE CORPORATE NETWORK ARCHITECTURE - ANSWER
-=====================================================
+# DEPLOY SIMPLE CORPORATE NETWORK ARCHITECTURE - ANSWER
 
 This guide walks you through deploying a corporate network infrastructure
 using Windows Server 2019 with VirtualBox. You will create a main server
@@ -852,3 +851,4 @@ Key Verification Commands:
 - ping <IP> (test connectivity)
 - Get-DhcpServerv4Scope (verify DHCP scopes)
 - Get-DhcpServerv4Lease -ScopeId <scope> (check leases)
+

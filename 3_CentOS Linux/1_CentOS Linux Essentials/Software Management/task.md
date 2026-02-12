@@ -1,5 +1,4 @@
-SOFTWARE MANAGEMENT - TASK
-==========================
+# SOFTWARE MANAGEMENT - TASK
 
 TASKS:
 ------
@@ -44,3 +43,4 @@ HELPFUL MATERIALS:
 
 https://linuxconfig.org/bash-scripting-tutorial-for-beginners
 https://www.redhat.com/sysadmin/how-manage-packages
+

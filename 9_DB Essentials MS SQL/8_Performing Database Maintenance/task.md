@@ -1,5 +1,4 @@
-PERFORMING DATABASE MAINTENANCE - TASK
-======================================
+# PERFORMING DATABASE MAINTENANCE - TASK
 
 GOALS:
 ------
@@ -173,3 +172,4 @@ https://docs.microsoft.com/en-us/sql/relational-databases/indexes/reorganize-and
 https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-db-index-physical-stats-transact-sql
 https://www.mssqltips.com/sqlservertip/5645/sql-server-database-corruption-and-impact-of-running-checkdb-repair-with-allow-data-loss/
 https://dba.stackexchange.com/questions/196567/test-data-to-generate-high-index-fragmentation-level
+

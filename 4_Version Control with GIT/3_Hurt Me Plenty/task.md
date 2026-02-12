@@ -1,5 +1,4 @@
-HURT ME PLENTY - TASK
-=====================
+# HURT ME PLENTY - TASK
 
 NOTE: This task is performed after the previous one (Bring It On).
 
@@ -47,3 +46,4 @@ HELPFUL MATERIALS:
 https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase
 https://git-scm.com/book/en/v2/Git-Basics-Tagging
 https://www.atlassian.com/git/tutorials/merging-vs-rebasing
+

@@ -1,5 +1,4 @@
-PIPELINES & LOGICAL OPERATORS - ANSWER
-======================================
+# PIPELINES & LOGICAL OPERATORS - ANSWER
 
 This guide covers bash pipelines (|), logical AND (&&), logical OR (||),
 and command chaining for complex one-liner operations.
@@ -381,3 +380,4 @@ Solution: Check file/folder permissions
 [ ] Understand exit codes: 0 = success, non-zero = failure
 
 ================================================================================
+

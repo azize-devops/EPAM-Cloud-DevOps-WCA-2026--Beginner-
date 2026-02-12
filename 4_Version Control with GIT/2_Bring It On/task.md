@@ -1,5 +1,4 @@
-BRING IT ON - TASK
-==================
+# BRING IT ON - TASK
 
 NOTE: This task is performed immediately after the previous one (I Can Win).
 
@@ -52,3 +51,4 @@ HELPFUL MATERIALS:
 https://www.atlassian.com/git/tutorials/using-branches
 https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts
 https://git-scm.com/docs/gitignore
+

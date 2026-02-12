@@ -1,5 +1,4 @@
-LINUX NETWORKING PRACTICAL TASK
-===============================
+# LINUX NETWORKING PRACTICAL TASK
 
 The practical part of the Linux Networking module involves creating a network
 using VirtualBox, which is shown in the network diagram below.
@@ -89,3 +88,4 @@ https://www.tecmint.com/ip-command-examples/
 https://wiki.archlinux.org/title/dhcpd
 https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands
 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/
+

@@ -1,5 +1,4 @@
-AUDITING DATA ACCESS AND ENCRYPTING DATA - ANSWER
-=================================================
+# AUDITING DATA ACCESS AND ENCRYPTING DATA - ANSWER
 
 This guide covers SQL Server Audit configuration for security monitoring
 and Transparent Data Encryption (TDE) for protecting data at rest.
@@ -918,3 +917,4 @@ IMPORTANT REMINDERS:
 3. Test restore process with TDE on a different server
 4. Audit logs can grow large - implement retention policy
 5. TDE encrypts tempdb when enabled on any database
+

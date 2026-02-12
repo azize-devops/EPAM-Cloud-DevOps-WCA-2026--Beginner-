@@ -1,5 +1,4 @@
-AUDITING DATA ACCESS AND ENCRYPTING DATA - TASK
-================================================
+# AUDITING DATA ACCESS AND ENCRYPTING DATA - TASK
 
 GOALS:
 ------
@@ -112,3 +111,4 @@ https://docs.microsoft.com/en-us/sql/relational-databases/security/auditing/crea
 https://docs.microsoft.com/en-us/sql/relational-databases/security/auditing/sql-server-audit-action-groups-and-actions
 https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/transparent-data-encryption
 https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/move-a-tde-protected-database-to-another-sql-server
+

@@ -1,5 +1,4 @@
-PRACTICAL TASK ON TRAFFIC ANALYSIS - ANSWERS
-=============================================
+# PRACTICAL TASK ON TRAFFIC ANALYSIS - ANSWERS
 
 ================================================================================
 TASK 1: Install Wireshark packet analyzer and see how it works
@@ -522,3 +521,4 @@ Print this checklist and mark each screenshot as you take it:
 [ ] SCREENSHOT 15 - TCP header expanded showing all required fields
 
 TOTAL: 15-16 Screenshots Required
+

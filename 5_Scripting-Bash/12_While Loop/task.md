@@ -1,5 +1,4 @@
-WHILE LOOP - TASK
-=================
+# WHILE LOOP - TASK
 
 GOALS:
 ------
@@ -46,3 +45,4 @@ HELPFUL MATERIALS:
 
 https://linuxize.com/post/bash-while-loop/
 https://devhints.io/bash
+

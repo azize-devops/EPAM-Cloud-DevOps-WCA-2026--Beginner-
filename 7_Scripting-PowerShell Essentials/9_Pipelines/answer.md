@@ -1,5 +1,4 @@
-PIPELINES - ANSWER
-==================
+# PIPELINES - ANSWER
 
 This guide covers PowerShell pipelines, data streaming between cmdlets,
 and advanced pipeline techniques for data processing.
@@ -665,3 +664,4 @@ Solution: Use regex to strip HTML tags
 [ ] Understand Select-Object calculated properties
 
 ================================================================================
+

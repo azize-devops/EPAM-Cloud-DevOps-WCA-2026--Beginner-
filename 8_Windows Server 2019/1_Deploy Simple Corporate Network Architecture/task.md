@@ -1,5 +1,4 @@
-DEPLOY SIMPLE CORPORATE NETWORK ARCHITECTURE - TASK
-===================================================
+# DEPLOY SIMPLE CORPORATE NETWORK ARCHITECTURE - TASK
 
 GOALS:
 ------
@@ -109,3 +108,4 @@ https://docs.microsoft.com/en-us/windows-server/remote/remote-access/remote-acce
 https://docs.microsoft.com/en-us/windows-server/networking/technologies/network-policy-server/network-policy-server
 https://www.virtualbox.org/manual/ch06.html
 https://docs.microsoft.com/en-us/windows-server/networking/technologies/ipam/ipam-top
+

@@ -1,5 +1,4 @@
-OUTPUT AND FORMAT VIEW - ANSWER
-================================
+# OUTPUT AND FORMAT VIEW - ANSWER
 
 This guide covers PowerShell output formatting, custom views,
 and verbose/debug output control.
@@ -730,3 +729,4 @@ Solution: Use -join or Format-Table
 [ ] Know how to use [CmdletBinding()]
 
 ================================================================================
+

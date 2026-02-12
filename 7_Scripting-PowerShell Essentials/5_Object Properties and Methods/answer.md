@@ -1,5 +1,4 @@
-OBJECT PROPERTIES AND METHODS - ANSWER
-======================================
+# OBJECT PROPERTIES AND METHODS - ANSWER
 
 This guide covers PowerShell classes, properties, methods,
 and creating custom objects with functionality.
@@ -463,3 +462,4 @@ Solution: Redefine class after changes (or restart PowerShell)
 [ ] Know how to create class instances with ::new()
 
 ================================================================================
+

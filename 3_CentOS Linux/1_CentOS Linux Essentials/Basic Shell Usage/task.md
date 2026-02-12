@@ -1,5 +1,4 @@
-BASIC SHELL USAGE - TASK
-=========================
+# BASIC SHELL USAGE - TASK
 
 TASKS:
 ------
@@ -49,3 +48,4 @@ HELPFUL MATERIALS:
 
 https://linuxconfig.org/bash-scripting-tutorial-for-beginners
 https://www.tecmint.com/35-practical-examples-of-linux-find-command/
+

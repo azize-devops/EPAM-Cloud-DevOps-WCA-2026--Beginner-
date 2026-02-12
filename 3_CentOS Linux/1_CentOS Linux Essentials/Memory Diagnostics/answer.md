@@ -1,5 +1,4 @@
-MEMORY DIAGNOSTICS - ANSWERS
-============================
+# MEMORY DIAGNOSTICS - ANSWERS
 
 ================================================================================
 TASK 1: Open terminal of your choosing
@@ -629,3 +628,4 @@ Print this checklist and mark each screenshot as you take it:
 [ ] SCREENSHOT 4f - Complete analysis with top 5 processes
 
 TOTAL: 13 Screenshots Required
+
