@@ -65,7 +65,8 @@ Download Links (as of current version):
 1. Locate downloaded file (e.g., VirtualBox-7.0.14-161095-Win.exe)
 2. Double-click to run installer
 3. Click "Next" on Welcome screen
-4. Choose installation location (default is recommended)        
+4. Choose installation location (default is recommended)
+        
 5. Select features to install:
     - [**+**] VirtualBox USB Support
     - [**+**] VirtualBox Networking
@@ -73,7 +74,8 @@ Download Links (as of current version):
     
 6. Click "Next" and then "Yes" for network interface warning
 7. Click "Install"
-8. Click "Finish" when complete    
+8. Click "Finish" when complete
+    
         Installation Notes:
         -   During installation, network connectivity may be temporarily interrupted
         -   Windows may ask for permission to install device software - click "Install"
@@ -207,37 +209,22 @@ Create VM dialog - Summary
 9. Wait for installation to complete
 10. Click "Restart Now" when prompted
 11. Press Enter when asked to remove installation medium
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4e <<<                         |
-|                                                                  |
-|  Ubuntu installer showing:                                       |
-|  - Welcome screen with "Install Ubuntu" option                   |
-|  - Language selection visible                                    |
-|                                                                  |
-+------------------------------------------------------------------+
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4f <<<                         |
-|                                                                  |
-|  Ubuntu installer showing:                                       |
-|  - Installation type selection                                   |
-|  - "Erase disk and install Ubuntu" selected                      |
-|  - This is safe for VM - it only erases virtual disk             |
-|                                                                  |
-+------------------------------------------------------------------+
+Ubuntu installer - Welcome screen
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Ubuntu%20installer%20-%20Welcome%20screen.png" alt="Ubuntu installer - Welcome screen" width="900">
+</p>
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4g <<<                         |
-|                                                                  |
-|  Ubuntu installer showing:                                       |
-|  - User account creation screen                                  |
-|  - Your name field                                               |
-|  - Computer's name: VM1                                          |
-|  - Username field                                                |
-|  - Password field                                                |
-|                                                                  |
-+------------------------------------------------------------------+
+
+Ubuntu installer - Installation type
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Ubuntu%20installer%20-%20Installation%20type.png" alt="Ubuntu installer - Installation type" width="900">
+</p>
+
+Ubuntu installer - User account creation
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Ubuntu%20installer%20-%20User%20account%20creation.png" alt="Ubuntu installer - User account creation" width="900">
+</p>
 
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 4h <<<                         |
@@ -247,14 +234,14 @@ Create VM dialog - Summary
 |  - "Restart Now" button                                          |
 |                                                                  |
 +------------------------------------------------------------------+
-````
+
 #### Step 3: First Boot and Login
 
 1. VM1 restarts
 2. Ubuntu login screen appears
 3. Enter password and login
 4. Complete initial setup wizard (if shown)
-````
+
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 4i <<<                         |
 |                                                                  |
@@ -265,7 +252,7 @@ Create VM dialog - Summary
 |  - This confirms successful installation                         |
 |                                                                  |
 +------------------------------------------------------------------+
-````
+
 
 ##  TASK 5: VM control options - start, stop, reboot, save state
 
@@ -276,7 +263,8 @@ Create VM dialog - Summary
   - Releasing mouse from VM (Host Key)
   - Keyboard shortcuts (Host Key + other key)
 - You can change Host Key in: File > Preferences > Input
-````
+
+
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 5a <<<                         |
 |                                                                  |
@@ -286,7 +274,7 @@ Create VM dialog - Summary
 |  - Default: Right Ctrl                                           |
 |                                                                  |
 +------------------------------------------------------------------+
-````
+
 
 ### START OPTIONS
 
@@ -737,9 +725,9 @@ Print this checklist and mark each screenshot as you take it:
 - [**✓**] SCREENSHOT 4b  - Create VM dialog - Hardware (RAM, CPU)
 - [**✓**] SCREENSHOT 4c  - Create VM dialog - Virtual Hard Disk
 - [**✓**] SCREENSHOT 4d  - Create VM dialog - Summary
-- [ ] SCREENSHOT 4e  - Ubuntu installer - Welcome screen
-- [ ] SCREENSHOT 4f  - Ubuntu installer - Installation type
-- [ ] SCREENSHOT 4g  - Ubuntu installer - User account creation
+- [**✓**] SCREENSHOT 4e  - Ubuntu installer - Welcome screen
+- [**✓**] SCREENSHOT 4f  - Ubuntu installer - Installation type
+- [**✓**] SCREENSHOT 4g  - Ubuntu installer - User account creation
 - [ ] SCREENSHOT 4h  - Ubuntu installer - Installation complete
 - [ ] SCREENSHOT 4i  - Ubuntu desktop after login (VM1)
 - [ ] SCREENSHOT 5a  - VirtualBox Preferences - Host Key setting
