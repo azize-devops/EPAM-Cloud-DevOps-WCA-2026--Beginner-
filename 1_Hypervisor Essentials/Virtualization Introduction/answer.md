@@ -341,23 +341,33 @@ Ubuntu restart option or terminal reboot
 
 ### KEYBOARD SHORTCUTS SUMMARY
 
-````
+
 +----------------------+----------------------------------------+
 | Shortcut             | Action                                 |
 +----------------------+----------------------------------------+
 | Host Key             | Release mouse/keyboard from VM         |
++----------------------+----------------------------------------+
 | Host Key + F         | Toggle fullscreen mode                 |
++----------------------+----------------------------------------+
 | Host Key + L         | Toggle seamless mode                   |
++----------------------+----------------------------------------+
 | Host Key + C         | Toggle scaled mode                     |
++----------------------+----------------------------------------+
 | Host Key + Home      | Show Machine menu                      |
++----------------------+----------------------------------------+
 | Host Key + P         | Pause VM                               |
++----------------------+----------------------------------------+
 | Host Key + R         | Reset (hard reboot)                    |
++----------------------+----------------------------------------+
 | Host Key + Q         | Close VM (shows options dialog)        |
++----------------------+----------------------------------------+
 | Host Key + S         | Take snapshot                          |
++----------------------+----------------------------------------+
 | Host Key + E         | Take screenshot                        |
++----------------------+----------------------------------------+
 | Host Key + Del       | Send Ctrl+Alt+Del to VM                |
 +----------------------+----------------------------------------+
-````
+
 ````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 5f <<<                         |
@@ -565,80 +575,6 @@ Name and Path:
 |                                                                  |
 +------------------------------------------------------------------+
 ````
-
-
-# COMPLETE TASK SUMMARY
-
-TASK CHECKLIST:
-
-- [**✓**] 1. Reviewed VirtualBox user manual
-
-- [**✓**] 2. Downloaded and installed VirtualBox
-
-- [**✓**] 3. Downloaded Ubuntu ISO
-
-- [**✓**] 4. Created VM1 and installed Ubuntu
-
-- [ ] 5. Tested VM control options:
-    
-   - [ ] Normal Start
-   
-   - [ ] Save State
-   
-   - [ ] ACPI Shutdown
-   
-   - [ ] Power Off
-   
-   - [ ] Pause
-   
-   - [ ] Reset
-   
-   - [ ] Fullscreen mode (Host Key + F)
-   
-   - [ ] Mouse capture/release (Host Key)
-
-- [ ] 6. Cloned VM1 to create VM2
-
-
-# VIRTUALBOX CONTROLS REFERENCE
-
-VM STATES:
-+----------------+------------------------------------------+
-| State          | Description                              |
-+----------------+------------------------------------------+
-| Powered Off    | VM is completely off                     |
-| Saved          | VM state saved to disk                   |
-| Running        | VM is currently running                  |
-| Paused         | VM is frozen (can resume)                |
-| Aborted        | VM crashed or was force-stopped          |
-+----------------+------------------------------------------+
-
-HOST KEY SHORTCUTS:
-+----------------------+----------------------------------------+
-| Shortcut             | Action                                 |
-+----------------------+----------------------------------------+
-| Host Key (Right Ctrl)| Release mouse from VM                  |
-| Host Key + F         | Toggle fullscreen                      |
-| Host Key + L         | Toggle seamless mode                   |
-| Host Key + C         | Toggle scaled mode                     |
-| Host Key + P         | Pause/Resume VM                        |
-| Host Key + R         | Reset VM (hard reboot)                 |
-| Host Key + Q         | Close VM dialog                        |
-| Host Key + S         | Take snapshot                          |
-| Host Key + Del       | Send Ctrl+Alt+Del to guest             |
-+----------------------+----------------------------------------+
-
-RECOMMENDED VM SETTINGS FOR UBUNTU:
-+----------------+------------------------------------------+
-| Setting        | Recommended Value                        |
-+----------------+------------------------------------------+
-| RAM            | 2048 MB minimum, 4096 MB recommended     |
-| CPUs           | 2 or more                                |
-| Video Memory   | 128 MB                                   |
-| Disk Size      | 25 GB minimum, 50 GB recommended         |
-| Network        | NAT (for internet) or Bridged (for LAN)  |
-+----------------+------------------------------------------+
-
 
 # TROUBLESHOOTING
 
