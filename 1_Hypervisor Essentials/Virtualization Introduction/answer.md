@@ -226,14 +226,10 @@ Ubuntu installer - User account creation
   <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Ubuntu%20installer%20-%20User%20account%20creation.png" alt="Ubuntu installer - User account creation" width="900">
 </p>
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4h <<<                         |
-|                                                                  |
-|  Ubuntu installation complete showing:                           |
-|  - "Installation Complete" message                               |
-|  - "Restart Now" button                                          |
-|                                                                  |
-+------------------------------------------------------------------+
+Ubuntu installer - Installation complete
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Ubuntu%20installer%20-%20Installation%20complete.png" alt="Ubuntu installer - Installation complete" width="900">
+</p>
 
 #### Step 3: First Boot and Login
 
@@ -242,17 +238,10 @@ Ubuntu installer - User account creation
 3. Enter password and login
 4. Complete initial setup wizard (if shown)
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4i <<<                         |
-|                                                                  |
-|  Ubuntu Desktop showing:                                         |
-|  - Ubuntu desktop after login                                    |
-|  - Desktop icons visible                                         |
-|  - Top bar with time and system icons                            |
-|  - This confirms successful installation                         |
-|                                                                  |
-+------------------------------------------------------------------+
-
+Ubuntu desktop after login (VM1)
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Ubuntu%20desktop%20after%20login%20(VM1).png" alt="Ubuntu desktop after login (VM1)" width="900">
+</p>
 
 ##  TASK 5: VM control options - start, stop, reboot, save state
 
@@ -264,16 +253,10 @@ Ubuntu installer - User account creation
   - Keyboard shortcuts (Host Key + other key)
 - You can change Host Key in: File > Preferences > Input
 
-
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5a <<<                         |
-|                                                                  |
-|  VirtualBox Preferences showing:                                 |
-|  - File > Preferences > Input                                    |
-|  - Host Key Combination visible                                  |
-|  - Default: Right Ctrl                                           |
-|                                                                  |
-+------------------------------------------------------------------+
+VirtualBox Preferences - Host Key setting
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VirtualBox%20Preferences%20-%20Host%20Key%20setting.png" alt="VirtualBox Preferences - Host Key setting" width="900">
+</p>
 
 
 ### START OPTIONS
@@ -293,17 +276,10 @@ Ubuntu installer - User account creation
    - Select VM > Click dropdown arrow next to Start > Detachable Start
    - Can close window while VM keeps running
 
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5b <<<                         |
-|                                                                  |
-|  VirtualBox Manager showing:                                     |
-|  - VM1 selected                                                  |
-|  - Start button dropdown menu expanded                           |
-|  - Options visible: Normal Start, Headless Start, Detachable     |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+Start button dropdown menu options
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Start%20button%20dropdown%20menu%20options.png" alt="Start button dropdown menu options" width="900">
+</p>
 
 ### STOP OPTIONS (Machine Menu or Close Window)
 
@@ -333,33 +309,17 @@ When you close VM window or use Machine menu, you get options:
    - Keyboard: Host Key + P
    - Freezes VM state
    - Can resume with same command
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5c <<<                         |
-|                                                                  |
-|  VM window showing Machine menu:                                 |
-|  - Machine menu expanded                                         |
-|  - Options visible:                                              |
-|    - Pause                                                       |
-|    - Reset                                                       |
-|    - ACPI Shutdown                                               |
-|    - Power Off                                                   |
-|    - Save State                                                  |
-|                                                                  |
-+------------------------------------------------------------------+
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5d <<<                         |
-|                                                                  |
-|  Close VM dialog showing:                                        |
-|  - "Close Virtual Machine" dialog                                |
-|  - Options:                                                      |
-|    ( ) Save the machine state                                    |
-|    ( ) Send the shutdown signal                                  |
-|    ( ) Power off the machine                                     |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+Machine menu with control options
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Machine%20menu%20with%20control%20options.png" alt="Machine menu with control options" width="900">
+</p>
+
+Close VM dialog (Save/Shutdown/Power Off)
+Close VM dialog (SaveShutdownPower Off)
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Close%20VM%20dialog%20(SaveShutdownPower%20Off).png" alt="Close VM dialog (SaveShutdownPower Off)" width="900">
+</p>
 
 ### REBOOT/RESET OPTIONS
 
@@ -373,17 +333,11 @@ When you close VM window or use Machine menu, you get options:
    - Keyboard: Host Key + R
    - Like pressing reset button on physical PC
    - May cause data loss
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5e <<<                         |
-|                                                                  |
-|  Ubuntu Power menu showing:                                      |
-|  - Power menu in Ubuntu (top right corner)                       |
-|  - "Restart" option visible                                      |
-|  - OR terminal window with "sudo reboot" command                 |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+
+Ubuntu restart option or terminal reboot
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Ubuntu%20restart&20option%20or%20terminal%20reboot.png" alt="Ubuntu restart option or terminal reboot" width="900">
+</p>
 
 ### KEYBOARD SHORTCUTS SUMMARY
 
@@ -623,7 +577,7 @@ TASK CHECKLIST:
 
 - [**✓**] 3. Downloaded Ubuntu ISO
 
-- [ ] 4. Created VM1 and installed Ubuntu
+- [**✓**] 4. Created VM1 and installed Ubuntu
 
 - [ ] 5. Tested VM control options:
     
@@ -728,13 +682,13 @@ Print this checklist and mark each screenshot as you take it:
 - [**✓**] SCREENSHOT 4e  - Ubuntu installer - Welcome screen
 - [**✓**] SCREENSHOT 4f  - Ubuntu installer - Installation type
 - [**✓**] SCREENSHOT 4g  - Ubuntu installer - User account creation
-- [ ] SCREENSHOT 4h  - Ubuntu installer - Installation complete
-- [ ] SCREENSHOT 4i  - Ubuntu desktop after login (VM1)
-- [ ] SCREENSHOT 5a  - VirtualBox Preferences - Host Key setting
-- [ ] SCREENSHOT 5b  - Start button dropdown menu options
-- [ ] SCREENSHOT 5c  - Machine menu with control options
-- [ ] SCREENSHOT 5d  - Close VM dialog (Save/Shutdown/Power Off)
-- [ ] SCREENSHOT 5e  - Ubuntu restart option or terminal reboot
+- [**✓**] SCREENSHOT 4h  - Ubuntu installer - Installation complete
+- [**✓**] SCREENSHOT 4i  - Ubuntu desktop after login (VM1)
+- [**✓**] SCREENSHOT 5a  - VirtualBox Preferences - Host Key setting
+- [**✓**] SCREENSHOT 5b  - Start button dropdown menu options
+- [**✓**] SCREENSHOT 5c  - Machine menu with control options
+- [**✓**] SCREENSHOT 5d  - Close VM dialog (Save/Shutdown/Power Off)
+- [**✓**] SCREENSHOT 5e  - Ubuntu restart option or terminal reboot
 - [ ] SCREENSHOT 5f  - VM in fullscreen mode
 - [ ] SCREENSHOT 5g  - Mouse capture message
 - [ ] SCREENSHOT 5h  - VM in "Saved" state in Manager
@@ -747,4 +701,3 @@ Print this checklist and mark each screenshot as you take it:
 - [ ] SCREENSHOT 6g  - Both VMs running simultaneously
 
 ## TOTAL: 31 Screenshots Required
-
