@@ -13,12 +13,7 @@
 **Expected Result:**
 Wireshark main window opens showing list of available network interfaces.
 
-> **SCREENSHOT 1**
->
-> Wireshark main interface showing:
-> - Welcome screen with network interfaces listed
-> - Interface names (Ethernet, Wi-Fi, etc.)
-> - Traffic activity graphs next to each interface
+![Wireshark Main Interface](../../docs/images/2_Networking/2_Network%20Services/Wireshark%20main%20interface%20after%20installation.png)
 
 ---
 
@@ -32,12 +27,7 @@ Wireshark main window opens showing list of available network interfaces.
 **Expected Result:**
 Packets start appearing in the packet list pane.
 
-> **SCREENSHOT 2**
->
-> Wireshark capture starting showing:
-> - Selected interface highlighted
-> - Blue shark fin icon clicked OR interface double-clicked
-> - Packets beginning to appear in the list
+![Interface Selection and Capture Starting](../../docs/images/2_Networking/2_Network%20Services/Interface%20selection%20and%20capture%20starting.png)
 
 ---
 
@@ -52,12 +42,7 @@ Packets start appearing in the packet list pane.
 **Expected Result:**
 Browser displays EPAM website with visible navigation.
 
-> **SCREENSHOT 3**
->
-> Browser window showing:
-> - URL bar with "epam.com" or "https://www.epam.com"
-> - EPAM website homepage loaded
-> - Navigation tabs visible (Services, Industries, etc.)
+![Browser Showing EPAM Website](../../docs/images/2_Networking/2_Network%20Services/Browser%20showing%20epam.com%20website.png)
 
 ---
 
@@ -87,12 +72,7 @@ Approximate round trip times in milli-seconds:
     Minimum = 14ms, Maximum = 16ms, Average = 15ms
 ```
 
-> **SCREENSHOT 4**
->
-> Command Prompt showing:
-> - "ping 8.8.8.8" command typed
-> - 4 reply lines from 8.8.8.8
-> - Ping statistics (Sent=4, Received=4, Lost=0)
+![Command Prompt Ping Results](../../docs/images/2_Networking/2_Network%20Services/Command%20Prompt%20with%20ping%208.8.8.8%20results.png)
 
 ---
 
@@ -105,12 +85,7 @@ Approximate round trip times in milli-seconds:
 **Expected Result:**
 Packet capture stops, all captured packets visible in list.
 
-> **SCREENSHOT 5**
->
-> Wireshark window showing:
-> - Red stop button in toolbar
-> - List of captured packets (hundreds/thousands of packets)
-> - Packet details visible when one is selected
+![Wireshark Captured Packets](../../docs/images/2_Networking/2_Network%20Services/Wireshark%20Captured%20Packets.png)
 
 ---
 
@@ -125,21 +100,14 @@ Packet capture stops, all captured packets visible in list.
 - Smallest packet: Usually ARP or TCP ACK packets (~54-60 bytes)
 - Largest packet: Usually HTTP/HTTPS data packets (up to 1514 bytes for Ethernet)
 
-**Example Answer:**
+**Answer:**
 
 | Packet Type     | Size       |
 |:----------------|:-----------|
-| Smallest packet | 54 bytes   |
-| Largest packet  | 1514 bytes |
+| Smallest packet | 42 bytes   |
+| Largest packet  | 65534 bytes|
 
-> **SCREENSHOT 6**
->
-> Statistics > Packet Lengths window showing:
-> - Packet length distribution table
-> - "Topic / Item" column with ranges (0-19, 20-39, 40-79, etc.)
-> - "Count" column showing number of packets in each range
-> - Smallest size visible (e.g., 54 bytes)
-> - Largest size visible (e.g., 1514 bytes)
+![Statistics Packet Lengths](../../docs/images/2_Networking/2_Network%20Services/Statistics%20Packet%20Lengths.png)
 
 ---
 
@@ -149,16 +117,11 @@ Packet capture stops, all captured packets visible in list.
 1. Go to `Statistics > Packet Lengths`
 2. Look at the "Count" column to find the most frequent length range
 
-**Example Answer:**
-- Most common packet length: **54-128 bytes** (TCP ACK and small packets)
+**Answer:**
+- Most common packet length: **1280–2559 bytes → %41,62** (TCP ACK and small packets)
 - This is typical because TCP acknowledgments are frequent and small
 
-> **SCREENSHOT 7**
->
-> Statistics > Packet Lengths window showing:
-> - Row with highest "Count" value highlighted/marked
-> - Most common packet length range visible
-> - Percentage column showing highest percentage
+![Statistics Packet Lengths Most Common](../../docs/images/2_Networking/2_Network%20Services/Statistics%20Packet%20Lengths%20Most%20Common.png)
 
 ---
 
@@ -170,19 +133,13 @@ Packet capture stops, all captured packets visible in list.
 3. Sort by "Tx Bytes" (transmitted bytes) column - click column header
 4. Find the public IP with highest transmitted bytes
 
-**Example Answer:**
-- Most traffic transmitted to: *[IP address of epam.com server]*
+**Answer:**
+- Most traffic transmitted to: *[34.36.57.103 server]*
 - This makes sense because we browsed epam.com website
 
 > **Note:** Ignore private IPs (10.x.x.x, 172.16-31.x.x, 192.168.x.x)
 
-> **SCREENSHOT 8**
->
-> Statistics > Endpoints > IPv4 tab showing:
-> - IPv4 tab selected
-> - List sorted by "Tx Bytes" column (descending)
-> - Public IP with highest Tx Bytes at top
-> - Tx Bytes value visible for that IP
+![Statistics Endpoints IPv4 Tx Bytes](../../docs/images/2_Networking/2_Network%20Services/Statistics%20Endpoints%20IPv4%20Tx%20Bytes.png)
 
 ---
 
@@ -194,17 +151,11 @@ Packet capture stops, all captured packets visible in list.
 3. Sort by "Rx Bytes" (received bytes) column - click column header
 4. Find the public IP with highest received bytes
 
-**Example Answer:**
-- Most traffic received from: *[IP address of epam.com server]*
+**Answer:**
+- Most traffic received from: *[IP address of 34.36.57.103 server]*
 - Web browsing involves downloading more data than uploading
 
-> **SCREENSHOT 9**
->
-> Statistics > Endpoints > IPv4 tab showing:
-> - IPv4 tab selected
-> - List sorted by "Rx Bytes" column (descending)
-> - Public IP with highest Rx Bytes at top
-> - Rx Bytes value visible for that IP
+![Statistics Endpoints IPv4 Rx Bytes](../../docs/images/2_Networking/2_Network%20Services/Statistics%20Endpoints%20IPv4%20Rx%20Bytes.png)
 
 ---
 
@@ -215,13 +166,13 @@ Packet capture stops, all captured packets visible in list.
 2. Find TCP, UDP, and ICMP in the list
 3. Note the percentage for each
 
-**Example Answer:**
+**Answer:**
 
-| Protocol | Packets | Percentage |
-|:--------:|:-------:|:----------:|
-| TCP      | XXXX    |  ~85-95%   |
-| UDP      | XXX     |  ~3-10%    |
-| ICMP     | 8       |  ~0.1-1%   |
+| Protocol |  Packets  | Percentage |
+|:--------:|:---------:|:----------:|
+| TCP      | ≈ 278,089 |  ≈ 53.2%   |
+| UDP      | ≈ 244,800 |  ≈ 46.8%   |
+| ICMP     | 8         |  ~0.01%    |
 
 **Explanation:**
 - **TCP** is highest because HTTP/HTTPS (web browsing) uses TCP
@@ -230,14 +181,7 @@ Packet capture stops, all captured packets visible in list.
 
 > **Note:** HTTPS traffic was encrypted (TLS over TCP 443), therefore application payload was not readable in Wireshark.
 
-> **SCREENSHOT 10**
->
-> Statistics > Protocol Hierarchy window showing:
-> - Protocol tree expanded
-> - TCP row with packet count and percentage visible
-> - UDP row with packet count and percentage visible
-> - ICMP row with packet count and percentage visible
-> - Percentage column clearly showing values
+![Statistics Protocol Hierarchy](../../docs/images/2_Networking/2_Network%20Services/Statistics%20Protocol%20Hierarchy.png)
 
 ---
 
@@ -257,13 +201,7 @@ icmp
 **Expected Result:**
 Only 8 packets shown (4 Echo Request + 4 Echo Reply)
 
-> **SCREENSHOT 11**
->
-> Wireshark main window showing:
-> - Filter bar with "icmp" typed
-> - Green filter bar (valid filter)
-> - Only ICMP packets in the list (~8 packets)
-> - "Echo (ping) request" and "Echo (ping) reply" in Info column
+![Wireshark ICMP Filter](../../docs/images/2_Networking/2_Network%20Services/Wireshark%20with%20icmp%20filter%20applied.png)
 
 ---
 
@@ -274,34 +212,25 @@ Only 8 packets shown (4 Echo Request + 4 Echo Reply)
 2. Expand "Ethernet II" section for MAC addresses
 3. Expand "Internet Protocol Version 4" section for IP addresses
 
-**Example Answer:**
+**Answer:**
 
 ### ETHERNET II (Layer 2):
 
-| Field           | Example Value       |
+| Field           | Value               |
 |:----------------|:--------------------|
-| Source MAC      | aa:bb:cc:dd:ee:ff   |
-| Destination MAC | 11:22:33:44:55:66   |
+| Source MAC      | 80:2d:1a:03:b2:18   |
+| Destination MAC | 5a:8d:fe:36:aa:4c   |
 
 > **Note:** Destination MAC is usually your router's MAC (default gateway)
 
 ### INTERNET PROTOCOL (Layer 3):
 
-| Field          | Example Value   |
+| Field          | Value           |
 |:---------------|:----------------|
-| Source IP      | 192.168.1.100   |
-| Destination IP | 8.8.8.8         |
+| Source IP      | 8.8.8.8         |
+| Destination IP | 192.168.1.16    |
 
-> **SCREENSHOT 12**
->
-> Wireshark packet details pane showing:
-> - ICMP packet selected in top pane
-> - "Ethernet II" section EXPANDED showing:
->   - Source: [your MAC address]
->   - Destination: [router MAC address]
-> - "Internet Protocol Version 4" section EXPANDED showing:
->   - Source: [your IP address]
->   - Destination: 8.8.8.8
+![Packet Details Ethernet and IPv4](../../docs/images/2_Networking/2_Network%20Services/Packet%20details%20Ethernet%20II%20and%20IPv4%20headers%20expanded.png)
 
 ---
 
@@ -314,41 +243,30 @@ Only 8 packets shown (4 Echo Request + 4 Echo Reply)
 2. Click on each and expand "Internet Protocol Version 4"
 3. Find the TTL (Time To Live) field
 
-**Example Answer:**
+**Answer:**
 
 | Packet Type   | TTL |
 |:--------------|:---:|
 | Echo Request  | 128 |
-| Echo Reply    | 115 |
+| Echo Reply    | 109 |
 
 ### EXPLANATION OF TTL DIFFERENCE:
 
 - **Echo Request TTL (128):** This is the initial TTL set by Windows (Windows default = 128, Linux default = 64)
-- **Echo Reply TTL (115):** The reply packet started with TTL=128 at Google's server, but each router it passed through decremented the TTL by 1
+- **Echo Reply TTL (109):** The reply packet started with TTL=128 at Google's server, but each router it passed through decremented the TTL by 1
 
 **Calculation:**
-- If reply TTL = 115, and assuming Google uses TTL=128
-- Number of hops = 128 - 115 = **13 routers** between you and 8.8.8.8
+- If reply TTL = 109, and assuming Google uses TTL=128
+- Number of hops = 128 - 109 = **19 routers** between you and 8.8.8.8
 
 **Purpose of TTL:**
 - Prevents packets from circulating forever in case of routing loops
 - Each router decrements TTL by 1
 - When TTL reaches 0, the packet is discarded
 
-> **SCREENSHOT 13a**
->
-> Echo REQUEST packet showing:
-> - "Echo (ping) request" selected in packet list
-> - IPv4 section expanded in details pane
-> - "Time to Live: 128" field visible and highlighted
+![Echo Request TTL](../../docs/images/2_Networking/2_Network%20Services/Echo%20Request%20packet%20with%20TTL%20field%20visible.png)
 
-> **SCREENSHOT 13b**
->
-> Echo REPLY packet showing:
-> - "Echo (ping) reply" selected in packet list
-> - IPv4 section expanded in details pane
-> - "Time to Live: 115" (or similar) field visible and highlighted
-> - Note the DIFFERENT TTL value compared to request
+![Echo Reply TTL](../../docs/images/2_Networking/2_Network%20Services/Echo%20Reply%20packet%20with%20TTL%20field%20visible.png)
 
 ---
 
@@ -364,16 +282,10 @@ This shows TCP packets used to initiate connections (3-way handshake)
 
 **Filter syntax:**
 ```
-tcp.flags.syn == 1
+tcp.flags.syn == 1 && tcp.flags.ack == 0
 ```
 
-> **SCREENSHOT 14**
->
-> Wireshark main window showing:
-> - Filter bar with "tcp.flags.syn == 1" typed
-> - Green filter bar (valid filter)
-> - Only TCP SYN packets in the list
-> - "[SYN]" visible in Info column for packets
+![Wireshark TCP SYN Filter](../../docs/images/2_Networking/2_Network%20Services/Wireshark%20TCP%20SYN%20Filter.png)
 
 ---
 
@@ -384,13 +296,13 @@ tcp.flags.syn == 1
 2. Expand "Transmission Control Protocol" section
 3. Find the required fields
 
-**Example Answer:**
+**Answer:**
 
-| Field                  | Example Value  |
+| Field                  | Value  |
 |:-----------------------|:--------------:|
-| Source Port            | 52431          |
+| Source Port            | 61790          |
 | Destination Port       | 443 (HTTPS)    |
-| Window Size            | 64240          |
+| Window Size            | 65535          |
 | Sequence Number        | 0 (relative)   |
 | Acknowledgment Number  | 0              |
 
@@ -410,7 +322,7 @@ tcp.flags.syn == 1
 - Flow control mechanism
 - Indicates how many bytes the sender can receive before needing acknowledgment
 - Prevents fast sender from overwhelming slow receiver
-- Example: Window size 64240 means "I can receive up to 64240 bytes"
+- Window size 65535 means "I can receive up to 65535 bytes"
 
 #### 4. SEQUENCE NUMBER (32 bits)
 - Identifies the position of data in the byte stream
@@ -432,41 +344,4 @@ tcp.flags.syn == 1
 | 2    | Server -> Client  | SYN-ACK | Seq=Y, Ack=X+1    |
 | 3    | Client -> Server  | ACK     | Seq=X+1, Ack=Y+1  |
 
-> **SCREENSHOT 15**
->
-> Wireshark packet details showing:
-> - TCP SYN packet selected in top pane
-> - "Transmission Control Protocol" section EXPANDED showing:
->   - Source Port: [port number]
->   - Destination Port: [port number, e.g., 443]
->   - Sequence Number: [number]
->   - Acknowledgment Number: [number]
->   - Window size: [number]
-> - All fields clearly visible
-
----
-
-## SCREENSHOTS CHECKLIST
-
-Print this checklist and mark each screenshot as you take it:
-
-| #    | Screenshot Description                                        | Done |
-|:----:|:--------------------------------------------------------------|:----:|
-| 1    | Wireshark main interface after installation                   | [ ]  |
-| 2    | Interface selection and capture starting                      | [ ]  |
-| 3    | Browser showing epam.com website                              | [ ]  |
-| 4    | Command Prompt with ping 8.8.8.8 results                      | [ ]  |
-| 5    | Wireshark with captured packets (after stop)                  | [ ]  |
-| 6    | Statistics > Packet Lengths (smallest/largest)                | [ ]  |
-| 7    | Statistics > Packet Lengths (most common - can combine with 6)| [ ]  |
-| 8    | Statistics > Endpoints > IPv4 (sorted by Tx Bytes)            | [ ]  |
-| 9    | Statistics > Endpoints > IPv4 (sorted by Rx Bytes)            | [ ]  |
-| 10   | Statistics > Protocol Hierarchy (TCP, UDP, ICMP percentages)  | [ ]  |
-| 11   | Wireshark with "icmp" filter applied                          | [ ]  |
-| 12   | Packet details: Ethernet II and IPv4 headers expanded         | [ ]  |
-| 13a  | Echo Request packet with TTL field visible                    | [ ]  |
-| 13b  | Echo Reply packet with TTL field visible                      | [ ]  |
-| 14   | Wireshark with "tcp.flags.syn == 1" filter applied            | [ ]  |
-| 15   | TCP header expanded showing all required fields               | [ ]  |
-
-> **TOTAL: 15-16 Screenshots Required**
+![TCP Header Fields](../../docs/images/2_Networking/2_Network%20Services/TCP%20header%20expanded%20showing%20all%20required%20fields.png)
