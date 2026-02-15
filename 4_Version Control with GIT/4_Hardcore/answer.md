@@ -348,29 +348,22 @@ Expected output:
 +----------------------------------------------------------+
 
 
-================================================================================
-                        GIT REMOTE COMMANDS REFERENCE
-================================================================================
+## GIT REMOTE COMMANDS REFERENCE
 
-| Command                              | Description                          |
-|--------------------------------------|--------------------------------------|
-| git remote                           | List remote names                    |
-| git remote -v                        | List remotes with URLs               |
-| git remote add <name> <url>          | Add new remote                       |
-| git remote remove <name>             | Remove remote                        |
-| git remote rename <old> <new>        | Rename remote                        |
-| git remote set-url <name> <url>      | Change remote URL                    |
-| git remote set-url --push <name> <url>| Change push URL only               |
-| git remote show <name>               | Show remote details                  |
-| git remote prune <name>              | Remove stale remote branches         |
-| git remote update                    | Fetch all remotes                    |
+| Command | Description |
+|---------|-------------|
+| git remote | List remote names |
+| git remote -v | List remotes with URLs |
+| git remote add <name> <url> | Add new remote |
+| git remote remove <name> | Remove remote |
+| git remote rename <old> <new> | Rename remote |
+| git remote set-url <name> <url> | Change remote URL |
+| git remote set-url --push <name> <url> | Change push URL only |
+| git remote show <name> | Show remote details |
+| git remote prune <name> | Remove stale remote branches |
+| git remote update | Fetch all remotes |
 
-================================================================================
-
-
-================================================================================
-                        WORKING WITH MULTIPLE REMOTES
-================================================================================
+## WORKING WITH MULTIPLE REMOTES
 
 You can have multiple remotes configured:
 
@@ -396,12 +389,7 @@ You can have multiple remotes configured:
     # Push to all remotes
     git remote | xargs -L1 git push --all
 
-================================================================================
-
-
-================================================================================
-                    DIFFERENT FETCH AND PUSH URLs
-================================================================================
+## DIFFERENT FETCH AND PUSH URLs
 
 You can configure different URLs for fetch and push:
 
@@ -419,31 +407,21 @@ You can configure different URLs for fetch and push:
 
 Use case: Fetch from upstream, push to your fork.
 
-================================================================================
+## PUSH OPTIONS
 
+| Command | Description |
+|---------|-------------|
+| git push | Push current branch |
+| git push origin main | Push main to origin |
+| git push --all origin | Push all branches |
+| git push origin --tags | Push all tags |
+| git push --mirror origin | Push everything (branches + tags) |
+| git push -u origin main | Push and set upstream |
+| git push --force origin main | Force push (dangerous!) |
+| git push --force-with-lease | Safer force push |
+| git push --delete origin branch | Delete remote branch |
 
-================================================================================
-                           PUSH OPTIONS
-================================================================================
-
-| Command                              | Description                          |
-|--------------------------------------|--------------------------------------|
-| git push                             | Push current branch                  |
-| git push origin main                 | Push main to origin                  |
-| git push --all origin                | Push all branches                    |
-| git push origin --tags               | Push all tags                        |
-| git push --mirror origin             | Push everything (branches + tags)    |
-| git push -u origin main              | Push and set upstream                |
-| git push --force origin main         | Force push (dangerous!)              |
-| git push --force-with-lease          | Safer force push                     |
-| git push --delete origin branch      | Delete remote branch                 |
-
-================================================================================
-
-
-================================================================================
-                             TROUBLESHOOTING
-================================================================================
+## TROUBLESHOOTING
 
 Problem: "Permission denied (publickey)"
 Solutions:
@@ -477,12 +455,7 @@ Problem: Want to push to multiple remotes at once
 Solution: Add multiple push URLs:
     git remote set-url --add --push origin git@github.com:user/repo2.git
 
-================================================================================
-
-
-================================================================================
-                              SELF-REVIEW CHECKLIST
-================================================================================
+## SELF-REVIEW CHECKLIST
 
 [ ] Current remote URL noted (original repository)
 [ ] All branches pushed to original GitHub repository
@@ -499,6 +472,4 @@ Solution: Add multiple push URLs:
 [ ] Remote URL restored to original repository
 [ ] git remote -v shows original repository URL
 [ ] Connection to original repository verified (git fetch)
-
-================================================================================
 

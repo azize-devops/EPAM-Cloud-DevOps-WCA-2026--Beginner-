@@ -23,25 +23,21 @@ Causes of corruption:
 TYPES OF CORRUPTION:
 -------------------
 
-+----------------------+------------------------------------------------+
-| Type                 | Description                                    |
-+----------------------+------------------------------------------------+
-| Page checksum error  | Page data doesn't match checksum               |
-| Torn page            | Incomplete page write (partial sectors)        |
-| Logical corruption   | Data inconsistencies (orphaned rows, etc.)     |
-| Structural damage    | Damaged system pages, allocation errors        |
-+----------------------+------------------------------------------------+
+| Type | Description |
+|------|-------------|
+| Page checksum error | Page data doesn't match checksum |
+| Torn page | Incomplete page write (partial sectors) |
+| Logical corruption | Data inconsistencies (orphaned rows, etc.) |
+| Structural damage | Damaged system pages, allocation errors |
 
 PAGE_VERIFY OPTIONS:
 -------------------
 
-+----------------------+------------------------------------------------+
-| Option               | Description                                    |
-+----------------------+------------------------------------------------+
-| CHECKSUM             | Full page checksum (recommended)               |
-| TORN_PAGE_DETECTION  | Checks for torn writes (legacy)                |
-| NONE                 | No verification (not recommended)              |
-+----------------------+------------------------------------------------+
+| Option | Description |
+|--------|-------------|
+| CHECKSUM | Full page checksum (recommended) |
+| TORN_PAGE_DETECTION | Checks for torn writes (legacy) |
+| NONE | No verification (not recommended) |
 
 ================================================================================
                     PART 1: CREATE TEST DATABASE
@@ -269,15 +265,10 @@ STEP 3.2: CHECKDB OPTIONS
 REPAIR OPTIONS:
 --------------
 
-+---------------------------+------------------------------------------------+
-| Repair Option             | Description                                    |
-+---------------------------+------------------------------------------------+
-| REPAIR_REBUILD            | Attempts to repair without data loss.          |
-|                           | Rebuilds indexes, etc.                         |
-+---------------------------+------------------------------------------------+
-| REPAIR_ALLOW_DATA_LOSS    | Repairs by deallocating corrupted pages.       |
-|                           | MAY RESULT IN DATA LOSS!                       |
-+---------------------------+------------------------------------------------+
+| Repair Option | Description |
+|---------------|-------------|
+| REPAIR_REBUILD | Attempts to repair without data loss. Rebuilds indexes, etc. |
+| REPAIR_ALLOW_DATA_LOSS | Repairs by deallocating corrupted pages. MAY RESULT IN DATA LOSS! |
 
 IMPORTANT: Always try REPAIR_REBUILD first. Only use REPAIR_ALLOW_DATA_LOSS
 as a last resort when you don't have a good backup!
@@ -465,15 +456,10 @@ STEP 5.3: CREATE PRODUCTION TABLE
 UNDERSTANDING FRAGMENTATION:
 ---------------------------
 
-+----------------------+------------------------------------------------+
-| Fragmentation Type   | Description                                    |
-+----------------------+------------------------------------------------+
-| Logical Fragmentation| Pages not in physical order. Affects scans.   |
-| (External)           | Measured as % of out-of-order pages.           |
-+----------------------+------------------------------------------------+
-| Page Density         | How full pages are. Low = wasted space.        |
-| (Internal)           | Measured as avg_page_space_used_in_percent.    |
-+----------------------+------------------------------------------------+
+| Fragmentation Type | Description |
+|--------------------|-------------|
+| Logical Fragmentation (External) | Pages not in physical order. Affects scans. Measured as % of out-of-order pages. |
+| Page Density (Internal) | How full pages are. Low = wasted space. Measured as avg_page_space_used_in_percent. |
 
 STEP 6.1: CHECK INITIAL FRAGMENTATION
 -------------------------------------
@@ -598,13 +584,11 @@ causing the physical order to not match the logical order.
 FRAGMENTATION GUIDELINES:
 ------------------------
 
-+-----------------------+--------------------------------------------+
-| Fragmentation Level   | Recommended Action                         |
-+-----------------------+--------------------------------------------+
-| < 5%                  | No action needed                           |
-| 5% - 30%              | REORGANIZE (online, less resource)         |
-| > 30%                 | REBUILD (offline by default, more thorough)|
-+-----------------------+--------------------------------------------+
+| Fragmentation Level | Recommended Action |
+|---------------------|-------------------|
+| < 5% | No action needed |
+| 5% - 30% | REORGANIZE (online, less resource) |
+| > 30% | REBUILD (offline by default, more thorough) |
 
 STEP 8.1: REORGANIZE INDEX
 --------------------------
@@ -785,32 +769,27 @@ STEP 8.4: COMPARISON SCRIPT
 DBCC CHECKDB COMMANDS:
 ---------------------
 
-+----------------------------------+----------------------------------------+
-| Command                          | Purpose                                |
-+----------------------------------+----------------------------------------+
-| DBCC CHECKDB (dbname)            | Full integrity check                   |
-| DBCC CHECKDB (db, REPAIR_REBUILD)| Repair without data loss               |
-| DBCC CHECKDB (db, REPAIR_ALLOW_  | Repair with potential data loss        |
-|              DATA_LOSS)          |                                        |
-| DBCC CHECKTABLE (table)          | Check specific table                   |
-| DBCC CHECKALLOC (dbname)         | Check allocation consistency           |
-| DBCC CHECKCATALOG (dbname)       | Check catalog consistency              |
-+----------------------------------+----------------------------------------+
+| Command | Purpose |
+|---------|---------|
+| DBCC CHECKDB (dbname) | Full integrity check |
+| DBCC CHECKDB (db, REPAIR_REBUILD) | Repair without data loss |
+| DBCC CHECKDB (db, REPAIR_ALLOW_DATA_LOSS) | Repair with potential data loss |
+| DBCC CHECKTABLE (table) | Check specific table |
+| DBCC CHECKALLOC (dbname) | Check allocation consistency |
+| DBCC CHECKCATALOG (dbname) | Check catalog consistency |
 
 INDEX MAINTENANCE COMPARISON:
 ----------------------------
 
-+------------------+-------------------+-------------------+
-| Feature          | REORGANIZE        | REBUILD           |
-+------------------+-------------------+-------------------+
-| Online           | Always            | Offline (default) |
-| Resource Usage   | Low               | High              |
-| Defrag Result    | Partial           | Complete          |
-| Statistics       | Not updated       | Updated           |
-| Space Required   | Minimal           | 2x index size     |
-| Duration         | Shorter           | Longer            |
-| Best For         | 5-30% frag        | >30% frag         |
-+------------------+-------------------+-------------------+
+| Feature | REORGANIZE | REBUILD |
+|---------|------------|---------|
+| Online | Always | Offline (default) |
+| Resource Usage | Low | High |
+| Defrag Result | Partial | Complete |
+| Statistics | Not updated | Updated |
+| Space Required | Minimal | 2x index size |
+| Duration | Shorter | Longer |
+| Best For | 5-30% frag | >30% frag |
 
 KEY TAKEAWAYS:
 -------------

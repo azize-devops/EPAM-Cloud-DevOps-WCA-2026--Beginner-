@@ -32,14 +32,12 @@ SQL Server automatically detects deadlocks and terminates one transaction
 
 LOCK TYPES:
 -----------
-+------------------+------------------------------------------------+
-| Lock Type        | Description                                    |
-+------------------+------------------------------------------------+
-| Shared (S)       | Read operations. Multiple shared locks allowed |
-| Exclusive (X)    | Write operations. No other locks allowed       |
-| Update (U)       | Prevents deadlock during update reads          |
-| Intent (IS/IX)   | Hierarchy locks indicating lower-level locks   |
-+------------------+------------------------------------------------+
+| Lock Type | Description |
+|-----------|-------------|
+| Shared (S) | Read operations. Multiple shared locks allowed |
+| Exclusive (X) | Write operations. No other locks allowed |
+| Update (U) | Prevents deadlock during update reads |
+| Intent (IS/IX) | Hierarchy locks indicating lower-level locks |
 
 ================================================================================
                     PART 1: START SQL SERVER PROFILER
@@ -660,17 +658,15 @@ What We Learned:
 
 Key Points:
 -----------
-+---------------------------------------------------------------------+
-| Deadlock Component     | Description                                |
-+---------------------------------------------------------------------+
-| Cause                  | Circular lock dependency                   |
-| Detection              | Automatic by SQL Server (background)       |
-| Resolution             | One transaction killed (victim)            |
-| Victim Selection       | Priority, then rollback cost               |
-| Error Code             | 1205                                       |
-| Monitoring             | Profiler, Extended Events, DMVs            |
-| Prevention             | Consistent access order, short transactions|
-+---------------------------------------------------------------------+
+| Deadlock Component | Description |
+|--------------------|-------------|
+| Cause | Circular lock dependency |
+| Detection | Automatic by SQL Server (background) |
+| Resolution | One transaction killed (victim) |
+| Victim Selection | Priority, then rollback cost |
+| Error Code | 1205 |
+| Monitoring | Profiler, Extended Events, DMVs |
+| Prevention | Consistent access order, short transactions |
 
 Files Created (if saved traces):
 -------------------------------

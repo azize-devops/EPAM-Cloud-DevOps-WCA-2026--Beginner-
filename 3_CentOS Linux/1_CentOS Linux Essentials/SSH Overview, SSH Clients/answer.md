@@ -407,19 +407,19 @@ Expected output:
 ================================================================================
 
 | Command                                    | Description                    |
-|-------------------------------------------|--------------------------------|
-| ssh user@host                             | Connect to remote host          |
-| ssh -i keyfile user@host                  | Connect using specific key      |
-| ssh -p port user@host                     | Connect to specific port        |
-| ssh -v user@host                          | Verbose mode (debugging)        |
-| ssh-keygen -t rsa -b 4096                 | Generate RSA key pair           |
-| ssh-keygen -t ed25519                     | Generate Ed25519 key pair       |
-| ssh-copy-id user@host                     | Copy public key to remote       |
-| ssh-copy-id -i key.pub user@host          | Copy specific key to remote     |
-| scp file user@host:path                   | Copy file to remote             |
-| scp user@host:file localpath              | Copy file from remote           |
-| scp -r dir user@host:path                 | Copy directory recursively      |
-| sftp user@host                            | Interactive secure FTP          |
+|--------------------------------------------|--------------------------------|
+| ssh user@host                              | Connect to remote host         |
+| ssh -i keyfile user@host                   | Connect using specific key     |
+| ssh -p port user@host                      | Connect to specific port       |
+| ssh -v user@host                           | Verbose mode (debugging)       |
+| ssh-keygen -t rsa -b 4096                  | Generate RSA key pair          |
+| ssh-keygen -t ed25519                      | Generate Ed25519 key pair      |
+| ssh-copy-id user@host                      | Copy public key to remote      |
+| ssh-copy-id -i key.pub user@host           | Copy specific key to remote    |
+| scp file user@host:path                    | Copy file to remote            |
+| scp user@host:file localpath               | Copy file from remote          |
+| scp -r dir user@host:path                  | Copy directory recursively     |
+| sftp user@host                             | Interactive secure FTP         |
 
 ================================================================================
 
@@ -463,12 +463,12 @@ Example with multiple hosts:
                               SSH KEY TYPES
 ================================================================================
 
-| Key Type    | Command                          | Notes                       |
-|------------|----------------------------------|------------------------------|
-| RSA        | ssh-keygen -t rsa -b 4096        | Most compatible, use 4096+   |
-| Ed25519    | ssh-keygen -t ed25519            | Modern, faster, recommended  |
-| ECDSA      | ssh-keygen -t ecdsa -b 521       | Good security, less common   |
-| DSA        | ssh-keygen -t dsa                | Deprecated, avoid            |
+| Key Type    | Command                          | Notes                        |
+|-------------|----------------------------------|------------------------------|
+| RSA         | ssh-keygen -t rsa -b 4096        | Most compatible, use 4096+   |
+| Ed25519     | ssh-keygen -t ed25519            | Modern, faster, recommended  |
+| ECDSA       | ssh-keygen -t ecdsa -b 521       | Good security, less common   |
+| DSA         | ssh-keygen -t dsa                | Deprecated, avoid            |
 
 ================================================================================
 
@@ -478,13 +478,13 @@ Example with multiple hosts:
 ================================================================================
 
 | File                        | Location           | Purpose                    |
-|----------------------------|--------------------|----------------------------|
-| id_rsa                     | ~/.ssh/            | Private key (keep secret!) |
-| id_rsa.pub                 | ~/.ssh/            | Public key (share this)    |
-| authorized_keys            | ~/.ssh/            | Allowed public keys        |
-| known_hosts                | ~/.ssh/            | Trusted host fingerprints  |
-| config                     | ~/.ssh/            | SSH client configuration   |
-| sshd_config                | /etc/ssh/          | SSH server configuration   |
+|-----------------------------|--------------------|-----------------------------|
+| id_rsa                      | ~/.ssh/            | Private key (keep secret!) |
+| id_rsa.pub                  | ~/.ssh/            | Public key (share this)    |
+| authorized_keys             | ~/.ssh/            | Allowed public keys        |
+| known_hosts                 | ~/.ssh/            | Trusted host fingerprints  |
+| config                      | ~/.ssh/            | SSH client configuration   |
+| sshd_config                 | /etc/ssh/          | SSH server configuration   |
 
 Permissions:
 - ~/.ssh directory: 700 (drwx------)

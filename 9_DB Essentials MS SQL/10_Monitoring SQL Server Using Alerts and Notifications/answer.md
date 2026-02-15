@@ -42,17 +42,11 @@ ALERT SYSTEM ARCHITECTURE:
 ALERT TYPES:
 -----------
 
-+----------------------+------------------------------------------------+
-| Alert Type           | Description                                    |
-+----------------------+------------------------------------------------+
-| SQL Server Event     | Triggered by specific error numbers or         |
-|                      | severity levels                                |
-+----------------------+------------------------------------------------+
-| Performance Condition| Triggered when performance counter exceeds     |
-|                      | threshold                                      |
-+----------------------+------------------------------------------------+
-| WMI Event            | Triggered by WMI events                        |
-+----------------------+------------------------------------------------+
+| Alert Type | Description |
+|------------|-------------|
+| SQL Server Event | Triggered by specific error numbers or severity levels |
+| Performance Condition | Triggered when performance counter exceeds threshold |
+| WMI Event | Triggered by WMI events |
 
 ================================================================================
                     PART 1: CONFIGURE DATABASE MAIL
@@ -124,14 +118,12 @@ STEP 1.2: CREATE DATABASE MAIL PROFILE USING T-SQL
 SMTP SERVER SETTINGS:
 --------------------
 
-+----------------------+------------------+------+-----+
-| Provider             | SMTP Server      | Port | SSL |
-+----------------------+------------------+------+-----+
-| Office 365           | smtp.office365.com| 587 | Yes |
-| Gmail                | smtp.gmail.com   | 587  | Yes |
-| Outlook.com          | smtp-mail.outlook.com| 587| Yes |
-| Yahoo                | smtp.mail.yahoo.com| 587| Yes |
-+----------------------+------------------+------+-----+
+| Provider | SMTP Server | Port | SSL |
+|----------|-------------|------|-----|
+| Office 365 | smtp.office365.com | 587 | Yes |
+| Gmail | smtp.gmail.com | 587 | Yes |
+| Outlook.com | smtp-mail.outlook.com | 587 | Yes |
+| Yahoo | smtp.mail.yahoo.com | 587 | Yes |
 
 NOTE: Gmail may require "App Password" if 2FA is enabled.
 Office 365 may require "Less secure apps" or App Password.
@@ -759,18 +751,16 @@ CREATE ALERT FOR HIGH SEVERITY ERRORS:
 COMPONENTS CONFIGURED:
 ---------------------
 
-+------------------------+----------------------------------------+
-| Component              | Details                                |
-+------------------------+----------------------------------------+
-| Database Mail Profile  | SQLAlertProfile                        |
-| Database Mail Account  | SQLMailAccount                         |
-| SMTP Server            | smtp.office365.com:587 (SSL)           |
-| SQL Agent Operator     | DBA_Alerts                             |
-| Alert - Error 1205     | Deadlock Alert - Error 1205            |
-| Alert - Error 3928     | Deadlock Alert - Error 3928            |
-| Trace Flag 1204        | Deadlock participants info             |
-| Trace Flag 1222        | Detailed deadlock XML                  |
-+------------------------+----------------------------------------+
+| Component | Details |
+|-----------|---------|
+| Database Mail Profile | SQLAlertProfile |
+| Database Mail Account | SQLMailAccount |
+| SMTP Server | smtp.office365.com:587 (SSL) |
+| SQL Agent Operator | DBA_Alerts |
+| Alert - Error 1205 | Deadlock Alert - Error 1205 |
+| Alert - Error 3928 | Deadlock Alert - Error 3928 |
+| Trace Flag 1204 | Deadlock participants info |
+| Trace Flag 1222 | Detailed deadlock XML |
 
 KEY STORED PROCEDURES:
 ---------------------

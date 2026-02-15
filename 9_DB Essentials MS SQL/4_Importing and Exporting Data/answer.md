@@ -8,15 +8,13 @@ and Data Migration Assistant.
                     OVERVIEW: DATA IMPORT/EXPORT METHODS
 ================================================================================
 
-+------------------+-----------------------------------------------------------+
-| Method           | Description                                               |
-+------------------+-----------------------------------------------------------+
-| Import Flat File | SSMS wizard for importing CSV/TXT files. Creates table.   |
-| bcp              | Command-line bulk copy utility. Fast, flexible.           |
-| BULK INSERT      | T-SQL statement. Table must exist. Fast for large data.   |
-| OPENROWSET       | T-SQL function. Can SELECT INTO to create table.          |
-| DMA              | GUI tool for database migration and assessment.           |
-+------------------+-----------------------------------------------------------+
+| Method | Description |
+|--------|-------------|
+| Import Flat File | SSMS wizard for importing CSV/TXT files. Creates table. |
+| bcp | Command-line bulk copy utility. Fast, flexible. |
+| BULK INSERT | T-SQL statement. Table must exist. Fast for large data. |
+| OPENROWSET | T-SQL function. Can SELECT INTO to create table. |
+| DMA | GUI tool for database migration and assessment. |
 
 ================================================================================
                     PART 1: CREATE DATABASE ON INSTANCE1
@@ -648,24 +646,15 @@ STEP 7.7: VERIFY OPENROWSET DATA
                     KEY DIFFERENCES: BULK INSERT vs OPENROWSET
 ================================================================================
 
-+------------------+---------------------------+---------------------------+
-| Feature          | BULK INSERT               | OPENROWSET                |
-+------------------+---------------------------+---------------------------+
-| Table Creation   | Table MUST exist          | Can create with SELECT    |
-|                  | before import             | INTO (auto-create)        |
-+------------------+---------------------------+---------------------------+
-| Syntax           | Statement                 | Function (used in SELECT) |
-+------------------+---------------------------+---------------------------+
-| Usage            | INSERT only               | SELECT, INSERT, UPDATE    |
-+------------------+---------------------------+---------------------------+
-| Data Source      | Local files only          | Local files + remote      |
-+------------------+---------------------------+---------------------------+
-| Performance      | Slightly faster           | More flexible             |
-+------------------+---------------------------+---------------------------+
-| Transactions     | Can be in transaction     | Each is its own query     |
-+------------------+---------------------------+---------------------------+
-| Triggers         | FIRE_TRIGGERS option      | Triggers always fire      |
-+------------------+---------------------------+---------------------------+
+| Feature | BULK INSERT | OPENROWSET |
+|---------|-------------|------------|
+| Table Creation | Table MUST exist before import | Can create with SELECT INTO (auto-create) |
+| Syntax | Statement | Function (used in SELECT) |
+| Usage | INSERT only | SELECT, INSERT, UPDATE |
+| Data Source | Local files only | Local files + remote |
+| Performance | Slightly faster | More flexible |
+| Transactions | Can be in transaction | Each is its own query |
+| Triggers | FIRE_TRIGGERS option | Triggers always fire |
 
 ================================================================================
                     PART 8: MIGRATE DATABASE USING DATA MIGRATION ASSISTANT

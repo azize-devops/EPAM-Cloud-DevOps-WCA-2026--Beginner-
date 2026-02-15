@@ -188,16 +188,15 @@ Mem:          3.8Gi       1.2Gi       1.5Gi        44Mi       1.2Gi       2.4Gi
 Swap:         2.0Gi          0B       2.0Gi
 
 Column Definitions:
-+---------------+----------------------------------------------------------+
+
 | Column        | Description                                              |
-+---------------+----------------------------------------------------------+
+|---------------|----------------------------------------------------------|
 | total         | Total installed RAM                                      |
 | used          | Memory currently in use by processes                     |
 | free          | Completely unused memory                                 |
 | shared        | Memory used by tmpfs and shared between processes        |
 | buff/cache    | Memory used for buffers and disk cache                   |
 | available     | Memory available for new applications (free + reclaimable)|
-+---------------+----------------------------------------------------------+
 
 
 CALCULATING VALUES
@@ -572,9 +571,8 @@ top    # (press M to sort by memory, q to quit)
 FREE COMMAND OPTIONS REFERENCE
 ================================================================================
 
-+----------+------------------------------------------+
 | Option   | Description                              |
-+----------+------------------------------------------+
+|----------|------------------------------------------|
 | -b       | Display in bytes                         |
 | -k       | Display in kilobytes (default)           |
 | -m       | Display in megabytes                     |
@@ -585,21 +583,18 @@ FREE COMMAND OPTIONS REFERENCE
 | -c N     | Repeat N times then exit                 |
 | -l       | Show low and high memory stats           |
 | -w       | Wide output (separate buffers/cache)     |
-+----------+------------------------------------------+
 
 
 ================================================================================
 PS COMMAND MEMORY-RELATED OPTIONS
 ================================================================================
 
-+------------+------------------------------------------+
 | Field      | Description                              |
-+------------+------------------------------------------+
+|------------|------------------------------------------|
 | %mem       | Percentage of physical memory used       |
 | rss        | Resident Set Size (KB) - actual RAM      |
 | vsz        | Virtual Memory Size (KB)                 |
 | size       | Approximate swap space needed            |
-+------------+------------------------------------------+
 
 Sort options:
 - --sort=-%mem  : Sort by memory descending

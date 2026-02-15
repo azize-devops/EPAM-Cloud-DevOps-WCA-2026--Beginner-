@@ -142,13 +142,11 @@ Output:
 -rwx------. 1 user1 user1 11 Jan 15 10:01 execute
 
 Permission breakdown:
-+----------+------+-------------+-------------------+
 | File     | Octal| Permission  | user1 can...      |
-+----------+------+-------------+-------------------+
+|----------|------|-------------|-------------------|
 | read     | 400  | r--------   | read only         |
 | write    | 600  | rw-------   | read + write      |
 | execute  | 700  | rwx------   | read+write+execute|
-+----------+------+-------------+-------------------+
 
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 5 <<<                          |
@@ -341,13 +339,11 @@ Output:
 -rwxr-xr-x. 1 user1 user1 11 Jan 15 10:01 execute
 
 Permission summary:
-+----------+------+-------------+---------------------+
 | File     | Octal| Permission  | user2 (others) can  |
-+----------+------+-------------+---------------------+
+|----------|------|-------------|---------------------|
 | read     | 644  | rw-r--r--   | read (r--)          |
 | write    | 666  | rw-rw-rw-   | read+write (rw-)    |
 | execute  | 755  | rwxr-xr-x   | read+execute (r-x)  |
-+----------+------+-------------+---------------------+
 
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 9 <<<                          |
@@ -662,13 +658,11 @@ rm /tmp/homework/immutable          # SUCCESS
 DIRECTORY vs FILE PERMISSIONS
 ================================================================================
 
-+------+-------------------+-------------------+
 | Perm | For FILES         | For DIRECTORIES   |
-+------+-------------------+-------------------+
+|------|-------------------|-------------------|
 |  r   | Read contents     | List contents     |
 |  w   | Modify contents   | Create/delete files|
 |  x   | Execute as program| Enter directory   |
-+------+-------------------+-------------------+
 
 IMPORTANT FOR DIRECTORIES:
 - To list contents (ls): need r + x
@@ -681,15 +675,13 @@ IMPORTANT FOR DIRECTORIES:
 SPECIAL ATTRIBUTES (chattr)
 ================================================================================
 
-+------+------------------------------------------+
 | Attr | Description                              |
-+------+------------------------------------------+
+|------|------------------------------------------|
 |  i   | Immutable - cannot modify/delete         |
 |  a   | Append only - can only add data          |
 |  c   | Compressed - auto compress on disk       |
 |  s   | Secure delete - zero blocks when deleted |
 |  u   | Undeletable - can be undeleted           |
-+------+------------------------------------------+
 
 Commands:
 - chattr +i file  = add immutable
@@ -701,9 +693,8 @@ Commands:
 PERMISSION QUICK REFERENCE
 ================================================================================
 
-+------+-------------+---------------------------+
 | Octal| Permission  | Typical Use               |
-+------+-------------+---------------------------+
+|------|-------------|---------------------------|
 | 777  | rwxrwxrwx   | Full access for everyone  |
 | 755  | rwxr-xr-x   | Executable, others read   |
 | 750  | rwxr-x---   | Executable, group only    |
@@ -713,7 +704,6 @@ PERMISSION QUICK REFERENCE
 | 640  | rw-r-----   | Readable by group only    |
 | 600  | rw-------   | Private file              |
 | 400  | r--------   | Read-only for owner       |
-+------+-------------+---------------------------+
 
 
 ================================================================================

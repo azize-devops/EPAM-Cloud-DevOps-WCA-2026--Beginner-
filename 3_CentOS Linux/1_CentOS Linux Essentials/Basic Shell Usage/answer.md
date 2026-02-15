@@ -428,15 +428,13 @@ ls -la ~/ | grep homework
 SELF-REVIEW CHECKLIST
 ================================================================================
 
-+-----+------------------------------------------+----------+
-| No. | Check                                    | Status   |
-+-----+------------------------------------------+----------+
-|  1  | ls -la ~/homework shows 2 files          | [ ]      |
-|  2  | Both files have same timestamp           | [ ]      |
-|  3  | cat ~/homework/file1 shows your name     | [ ]      |
-|  4  | find command returns file1 and file2     | [ ]      |
-|  5  | homework folder removed successfully     | [ ]      |
-+-----+------------------------------------------+----------+
+| No. | Check | Status |
+|-----|-------|--------|
+| 1 | ls -la ~/homework shows 2 files | [ ] |
+| 2 | Both files have same timestamp | [ ] |
+| 3 | cat ~/homework/file1 shows your name | [ ] |
+| 4 | find command returns file1 and file2 | [ ] |
+| 5 | homework folder removed successfully | [ ] |
 
 
 ================================================================================
@@ -444,55 +442,51 @@ USEFUL COMMANDS REFERENCE
 ================================================================================
 
 NAVIGATION:
-+------------------+----------------------------------------+
-| Command          | Description                            |
-+------------------+----------------------------------------+
-| cd               | Change to home directory               |
-| cd ~             | Change to home directory               |
-| cd /             | Change to root directory               |
-| cd ..            | Go up one directory                    |
-| cd -             | Go to previous directory               |
-| pwd              | Print working directory                |
-+------------------+----------------------------------------+
+
+| Command | Description |
+|---------|-------------|
+| cd | Change to home directory |
+| cd ~ | Change to home directory |
+| cd / | Change to root directory |
+| cd .. | Go up one directory |
+| cd - | Go to previous directory |
+| pwd | Print working directory |
 
 FILE OPERATIONS:
-+------------------+----------------------------------------+
-| Command          | Description                            |
-+------------------+----------------------------------------+
-| touch file       | Create empty file / update timestamp   |
-| touch -r a b     | Copy timestamp from file a to file b   |
-| mkdir dir        | Create directory                       |
-| rm file          | Remove file                            |
-| rm -r dir        | Remove directory recursively           |
-| rm -rf dir       | Remove directory forcefully            |
-| cp src dest      | Copy file                              |
-| mv src dest      | Move/rename file                       |
-+------------------+----------------------------------------+
+
+| Command | Description |
+|---------|-------------|
+| touch file | Create empty file / update timestamp |
+| touch -r a b | Copy timestamp from file a to file b |
+| mkdir dir | Create directory |
+| rm file | Remove file |
+| rm -r dir | Remove directory recursively |
+| rm -rf dir | Remove directory forcefully |
+| cp src dest | Copy file |
+| mv src dest | Move/rename file |
 
 VIEWING FILES:
-+------------------+----------------------------------------+
-| Command          | Description                            |
-+------------------+----------------------------------------+
-| cat file         | Display file contents                  |
-| less file        | View file with pagination              |
-| head file        | View first 10 lines                    |
-| head -n 5 file   | View first 5 lines                     |
-| tail file        | View last 10 lines                     |
-| tail -f file     | Follow file updates (logs)             |
-+------------------+----------------------------------------+
+
+| Command | Description |
+|---------|-------------|
+| cat file | Display file contents |
+| less file | View file with pagination |
+| head file | View first 10 lines |
+| head -n 5 file | View first 5 lines |
+| tail file | View last 10 lines |
+| tail -f file | Follow file updates (logs) |
 
 FIND COMMAND:
-+------------------+----------------------------------------+
-| Option           | Description                            |
-+------------------+----------------------------------------+
-| -type f          | Files only                             |
-| -type d          | Directories only                       |
-| -name "*.txt"    | By name pattern                        |
-| -mmin -60        | Modified < 60 minutes ago              |
-| -mmin +60        | Modified > 60 minutes ago              |
-| -mtime -1        | Modified < 1 day ago                   |
-| -size +10M       | Larger than 10 MB                      |
-+------------------+----------------------------------------+
+
+| Option | Description |
+|--------|-------------|
+| -type f | Files only |
+| -type d | Directories only |
+| -name "*.txt" | By name pattern |
+| -mmin -60 | Modified < 60 minutes ago |
+| -mmin +60 | Modified > 60 minutes ago |
+| -mtime -1 | Modified < 1 day ago |
+| -size +10M | Larger than 10 MB |
 
 
 ================================================================================

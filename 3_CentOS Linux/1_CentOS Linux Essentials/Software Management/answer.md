@@ -364,25 +364,25 @@ Additional verification commands:
 ================================================================================
 
 | Command                        | Description                                 |
-|-------------------------------|---------------------------------------------|
-| yum search <package>          | Search for packages by name/description     |
-| yum list <package>            | List packages matching pattern              |
-| yum list available            | List all available packages                 |
-| yum list installed            | List all installed packages                 |
-| yum info <package>            | Show detailed package information           |
-| yum install <package>         | Install a package                           |
-| yum install <package> -y      | Install without confirmation                |
-| yum remove <package>          | Remove a package                            |
-| yum autoremove <package>      | Remove package and unused dependencies      |
-| yum update                    | Update all packages                         |
-| yum update <package>          | Update specific package                     |
-| yum provides <file>           | Find which package provides a file          |
-| yum repolist                  | List enabled repositories                   |
-| yum repolist all              | List all repositories (enabled/disabled)    |
-| yum clean all                 | Clean yum cache                             |
-| yum history                   | Show transaction history                    |
-| yum grouplist                 | List available package groups               |
-| yum groupinstall <group>      | Install a package group                     |
+|--------------------------------|---------------------------------------------|
+| yum search <package>           | Search for packages by name/description     |
+| yum list <package>             | List packages matching pattern              |
+| yum list available             | List all available packages                 |
+| yum list installed             | List all installed packages                 |
+| yum info <package>             | Show detailed package information           |
+| yum install <package>          | Install a package                           |
+| yum install <package> -y       | Install without confirmation                |
+| yum remove <package>           | Remove a package                            |
+| yum autoremove <package>       | Remove package and unused dependencies      |
+| yum update                     | Update all packages                         |
+| yum update <package>           | Update specific package                     |
+| yum provides <file>            | Find which package provides a file          |
+| yum repolist                   | List enabled repositories                   |
+| yum repolist all               | List all repositories (enabled/disabled)    |
+| yum clean all                  | Clean yum cache                             |
+| yum history                    | Show transaction history                    |
+| yum grouplist                  | List available package groups               |
+| yum groupinstall <group>       | Install a package group                     |
 
 ================================================================================
 
@@ -392,12 +392,12 @@ Additional verification commands:
 ================================================================================
 
 | Repository     | Description                                              |
-|---------------|----------------------------------------------------------|
-| base          | Base CentOS packages                                      |
-| updates       | Security and bug fix updates                              |
-| extras        | Additional CentOS packages                                |
-| epel          | Extra Packages for Enterprise Linux (community)           |
-| epel-release  | Package that enables EPEL repository                      |
+|----------------|----------------------------------------------------------|
+| base           | Base CentOS packages                                     |
+| updates        | Security and bug fix updates                             |
+| extras         | Additional CentOS packages                               |
+| epel           | Extra Packages for Enterprise Linux (community)          |
+| epel-release   | Package that enables EPEL repository                     |
 
 To enable EPEL:
     sudo yum install epel-release

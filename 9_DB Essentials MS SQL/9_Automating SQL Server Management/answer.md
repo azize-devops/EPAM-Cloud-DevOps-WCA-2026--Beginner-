@@ -37,17 +37,15 @@ WHY USE PROXY ACCOUNTS?
 JOB STEP SUBSYSTEMS:
 -------------------
 
-+----------------------+------------------------------------------------+
-| Subsystem            | Description                                    |
-+----------------------+------------------------------------------------+
-| TSQL                 | T-SQL scripts (default)                        |
-| PowerShell           | PowerShell scripts                             |
-| CmdExec              | Operating system commands                      |
-| SSIS                 | Integration Services packages                  |
-| SSAS                 | Analysis Services commands                     |
-| SSRS                 | Reporting Services                             |
-| ActiveScripting      | ActiveX scripts (legacy)                       |
-+----------------------+------------------------------------------------+
+| Subsystem | Description |
+|-----------|-------------|
+| TSQL | T-SQL scripts (default) |
+| PowerShell | PowerShell scripts |
+| CmdExec | Operating system commands |
+| SSIS | Integration Services packages |
+| SSAS | Analysis Services commands |
+| SSRS | Reporting Services |
+| ActiveScripting | ActiveX scripts (legacy) |
 
 ================================================================================
                     PART 1: RESTORE ADVENTUREWORKS DATABASE
@@ -230,22 +228,20 @@ STEP 4.1: CREATE PROXY USING T-SQL
 SUBSYSTEM IDs:
 -------------
 
-+----+------------------+
-| ID | Subsystem        |
-+----+------------------+
-| 1  | ActiveScripting  |
-| 2  | CmdExec          |
-| 3  | TSQL             |
-| 4  | Snapshot         |
-| 5  | LogReader        |
-| 6  | Distribution     |
-| 7  | Merge            |
-| 8  | QueueReader      |
-| 9  | ANALYSISQUERY    |
-| 10 | ANALYSISCOMMAND  |
-| 11 | SSIS             |
-| 12 | PowerShell       |
-+----+------------------+
+| ID | Subsystem |
+|----|-----------|
+| 1 | ActiveScripting |
+| 2 | CmdExec |
+| 3 | TSQL |
+| 4 | Snapshot |
+| 5 | LogReader |
+| 6 | Distribution |
+| 7 | Merge |
+| 8 | QueueReader |
+| 9 | ANALYSISQUERY |
+| 10 | ANALYSISCOMMAND |
+| 11 | SSIS |
+| 12 | PowerShell |
 
 STEP 4.2: GRANT PROXY TO LOGIN (OPTIONAL)
 -----------------------------------------
@@ -853,17 +849,15 @@ PROBLEM: DBCC CHECKDB fails
 COMPONENTS CREATED:
 ------------------
 
-+---------------------------+----------------------------------------+
-| Component                 | Name/Details                           |
-+---------------------------+----------------------------------------+
-| Windows Account           | SQLJobProxy                            |
-| SQL Credential            | SQLJobProxyCredential                  |
-| Proxy Account             | SQLJobProxy_PowerShell (PowerShell)    |
-| SQL Agent Job             | AdventureWorks_Maintenance_Job         |
-|   Step 1                  | DBCC CHECKDB (T-SQL)                   |
-|   Step 2                  | Create Folder (PowerShell + Proxy)     |
-|   Step 3                  | Backup Database (T-SQL)                |
-+---------------------------+----------------------------------------+
+| Component | Name/Details |
+|-----------|--------------|
+| Windows Account | SQLJobProxy |
+| SQL Credential | SQLJobProxyCredential |
+| Proxy Account | SQLJobProxy_PowerShell (PowerShell) |
+| SQL Agent Job | AdventureWorks_Maintenance_Job |
+| Step 1 | DBCC CHECKDB (T-SQL) |
+| Step 2 | Create Folder (PowerShell + Proxy) |
+| Step 3 | Backup Database (T-SQL) |
 
 KEY STORED PROCEDURES:
 ---------------------

@@ -22,9 +22,8 @@ STEP 2: Create Virtual Machine in VirtualBox
 2. Click "New" to create a new VM
 3. Configure VM settings:
 
-   +------------------------+-------------------------+
    | Setting                | Recommended Value       |
-   +------------------------+-------------------------+
+   |------------------------|-------------------------|
    | Name                   | CentOS-Stream-9         |
    | Type                   | Linux                   |
    | Version                | Red Hat (64-bit)        |
@@ -32,7 +31,6 @@ STEP 2: Create Virtual Machine in VirtualBox
    | Hard Disk              | Create a virtual disk   |
    | Disk Size              | 40 GB (minimum)         |
    | Disk Type              | VDI (dynamically alloc) |
-   +------------------------+-------------------------+
 
 4. Before starting, go to Settings > Storage:
    - Click on "Empty" under Controller: IDE
@@ -68,15 +66,13 @@ STEP 2: Create User
 1. Click on "User Creation"
 2. Fill in the details:
 
-   +------------------------+-------------------------+
    | Field                  | Value                   |
-   +------------------------+-------------------------+
+   |------------------------|-------------------------|
    | Full Name              | Name Surname            |
    | User Name              | Name_Surname            |
    | Make this user admin   | [x] Check this box      |
    | Require password       | [x] Check this box      |
    | Password               | YourSecurePassword123!  |
-   +------------------------+-------------------------+
 
 3. Click "Done"
 
@@ -108,24 +104,20 @@ STEP 2: Configure Network
 3. Click "Configure..." for advanced settings:
 
    AUTOMATIC (DHCP) - Recommended for beginners:
-   +------------------------+-------------------------+
    | Setting                | Value                   |
-   +------------------------+-------------------------+
+   |------------------------|-------------------------|
    | IPv4 Method            | Automatic (DHCP)        |
    | IPv6 Method            | Automatic               |
    | Connect automatically  | [x] Checked             |
-   +------------------------+-------------------------+
 
    MANUAL (Static IP) - For specific requirements:
-   +------------------------+-------------------------+
    | Setting                | Example Value           |
-   +------------------------+-------------------------+
+   |------------------------|-------------------------|
    | IPv4 Method            | Manual                  |
    | Address                | 192.168.1.100           |
    | Netmask                | 255.255.255.0           |
    | Gateway                | 192.168.1.1             |
    | DNS Servers            | 8.8.8.8, 8.8.4.4        |
-   +------------------------+-------------------------+
 
 4. Set Host Name at the bottom:
    - Example: centos-vm.localdomain
@@ -154,9 +146,8 @@ STEP 2: Create Partitions
 -------------------------
 Click "+" to add each partition. Recommended layout for 40GB disk:
 
-+------------+------------+-------------+----------------------------------+
 | Mount Point| Size       | File System | Purpose                          |
-+------------+------------+-------------+----------------------------------+
+|------------|------------|-------------|----------------------------------|
 | /boot      | 1 GiB      | xfs         | Boot files                       |
 | /boot/efi  | 600 MiB    | EFI System  | EFI boot (UEFI systems only)     |
 | swap       | 2 GiB      | swap        | Virtual memory                   |
@@ -164,7 +155,6 @@ Click "+" to add each partition. Recommended layout for 40GB disk:
 | /home      | 10 GiB     | xfs         | User home directories            |
 | /opt       | 5 GiB      | xfs         | Optional/third-party software    |
 | /var       | 10 GiB     | xfs         | Variable data (logs, databases)  |
-+------------+------------+-------------+----------------------------------+
 
 Note: Remaining space can be added to /home or / as needed.
 

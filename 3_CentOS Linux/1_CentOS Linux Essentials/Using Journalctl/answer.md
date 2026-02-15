@@ -607,87 +607,80 @@ JOURNALCTL COMMANDS REFERENCE
 ================================================================================
 
 BASIC USAGE:
-+----------------------------------+----------------------------------------+
-| Command                          | Description                            |
-+----------------------------------+----------------------------------------+
-| journalctl                       | Show all logs                          |
-| journalctl -u <unit>             | Show logs for specific unit            |
-| journalctl -f                    | Follow logs in real-time               |
-| journalctl -n <N>                | Show last N entries                    |
-| journalctl -r                    | Show in reverse order (newest first)   |
-| journalctl -e                    | Jump to end of journal                 |
-| journalctl -x                    | Add explanatory messages               |
-| journalctl -xe                   | Combine -x and -e (common usage)       |
-+----------------------------------+----------------------------------------+
+
+| Command | Description |
+|---------|-------------|
+| journalctl | Show all logs |
+| journalctl -u <unit> | Show logs for specific unit |
+| journalctl -f | Follow logs in real-time |
+| journalctl -n <N> | Show last N entries |
+| journalctl -r | Show in reverse order (newest first) |
+| journalctl -e | Jump to end of journal |
+| journalctl -x | Add explanatory messages |
+| journalctl -xe | Combine -x and -e (common usage) |
 
 TIME FILTERS:
-+----------------------------------+----------------------------------------+
-| Command                          | Description                            |
-+----------------------------------+----------------------------------------+
-| journalctl --since "1 hour ago"  | Logs from last hour                    |
-| journalctl --since today         | Logs from today                        |
-| journalctl --since yesterday     | Logs from yesterday                    |
-| journalctl --since "2024-01-15"  | Logs from specific date                |
-| journalctl --until "1 hour ago"  | Logs until 1 hour ago                  |
-| journalctl -b                    | Logs from current boot                 |
-| journalctl -b -1                 | Logs from previous boot                |
-+----------------------------------+----------------------------------------+
+
+| Command | Description |
+|---------|-------------|
+| journalctl --since "1 hour ago" | Logs from last hour |
+| journalctl --since today | Logs from today |
+| journalctl --since yesterday | Logs from yesterday |
+| journalctl --since "2024-01-15" | Logs from specific date |
+| journalctl --until "1 hour ago" | Logs until 1 hour ago |
+| journalctl -b | Logs from current boot |
+| journalctl -b -1 | Logs from previous boot |
 
 PRIORITY FILTERS:
-+----------------------------------+----------------------------------------+
-| Command                          | Description                            |
-+----------------------------------+----------------------------------------+
-| journalctl -p emerg              | Emergency only (level 0)               |
-| journalctl -p alert              | Alert and above (level 0-1)            |
-| journalctl -p crit               | Critical and above (level 0-2)         |
-| journalctl -p err                | Error and above (level 0-3)            |
-| journalctl -p warning            | Warning and above (level 0-4)          |
-| journalctl -p notice             | Notice and above (level 0-5)           |
-| journalctl -p info               | Info and above (level 0-6)             |
-| journalctl -p debug              | All including debug (level 0-7)        |
-+----------------------------------+----------------------------------------+
+
+| Command | Description |
+|---------|-------------|
+| journalctl -p emerg | Emergency only (level 0) |
+| journalctl -p alert | Alert and above (level 0-1) |
+| journalctl -p crit | Critical and above (level 0-2) |
+| journalctl -p err | Error and above (level 0-3) |
+| journalctl -p warning | Warning and above (level 0-4) |
+| journalctl -p notice | Notice and above (level 0-5) |
+| journalctl -p info | Info and above (level 0-6) |
+| journalctl -p debug | All including debug (level 0-7) |
 
 OUTPUT FORMATS:
-+----------------------------------+----------------------------------------+
-| Command                          | Description                            |
-+----------------------------------+----------------------------------------+
-| journalctl -o short              | Default format                         |
-| journalctl -o short-precise      | With microseconds                      |
-| journalctl -o verbose            | All fields                             |
-| journalctl -o json               | JSON format                            |
-| journalctl -o json-pretty        | Pretty JSON format                     |
-| journalctl -o cat                | Message only                           |
-+----------------------------------+----------------------------------------+
+
+| Command | Description |
+|---------|-------------|
+| journalctl -o short | Default format |
+| journalctl -o short-precise | With microseconds |
+| journalctl -o verbose | All fields |
+| journalctl -o json | JSON format |
+| journalctl -o json-pretty | Pretty JSON format |
+| journalctl -o cat | Message only |
 
 OTHER USEFUL OPTIONS:
-+----------------------------------+----------------------------------------+
-| Command                          | Description                            |
-+----------------------------------+----------------------------------------+
-| journalctl --disk-usage          | Show journal disk usage                |
-| journalctl --list-boots          | List all boots                         |
-| journalctl _PID=<pid>            | Logs for specific PID                  |
-| journalctl _UID=<uid>            | Logs for specific user                 |
-| journalctl --no-pager            | Output without paging                  |
-| journalctl --vacuum-size=100M    | Clean up journal to 100MB              |
-+----------------------------------+----------------------------------------+
+
+| Command | Description |
+|---------|-------------|
+| journalctl --disk-usage | Show journal disk usage |
+| journalctl --list-boots | List all boots |
+| journalctl _PID=<pid> | Logs for specific PID |
+| journalctl _UID=<uid> | Logs for specific user |
+| journalctl --no-pager | Output without paging |
+| journalctl --vacuum-size=100M | Clean up journal to 100MB |
 
 
 ================================================================================
 LOG PRIORITY LEVELS
 ================================================================================
 
-+-------+----------+----------------------------------------------------------+
-| Level | Name     | Description                                              |
-+-------+----------+----------------------------------------------------------+
-|   0   | emerg    | System is unusable                                       |
-|   1   | alert    | Action must be taken immediately                         |
-|   2   | crit     | Critical conditions                                      |
-|   3   | err      | Error conditions                                         |
-|   4   | warning  | Warning conditions                                       |
-|   5   | notice   | Normal but significant condition                         |
-|   6   | info     | Informational messages                                   |
-|   7   | debug    | Debug-level messages                                     |
-+-------+----------+----------------------------------------------------------+
+| Level | Name | Description |
+|-------|------|-------------|
+| 0 | emerg | System is unusable |
+| 1 | alert | Action must be taken immediately |
+| 2 | crit | Critical conditions |
+| 3 | err | Error conditions |
+| 4 | warning | Warning conditions |
+| 5 | notice | Normal but significant condition |
+| 6 | info | Informational messages |
+| 7 | debug | Debug-level messages |
 
 Using -p err shows levels 0-3 (emerg, alert, crit, err)
 

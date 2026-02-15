@@ -98,15 +98,14 @@ Output:
 245
 
 UNIT FILE STATES EXPLAINED:
-+------------+----------------------------------------------------------+
-| State      | Description                                              |
-+------------+----------------------------------------------------------+
-| enabled    | Starts automatically at boot                             |
-| disabled   | Does not start at boot                                   |
-| static     | Cannot be enabled, only started manually or dependency   |
-| masked     | Completely disabled, cannot start                        |
-| generated  | Generated dynamically by a generator                     |
-+------------+----------------------------------------------------------+
+
+| State | Description |
+|-------|-------------|
+| enabled | Starts automatically at boot |
+| disabled | Does not start at boot |
+| static | Cannot be enabled, only started manually or dependency |
+| masked | Completely disabled, cannot start |
+| generated | Generated dynamically by a generator |
 
 
 ================================================================================
@@ -218,15 +217,14 @@ Jan 15 10:00:00 hostname httpd[1234]: AH00558: httpd: Could not reliably determi
 Jan 15 10:00:00 hostname systemd[1]: Started The Apache HTTP Server.
 
 Understanding the output:
-+----------------+----------------------------------------------------------+
-| Field          | Description                                              |
-+----------------+----------------------------------------------------------+
-| Loaded         | Unit file location and enable status                     |
-| Active         | Current state and since when                             |
-| Main PID       | Process ID of main process                               |
-| CGroup         | Control group with all related processes                 |
-| Log entries    | Recent journal entries for this service                  |
-+----------------+----------------------------------------------------------+
+
+| Field | Description |
+|-------|-------------|
+| Loaded | Unit file location and enable status |
+| Active | Current state and since when |
+| Main PID | Process ID of main process |
+| CGroup | Control group with all related processes |
+| Log entries | Recent journal entries for this service |
 
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 5 <<<                          |
@@ -258,14 +256,13 @@ Output shows new start time:
                                                              Just restarted
 
 Alternative commands:
-+------------------+----------------------------------------------------------+
-| Command          | Description                                              |
-+------------------+----------------------------------------------------------+
-| restart          | Stop and start the service                               |
-| reload           | Reload configuration without stopping                    |
-| reload-or-restart| Reload if supported, otherwise restart                   |
-| try-restart      | Restart only if already running                          |
-+------------------+----------------------------------------------------------+
+
+| Command | Description |
+|---------|-------------|
+| restart | Stop and start the service |
+| reload | Reload configuration without stopping |
+| reload-or-restart | Reload if supported, otherwise restart |
+| try-restart | Restart only if already running |
 
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 6 <<<                          |
@@ -419,13 +416,12 @@ TASK 10: Create test.service unit file
 
 UNDERSTANDING SYSTEMD UNIT FILE LOCATIONS
 ------------------------------------------
-+--------------------------------+------------------------------------------+
-| Location                       | Purpose                                  |
-+--------------------------------+------------------------------------------+
-| /etc/systemd/system/           | Local/admin unit files (highest priority)|
-| /run/systemd/system/           | Runtime unit files                       |
-| /usr/lib/systemd/system/       | Package-installed unit files             |
-+--------------------------------+------------------------------------------+
+
+| Location | Purpose |
+|----------|---------|
+| /etc/systemd/system/ | Local/admin unit files (highest priority) |
+| /run/systemd/system/ | Runtime unit files |
+| /usr/lib/systemd/system/ | Package-installed unit files |
 
 For custom services, use: /etc/systemd/system/
 
@@ -475,15 +471,14 @@ WantedBy=multi-user.target                      # Start in multi-user mode
 
 
 SERVICE TYPES:
-+------------+----------------------------------------------------------+
-| Type       | Description                                              |
-+------------+----------------------------------------------------------+
-| simple     | Default. Process in ExecStart is the main process        |
-| forking    | Process forks and parent exits (traditional daemons)     |
-| oneshot    | Process exits after completing (like scripts)            |
-| notify     | Like simple but process signals when ready               |
-| idle       | Like simple but waits until all jobs done                |
-+------------+----------------------------------------------------------+
+
+| Type | Description |
+|------|-------------|
+| simple | Default. Process in ExecStart is the main process |
+| forking | Process forks and parent exits (traditional daemons) |
+| oneshot | Process exits after completing (like scripts) |
+| notify | Like simple but process signals when ready |
+| idle | Like simple but waits until all jobs done |
 
 
 STEP 2: Verify the unit file
@@ -706,43 +701,40 @@ SYSTEMD COMMANDS REFERENCE
 ================================================================================
 
 SERVICE CONTROL:
-+----------------------------------+----------------------------------------+
-| Command                          | Description                            |
-+----------------------------------+----------------------------------------+
-| systemctl start <service>        | Start a service                        |
-| systemctl stop <service>         | Stop a service                         |
-| systemctl restart <service>      | Restart a service                      |
-| systemctl reload <service>       | Reload configuration                   |
-| systemctl status <service>       | Show service status                    |
-| systemctl enable <service>       | Enable at boot                         |
-| systemctl disable <service>      | Disable at boot                        |
-| systemctl is-active <service>    | Check if running                       |
-| systemctl is-enabled <service>   | Check if enabled                       |
-| systemctl mask <service>         | Completely disable service             |
-| systemctl unmask <service>       | Unmask a masked service                |
-+----------------------------------+----------------------------------------+
+
+| Command | Description |
+|---------|-------------|
+| systemctl start <service> | Start a service |
+| systemctl stop <service> | Stop a service |
+| systemctl restart <service> | Restart a service |
+| systemctl reload <service> | Reload configuration |
+| systemctl status <service> | Show service status |
+| systemctl enable <service> | Enable at boot |
+| systemctl disable <service> | Disable at boot |
+| systemctl is-active <service> | Check if running |
+| systemctl is-enabled <service> | Check if enabled |
+| systemctl mask <service> | Completely disable service |
+| systemctl unmask <service> | Unmask a masked service |
 
 LISTING AND INFORMATION:
-+----------------------------------+----------------------------------------+
-| Command                          | Description                            |
-+----------------------------------+----------------------------------------+
-| systemctl list-units             | List loaded units                      |
-| systemctl list-unit-files        | List all unit files                    |
-| systemctl list-dependencies      | Show unit dependencies                 |
-| systemctl show <service>         | Show all properties                    |
-| systemctl cat <service>          | Show unit file content                 |
-+----------------------------------+----------------------------------------+
+
+| Command | Description |
+|---------|-------------|
+| systemctl list-units | List loaded units |
+| systemctl list-unit-files | List all unit files |
+| systemctl list-dependencies | Show unit dependencies |
+| systemctl show <service> | Show all properties |
+| systemctl cat <service> | Show unit file content |
 
 SYSTEM MANAGEMENT:
-+----------------------------------+----------------------------------------+
-| Command                          | Description                            |
-+----------------------------------+----------------------------------------+
-| systemctl daemon-reload          | Reload systemd configuration           |
-| systemctl reboot                 | Reboot the system                      |
-| systemctl poweroff               | Power off the system                   |
-| systemctl suspend                | Suspend the system                     |
-| systemctl hibernate              | Hibernate the system                   |
-+----------------------------------+----------------------------------------+
+
+| Command | Description |
+|---------|-------------|
+| systemctl daemon-reload | Reload systemd configuration |
+| systemctl reboot | Reboot the system |
+| systemctl poweroff | Power off the system |
+| systemctl suspend | Suspend the system |
+| systemctl hibernate | Hibernate the system |
 
 
 ================================================================================
@@ -773,25 +765,24 @@ WantedBy=multi-user.target
 
 
 COMMON UNIT FILE DIRECTIVES:
-+------------------+----------------------------------------------------------+
-| Directive        | Description                                              |
-+------------------+----------------------------------------------------------+
-| Description      | Human-readable description                               |
-| After            | Start after these units                                  |
-| Before           | Start before these units                                 |
-| Requires         | Hard dependency - fails if dependency fails              |
-| Wants            | Soft dependency - doesn't fail if dependency fails       |
-| Type             | Service type (simple, forking, oneshot, etc.)            |
-| ExecStart        | Command to start the service                             |
-| ExecStop         | Command to stop the service                              |
-| ExecReload       | Command to reload configuration                          |
-| Restart          | When to restart (always, on-failure, etc.)               |
-| User             | Run as this user                                         |
-| Group            | Run as this group                                        |
-| WorkingDirectory | Working directory for the service                        |
-| Environment      | Set environment variables                                |
-| WantedBy         | Target that wants this service                           |
-+------------------+----------------------------------------------------------+
+
+| Directive | Description |
+|-----------|-------------|
+| Description | Human-readable description |
+| After | Start after these units |
+| Before | Start before these units |
+| Requires | Hard dependency - fails if dependency fails |
+| Wants | Soft dependency - doesn't fail if dependency fails |
+| Type | Service type (simple, forking, oneshot, etc.) |
+| ExecStart | Command to start the service |
+| ExecStop | Command to stop the service |
+| ExecReload | Command to reload configuration |
+| Restart | When to restart (always, on-failure, etc.) |
+| User | Run as this user |
+| Group | Run as this group |
+| WorkingDirectory | Working directory for the service |
+| Environment | Set environment variables |
+| WantedBy | Target that wants this service |
 
 
 ================================================================================

@@ -4,9 +4,7 @@ Complete guide to performing all 4 previous tasks using ONLY the command line.
 No GUI editors, file managers, or git GUI tools allowed!
 
 
-================================================================================
-                         ESSENTIAL COMMAND LINE TOOLS
-================================================================================
+## ESSENTIAL COMMAND LINE TOOLS
 
 CREATING FILES:
 
@@ -48,12 +46,7 @@ NAVIGATION:
     ls                          # List files
     ls -la                      # List all files with details
 
-================================================================================
-
-
-================================================================================
-                    PART 1: I CAN WIN (Command Line Only)
-================================================================================
+## PART 1: I CAN WIN (Command Line Only)
 
 Step 1: Verify Git installation
 
@@ -186,10 +179,7 @@ Step 11: Verify complete content
 |  Expected: Both halves of lyrics                         |
 +----------------------------------------------------------+
 
-
-================================================================================
-                   PART 2: BRING IT ON (Command Line Only)
-================================================================================
+## PART 2: BRING IT ON (Command Line Only)
 
 Step 1: Create .gitignore using cat
 
@@ -352,10 +342,7 @@ Step 12: Complete merge
 |  Expected: Merge successful                              |
 +----------------------------------------------------------+
 
-
-================================================================================
-                  PART 3: HURT ME PLENTY (Command Line Only)
-================================================================================
+## PART 3: HURT ME PLENTY (Command Line Only)
 
 Step 1: Create storm branch
 
@@ -462,10 +449,7 @@ Step 8: Verify linear history
 |  Expected: Linear history                                |
 +----------------------------------------------------------+
 
-
-================================================================================
-                    PART 4: HARDCORE (Command Line Only)
-================================================================================
+## PART 4: HARDCORE (Command Line Only)
 
 Step 1: Push all branches and tags
 
@@ -539,10 +523,7 @@ Step 6: Verify connection
 |  Expected: Fetch successful                              |
 +----------------------------------------------------------+
 
-
-================================================================================
-                           VI/VIM QUICK REFERENCE
-================================================================================
+## VI/VIM QUICK REFERENCE
 
 STARTING VI:
     vi filename.txt              # Open or create file
@@ -585,12 +566,7 @@ SEARCH:
     n                            # Next match
     N                            # Previous match
 
-================================================================================
-
-
-================================================================================
-                      BASH COMMAND LINE TIPS
-================================================================================
+## BASH COMMAND LINE TIPS
 
 FILE OPERATIONS:
     touch file.txt               # Create empty file
@@ -624,12 +600,7 @@ HISTORY:
     !!                           # Run last command
     Ctrl+r                       # Search history
 
-================================================================================
-
-
-================================================================================
-                             TROUBLESHOOTING
-================================================================================
+## TROUBLESHOOTING
 
 Problem: vi/vim feels unfamiliar
 Solution: Practice basic commands:
@@ -656,12 +627,7 @@ Solution: Use pwd and ls:
 Problem: Can't see hidden files (.gitignore)
 Solution: Use ls -la (show all files)
 
-================================================================================
-
-
-================================================================================
-                              SELF-REVIEW CHECKLIST
-================================================================================
+## SELF-REVIEW CHECKLIST
 
 GENERAL:
 [ ] All tasks completed via MINGW64/Git Bash terminal only
@@ -695,6 +661,4 @@ PART 4 - HARDCORE:
 [ ] Remote viewed and changed via command line
 [ ] Push to multiple repos via command line
 [ ] Remote restored via command line
-
-================================================================================
 

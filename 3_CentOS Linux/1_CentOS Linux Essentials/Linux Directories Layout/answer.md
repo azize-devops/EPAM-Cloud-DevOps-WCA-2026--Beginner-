@@ -417,22 +417,18 @@ KEY DIFFERENCES: cp vs mv, folder vs contents
 ================================================================================
 
 COPY FOLDER CONTENTS vs COPY FOLDER:
-+--------------------------------+--------------------------------+
 | cp -r ~/full/* ~/final/        | cp -r ~/full ~/final/          |
-+--------------------------------+--------------------------------+
+|--------------------------------|--------------------------------|
 | Copies: file1, nested          | Copies: full/ (with contents)  |
 | Result in final:               | Result in final:               |
 |   final/file1                  |   final/full/file1             |
 |   final/nested/                |   final/full/nested/           |
-+--------------------------------+--------------------------------+
 
 COPY vs MOVE:
-+--------------------------------+--------------------------------+
 | cp -r ~/empty ~/final/         | mv ~/empty ~/final/empty_moved |
-+--------------------------------+--------------------------------+
+|--------------------------------|--------------------------------|
 | Original folder REMAINS        | Original folder REMOVED        |
 | Creates a copy                 | Relocates and/or renames       |
-+--------------------------------+--------------------------------+
 
 
 ================================================================================
@@ -440,37 +436,31 @@ USEFUL COMMANDS REFERENCE
 ================================================================================
 
 COPY COMMANDS:
-+---------------------------+------------------------------------------+
 | Command                   | Description                              |
-+---------------------------+------------------------------------------+
+|---------------------------|------------------------------------------|
 | cp file1 file2            | Copy file1 to file2                      |
 | cp file dir/              | Copy file into directory                 |
 | cp -r dir1 dir2/          | Copy dir1 into dir2                      |
 | cp -r dir1/* dir2/        | Copy contents of dir1 into dir2          |
 | cp -a dir1 dir2/          | Copy with all attributes preserved       |
-+---------------------------+------------------------------------------+
 
 MOVE/RENAME COMMANDS:
-+---------------------------+------------------------------------------+
 | Command                   | Description                              |
-+---------------------------+------------------------------------------+
+|---------------------------|------------------------------------------|
 | mv file1 file2            | Rename file1 to file2                    |
 | mv file dir/              | Move file into directory                 |
 | mv dir1 dir2/             | Move dir1 into dir2                      |
 | mv dir1 dir2/newname      | Move dir1 into dir2 with new name        |
 | mv dir1 newname           | Rename dir1 to newname (same location)   |
-+---------------------------+------------------------------------------+
 
 DIRECTORY COMMANDS:
-+---------------------------+------------------------------------------+
 | Command                   | Description                              |
-+---------------------------+------------------------------------------+
+|---------------------------|------------------------------------------|
 | mkdir dir                 | Create directory                         |
 | mkdir -p dir1/dir2/dir3   | Create nested directories                |
 | rmdir dir                 | Remove empty directory                   |
 | rm -r dir                 | Remove directory and contents            |
 | tree dir                  | Show directory structure as tree         |
-+---------------------------+------------------------------------------+
 
 
 ================================================================================

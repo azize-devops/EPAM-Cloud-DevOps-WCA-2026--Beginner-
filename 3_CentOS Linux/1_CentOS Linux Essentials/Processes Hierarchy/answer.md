@@ -444,9 +444,9 @@ PROCESS COMMANDS REFERENCE
 ================================================================================
 
 VIEWING PROCESSES:
-+---------------------------+------------------------------------------+
+
 | Command                   | Description                              |
-+---------------------------+------------------------------------------+
+|---------------------------|------------------------------------------|
 | ps                        | Show processes in current terminal       |
 | ps -f                     | Full format listing                      |
 | ps aux                    | All processes, all users                 |
@@ -457,12 +457,11 @@ VIEWING PROCESSES:
 | htop                      | Enhanced interactive viewer (if installed)|
 | pgrep name                | Find PID by process name                 |
 | pidof name                | Find PID of running program              |
-+---------------------------+------------------------------------------+
 
 JOB CONTROL:
-+---------------------------+------------------------------------------+
+
 | Command                   | Description                              |
-+---------------------------+------------------------------------------+
+|---------------------------|------------------------------------------|
 | command &                 | Run command in background                |
 | jobs                      | List background jobs                     |
 | jobs -l                   | List with PIDs                           |
@@ -471,45 +470,42 @@ JOB CONTROL:
 | Ctrl+Z                    | Suspend current process                  |
 | Ctrl+C                    | Terminate current process                |
 | $!                        | PID of last background process           |
-+---------------------------+------------------------------------------+
 
 KILLING PROCESSES:
-+---------------------------+------------------------------------------+
+
 | Command                   | Description                              |
-+---------------------------+------------------------------------------+
+|---------------------------|------------------------------------------|
 | kill PID                  | Send SIGTERM (graceful stop)             |
 | kill -9 PID               | Send SIGKILL (force kill)                |
 | kill %n                   | Kill job number n                        |
 | pkill name                | Kill by process name                     |
 | pkill -f pattern          | Kill by command pattern                  |
 | killall name              | Kill all processes with name             |
-+---------------------------+------------------------------------------+
 
 
 ================================================================================
 PROCESS STATES (STAT column in ps)
 ================================================================================
 
-+------+------------------------------------------+
 | Code | Description                              |
-+------+------------------------------------------+
+|------|------------------------------------------|
 |  R   | Running or runnable                      |
 |  S   | Sleeping (interruptible)                 |
 |  D   | Uninterruptible sleep (usually I/O)      |
 |  T   | Stopped (by signal or debugger)          |
 |  Z   | Zombie (terminated but not reaped)       |
 |  I   | Idle kernel thread                       |
-+------+------------------------------------------+
 
 Additional characters:
-+------+------------------------------------------+
+
+| Code | Description                              |
+|------|------------------------------------------|
 |  <   | High priority                            |
 |  N   | Low priority                             |
 |  L   | Pages locked in memory                   |
 |  s   | Session leader                           |
 |  l   | Multi-threaded                           |
 |  +   | In foreground process group              |
-+------+------------------------------------------+
 
 
 ================================================================================

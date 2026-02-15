@@ -787,28 +787,12 @@ PROBLEM: Database in "Recovery Pending" state
 Methods for Moving Databases:
 -----------------------------
 
-+------------------+-------------------+----------------------------------+
-| Method           | Use Case          | Steps Required                   |
-+------------------+-------------------+----------------------------------+
-| Detach/Attach    | User databases    | 1. Detach                        |
-|                  |                   | 2. Move files                    |
-|                  |                   | 3. Attach                        |
-+------------------+-------------------+----------------------------------+
-| ALTER DATABASE   | User databases    | 1. ALTER DATABASE MODIFY FILE    |
-| MODIFY FILE      |                   | 2. Set OFFLINE                   |
-|                  |                   | 3. Move files                    |
-|                  |                   | 4. Set ONLINE                    |
-+------------------+-------------------+----------------------------------+
-| System DB Move   | master, model,    | 1. ALTER DATABASE MODIFY FILE    |
-|                  | msdb              | 2. Update startup params (master)|
-|                  |                   | 3. Stop SQL Server               |
-|                  |                   | 4. Move files                    |
-|                  |                   | 5. Start SQL Server              |
-+------------------+-------------------+----------------------------------+
-| TempDB Move      | tempdb only       | 1. ALTER DATABASE MODIFY FILE    |
-|                  |                   | 2. Restart SQL Server            |
-|                  |                   | (Files recreated automatically)  |
-+------------------+-------------------+----------------------------------+
+| Method | Use Case | Steps Required |
+|--------|----------|----------------|
+| Detach/Attach | User databases | 1. Detach 2. Move files 3. Attach |
+| ALTER DATABASE MODIFY FILE | User databases | 1. ALTER DATABASE MODIFY FILE 2. Set OFFLINE 3. Move files 4. Set ONLINE |
+| System DB Move | master, model, msdb | 1. ALTER DATABASE MODIFY FILE 2. Update startup params (master) 3. Stop SQL Server 4. Move files 5. Start SQL Server |
+| TempDB Move | tempdb only | 1. ALTER DATABASE MODIFY FILE 2. Restart SQL Server (Files recreated automatically) |
 
 Final File Locations:
 ---------------------

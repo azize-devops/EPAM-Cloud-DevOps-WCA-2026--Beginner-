@@ -11,30 +11,20 @@ recovery and tail-log backup procedures.
 BACKUP TYPE OVERVIEW:
 --------------------
 
-+------------------+----------------------------------------------------------+
-| Backup Type      | Description                                              |
-+------------------+----------------------------------------------------------+
-| FULL             | Complete copy of database. Base for all other backups.   |
-| DIFFERENTIAL     | Only changes since last FULL backup. Requires FULL.      |
-| TRANSACTION LOG  | Only transaction log records since last log backup.      |
-|                  | Enables point-in-time recovery. Requires FULL recovery.  |
-+------------------+----------------------------------------------------------+
+| Backup Type | Description |
+|-------------|-------------|
+| FULL | Complete copy of database. Base for all other backups. |
+| DIFFERENTIAL | Only changes since last FULL backup. Requires FULL. |
+| TRANSACTION LOG | Only transaction log records since last log backup. Enables point-in-time recovery. Requires FULL recovery. |
 
 RECOVERY MODELS:
 ---------------
 
-+------------------+----------------------------------------------------------+
-| Recovery Model   | Description                                              |
-+------------------+----------------------------------------------------------+
-| SIMPLE           | No transaction log backups. Minimal log management.      |
-|                  | Cannot do point-in-time recovery.                        |
-+------------------+----------------------------------------------------------+
-| FULL             | Full transaction log maintained. Supports all backup     |
-|                  | types including point-in-time recovery.                  |
-+------------------+----------------------------------------------------------+
-| BULK_LOGGED      | Like FULL but minimally logs bulk operations.            |
-|                  | Limited point-in-time recovery for bulk operations.      |
-+------------------+----------------------------------------------------------+
+| Recovery Model | Description |
+|----------------|-------------|
+| SIMPLE | No transaction log backups. Minimal log management. Cannot do point-in-time recovery. |
+| FULL | Full transaction log maintained. Supports all backup types including point-in-time recovery. |
+| BULK_LOGGED | Like FULL but minimally logs bulk operations. Limited point-in-time recovery for bulk operations. |
 
 ================================================================================
                     PART 1: SETUP AND RESTORE ADVENTUREWORKS
@@ -356,12 +346,10 @@ EXPECTED RESULTS:
 -----------------
 Typical compression ratios for AdventureWorks:
 
-+------------------+-------------+----------------+---------------------+
-| Backup Type      | Backup Size | Compressed Size| Compression Savings |
-+------------------+-------------+----------------+---------------------+
-| No Compression   | ~200 MB     | ~200 MB        | 0%                  |
-| With Compression | ~200 MB     | ~50 MB         | ~75%                |
-+------------------+-------------+----------------+---------------------+
+| Backup Type | Backup Size | Compressed Size | Compression Savings |
+|-------------|-------------|-----------------|---------------------|
+| No Compression | ~200 MB | ~200 MB | 0% |
+| With Compression | ~200 MB | ~50 MB | ~75% |
 
 ================================================================================
                     PART 7: DATA CHANGES AND DIFFERENTIAL BACKUP

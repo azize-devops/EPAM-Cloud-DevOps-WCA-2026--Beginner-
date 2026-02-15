@@ -401,49 +401,38 @@ Step 6: Verify storm.txt still present
 +----------------------------------------------------------+
 
 
-================================================================================
-                           GIT TAG COMMANDS
-================================================================================
+## GIT TAG COMMANDS
 
-| Command                          | Description                              |
-|----------------------------------|------------------------------------------|
-| git tag                          | List all tags                            |
-| git tag <name>                   | Create lightweight tag                   |
-| git tag -a <name> -m "msg"       | Create annotated tag                     |
-| git tag -d <name>                | Delete local tag                         |
-| git push origin <tag>            | Push specific tag to remote              |
-| git push origin --tags           | Push all tags to remote                  |
-| git show <tag>                   | Show tag details                         |
-| git checkout <tag>               | Checkout specific tag (detached HEAD)    |
-| git tag -l "v1.*"                | List tags matching pattern               |
+| Command | Description |
+|---------|-------------|
+| git tag | List all tags |
+| git tag <name> | Create lightweight tag |
+| git tag -a <name> -m "msg" | Create annotated tag |
+| git tag -d <name> | Delete local tag |
+| git push origin <tag> | Push specific tag to remote |
+| git push origin --tags | Push all tags to remote |
+| git show <tag> | Show tag details |
+| git checkout <tag> | Checkout specific tag (detached HEAD) |
+| git tag -l "v1.*" | List tags matching pattern |
 
 Tag types:
 - Lightweight: Just a pointer to a commit (git tag name)
 - Annotated: Full object with message, author, date (git tag -a name -m "msg")
 
-================================================================================
+## GIT REBASE COMMANDS
+
+| Command | Description |
+|---------|-------------|
+| git rebase <branch> | Rebase current branch onto <branch> |
+| git rebase main | Rebase current branch onto main |
+| git rebase --continue | Continue after resolving conflict |
+| git rebase --abort | Abort rebase and return to original |
+| git rebase --skip | Skip current commit during rebase |
+| git rebase -i HEAD~3 | Interactive rebase (last 3 commits) |
+| git rebase -i <commit> | Interactive rebase from commit |
 
 
-================================================================================
-                           GIT REBASE COMMANDS
-================================================================================
-
-| Command                          | Description                              |
-|----------------------------------|------------------------------------------|
-| git rebase <branch>              | Rebase current branch onto <branch>      |
-| git rebase main                  | Rebase current branch onto main          |
-| git rebase --continue            | Continue after resolving conflict        |
-| git rebase --abort               | Abort rebase and return to original      |
-| git rebase --skip                | Skip current commit during rebase        |
-| git rebase -i HEAD~3             | Interactive rebase (last 3 commits)      |
-| git rebase -i <commit>           | Interactive rebase from commit           |
-
-================================================================================
-
-
-================================================================================
-                        MERGE VS REBASE COMPARISON
-================================================================================
+## MERGE VS REBASE COMPARISON
 
 MERGE:
 - Creates a merge commit
@@ -469,12 +458,7 @@ REBASE:
 
 GOLDEN RULE: Never rebase commits that have been pushed to a shared repository!
 
-================================================================================
-
-
-================================================================================
-                        HANDLING REBASE CONFLICTS
-================================================================================
+## HANDLING REBASE CONFLICTS
 
 If conflicts occur during rebase:
 
@@ -493,12 +477,7 @@ If conflicts occur during rebase:
 5. Or abort if needed:
     git rebase --abort
 
-================================================================================
-
-
-================================================================================
-                             TROUBLESHOOTING
-================================================================================
+## TROUBLESHOOTING
 
 Problem: "Cannot rebase: You have unstaged changes"
 Solution: Commit or stash changes first:
@@ -530,12 +509,7 @@ Solution: After rebasing a pushed branch, force push:
     git push --force-with-lease origin storm
     (WARNING: Only do this if you're the only one using the branch!)
 
-================================================================================
-
-
-================================================================================
-                              SELF-REVIEW CHECKLIST
-================================================================================
+## SELF-REVIEW CHECKLIST
 
 [ ] Storm branch created from main
 [ ] storm.txt created with first two lines
@@ -554,6 +528,4 @@ Solution: After rebasing a pushed branch, force push:
 [ ] git log shows linear history
 [ ] pursuit.txt accessible on storm branch after rebase
 [ ] storm.txt still intact after rebase
-
-================================================================================
 

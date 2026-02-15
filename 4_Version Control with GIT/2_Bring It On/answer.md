@@ -513,44 +513,37 @@ Step 9: Push to remote (optional)
 +----------------------------------------------------------+
 
 
-================================================================================
-                           GIT BRANCHING COMMANDS
-================================================================================
+## GIT BRANCHING COMMANDS
 
-| Command                          | Description                              |
-|----------------------------------|------------------------------------------|
-| git branch                       | List local branches                      |
-| git branch -a                    | List all branches (local + remote)       |
-| git branch <name>                | Create new branch                        |
-| git checkout <branch>            | Switch to branch                         |
-| git checkout -b <name>           | Create and switch to new branch          |
-| git switch <branch>              | Switch to branch (newer syntax)          |
-| git switch -c <name>             | Create and switch (newer syntax)         |
-| git merge <branch>               | Merge branch into current branch         |
-| git merge --abort                | Abort merge in progress                  |
-| git branch -d <name>             | Delete branch (if merged)                |
-| git branch -D <name>             | Force delete branch                      |
-| git log --graph                  | Show commit graph                        |
-| git log --oneline --graph        | Compact commit graph                     |
+| Command | Description |
+|---------|-------------|
+| git branch | List local branches |
+| git branch -a | List all branches (local + remote) |
+| git branch <name> | Create new branch |
+| git checkout <branch> | Switch to branch |
+| git checkout -b <name> | Create and switch to new branch |
+| git switch <branch> | Switch to branch (newer syntax) |
+| git switch -c <name> | Create and switch (newer syntax) |
+| git merge <branch> | Merge branch into current branch |
+| git merge --abort | Abort merge in progress |
+| git branch -d <name> | Delete branch (if merged) |
+| git branch -D <name> | Force delete branch |
+| git log --graph | Show commit graph |
+| git log --oneline --graph | Compact commit graph |
 
-================================================================================
+## .GITIGNORE PATTERNS
 
-
-================================================================================
-                           .GITIGNORE PATTERNS
-================================================================================
-
-| Pattern          | Description                                          |
-|------------------|------------------------------------------------------|
-| *.log            | Ignore all .log files                                |
-| *.db             | Ignore all .db files                                 |
-| target/          | Ignore directory named target                        |
-| bin/             | Ignore directory named bin                           |
-| /build           | Ignore build in root only                            |
-| **/logs          | Ignore logs directories anywhere                     |
-| !important.log   | Don't ignore important.log (exception)               |
-| *.txt            | Ignore all .txt files                                |
-| doc/*.pdf        | Ignore PDFs in doc directory                         |
+| Pattern | Description |
+|---------|-------------|
+| *.log | Ignore all .log files |
+| *.db | Ignore all .db files |
+| target/ | Ignore directory named target |
+| bin/ | Ignore directory named bin |
+| /build | Ignore build in root only |
+| **/logs | Ignore logs directories anywhere |
+| !important.log | Don't ignore important.log (exception) |
+| *.txt | Ignore all .txt files |
+| doc/*.pdf | Ignore PDFs in doc directory |
 
 Common .gitignore entries:
     # IDE files
@@ -577,12 +570,7 @@ Common .gitignore entries:
     .DS_Store
     Thumbs.db
 
-================================================================================
-
-
-================================================================================
-                        MERGE CONFLICT RESOLUTION
-================================================================================
+## MERGE CONFLICT RESOLUTION
 
 Conflict markers explained:
 
@@ -613,12 +601,7 @@ Tools for conflict resolution:
     git checkout --ours    # Keep current branch version
     git checkout --theirs  # Keep merging branch version
 
-================================================================================
-
-
-================================================================================
-                             TROUBLESHOOTING
-================================================================================
+## TROUBLESHOOTING
 
 Problem: "Already on branch" when trying to create
 Solution: Use git checkout -b <name> to create AND switch
@@ -644,12 +627,7 @@ Solution:
     git checkout wrong-branch
     git reset HEAD~1
 
-================================================================================
-
-
-================================================================================
-                              SELF-REVIEW CHECKLIST
-================================================================================
+## SELF-REVIEW CHECKLIST
 
 [ ] .gitignore file created
 [ ] .gitignore contains *.db pattern
@@ -671,6 +649,4 @@ Solution:
 [ ] Lines in correct order (feature lines first, then main lines)
 [ ] Merge commit completed successfully
 [ ] git log --graph shows merge structure
-
-================================================================================
 

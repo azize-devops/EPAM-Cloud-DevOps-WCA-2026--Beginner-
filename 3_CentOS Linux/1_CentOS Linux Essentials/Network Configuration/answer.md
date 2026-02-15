@@ -316,23 +316,23 @@ Alternative curl commands:
 ================================================================================
 
 | Command                        | Description                                 |
-|-------------------------------|---------------------------------------------|
-| ip addr show                  | Show all network interfaces and IPs         |
-| ip a                          | Short form of ip addr show                  |
-| ip link show                  | Show network interface status               |
-| ip route show                 | Show routing table                          |
-| hostname -I                   | Show all IP addresses                       |
-| ping <host>                   | Test connectivity to host                   |
-| ping -c 3 <host>              | Send 3 ping packets                         |
-| curl <url>                    | Fetch content from URL                      |
-| curl -L <url>                 | Follow redirects                            |
-| curl -v <url>                 | Verbose output                              |
-| curl -I <url>                 | Show response headers only                  |
-| getent hosts <hostname>       | Query name resolution                       |
-| nslookup <hostname>           | DNS lookup                                  |
-| dig <hostname>                | Detailed DNS lookup                         |
-| ss -tlnp                      | Show listening TCP ports                    |
-| netstat -tlnp                 | Show listening TCP ports (legacy)           |
+|--------------------------------|---------------------------------------------|
+| ip addr show                   | Show all network interfaces and IPs         |
+| ip a                           | Short form of ip addr show                  |
+| ip link show                   | Show network interface status               |
+| ip route show                  | Show routing table                          |
+| hostname -I                    | Show all IP addresses                       |
+| ping <host>                    | Test connectivity to host                   |
+| ping -c 3 <host>               | Send 3 ping packets                         |
+| curl <url>                     | Fetch content from URL                      |
+| curl -L <url>                  | Follow redirects                            |
+| curl -v <url>                  | Verbose output                              |
+| curl -I <url>                  | Show response headers only                  |
+| getent hosts <hostname>        | Query name resolution                       |
+| nslookup <hostname>            | DNS lookup                                  |
+| dig <hostname>                 | Detailed DNS lookup                         |
+| ss -tlnp                       | Show listening TCP ports                    |
+| netstat -tlnp                  | Show listening TCP ports (legacy)           |
 
 ================================================================================
 
@@ -366,16 +366,16 @@ Important notes:
                            FIREWALL COMMANDS
 ================================================================================
 
-| Command                                    | Description                    |
-|-------------------------------------------|--------------------------------|
-| systemctl status firewalld                | Check firewall status          |
-| firewall-cmd --list-all                   | List all firewall rules        |
-| firewall-cmd --add-service=http           | Allow HTTP (temporary)         |
-| firewall-cmd --permanent --add-service=http | Allow HTTP (permanent)       |
-| firewall-cmd --reload                     | Reload firewall rules          |
-| firewall-cmd --add-port=80/tcp            | Allow port 80 TCP              |
-| systemctl stop firewalld                  | Stop firewall                  |
-| systemctl disable firewalld               | Disable firewall on boot       |
+| Command                                      | Description                    |
+|----------------------------------------------|--------------------------------|
+| systemctl status firewalld                   | Check firewall status          |
+| firewall-cmd --list-all                      | List all firewall rules        |
+| firewall-cmd --add-service=http              | Allow HTTP (temporary)         |
+| firewall-cmd --permanent --add-service=http  | Allow HTTP (permanent)         |
+| firewall-cmd --reload                        | Reload firewall rules          |
+| firewall-cmd --add-port=80/tcp               | Allow port 80 TCP              |
+| systemctl stop firewalld                     | Stop firewall                  |
+| systemctl disable firewalld                  | Disable firewall on boot       |
 
 ================================================================================
 

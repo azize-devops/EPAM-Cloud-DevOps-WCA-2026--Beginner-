@@ -341,33 +341,19 @@ Ubuntu restart option or terminal reboot
 
 ### KEYBOARD SHORTCUTS SUMMARY
 
-````
-+----------------------+----------------------------------------+
-| Shortcut             | Action                                 |
-+----------------------+----------------------------------------+
-| Host Key             | Release mouse/keyboard from VM         |
-+----------------------+----------------------------------------+
-| Host Key + F         | Toggle fullscreen mode                 |
-+----------------------+----------------------------------------+
-| Host Key + L         | Toggle seamless mode                   |
-+----------------------+----------------------------------------+
-| Host Key + C         | Toggle scaled mode                     |
-+----------------------+----------------------------------------+
-| Host Key + Home      | Show Machine menu                      |
-+----------------------+----------------------------------------+
-| Host Key + P         | Pause VM                               |
-+----------------------+----------------------------------------+
-| Host Key + R         | Reset (hard reboot)                    |
-+----------------------+----------------------------------------+
-| Host Key + Q         | Close VM (shows options dialog)        |
-+----------------------+----------------------------------------+
-| Host Key + S         | Take snapshot                          |
-+----------------------+----------------------------------------+
-| Host Key + E         | Take screenshot                        |
-+----------------------+----------------------------------------+
-| Host Key + Del       | Send Ctrl+Alt+Del to VM                |
-+----------------------+----------------------------------------+
-````
+| Shortcut | Action |
+|----------|--------|
+| Host Key | Release mouse/keyboard from VM |
+| Host Key + F | Toggle fullscreen mode |
+| Host Key + L | Toggle seamless mode |
+| Host Key + C | Toggle scaled mode |
+| Host Key + Home | Show Machine menu |
+| Host Key + P | Pause VM |
+| Host Key + R | Reset (hard reboot) |
+| Host Key + Q | Close VM (shows options dialog) |
+| Host Key + S | Take snapshot |
+| Host Key + E | Take screenshot |
+| Host Key + Del | Send Ctrl+Alt+Del to VM |
 
 VM in fullscreen mode
 <p align="center">

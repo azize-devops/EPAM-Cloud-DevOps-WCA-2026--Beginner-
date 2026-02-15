@@ -227,13 +227,11 @@ Explanation of permissions 640:
 - 0 (others/public): --- (no permissions)
 
 Permission breakdown:
-+-------+-------+-------+-------+
 | Octal | Binary| Perms | Meaning|
-+-------+-------+-------+-------+
+|-------|-------|-------|--------|
 |   6   |  110  | rw-   | read+write |
 |   4   |  100  | r--   | read only  |
 |   0   |  000  | ---   | none       |
-+-------+-------+-------+-------+
 
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 6 <<<                          |
@@ -269,13 +267,11 @@ Explanation:
 - Therefore, user2 CANNOT read the file
 
 Access check:
-+----------+------------+------------+
 | Category | User/Group | Can Read?  |
-+----------+------------+------------+
+|----------|------------|------------|
 | Owner    | user1      | YES (rw-)  |
 | Group    | group1     | YES (r--)  |
 | Others   | user2      | NO (---)   |
-+----------+------------+------------+
 
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 7 <<<                          |
@@ -351,13 +347,11 @@ Explanation:
 - Therefore, user2 CAN now read the file!
 
 Access check after chown:
-+----------+------------+------------+
 | Category | User/Group | Can Read?  |
-+----------+------------+------------+
+|----------|------------|------------|
 | Owner    | user1      | YES (rw-)  |
 | Group    | shared     | YES (r--)  |
 | Others   | everyone   | NO (---)   |
-+----------+------------+------------+
 
 user2 is in "shared" group → matches Group category → CAN READ!
 
@@ -481,19 +475,16 @@ FILE PERMISSIONS EXPLAINED
 ================================================================================
 
 PERMISSION FORMAT: -rwxrwxrwx
-+-----+----------+------------------+
 | Pos | Category | Description      |
-+-----+----------+------------------+
+|-----|----------|------------------|
 |  1  | Type     | - file, d dir, l link |
 | 2-4 | Owner    | User permissions |
 | 5-7 | Group    | Group permissions|
 | 8-10| Others   | Public permissions|
-+-----+----------+------------------+
 
 PERMISSION VALUES:
-+------+--------+-------+
 | Perm | Binary | Octal |
-+------+--------+-------+
+|------|--------|-------|
 | ---  |  000   |   0   |
 | --x  |  001   |   1   |
 | -w-  |  010   |   2   |
@@ -502,18 +493,15 @@ PERMISSION VALUES:
 | r-x  |  101   |   5   |
 | rw-  |  110   |   6   |
 | rwx  |  111   |   7   |
-+------+--------+-------+
 
 COMMON PERMISSION SETS:
-+------+------------+----------------------+
 | Octal| Permission | Typical Use          |
-+------+------------+----------------------+
+|------|------------|----------------------|
 | 755  | rwxr-xr-x  | Directories, scripts |
 | 644  | rw-r--r-- | Regular files        |
 | 640  | rw-r-----  | Private group files  |
 | 600  | rw-------  | Private files        |
 | 700  | rwx------  | Private directories  |
-+------+------------+----------------------+
 
 
 ================================================================================
@@ -521,9 +509,8 @@ USER AND GROUP COMMANDS REFERENCE
 ================================================================================
 
 USER COMMANDS:
-+---------------------------+------------------------------------------+
 | Command                   | Description                              |
-+---------------------------+------------------------------------------+
+|---------------------------|------------------------------------------|
 | useradd username          | Create new user                          |
 | useradd -u UID username   | Create user with specific UID            |
 | useradd -g group username | Create user with primary group           |
@@ -532,23 +519,19 @@ USER COMMANDS:
 | usermod -aG group user    | Add user to supplementary group          |
 | passwd username           | Set/change password                      |
 | id username               | Show user UID, GID, groups               |
-+---------------------------+------------------------------------------+
 
 GROUP COMMANDS:
-+---------------------------+------------------------------------------+
 | Command                   | Description                              |
-+---------------------------+------------------------------------------+
+|---------------------------|------------------------------------------|
 | groupadd groupname        | Create new group                         |
 | groupadd -g GID groupname | Create group with specific GID           |
 | groupdel groupname        | Delete group                             |
 | groups username           | Show groups user belongs to              |
 | getent group groupname    | Get group information                    |
-+---------------------------+------------------------------------------+
 
 PERMISSION COMMANDS:
-+---------------------------+------------------------------------------+
 | Command                   | Description                              |
-+---------------------------+------------------------------------------+
+|---------------------------|------------------------------------------|
 | chmod 640 file            | Set permissions using octal              |
 | chmod u+x file            | Add execute for user                     |
 | chmod g-w file            | Remove write for group                   |
@@ -556,17 +539,14 @@ PERMISSION COMMANDS:
 | chown user file           | Change owner                             |
 | chown user:group file     | Change owner and group                   |
 | chgrp group file          | Change group only                        |
-+---------------------------+------------------------------------------+
 
 SWITCH USER COMMANDS:
-+---------------------------+------------------------------------------+
 | Command                   | Description                              |
-+---------------------------+------------------------------------------+
+|---------------------------|------------------------------------------|
 | su - username             | Switch to user (login shell)             |
 | su username               | Switch to user (non-login shell)         |
 | sudo -u username command  | Run command as specific user             |
 | sudo su - username        | Switch to user using sudo                |
-+---------------------------+------------------------------------------+
 
 
 ================================================================================

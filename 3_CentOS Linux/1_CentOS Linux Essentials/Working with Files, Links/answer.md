@@ -374,25 +374,16 @@ All files cleaned up successfully.
 SOFT LINK vs HARD LINK COMPARISON
 ================================================================================
 
-+---------------------------+---------------------------+---------------------------+
-| Feature                   | Soft Link (Symbolic)      | Hard Link                 |
-+---------------------------+---------------------------+---------------------------+
-| Command                   | ln -s target link         | ln target link            |
-+---------------------------+---------------------------+---------------------------+
-| Points to                 | File path (name)          | Inode (data blocks)       |
-+---------------------------+---------------------------+---------------------------+
-| If original deleted       | BROKEN (doesn't work)     | STILL WORKS               |
-+---------------------------+---------------------------+---------------------------+
-| Can link to directory     | YES                       | NO (usually)              |
-+---------------------------+---------------------------+---------------------------+
-| Can cross filesystems     | YES                       | NO                        |
-+---------------------------+---------------------------+---------------------------+
-| ls -l display             | l--------- name -> target | ---------- name           |
-+---------------------------+---------------------------+---------------------------+
-| Inode                     | Different from target     | Same as target            |
-+---------------------------+---------------------------+---------------------------+
-| File size                 | Length of target path     | Same as target            |
-+---------------------------+---------------------------+---------------------------+
+| Feature | Soft Link (Symbolic) | Hard Link |
+|---------|----------------------|-----------|
+| Command | ln -s target link | ln target link |
+| Points to | File path (name) | Inode (data blocks) |
+| If original deleted | BROKEN (doesn't work) | STILL WORKS |
+| Can link to directory | YES | NO (usually) |
+| Can cross filesystems | YES | NO |
+| ls -l display | l--------- name -> target | ---------- name |
+| Inode | Different from target | Same as target |
+| File size | Length of target path | Same as target |
 
 VISUAL REPRESENTATION:
 
@@ -469,30 +460,28 @@ USEFUL COMMANDS REFERENCE
 ================================================================================
 
 LINK COMMANDS:
-+---------------------------+------------------------------------------+
-| Command                   | Description                              |
-+---------------------------+------------------------------------------+
-| ln -s target link         | Create symbolic (soft) link              |
-| ln target link            | Create hard link                         |
-| ls -l                     | Show links (soft links show ->)          |
-| ls -li                    | Show inode numbers                       |
-| readlink link             | Show target of symbolic link             |
-| readlink -f link          | Show absolute path of target             |
-| unlink link               | Remove a link                            |
-| find . -type l            | Find all symbolic links                  |
-| find . -xtype l           | Find broken symbolic links               |
-+---------------------------+------------------------------------------+
+
+| Command | Description |
+|---------|-------------|
+| ln -s target link | Create symbolic (soft) link |
+| ln target link | Create hard link |
+| ls -l | Show links (soft links show ->) |
+| ls -li | Show inode numbers |
+| readlink link | Show target of symbolic link |
+| readlink -f link | Show absolute path of target |
+| unlink link | Remove a link |
+| find . -type l | Find all symbolic links |
+| find . -xtype l | Find broken symbolic links |
 
 PERMISSION COMMANDS:
-+---------------------------+------------------------------------------+
-| Command                   | Description                              |
-+---------------------------+------------------------------------------+
-| chmod +x file             | Add execute permission                   |
-| chmod -x file             | Remove execute permission                |
-| chmod 755 file            | rwxr-xr-x (owner full, others read/exec) |
-| chmod 644 file            | rw-r--r-- (owner rw, others read)        |
-| chmod u+x file            | Add execute for user (owner) only        |
-+---------------------------+------------------------------------------+
+
+| Command | Description |
+|---------|-------------|
+| chmod +x file | Add execute permission |
+| chmod -x file | Remove execute permission |
+| chmod 755 file | rwxr-xr-x (owner full, others read/exec) |
+| chmod 644 file | rw-r--r-- (owner rw, others read) |
+| chmod u+x file | Add execute for user (owner) only |
 
 
 ================================================================================

@@ -33,14 +33,11 @@ backups, etc.)    UPDATE, DELETE)
 AUDIT DESTINATIONS:
 ------------------
 
-+----------------------+--------------------------------------------------+
-| Destination          | Description                                      |
-+----------------------+--------------------------------------------------+
-| File                 | Binary audit files (.sqlaudit). Most common.     |
-| Windows Application  | Windows Event Log - Application section          |
-| Windows Security     | Windows Event Log - Security section (requires   |
-|                      | special permissions)                             |
-+----------------------+--------------------------------------------------+
+| Destination | Description |
+|-------------|-------------|
+| File | Binary audit files (.sqlaudit). Most common. |
+| Windows Application | Windows Event Log - Application section |
+| Windows Security | Windows Event Log - Security section (requires special permissions) |
 
 ================================================================================
                     PART 1: CREATE SQL SERVER AUDIT
@@ -142,20 +139,18 @@ STEP 2.1: CREATE SERVER AUDIT SPECIFICATION (T-SQL)
 AVAILABLE SERVER AUDIT ACTION GROUPS:
 -------------------------------------
 
-+------------------------------------+------------------------------------------+
-| Action Group                       | Description                              |
-+------------------------------------+------------------------------------------+
-| BACKUP_RESTORE_GROUP               | Backup or restore commands               |
-| FAILED_LOGIN_GROUP                 | Failed login attempts                    |
-| SUCCESSFUL_LOGIN_GROUP             | Successful logins                        |
-| LOGIN_CHANGE_PASSWORD_GROUP        | Password changes                         |
-| SERVER_ROLE_MEMBER_CHANGE_GROUP    | Server role membership changes           |
-| DATABASE_CHANGE_GROUP              | CREATE/ALTER/DROP database               |
-| SERVER_PERMISSION_CHANGE_GROUP     | Server permission changes                |
-| SERVER_PRINCIPAL_CHANGE_GROUP      | Server principal (login) changes         |
-| AUDIT_CHANGE_GROUP                 | Audit configuration changes              |
-| DATABASE_PERMISSION_CHANGE_GROUP   | Database permission changes              |
-+------------------------------------+------------------------------------------+
+| Action Group | Description |
+|--------------|-------------|
+| BACKUP_RESTORE_GROUP | Backup or restore commands |
+| FAILED_LOGIN_GROUP | Failed login attempts |
+| SUCCESSFUL_LOGIN_GROUP | Successful logins |
+| LOGIN_CHANGE_PASSWORD_GROUP | Password changes |
+| SERVER_ROLE_MEMBER_CHANGE_GROUP | Server role membership changes |
+| DATABASE_CHANGE_GROUP | CREATE/ALTER/DROP database |
+| SERVER_PERMISSION_CHANGE_GROUP | Server permission changes |
+| SERVER_PRINCIPAL_CHANGE_GROUP | Server principal (login) changes |
+| AUDIT_CHANGE_GROUP | Audit configuration changes |
+| DATABASE_PERMISSION_CHANGE_GROUP | Database permission changes |
 
 ================================================================================
                     PART 3: SIMULATE SERVER AUDIT EVENTS
@@ -318,17 +313,15 @@ STEP 4.2: CREATE DATABASE AUDIT SPECIFICATION USING T-SQL (ALTERNATIVE)
 DATABASE AUDIT ACTIONS:
 ----------------------
 
-+------------------+------------------------------------------------+
-| Action           | Description                                    |
-+------------------+------------------------------------------------+
-| SELECT           | SELECT statements                              |
-| INSERT           | INSERT statements                              |
-| UPDATE           | UPDATE statements                              |
-| DELETE           | DELETE statements                              |
-| EXECUTE          | EXECUTE statements (stored procedures)         |
-| RECEIVE          | RECEIVE statements (Service Broker)            |
-| REFERENCES       | REFERENCES permission checks                   |
-+------------------+------------------------------------------------+
+| Action | Description |
+|--------|-------------|
+| SELECT | SELECT statements |
+| INSERT | INSERT statements |
+| UPDATE | UPDATE statements |
+| DELETE | DELETE statements |
+| EXECUTE | EXECUTE statements (stored procedures) |
+| RECEIVE | RECEIVE statements (Service Broker) |
+| REFERENCES | REFERENCES permission checks |
 
 ================================================================================
                     PART 5: PERFORM DATABASE ACTIONS TO TRIGGER AUDIT
@@ -505,21 +498,19 @@ STEP 6.3: FILTER SPECIFIC AUDIT EVENTS
 COMMON ACTION_ID VALUES:
 -----------------------
 
-+----------+--------------------------------+
-| ActionID | Description                    |
-+----------+--------------------------------+
-| BCK      | Backup                         |
-| RS       | Restore                        |
-| LGFL     | Login Failed                   |
-| LGSD     | Login Succeeded                |
-| PWC      | Password Change                |
-| SRVR     | Server Role Member Change      |
-| DL       | Delete                         |
-| UP       | Update                         |
-| SL       | Select                         |
-| IN       | Insert                         |
-| EX       | Execute                        |
-+----------+--------------------------------+
+| ActionID | Description |
+|----------|-------------|
+| BCK | Backup |
+| RS | Restore |
+| LGFL | Login Failed |
+| LGSD | Login Succeeded |
+| PWC | Password Change |
+| SRVR | Server Role Member Change |
+| DL | Delete |
+| UP | Update |
+| SL | Select |
+| IN | Insert |
+| EX | Execute |
 
 STEP 6.4: EXPORT AUDIT LOG TO TABLE
 -----------------------------------
@@ -862,34 +853,29 @@ STEP 8.4: ON TARGET SERVER - Restore Database
 AUDIT COMPONENTS CREATED:
 ------------------------
 
-+-----------------------------+--------------------------------------------+
-| Component                   | Purpose                                    |
-+-----------------------------+--------------------------------------------+
-| ServerSecurityAudit         | Server audit (writes to C:\SQLAudit\)      |
-| ServerAuditSpec             | Server-level audit specification           |
-|   - BACKUP_RESTORE_GROUP    | Logs backup/restore operations             |
-|   - FAILED_LOGIN_GROUP      | Logs failed login attempts                 |
-|   - LOGIN_CHANGE_PASSWORD   | Logs password changes                      |
-+-----------------------------+--------------------------------------------+
-| AdventureWorksAuditSpec     | Database-level audit specification         |
-|   - DELETE on dbo           | Logs DELETE operations                     |
-|   - UPDATE on Person        | Logs UPDATE operations                     |
-|   - SELECT on HR.Employee   | Logs SELECT operations                     |
-|   - INSERT on dbo           | Logs INSERT operations                     |
-+-----------------------------+--------------------------------------------+
+| Component | Purpose |
+|-----------|---------|
+| ServerSecurityAudit | Server audit (writes to C:\SQLAudit\) |
+| ServerAuditSpec | Server-level audit specification |
+| - BACKUP_RESTORE_GROUP | Logs backup/restore operations |
+| - FAILED_LOGIN_GROUP | Logs failed login attempts |
+| - LOGIN_CHANGE_PASSWORD | Logs password changes |
+| AdventureWorksAuditSpec | Database-level audit specification |
+| - DELETE on dbo | Logs DELETE operations |
+| - UPDATE on Person | Logs UPDATE operations |
+| - SELECT on HR.Employee | Logs SELECT operations |
+| - INSERT on dbo | Logs INSERT operations |
 
 TDE COMPONENTS CREATED:
 ----------------------
 
-+---------------------------+----------------------------------------------+
-| Component                 | Location                                     |
-+---------------------------+----------------------------------------------+
-| Master Key                | master database                              |
-| TDECertificate            | master database                              |
-| Database Encryption Key   | AdventureWorks2019                           |
-| Certificate Backup        | C:\SQLCerts\TDECertificate.cer               |
-| Private Key Backup        | C:\SQLCerts\TDECertificate_PrivateKey.pvk    |
-+---------------------------+----------------------------------------------+
+| Component | Location |
+|-----------|----------|
+| Master Key | master database |
+| TDECertificate | master database |
+| Database Encryption Key | AdventureWorks2019 |
+| Certificate Backup | C:\SQLCerts\TDECertificate.cer |
+| Private Key Backup | C:\SQLCerts\TDECertificate_PrivateKey.pvk |
 
 KEY COMMANDS REFERENCE:
 ----------------------

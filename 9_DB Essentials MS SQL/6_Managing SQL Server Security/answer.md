@@ -28,13 +28,11 @@ SECURITY HIERARCHY:
 AUTHENTICATION TYPES:
 --------------------
 
-+----------------------+-------------------------------------------------------+
-| Type                 | Description                                           |
-+----------------------+-------------------------------------------------------+
-| Windows Auth         | Uses Windows/AD accounts. More secure, SSO support.   |
-| SQL Server Auth      | Username/password stored in SQL Server. Cross-platform|
-| Contained DB User    | Auth at database level. Portable with database.       |
-+----------------------+-------------------------------------------------------+
+| Type | Description |
+|------|-------------|
+| Windows Auth | Uses Windows/AD accounts. More secure, SSO support. |
+| SQL Server Auth | Username/password stored in SQL Server. Cross-platform |
+| Contained DB User | Auth at database level. Portable with database. |
 
 ================================================================================
                     PART 1: CREATE WINDOWS LOCAL ACCOUNTS
@@ -845,21 +843,14 @@ METHOD 2: USING DATA MIGRATION ASSISTANT
 USERS AND PERMISSIONS CREATED:
 -----------------------------
 
-+-------------------+--------------------+----------------------------------+
-| User              | Auth Type          | Permissions                      |
-+-------------------+--------------------+----------------------------------+
-| Dev1-Dev5         | SQL Authentication | Read/Write all data              |
-+-------------------+--------------------+----------------------------------+
-| svc_sqlapp        | Windows Auth       | R/W only ApplicationData table   |
-+-------------------+--------------------+----------------------------------+
-| svc_sqlmaint      | Windows Auth       | Modify DB, Backup, No Delete     |
-+-------------------+--------------------+----------------------------------+
-| BackupUser        | SQL Authentication | Backup all DBs, No read data     |
-+-------------------+--------------------+----------------------------------+
-| QA1, QA2          | SQL Authentication | Read-only all data               |
-+-------------------+--------------------+----------------------------------+
-| LabUser           | Contained          | Full access to LabDB (portable)  |
-+-------------------+--------------------+----------------------------------+
+| User | Auth Type | Permissions |
+|------|-----------|-------------|
+| Dev1-Dev5 | SQL Authentication | Read/Write all data |
+| svc_sqlapp | Windows Auth | R/W only ApplicationData table |
+| svc_sqlmaint | Windows Auth | Modify DB, Backup, No Delete |
+| BackupUser | SQL Authentication | Backup all DBs, No read data |
+| QA1, QA2 | SQL Authentication | Read-only all data |
+| LabUser | Contained | Full access to LabDB (portable) |
 
 CONTAINED DATABASE BENEFITS:
 ---------------------------

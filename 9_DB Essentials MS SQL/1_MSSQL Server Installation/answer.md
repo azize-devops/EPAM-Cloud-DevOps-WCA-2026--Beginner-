@@ -801,17 +801,11 @@ PROBLEM: Command line installation failed
 
 Installation Completed:
 -----------------------
-+------------------+-------------------+------------------+
-| Component        | Instance Name     | Status           |
-+------------------+-------------------+------------------+
-| SQL Server       | MSSQLSERVER       | Default Instance |
-| (GUI Install)    |                   | Port 1433        |
-+------------------+-------------------+------------------+
-| SQL Server       | YOURINSTANCE      | Named Instance   |
-| (CMD Install)    |                   | Dynamic Port     |
-+------------------+-------------------+------------------+
-| SSMS             | N/A               | VM + Host        |
-+------------------+-------------------+------------------+
+| Component | Instance Name | Status |
+|-----------|---------------|--------|
+| SQL Server (GUI Install) | MSSQLSERVER | Default Instance, Port 1433 |
+| SQL Server (CMD Install) | YOURINSTANCE | Named Instance, Dynamic Port |
+| SSMS | N/A | VM + Host |
 
 Custom File Locations:
 ----------------------

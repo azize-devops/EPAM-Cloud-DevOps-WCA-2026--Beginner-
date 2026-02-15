@@ -488,68 +488,52 @@ Expected output:
 +----------------------------------------------------------+
 
 
-================================================================================
-                           GIT COMMANDS REFERENCE
-================================================================================
+## GIT COMMANDS REFERENCE
 
-| Command                          | Description                              |
-|----------------------------------|------------------------------------------|
-| git init                         | Initialize new repository                |
-| git clone <url>                  | Clone remote repository                  |
-| git status                       | Show working tree status                 |
-| git add <file>                   | Stage file for commit                    |
-| git add .                        | Stage all changes                        |
-| git commit -m "message"          | Commit staged changes                    |
-| git push                         | Push commits to remote                   |
-| git push -u origin main          | Push and set upstream branch             |
-| git pull                         | Fetch and merge remote changes           |
-| git fetch                        | Fetch remote changes without merge       |
-| git log                          | Show commit history                      |
-| git log --oneline                | Show compact commit history              |
-| git diff                         | Show unstaged changes                    |
-| git diff --staged                | Show staged changes                      |
-| git branch                       | List branches                            |
-| git checkout <branch>            | Switch to branch                         |
-| git remote -v                    | Show remote repositories                 |
+| Command | Description |
+|---------|-------------|
+| git init | Initialize new repository |
+| git clone <url> | Clone remote repository |
+| git status | Show working tree status |
+| git add <file> | Stage file for commit |
+| git add . | Stage all changes |
+| git commit -m "message" | Commit staged changes |
+| git push | Push commits to remote |
+| git push -u origin main | Push and set upstream branch |
+| git pull | Fetch and merge remote changes |
+| git fetch | Fetch remote changes without merge |
+| git log | Show commit history |
+| git log --oneline | Show compact commit history |
+| git diff | Show unstaged changes |
+| git diff --staged | Show staged changes |
+| git branch | List branches |
+| git checkout <branch> | Switch to branch |
+| git remote -v | Show remote repositories |
 
-================================================================================
+## SSH KEY COMMANDS
 
+| Command | Description |
+|---------|-------------|
+| ssh-keygen -t ed25519 -C "email" | Generate Ed25519 key |
+| ssh-keygen -t rsa -b 4096 -C "email" | Generate RSA key |
+| eval "$(ssh-agent -s)" | Start SSH agent |
+| ssh-add ~/.ssh/id_ed25519 | Add key to agent |
+| ssh -T git@github.com | Test GitHub SSH connection |
+| cat ~/.ssh/id_ed25519.pub | Display public key |
 
-================================================================================
-                           SSH KEY COMMANDS
-================================================================================
+## GIT CONFIG OPTIONS
 
-| Command                              | Description                          |
-|--------------------------------------|--------------------------------------|
-| ssh-keygen -t ed25519 -C "email"     | Generate Ed25519 key                 |
-| ssh-keygen -t rsa -b 4096 -C "email" | Generate RSA key                     |
-| eval "$(ssh-agent -s)"               | Start SSH agent                      |
-| ssh-add ~/.ssh/id_ed25519            | Add key to agent                     |
-| ssh -T git@github.com                | Test GitHub SSH connection           |
-| cat ~/.ssh/id_ed25519.pub            | Display public key                   |
-
-================================================================================
-
-
-================================================================================
-                           GIT CONFIG OPTIONS
-================================================================================
-
-| Command                                    | Description                    |
-|-------------------------------------------|--------------------------------|
-| git config --global user.name "Name"      | Set global username            |
-| git config --global user.email "email"    | Set global email               |
-| git config --global --list                | List global config             |
-| git config --local --list                 | List repo-specific config      |
-| git config --global core.editor "vim"     | Set default editor             |
-| git config --global init.defaultBranch main | Set default branch name      |
-
-================================================================================
+| Command | Description |
+|---------|-------------|
+| git config --global user.name "Name" | Set global username |
+| git config --global user.email "email" | Set global email |
+| git config --global --list | List global config |
+| git config --local --list | List repo-specific config |
+| git config --global core.editor "vim" | Set default editor |
+| git config --global init.defaultBranch main | Set default branch name |
 
 
-================================================================================
-                             TROUBLESHOOTING
-================================================================================
+## TROUBLESHOOTING
 
 Problem: Permission denied (publickey)
 Solutions:
@@ -581,12 +565,7 @@ Solutions:
 - Check git status to see file states
 - Verify you're in the correct directory
 
-================================================================================
-
-
-================================================================================
-                              SELF-REVIEW CHECKLIST
-================================================================================
+## SELF-REVIEW CHECKLIST
 
 [ ] Git installed and version verified
 [ ] SSH key pair generated
@@ -605,6 +584,4 @@ Solutions:
 [ ] git pull executed locally
 [ ] Complete lyrics visible in local song.txt
 [ ] Both commits visible in git log
-
-================================================================================
 

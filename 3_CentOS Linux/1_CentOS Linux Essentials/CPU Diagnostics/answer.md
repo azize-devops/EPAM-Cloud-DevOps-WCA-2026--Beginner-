@@ -705,19 +705,16 @@ CPU COMMANDS REFERENCE
 ================================================================================
 
 VIEWING CPU INFO:
-+---------------------------+------------------------------------------+
 | Command                   | Description                              |
-+---------------------------+------------------------------------------+
+|---------------------------|------------------------------------------|
 | lscpu                     | Display CPU architecture information     |
 | nproc                     | Print number of processing units         |
 | cat /proc/cpuinfo         | Detailed CPU information                 |
 | getconf _NPROCESSORS_ONLN | Number of online processors              |
-+---------------------------+------------------------------------------+
 
 MONITORING CPU USAGE:
-+---------------------------+------------------------------------------+
 | Command                   | Description                              |
-+---------------------------+------------------------------------------+
+|---------------------------|------------------------------------------|
 | top                       | Interactive process viewer               |
 | htop                      | Enhanced interactive viewer              |
 | uptime                    | System uptime and load averages          |
@@ -726,17 +723,14 @@ MONITORING CPU USAGE:
 | vmstat                    | Virtual memory and CPU statistics        |
 | pidstat                   | Per-process CPU usage (sysstat)          |
 | sar                       | System activity reporter (sysstat)       |
-+---------------------------+------------------------------------------+
 
 PROCESS SORTING:
-+---------------------------+------------------------------------------+
 | Command                   | Description                              |
-+---------------------------+------------------------------------------+
+|---------------------------|------------------------------------------|
 | ps aux --sort=-%cpu       | Sort by CPU descending                   |
 | ps aux --sort=%cpu        | Sort by CPU ascending                    |
 | top + P key               | Sort by CPU in top                       |
 | htop + F6                 | Choose sort column in htop               |
-+---------------------------+------------------------------------------+
 
 
 ================================================================================
@@ -745,24 +739,20 @@ LOAD AVERAGE INTERPRETATION
 
 For a system with N CPU cores:
 
-+------------------+------------------------------------------+
 | Load Average     | Interpretation                           |
-+------------------+------------------------------------------+
+|------------------|------------------------------------------|
 | < N × 0.7        | Healthy, plenty of capacity              |
 | N × 0.7 to N     | Moderate load, acceptable                |
 | N to N × 1.5     | High load, may need attention            |
 | > N × 1.5        | Overloaded, processes are waiting        |
-+------------------+------------------------------------------+
 
 Example with 4 CPU cores:
-+------------------+------------------------------------------+
 | Load Average     | Status                                   |
-+------------------+------------------------------------------+
+|------------------|------------------------------------------|
 | < 2.8            | Healthy                                  |
 | 2.8 - 4.0        | Moderate                                 |
 | 4.0 - 6.0        | High                                     |
 | > 6.0            | Overloaded                               |
-+------------------+------------------------------------------+
 
 
 ================================================================================
