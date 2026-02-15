@@ -4,9 +4,9 @@ The practical part of the Linux Networking module involves creating a network
 using VirtualBox, which is shown in the network diagram below.
 
 
-NETWORK TOPOLOGY:
------------------
+## NETWORK TOPOLOGY
 
+```
                             [Internet/Cloud]
                                    |
                                    |
@@ -21,32 +21,31 @@ NETWORK TOPOLOGY:
         |                                                 |
         +----------------- Net4 --------------------------+
                                                         Int2
+```
 
 
-NETWORK DESCRIPTION:
---------------------
+## NETWORK DESCRIPTION
 
 - Host: The computer on which VirtualBox is running.
 
 - Server_1: A virtual machine on which the Linux OS is deployed.
-  * Int1 - "Network bridge" mode, connected to Net1 (home network)
-  * IP address of Int1 is set statically (e.g., 192.168.1.200/24)
-  * Int2 - "Internal network" mode, connected to Net2
-  * Int3 - "Internal network" mode, connected to Net3
+  - Int1 - "Network bridge" mode, connected to Net1 (home network)
+  - IP address of Int1 is set statically (e.g., 192.168.1.200/24)
+  - Int2 - "Internal network" mode, connected to Net2
+  - Int3 - "Internal network" mode, connected to Net3
 
 - Client_1 and Client_2: Virtual machines with different Linux distributions
   (e.g., Ubuntu and CentOS).
-  * Interfaces connected in "Internal network" mode to Net2, Net3, and Net4
+  - Interfaces connected in "Internal network" mode to Net2, Net3, and Net4
     as shown in the diagram.
 
 - Address Space Requirements:
-  * Net2, Net3, and Net4 must use private IP ranges
-  * Must not overlap with the host network address space
-  * Same applies to IPaddr1 and IPaddr2
+  - Net2, Net3, and Net4 must use private IP ranges
+  - Must not overlap with the host network address space
+  - Same applies to IPaddr1 and IPaddr2
 
 
-TASKS:
-------
+## TASKS
 
 1. Configure static addresses on all interfaces on Server_1.
 
@@ -68,8 +67,7 @@ TASKS:
    ping the Internet resources, for example 8.8.8.8
 
 
-SELF-REVIEW:
-------------
+## SELF-REVIEW
 
 - All VMs can communicate according to the network topology
 - DHCP assigns IP addresses to Client_1 and Client_2
@@ -81,11 +79,9 @@ SELF-REVIEW:
 - Both clients can ping 8.8.8.8 (Internet access via NAT)
 
 
-HELPFUL MATERIALS:
-------------------
+## HELPFUL MATERIALS
 
-https://www.tecmint.com/ip-command-examples/
-https://wiki.archlinux.org/title/dhcpd
-https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands
-https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/
-
+- [IP Command Examples](https://www.tecmint.com/ip-command-examples/)
+- [Arch Wiki - dhcpd](https://wiki.archlinux.org/title/dhcpd)
+- [DigitalOcean - iptables Essentials](https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands)
+- [Red Hat Networking Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/)
