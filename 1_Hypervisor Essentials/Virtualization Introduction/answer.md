@@ -368,17 +368,11 @@ Ubuntu restart option or terminal reboot
 | Host Key + Del       | Send Ctrl+Alt+Del to VM                |
 +----------------------+----------------------------------------+
 
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5f <<<                         |
-|                                                                  |
-|  VM in fullscreen mode showing:                                  |
-|  - Ubuntu desktop in fullscreen                                  |
-|  - No VirtualBox window borders visible                          |
-|  - (Press Host Key + F to toggle fullscreen)                     |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+
+VM in fullscreen mode
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VM20in%fullscreen%20mode%20-3.png" alt="VM in fullscreen mode-3" width="900">
+</p>
 
 ### MOUSE CAPTURE
 
@@ -386,17 +380,11 @@ Ubuntu restart option or terminal reboot
 - Mouse cursor is confined to VM window
 - Press Host Key to release mouse
 - Auto-capture can be disabled in VM settings
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5g <<<                         |
-|                                                                  |
-|  VM window showing mouse capture message:                        |
-|  - Message at bottom of VM window                                |
-|  - "Right Ctrl to release mouse" or similar                      |
-|  - Mouse cursor inside VM                                        |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+
+Mouse capture message
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Mouse%20capture%20message.png" alt="Mouse capture message" width="900">
+</p>
 
 ### SAVE STATE DEMONSTRATION
 
@@ -410,18 +398,11 @@ To Resume:
 1. Select VM1
 2. Click "Start"
 3. VM resumes from exact saved state
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5h <<<                         |
-|                                                                  |
-|  VirtualBox Manager showing:                                     |
-|  - VM1 in list                                                   |
-|  - State: "Saved"                                                |
-|  - Restore button or Start button visible                        |
-|  - Preview/thumbnail shows saved state                           |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+
+VM in -Saved-state in Manager
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VM%20in%20-Saved-state%20in%20Manager.png" alt="VM in -Saved-state in Manager" width="900">
+</p>
 
 ##  TASK 6: Clone VM1 to create VM2
 
@@ -449,6 +430,12 @@ To Resume:
 #### Step 2: Select VM1 and start Clone wizard
 - Right-click on VM1 > Clone
 - OR select VM1 > Machine menu > Clone
+
+Clone option in context menu
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Clone%20option%20in%20context%20menu.png" alt="Clone option in context menu" width="900">
+</p>
+
 ````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 6a <<<                         |
@@ -467,6 +454,8 @@ Name and Path:
 2. Path: (default or choose location)
 3. MAC Address Policy: Generate new MAC addresses for all adapters
    (Important! Each VM needs unique MAC addresses)
+
+Clone dialog - Name and MAC address
 ````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 6b <<<                         |
@@ -487,6 +476,8 @@ Name and Path:
 2. Linked Clone
    - Faster and smaller
    - VM2 depends on VM1
+
+Clone dialog - Clone type selection
 ````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 6c <<<                         |
@@ -509,6 +500,8 @@ Name and Path:
 - Cloning process begins
 - Progress bar shows status
 - May take several minutes for Full Clone
+
+Clone progress bar
 ````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 6d <<<                         |
@@ -524,6 +517,8 @@ Name and Path:
 - VM2 appears in VM list
 - VM2 is separate from VM1
 - Both VMs can run simultaneously (with different MAC addresses)
+
+Both VM1 and VM2 in VirtualBox Manager
 ````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 6e <<<                         |
@@ -540,10 +535,15 @@ Name and Path:
 
 1. Start VM2
 2. Verify Ubuntu boots correctly
-3. Check hostname (may still show VM1's name inside)
+3. Check hostname (may still show VM1's name inside)                               
 4. Change hostname if needed:
-   $ sudo hostnamectl set-hostname VM2
-   $ sudo reboot
+    
+    ```
+    $ sudo hostnamectl set-hostname VM2
+    $ sudo reboot
+    ```
+
+VM2 running with hostname verification
 ````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 6f <<<                         |
@@ -563,6 +563,8 @@ Name and Path:
 2. Start VM2
 3. Both VMs run in separate windows
 4. Each VM has independent resources (RAM, CPU, network)
+
+Both VMs running simultaneously
 ````
 +------------------------------------------------------------------+
 |                    >>> SCREENSHOT 6g <<<                         |
