@@ -341,7 +341,7 @@ Ubuntu restart option or terminal reboot
 
 ### KEYBOARD SHORTCUTS SUMMARY
 
-
+````
 +----------------------+----------------------------------------+
 | Shortcut             | Action                                 |
 +----------------------+----------------------------------------+
@@ -367,11 +367,11 @@ Ubuntu restart option or terminal reboot
 +----------------------+----------------------------------------+
 | Host Key + Del       | Send Ctrl+Alt+Del to VM                |
 +----------------------+----------------------------------------+
-
+````
 
 VM in fullscreen mode
 <p align="center">
-  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VM20in%fullscreen%20mode%20-3.png" alt="VM in fullscreen mode-3" width="900">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VM%20in%20fullscreen%20mode-3.png" alt="VM in fullscreen mode-3" width="900">
 </p>
 
 ### MOUSE CAPTURE
