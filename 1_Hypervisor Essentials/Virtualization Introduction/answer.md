@@ -436,17 +436,6 @@ Clone option in context menu
   <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Clone%20option%20in%20context%20menu.png" alt="Clone option in context menu" width="900">
 </p>
 
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 6a <<<                         |
-|                                                                  |
-|  VirtualBox Manager showing:                                     |
-|  - Right-click context menu on VM1                               |
-|  - "Clone..." option highlighted                                 |
-|  - VM1 state: Powered Off or Saved                               |
-|                                                                  |
-+------------------------------------------------------------------+
-````
 ### Step 3: Configure Clone Settings
 
 Name and Path:
@@ -456,18 +445,10 @@ Name and Path:
    (Important! Each VM needs unique MAC addresses)
 
 Clone dialog - Name and MAC address
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 6b <<<                         |
-|                                                                  |
-|  Clone Virtual Machine dialog showing:                           |
-|  - Name: VM2                                                     |
-|  - Path setting                                                  |
-|  - MAC Address Policy dropdown:                                  |
-|    "Generate new MAC addresses for all network adapters"         |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Clone%20dialog%20-%20Name%20and%20MAC%20address.png" alt="Clone dialog - Name and MAC address" width="900">
+</p>
+
 ### Step 4: Select Clone Type
 1. Full Clone (Recommended)
    - Creates independent copy
@@ -478,18 +459,10 @@ Clone dialog - Name and MAC address
    - VM2 depends on VM1
 
 Clone dialog - Clone type selection
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 6c <<<                         |
-|                                                                  |
-|  Clone Type selection showing:                                   |
-|  - ( ) Full Clone                                                |
-|  - ( ) Linked Clone                                              |
-|  - Description of each option visible                            |
-|  - "Full Clone" selected (recommended)                           |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+<p align="center">0
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Clone%20dialog%20-%20Clone%20type%20selection.png" alt="Clone dialog - Clone type selection" width="900">
+</p>
+
 #### Step 5: Select Snapshots (if any)
 - If VM1 has snapshots:
   - Current machine state
@@ -502,34 +475,19 @@ Clone dialog - Clone type selection
 - May take several minutes for Full Clone
 
 Clone progress bar
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 6d <<<                         |
-|                                                                  |
-|  Clone progress showing:                                         |
-|  - Progress bar                                                  |
-|  - "Cloning virtual machine..." message                          |
-|  - Percentage complete                                           |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+<p align="center">0
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Clone%20progress%20bar.png" alt="Clone progress bar" width="900">
+</p>
+
 #### Step 7: Verify VM2 in VirtualBox Manager
 - VM2 appears in VM list
 - VM2 is separate from VM1
 - Both VMs can run simultaneously (with different MAC addresses)
 
 Both VM1 and VM2 in VirtualBox Manager
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 6e <<<                         |
-|                                                                  |
-|  VirtualBox Manager showing:                                     |
-|  - VM list with both VM1 and VM2                                 |
-|  - VM2 visible as new entry                                      |
-|  - Both VMs show "Powered Off" state                             |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+<p align="center">0
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Both%20VM1%20and%20VM2%20in%20VirtualBox%20Manager.png" alt="Both VM1 and VM2 in VirtualBox Manager" width="900">
+</p>
 
 ### VERIFY CLONE WORKS
 
@@ -544,18 +502,9 @@ Both VM1 and VM2 in VirtualBox Manager
     ```
 
 VM2 running with hostname verification
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 6f <<<                         |
-|                                                                  |
-|  VM2 running showing:                                            |
-|  - Ubuntu desktop on VM2                                         |
-|  - Terminal with hostname command:                               |
-|    $ hostnamectl                                                 |
-|  - OR VirtualBox window title showing "VM2"                      |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+<p align="center">0
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VM2%20running%20with%20hostname%20verification.png" alt="VM2 running with hostname verification" width="900">
+</p>
 
 ### RUNNING BOTH VMs SIMULTANEOUSLY
 
@@ -565,18 +514,9 @@ VM2 running with hostname verification
 4. Each VM has independent resources (RAM, CPU, network)
 
 Both VMs running simultaneously
-````
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 6g <<<                         |
-|                                                                  |
-|  Desktop showing:                                                |
-|  - Two VirtualBox windows side by side                           |
-|  - VM1 window with Ubuntu                                        |
-|  - VM2 window with Ubuntu                                        |
-|  - Both running simultaneously                                   |
-|                                                                  |
-+------------------------------------------------------------------+
-````
+<p align="center">0
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Both%20VMs%20running%20simultaneously.png" alt="Both VMs running simultaneously" width="900">
+</p>
 
 # TROUBLESHOOTING
 
@@ -600,42 +540,3 @@ Both VMs running simultaneously
 
 - **`PROBLEM:`** Clone fails
   - **`SOLUTION:`** Ensure VM is powered off, not just saved state
-
-
-# SCREENSHOTS CHECKLIST
-
-Print this checklist and mark each screenshot as you take it:
-
-- [**✓**] SCREENSHOT 1   - VirtualBox manual webpage in browser
-- [**✓**] SCREENSHOT 2a  - VirtualBox download page
-- [**✓**] SCREENSHOT 2b  - VirtualBox installation wizard (feature selection)
-- [**✓**] SCREENSHOT 2c  - VirtualBox installation complete
-- [**✓**] SCREENSHOT 2d  - VirtualBox Manager main window
-- [**✓**] SCREENSHOT 3a  - Ubuntu download page
-- [**✓** ] SCREENSHOT 3b  - Downloaded Ubuntu ISO file
-- [**✓**] SCREENSHOT 4a  - Create VM dialog - Name and OS
-- [**✓**] SCREENSHOT 4b  - Create VM dialog - Hardware (RAM, CPU)
-- [**✓**] SCREENSHOT 4c  - Create VM dialog - Virtual Hard Disk
-- [**✓**] SCREENSHOT 4d  - Create VM dialog - Summary
-- [**✓**] SCREENSHOT 4e  - Ubuntu installer - Welcome screen
-- [**✓**] SCREENSHOT 4f  - Ubuntu installer - Installation type
-- [**✓**] SCREENSHOT 4g  - Ubuntu installer - User account creation
-- [**✓**] SCREENSHOT 4h  - Ubuntu installer - Installation complete
-- [**✓**] SCREENSHOT 4i  - Ubuntu desktop after login (VM1)
-- [**✓**] SCREENSHOT 5a  - VirtualBox Preferences - Host Key setting
-- [**✓**] SCREENSHOT 5b  - Start button dropdown menu options
-- [**✓**] SCREENSHOT 5c  - Machine menu with control options
-- [**✓**] SCREENSHOT 5d  - Close VM dialog (Save/Shutdown/Power Off)
-- [**✓**] SCREENSHOT 5e  - Ubuntu restart option or terminal reboot
-- [ ] SCREENSHOT 5f  - VM in fullscreen mode
-- [ ] SCREENSHOT 5g  - Mouse capture message
-- [ ] SCREENSHOT 5h  - VM in "Saved" state in Manager
-- [ ] SCREENSHOT 6a  - Clone option in context menu
-- [ ] SCREENSHOT 6b  - Clone dialog - Name and MAC address
-- [ ] SCREENSHOT 6c  - Clone dialog - Clone type selection
-- [ ] SCREENSHOT 6d  - Clone progress bar
-- [ ] SCREENSHOT 6e  - Both VM1 and VM2 in VirtualBox Manager
-- [ ] SCREENSHOT 6f  - VM2 running with hostname verification
-- [ ] SCREENSHOT 6g  - Both VMs running simultaneously
-
-## TOTAL: 31 Screenshots Required
