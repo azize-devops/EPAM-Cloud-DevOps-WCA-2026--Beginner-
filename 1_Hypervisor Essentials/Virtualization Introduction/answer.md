@@ -336,7 +336,7 @@ Close VM dialog (SaveShutdownPower Off)
 
 Ubuntu restart option or terminal reboot
 <p align="center">
-  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Ubuntu%20restart&20option%20or%20terminal%20reboot.png" alt="Ubuntu restart option or terminal reboot" width="900">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Ubuntu%20restart%20option%20or%20terminal%20reboot.png" alt="Ubuntu restart option or terminal reboot" width="900">
 </p>
 
 ### KEYBOARD SHORTCUTS SUMMARY
