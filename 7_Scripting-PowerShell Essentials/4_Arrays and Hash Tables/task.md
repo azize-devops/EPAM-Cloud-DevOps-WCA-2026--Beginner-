@@ -1,15 +1,12 @@
-# ARRAYS AND HASH TABLES - TASK
+# Arrays and Hash Tables - Task
 
-GOALS:
-------
+## Goals
 
 - Learn to work with arrays and hash tables in PowerShell
 - Understand multi-dimensional arrays
 - Practice nested data structures
 
-
-TASKS:
-------
+## Tasks
 
 1. Create a two-dimensional strongly defined string array.
 
@@ -20,31 +17,30 @@ TASKS:
 
 4. Transform hash-table into ordered hash-table sorted by value.
 
-   Example:
+   **Example:**
+
+   ```powershell
    $hashTable = @{a = 12; g = 4; h = 1; t = 7; d = 8}
+   ```
 
-   Result:
-   Name                           Value
-   ----                           -----
-   h                              1
-   g                              4
-   t                              7
-   d                              8
-   a                              12
+   **Result:**
 
+   | Name | Value |
+   |------|-------|
+   | h    | 1     |
+   | g    | 4     |
+   | t    | 7     |
+   | d    | 8     |
+   | a    | 12    |
 
-SELF-REVIEW:
-------------
+## Self-Review
 
-- Task 1: 2D string array created and accessible
-- Task 2: Value retrieved from hash table in array
-- Task 3: Nested hash table values accessible by keys
-- Task 4: Hash table sorted by value and displayed in order
+- **Task 1:** 2D string array created and accessible
+- **Task 2:** Value retrieved from hash table in array
+- **Task 3:** Nested hash table values accessible by keys
+- **Task 4:** Hash table sorted by value and displayed in order
 
+## Helpful Materials
 
-HELPFUL MATERIALS:
-------------------
-
-https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_arrays
-https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_hash_tables
-
+- https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_arrays
+- https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_hash_tables

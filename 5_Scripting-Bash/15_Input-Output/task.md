@@ -1,18 +1,16 @@
-# INPUT/OUTPUT - TASK
+# Input/Output - Task
 
-GOALS:
-------
+## Goals
 
 - Learn to utilize data streams
 
-
-TASKS:
-------
+## Tasks
 
 1. Create a script that does the following:
    - Asks the user to input a filename
    - Writes the following poem to the file specified by user:
 
+     ```
      An old silent pond...
      A frog jumps into the pond,
      splash! Silence again.
@@ -24,41 +22,43 @@ TASKS:
      In the twilight rain
      these brilliant-hued hibiscus -
      A lovely sunset.
+     ```
 
    - Outputs the poem to the terminal
    - Outputs the message "Task finished" to stderr
 
 2. Run your script:
    - Specify "output" as the file to write the poem to
-   - Redirect stdout to /dev/null
+   - Redirect stdout to `/dev/null`
    - Redirect stderr to "stderr" file
 
-
-SELF-REVIEW:
-------------
+## Self-Review
 
 - Script returns no output (stdout redirected)
 
-- cat output command returns:
-  An old silent pond...
-  A frog jumps into the pond,
-  splash! Silence again.
+- `cat output` command returns:
 
-  Autumn moonlight-
-  a worm digs silently
-  into the chestnut.
+```
+An old silent pond...
+A frog jumps into the pond,
+splash! Silence again.
 
-  In the twilight rain
-  these brilliant-hued hibiscus -
-  A lovely sunset.
+Autumn moonlight-
+a worm digs silently
+into the chestnut.
 
-- cat stderr command returns:
-  Task finished
+In the twilight rain
+these brilliant-hued hibiscus -
+A lovely sunset.
+```
 
+- `cat stderr` command returns:
 
-HELPFUL MATERIALS:
-------------------
+```
+Task finished
+```
 
-https://linuxize.com/post/bash-redirect-stderr-stdout/
-https://devhints.io/bash
+## Helpful Materials
 
+- https://linuxize.com/post/bash-redirect-stderr-stdout/
+- https://devhints.io/bash

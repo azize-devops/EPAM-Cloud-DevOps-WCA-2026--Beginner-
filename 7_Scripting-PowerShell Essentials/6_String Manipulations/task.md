@@ -1,48 +1,51 @@
-# STRING MANIPULATIONS - TASK
+# String Manipulations - Task
 
-GOALS:
-------
+## Goals
 
 - Learn string manipulation techniques in PowerShell
 - Work with character arrays and sorting
 - Implement case conversion logic
 
-
-TASKS:
-------
+## Tasks
 
 1. Create a new sorted string using two strings with random characters in them.
    Strings contains only letters from a to z.
 
-   Example:
+   **Example:**
+
+   ```powershell
    $str1 = "xyaabbbccccdefww"
    $str2 = "xxxxyyyyabklmopq"
+   ```
 
-   Result:
+   **Result:**
+
+   ```
    "abcdefklmopqwxy"
+   ```
 
-2. Write a script that converts dash/underscore delimited words into
-   camel and pascal casing.
+2. Write a script that converts dash/underscore delimited words into camel and pascal casing.
 
-   Example 1:
+   **Example 1:**
+
+   ```powershell
    $inputString = "the-stealth-warrior"
    # Result: "theStealthWarrior"
+   ```
 
-   Example 2:
+   **Example 2:**
+
+   ```powershell
    $inputString = "The_Stealth_Warrior"
    # Result: "TheStealthWarrior"
+   ```
 
+## Self-Review
 
-SELF-REVIEW:
-------------
+- **Task 1:** Sorted unique characters from both strings
+- **Task 2:** Dash/underscore words converted to camelCase/PascalCase
 
-- Task 1: Sorted unique characters from both strings
-- Task 2: Dash/underscore words converted to camelCase/PascalCase
+## Helpful Materials
 
-
-HELPFUL MATERIALS:
-------------------
-
-https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_split
-https://docs.microsoft.com/en-us/dotnet/api/system.string
-
+- https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_split
+- https://docs.microsoft.com/en-us/dotnet/api/system.string

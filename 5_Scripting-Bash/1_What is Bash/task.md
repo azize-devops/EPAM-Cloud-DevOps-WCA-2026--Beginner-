@@ -1,32 +1,27 @@
-# WHAT IS BASH - TASK
+# What is Bash - Task
 
-GOALS:
-------
+## Goals
 
 - Learn to use terminal
 
-
-TASKS:
-------
+## Tasks
 
 1. Open a terminal of your choosing.
 
-2. Verify which bash version you are using by running bash --version command.
+2. Verify which bash version you are using by running `bash --version` command.
 
-3. Run some commands (e.g. echo "Hello world").
+3. Run some commands (e.g. `echo "Hello world"`).
 
+## Self-Review
 
-SELF-REVIEW:
-------------
+- `bash --version` command returns similar output:
 
-- bash --version command returns similar output:
+```
+GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin20)
+Copyright (C) 2007 Free Software Foundation, Inc.
+```
 
-  GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin20)
-  Copyright (C) 2007 Free Software Foundation, Inc.
+## Helpful Materials
 
-
-HELPFUL MATERIALS:
-------------------
-
-https://en.wikipedia.org/wiki/Bash_(Unix_shell)
-https://devhints.io/bash
+- https://en.wikipedia.org/wiki/Bash_(Unix_shell)
+- https://devhints.io/bash

@@ -1,59 +1,69 @@
-# FUNDAMENTALS OF POWERSHELL FUNCTIONS - TASK
+# Fundamentals of PowerShell Functions - Task
 
-GOALS:
-------
+## Goals
 
 - Learn to create PowerShell functions
 - Use switch parameters
 - Handle pipeline input in functions
 
+## Tasks
 
-TASKS:
-------
+1. Create a function that will get a string and one of several switch parameters and return the text from string with the color passed with switch parameter.
 
-1. Create a function that will get a string and one of several switch
-   parameters and return the text from string with the color passed
-   with switch parameter.
+   **Example 1:**
 
-   Example 1:
+   ```powershell
    Write-ColoredMessage -Text "Hello there!" -Red
    # Returns: Hello there! (in red color)
+   ```
 
-   Example 2:
+   **Example 2:**
+
+   ```powershell
    Write-ColoredMessage -Text "Hello there!" -Blue
    # Returns: Hello there! (in blue color)
+   ```
 
 2. Create a function that will get any array from the pipeline.
    Function output should be formatted according to the example below.
 
-   Example 1:
+   **Example 1:**
+
+   ```powershell
    1..3 | Get-ValueFromPipe
-   # Returns:
+   ```
+
+   **Returns:**
+
+   ```
    Value from pipe: 1
    Value from pipe: 2
    Value from pipe: 3
+   ```
 
-   Example 2:
+   **Example 2:**
+
+   ```powershell
    @("First", "Second") | Get-ValueFromPipe
-   # Returns:
+   ```
+
+   **Returns:**
+
+   ```
    Value from pipe: First
    Value from pipe: Second
+   ```
 
+## Self-Review
 
-SELF-REVIEW:
-------------
+- **Task 1:** Function accepts `-Text` parameter
+- **Task 1:** Switch parameters for colors work (`-Red`, `-Blue`, etc.)
+- **Task 1:** Text displayed in specified color
+- **Task 2:** Function accepts pipeline input
+- **Task 2:** Each value formatted with "Value from pipe:" prefix
 
-- Task 1: Function accepts -Text parameter
-- Task 1: Switch parameters for colors work (-Red, -Blue, etc.)
-- Task 1: Text displayed in specified color
-- Task 2: Function accepts pipeline input
-- Task 2: Each value formatted with "Value from pipe:" prefix
+## Helpful Materials
 
-
-HELPFUL MATERIALS:
-------------------
-
-https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions
-https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters
-https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pipelines
-
+- https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions
+- https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters
+- https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pipelines

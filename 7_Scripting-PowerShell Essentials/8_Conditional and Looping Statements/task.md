@@ -1,45 +1,60 @@
-# CONDITIONAL AND LOOPING STATEMENTS - TASK
+# Conditional and Looping Statements - Task
 
-GOALS:
-------
+## Goals
 
 - Practice conditional statements (if/elseif/else)
 - Use looping constructs (for, while, foreach)
 - Combine conditions with loops for practical scripts
 
-
-TASKS:
-------
+## Tasks
 
 1. Write a script to convert temperatures to and from Celsius, Fahrenheit.
 
-   Example 1:
+   **Example 1:**
+
+   ```powershell
    & .\script1.ps1 60C
    # Returns: 60C is 140 in Fahrenheit
+   ```
 
-   Example 2:
+   **Example 2:**
+
+   ```powershell
    & .\script1.ps1 45F
    # Returns: 45F is 7 in Celsius
+   ```
 
 2. Write a script to get the Fibonacci series between 0 to N.
 
-   Example 1:
+   **Example 1:**
+
+   ```powershell
    & .\script2.ps1 50
    # Returns: 1 1 2 3 5 8 13 21 34
+   ```
 
 3. Write a script to calculate a dog's age in human years.
    For the first two years, a dog year is equal to 10.5 human years.
    After that, each dog year equals 4 human years.
 
-   Example 1:
+   **Example 1:**
+
+   ```powershell
    & .\script3.ps1 10
    # Returns: 10.5 21 25 29 33 37 41 45 49 53
+   ```
 
 4. Write a script to create the multiplication table (from 1 to 10) of a number.
 
-   Example 1:
+   **Example 1:**
+
+   ```powershell
    & .\script4.ps1 6
-   # Returns:
+   ```
+
+   **Returns:**
+
+   ```
    6 x 1 = 6
    6 x 2 = 12
    6 x 3 = 18
@@ -50,21 +65,17 @@ TASKS:
    6 x 8 = 48
    6 x 9 = 54
    6 x 10 = 60
+   ```
 
+## Self-Review
 
-SELF-REVIEW:
-------------
+- **Task 1:** Temperature conversion works both ways (C to F, F to C)
+- **Task 2:** Fibonacci series generated correctly up to N
+- **Task 3:** Dog years calculated with correct formula
+- **Task 4:** Multiplication table displays 1 to 10
 
-- Task 1: Temperature conversion works both ways (C to F, F to C)
-- Task 2: Fibonacci series generated correctly up to N
-- Task 3: Dog years calculated with correct formula
-- Task 4: Multiplication table displays 1 to 10
+## Helpful Materials
 
-
-HELPFUL MATERIALS:
-------------------
-
-https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_if
-https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_for
-https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_while
-
+- https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_if
+- https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_for
+- https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_while

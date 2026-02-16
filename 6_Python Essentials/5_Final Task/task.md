@@ -1,49 +1,45 @@
-# FINAL TASK - QUADRATIC EQUATION SOLVER
+# Final Task - Quadratic Equation Solver
 
-GOALS:
-------
+## Goals
 
 - Test your Python skills with a practical challenge
 - Implement a function that finds roots of a quadratic equation
 
-
-TASK DESCRIPTION:
------------------
+## Task Description
 
 Create a script that solves quadratic equations in classic form:
-    ax^2 + bx + c = 0
+
+```
+ax^2 + bx + c = 0
+```
 
 Where a, b, c are entered from user input.
 Don't forget to implement user-friendly messages!
 
+## Required Functions
 
-REQUIRED FUNCTIONS:
--------------------
-
-1. main()
+1. **main()**
    - Program entry point
    - Ask for all required data
 
-2. ask_value(message)
+2. **ask_value(message)**
    - Ask user for input
    - Return the variable
    - Good to have: input validation
 
-3. discriminant(a, b, c)
+3. **discriminant(a, b, c)**
    - Calculate and return discriminant
-   - Formula: D = b^2 - 4ac
+   - Formula: `D = b^2 - 4ac`
 
-4. roots(d, a, b, c)
+4. **roots(d, a, b, c)**
    - Show all acceptable roots on screen
-   - Handle cases: D > 0, D = 0, D < 0
+   - Handle cases: `D > 0`, `D = 0`, `D < 0`
 
-5. solv_square(a, b, c)
+5. **solv_square(a, b, c)**
    - Contains discriminant and roots functions inside
    - Orchestrates the solving process
 
-
-SELF-REVIEW:
-------------
+## Self-Review
 
 - Script runs without errors
 - User can enter a, b, c values
@@ -51,10 +47,7 @@ SELF-REVIEW:
 - All required functions are implemented
 - User-friendly messages are shown
 
+## Helpful Materials
 
-HELPFUL MATERIALS:
-------------------
-
-https://en.wikipedia.org/wiki/Quadratic_equation
-https://docs.python.org/3/library/math.html
-
+- https://en.wikipedia.org/wiki/Quadratic_equation
+- https://docs.python.org/3/library/math.html
