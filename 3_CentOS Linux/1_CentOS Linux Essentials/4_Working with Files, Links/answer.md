@@ -7,11 +7,11 @@ Methods:
 - Activities > Search "Terminal"
 - Right-click on Desktop > Open Terminal
 
-> **Screenshot 1**
->
-> Terminal window showing:
-> - Empty terminal with command prompt
-> - Username and hostname visible (user@hostname:~$)
+**Screenshot 1:** Terminal window opened
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/4_Working%20with%20Files,%20Links/Terminal%20window%20opened.png" alt="Terminal window opened" width="900">
+</p>
 
 
 ## TASK 2: Create script and script.sh files with content
@@ -91,17 +91,11 @@ Output:
 echo Hello
 ```
 
-> **Screenshot 2**
->
-> Terminal showing:
-> - File creation command (cat with heredoc or echo)
-> - $ cat script
-> - Output:
->   #!/bin/bash
->
->   echo Hello
-> - $ cat script.sh
-> - Same output for script.sh
+**Screenshot 2:** File creation and cat showing content
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/4_Working%20with%20Files,%20Links/File%20creation%20and%20cat%20showing%20content.png" alt="File creation and cat showing content" width="900">
+</p>
 
 
 ## TASK 3: Make files executable with chmod +x
@@ -134,15 +128,11 @@ Explanation:
 - Before: -rw-r--r-- (read/write only)
 - After:  -rwxr-xr-x (read/write/execute)
 
-> **Screenshot 3**
->
-> Terminal showing:
-> - $ chmod +x script script.sh
-> - $ ls -la script script.sh
-> - Output with x permission visible:
->   -rwxr-xr-x ... script
->   -rwxr-xr-x ... script.sh
->   (x permissions for user, group, others)
+**Screenshot 3:** chmod +x and ls -la showing execute permission (x)
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/4_Working%20with%20Files,%20Links/chmod%20+x%20and%20ls%20-la%20showing%20execute%20permission%20(x).png" alt="chmod +x and ls -la showing execute permission (x)" width="900">
+</p>
 
 
 ## TASK 4: Create soft link (symbolic link) called script_soft for file script
@@ -173,14 +163,11 @@ Explanation of output:
 - -> script shows it points to the original file
 - Size (6) is the length of the target filename "script"
 
-> **Screenshot 4**
->
-> Terminal showing:
-> - $ ln -s script script_soft
-> - $ ls -la script_soft
-> - Output showing soft link:
->   lrwxrwxrwx ... script_soft -> script
->   (l = link type, arrow shows target)
+**Screenshot 4:** ln -s and ls -la showing soft link (l... -> target)
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/4_Working%20with%20Files,%20Links/ln%20-s%20and%20ls%20-la%20showing%20soft%20link%20(l...%20--%20target).png" alt="ln -s and ls -la showing soft link" width="900">
+</p>
 
 
 ## TASK 5: Create hard link called script_hard for file script.sh
@@ -224,15 +211,11 @@ Output:
 
 (Same inode number confirms hard link)
 
-> **Screenshot 5**
->
-> Terminal showing:
-> - $ ln script.sh script_hard
-> - $ ls -li script.sh script_hard
-> - Output showing same inode number:
->   12345678 -rwxr-xr-x. 2 ... script_hard
->   12345678 -rwxr-xr-x. 2 ... script.sh
->   (same inode, link count = 2)
+**Screenshot 5:** ln and ls -li showing hard link (same inode number)
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/4_Working%20with%20Files,%20Links/ln%20and%20ls%20-li%20showing%20hard%20link%20(same%20inode%20number).png" alt="ln and ls -li showing hard link (same inode number)" width="900">
+</p>
 
 
 ## TASK 6: Execute both script_soft and script_hard files
@@ -260,14 +243,11 @@ $ /bin/bash script_soft
 $ /bin/bash script_hard
 ```
 
-> **Screenshot 6**
->
-> Terminal showing:
-> - $ ./script_soft
-> - Hello
-> - $ ./script_hard
-> - Hello
-> - Both scripts produce same output
+**Screenshot 6:** Both ./script_soft and ./script_hard outputting "Hello"
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/4_Working%20with%20Files,%20Links/Both%20.-script_soft%20and%20.-script_hard%20outputting%20-Hello-.png" alt="Both ./script_soft and ./script_hard outputting Hello" width="900">
+</p>
 
 
 ## TASK 7: Remove original files script and script.sh
@@ -303,17 +283,11 @@ Note:
 - script_soft still exists but points to non-existent file (broken link)
 - script_hard still exists with link count now 1
 
-> **Screenshot 7**
->
-> Terminal showing:
-> - $ rm script script.sh
-> - $ ls -la script script.sh
-> - ls: cannot access 'script': No such file or directory
-> - ls: cannot access 'script.sh': No such file or directory
-> - $ ls -la script_soft script_hard
-> - Both links still exist:
->   lrwxrwxrwx ... script_soft -> script (broken)
->   -rwxr-xr-x. 1 ... script_hard (link count now 1)
+**Screenshot 7:** rm and verification that originals are deleted
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/4_Working%20with%20Files,%20Links/rm%20and%20verification%20that%20originals%20are%20deleted.png" alt="rm and verification that originals are deleted" width="900">
+</p>
 
 
 ## TASK 8: Execute both script_soft and script_hard files (after deletion)
@@ -355,18 +329,11 @@ Explanation:
 - Deleting original only removed one name, data still exists
 - script_hard is now the only name pointing to that data
 
-> **Screenshot 8**
->
-> Terminal showing:
-> - $ ./script_soft
-> - bash: ./script_soft: No such file or directory
->   (SOFT LINK FAILS - target file deleted)
->
-> - $ ./script_hard
-> - Hello
->   (HARD LINK WORKS - data still exists)
->
-> This demonstrates the key difference between soft and hard links
+**Screenshot 8:** Soft link ERROR + Hard link "Hello" output
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/4_Working%20with%20Files,%20Links/Soft%20link%20ERROR%20+%20Hard%20link%20-Hello-%20output.png" alt="Soft link ERROR + Hard link Hello output" width="900">
+</p>
 
 
 ## TASK 9: Remove all created files
@@ -388,13 +355,11 @@ ls: cannot access 'script*': No such file or directory
 
 All files cleaned up successfully.
 
-> **Screenshot 9**
->
-> Terminal showing:
-> - $ rm script_soft script_hard
-> - $ ls -la script*
-> - ls: cannot access 'script*': No such file or directory
-> - All files removed successfully
+**Screenshot 9:** Cleanup and verification all files removed
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/4_Working%20with%20Files,%20Links/Cleanup%20and%20verification%20all%20files%20removed.png" alt="Cleanup and verification all files removed" width="900">
+</p>
 
 
 ## SOFT LINK vs HARD LINK COMPARISON
@@ -511,18 +476,3 @@ rm script_soft script_hard
 | chmod u+x file          | Add execute for user (owner) only   |
 
 
-## SCREENSHOTS CHECKLIST
-
-Print this checklist and mark each screenshot as you take it:
-
-- [ ] SCREENSHOT 1  - Terminal window opened
-- [ ] SCREENSHOT 2  - File creation and cat showing content
-- [ ] SCREENSHOT 3  - chmod +x and ls -la showing execute permission (x)
-- [ ] SCREENSHOT 4  - ln -s and ls -la showing soft link (l... -> target)
-- [ ] SCREENSHOT 5  - ln and ls -li showing hard link (same inode number)
-- [ ] SCREENSHOT 6  - Both ./script_soft and ./script_hard outputting "Hello"
-- [ ] SCREENSHOT 7  - rm and verification that originals are deleted
-- [ ] SCREENSHOT 8  - Soft link ERROR + Hard link "Hello" output
-- [ ] SCREENSHOT 9  - Cleanup and verification all files removed
-
-TOTAL: 9 Screenshots Required
