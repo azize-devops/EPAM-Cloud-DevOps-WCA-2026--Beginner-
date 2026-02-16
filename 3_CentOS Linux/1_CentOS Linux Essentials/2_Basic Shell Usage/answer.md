@@ -13,11 +13,11 @@ Methods to open terminal in CentOS:
 **Method 3: Right-click on Desktop**
 - Right-click > Open Terminal
 
-> **Screenshot 1**
->
-> Terminal window showing:
-> - Empty terminal with command prompt
-> - Username and hostname visible (user@hostname:~$)
+**Screenshot 1:** Terminal window opened
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/2_Basic%20Shell%20Usage/Terminal%20window%20opened.png" alt="Terminal window opened" width="900">
+</p>
 
 
 ## TASK 2: Navigate to home folder of your user
@@ -54,12 +54,11 @@ Expected Output:
 /home/Name_Surname
 ```
 
-> **Screenshot 2**
->
-> Terminal showing:
-> - $ cd ~
-> - $ pwd
-> - /home/Name_Surname
+**Screenshot 2:** cd ~ and pwd showing home directory path
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/2_Basic%20Shell%20Usage/cd%20~%20and%20pwd%20showing%20home%20directory%20path.png" alt="cd ~ and pwd showing home directory path" width="900">
+</p>
 
 
 ## TASK 3: Create folder homework in current directory
@@ -83,13 +82,11 @@ Explanation:
 - mkdir = make directory
 - Creates a new directory named "homework" in current location
 
-> **Screenshot 3**
->
-> Terminal showing:
-> - $ mkdir homework
-> - $ ls -la
-> - Output with "homework" directory listed
-> - drwxr-xr-x ... homework
+**Screenshot 3:** mkdir homework and ls -la showing homework folder
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/2_Basic%20Shell%20Usage/mkdir%20homework%20and%20ls%20-la%20showing%20homework%20folder.png" alt="mkdir homework and ls -la showing homework folder" width="900">
+</p>
 
 
 ## TASK 4: Create file file1 in homework folder
@@ -113,13 +110,11 @@ Explanation:
 - touch creates an empty file (or updates timestamp if file exists)
 - homework/file1 specifies the path where file should be created
 
-> **Screenshot 4**
->
-> Terminal showing:
-> - $ touch homework/file1
-> - $ ls -la homework/
-> - Output showing file1 with size 0
-> - -rw-r--r-- ... 0 ... file1
+**Screenshot 4:** touch homework-file1 and ls -la homework showing file1
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/2_Basic%20Shell%20Usage/touch%20homework-file1%20and%20ls%20-la%20homework%20showing%20file1.png" alt="touch homework-file1 and ls -la homework showing file1" width="900">
+</p>
 
 
 ## TASK 5: Write your name and surname into file1 file
@@ -146,12 +141,11 @@ Explanation:
 - > redirects output and overwrites file content
 - >> would append to file instead of overwriting
 
-> **Screenshot 5**
->
-> Terminal showing:
-> - $ echo "Name Surname" > homework/file1
-> - Command executes without error
-> - Prompt returns to next line
+**Screenshot 5:** echo Name Surname > homework/file1
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/2_Basic%20Shell%20Usage/echo%20Name%20Surname%20-%20homeworkfile1.png" alt="echo Name Surname - homeworkfile1" width="900">
+</p>
 
 
 ## TASK 6: View the contents of file1 in the console
@@ -178,12 +172,11 @@ Explanation:
 - cat = concatenate and display file contents
 - Useful for viewing small files
 
-> **Screenshot 6**
->
-> Terminal showing:
-> - $ cat homework/file1
-> - Name Surname
-> - Your actual name and surname displayed
+**Screenshot 6:** cat homework-file1 showing your name
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/2_Basic%20Shell%20Usage/cat%20homework-file1%20showing%20your%20name.png" alt="cat homework-file1 showing your name" width="900">
+</p>
 
 
 ## TASK 7: Navigate to the root of your file system
@@ -217,13 +210,11 @@ Expected Output:
 bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 ```
 
-> **Screenshot 7**
->
-> Terminal showing:
-> - $ cd /
-> - $ pwd
-> - /
-> - (Optional: $ ls showing root directories)
+**Screenshot 7:** cd / and pwd showing root (/)
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/2_Basic%20Shell%20Usage/cd%20-%20and%20pwd%20showing%20root%20(-).png" alt="cd - and pwd showing root" width="900">
+</p>
 
 
 ## TASK 8: Create file2 with same timestamp as file1 (without changing directory)
@@ -265,17 +256,11 @@ Expected Output:
 /
 ```
 
-> **Screenshot 8**
->
-> Terminal showing:
-> - $ pwd
-> - /    <-- still at root
-> - $ touch -r ~/homework/file1 ~/homework/file2
-> - $ ls -la ~/homework/
-> - file1 and file2 with SAME TIMESTAMP:
->   ... Jan 15 10:01 file1
->   ... Jan 15 10:01 file2
->   (timestamps match)
+**Screenshot 8:** touch -r and ls -la showing MATCHING timestamps
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/2_Basic%20Shell%20Usage/touch%20-r%20and%20ls%20-la%20showing%20MATCHING%20timestamps.png" alt="touch -r and ls -la showing MATCHING timestamps" width="900">
+</p>
 
 
 ## TASK 9: Find files modified less than 1 hour ago
@@ -310,13 +295,11 @@ Alternative with -mtime (days):
 $ find ~ -type f -mtime 0    # Modified today (less than 24 hours ago)
 ```
 
-> **Screenshot 9**
->
-> Terminal showing:
-> - $ find ~ -type f -mmin -60
-> - /home/Name_Surname/homework/file1
-> - /home/Name_Surname/homework/file2
-> - Both files appear in the output
+**Screenshot 9:** find ~ -type f -mmin -60 showing file1 and file2
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/2_Basic%20Shell%20Usage/find%20~%20-type%20f%20-mmin%20-60%20showing%20file1%20and%20file2.png" alt="find ~ -type f -mmin -60 showing file1 and file2" width="900">
+</p>
 
 
 ## TASK 10: Review your task
@@ -358,15 +341,11 @@ Expected Output:
 /home/Name_Surname/homework/file2
 ```
 
-> **Screenshot 10**
->
-> Terminal showing ALL verification commands:
-> - $ ls -la ~/homework/
->   (shows file1 and file2 with same timestamp)
-> - $ cat ~/homework/file1
->   Name Surname
-> - $ find ~ -type f -mmin -60
->   (shows both files)
+**Screenshot 10:** All verification commands (ls, cat, find)
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/2_Basic%20Shell%20Usage/All%20verification%20commands%20(ls,%20cat,%20find).png" alt="All verification commands (ls, cat, find)" width="900">
+</p>
 
 
 ## TASK 11: Remove homework folder
@@ -407,15 +386,11 @@ Explanation:
 - -f = force (no confirmation prompts)
 - Be VERY careful with rm -rf, especially as root!
 
-> **Screenshot 11**
->
-> Terminal showing:
-> - $ rm -rf ~/homework
-> - $ ls ~/homework
-> - ls: cannot access '/home/.../homework': No such file or dir
-> - OR
-> - $ ls -la ~/ | grep homework
-> - (no output - folder doesn't exist)
+**Screenshot 11:** rm -rf ~/homework and verification folder is gone
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/2_Basic%20Shell%20Usage/rm%20-rf%20~-homework%20and%20verification%20folder%20is%20gone.png" alt="rm -rf ~/homework and verification folder is gone" width="900">
+</p>
 
 
 ## COMPLETE COMMAND SEQUENCE SUMMARY
