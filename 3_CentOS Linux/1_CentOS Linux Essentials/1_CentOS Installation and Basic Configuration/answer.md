@@ -11,7 +11,7 @@
    - DVD ISO (~9GB): Contains all packages, works offline
    - Boot ISO (~1GB): Minimal, downloads packages during install
 
-[SCREENSHOT REQUIRED] - CentOS download page
+![CentOS Download Page](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/1_CentOS%20Installation%20and%20Basic%20Configuration/CentOS%20download%20page.png)
 
 
 ### STEP 2: Create Virtual Machine in VirtualBox
@@ -39,7 +39,11 @@
 5. Go to Settings > Network:
    - Adapter 1: Attached to "NAT" or "Bridged Adapter"
 
-[SCREENSHOT REQUIRED] - VirtualBox VM creation settings
+![VirtualBox VM Settings - Name](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/1_CentOS%20Installation%20and%20Basic%20Configuration/VirtualBox%20VM%20Creation%20Settings-Name.png)
+
+![VirtualBox VM Settings - Hardware](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/1_CentOS%20Installation%20and%20Basic%20Configuration/VirtualBox%20VM%20Creation%20Settings-Hardware.png)
+
+![VirtualBox VM Settings - Disk](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/1_CentOS%20Installation%20and%20Basic%20Configuration/VirtualBox%20VM%20Creation%20Settings-Disk.png)
 
 
 ### STEP 3: Start Installation
@@ -48,7 +52,7 @@
 2. Select "Install CentOS Stream 9" from boot menu
 3. Wait for the installer to load
 
-[SCREENSHOT REQUIRED] - CentOS boot menu
+![CentOS Boot Menu](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/1_CentOS%20Installation%20and%20Basic%20Configuration/CentOS%20boot%20menu.png)
 
 
 ## TASK 2: Configure user "Name_Surname" during installation
@@ -72,7 +76,7 @@ After language selection, you'll see the Installation Summary screen.
 
 3. Click "Done"
 
-[SCREENSHOT REQUIRED] - User Creation screen with Name_Surname configured
+![User Creation Screen](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/1_CentOS%20Installation%20and%20Basic%20Configuration/User%20Creation%20screen%20with%20Name_Surname%20configured.png)
 
 
 ### STEP 3: Set Root Password (Optional but Recommended)
@@ -82,7 +86,7 @@ After language selection, you'll see the Installation Summary screen.
 3. Optionally disable root SSH login for security
 4. Click "Done"
 
-[SCREENSHOT REQUIRED] - Root Password configuration
+![Root Password Configuration](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/1_CentOS%20Installation%20and%20Basic%20Configuration/Root%20Password%20configuration.png)
 
 
 ## TASK 3: Configure network during installation
@@ -121,7 +125,7 @@ After language selection, you'll see the Installation Summary screen.
 
 5. Click "Done"
 
-[SCREENSHOT REQUIRED] - Network & Host Name configuration screen
+![Network & Host Name Configuration](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/1_CentOS%20Installation%20and%20Basic%20Configuration/Network%20&%20Host%20Name%20configuration%20screen.png)
 
 
 ## TASK 4: Configure custom sizes for /home, /opt, /var directories
@@ -133,7 +137,7 @@ After language selection, you'll see the Installation Summary screen.
 3. Under "Storage Configuration", select "Custom"
 4. Click "Done" to enter manual partitioning
 
-[SCREENSHOT REQUIRED] - Installation Destination with "Custom" selected
+![Installation Destination - Custom](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/1_CentOS%20Installation%20and%20Basic%20Configuration/Installation%20Destination%20with%20Custom%20selected.png)
 
 
 ### STEP 2: Create Partitions
@@ -192,7 +196,7 @@ Note: Remaining space can be added to /home or / as needed.
 3. Desired Capacity: 10 GiB
 4. Click "Add mount point"
 
-[SCREENSHOT REQUIRED] - Manual Partitioning screen showing all partitions
+![Manual Partitioning](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/1_CentOS%20Installation%20and%20Basic%20Configuration/Manual%20Partitioning%20screen%20showing%20all%20partitions.png)
 
 
 ### STEP 4: Accept Changes
@@ -201,7 +205,7 @@ Note: Remaining space can be added to /home or / as needed.
 2. Review the "Summary of Changes" dialog
 3. Click "Accept Changes"
 
-[SCREENSHOT REQUIRED] - Summary of Changes dialog
+![Summary of Changes](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/1_CentOS%20Installation%20and%20Basic%20Configuration/Summary%20of%20Changes%20dialog.png)
 
 
 ## STEP 5: Complete Installation
@@ -211,7 +215,9 @@ Note: Remaining space can be added to /home or / as needed.
 3. Click "Reboot System" when prompted
 4. Remove the ISO from virtual drive before reboot
 
-[SCREENSHOT REQUIRED] - Installation progress/completion screen
+![Installation Progress](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/1_CentOS%20Installation%20and%20Basic%20Configuration/Installation%20progress%20screen.png)
+
+![Installation Complete](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/1_CentOS%20Installation%20and%20Basic%20Configuration/Installation%20completion%20screen.png)
 
 
 ## SELF-REVIEW VERIFICATION
@@ -223,7 +229,7 @@ Note: Remaining space can be added to /home or / as needed.
 3. Enter your password
 4. You should see the desktop or command prompt
 
-[SCREENSHOT REQUIRED] - Successful login screen or desktop
+![Successful Login](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/1_CentOS%20Installation%20and%20Basic%20Configuration/Successful%20login%20screen%20or%20desktop.png)
 
 Verification Command:
 ```bash
@@ -279,7 +285,7 @@ HTTP/2 200
 ...
 ```
 
-[SCREENSHOT REQUIRED] - Terminal showing successful ping results
+![Terminal Ping Results](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/1_CentOS%20Installation%20and%20Basic%20Configuration/Terminal%20showing%20successful%20ping%20results.png)
 
 
 ### TEST 3: Verify partition sizes with df -h
@@ -304,7 +310,7 @@ Verify that:
 - /opt shows approximately 5 GiB
 - /var shows approximately 10 GiB
 
-[SCREENSHOT REQUIRED] - Terminal showing df -h output with correct partition sizes
+![Terminal df -h and lsblk Output](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/1_CentOS%20Installation%20and%20Basic%20Configuration/Terminal%20showing%20lsblk%20output.png)
 
 
 Additional Verification Command:
@@ -324,7 +330,7 @@ sda      8:0    0   40G  0 disk
 └─sda6   8:6    0   10G  0 part /var
 ```
 
-[SCREENSHOT REQUIRED] - Terminal showing lsblk output
+![Terminal lsblk Output](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/1_CentOS%20Installation%20and%20Basic%20Configuration/Terminal%20showing%20lsblk%20output.png)
 
 
 ## TROUBLESHOOTING
@@ -376,23 +382,24 @@ $ cat /etc/passwd | grep Name_Surname
 ```
 
 
-## SUMMARY OF REQUIRED SCREENSHOTS
+## SUMMARY OF SCREENSHOTS
 
-| Step | Screenshot Description |
-|------|------------------------|
-| 1 | CentOS download page |
-| 2 | VirtualBox VM creation settings |
-| 3 | CentOS boot menu |
-| 4 | User Creation screen with Name_Surname |
-| 5 | Root Password configuration |
-| 6 | Network & Host Name configuration |
-| 7 | Installation Destination with "Custom" selected |
-| 8 | Manual Partitioning showing all partitions |
-| 9 | Summary of Changes dialog |
-| 10 | Installation completion screen |
-| 11 | Successful login (desktop or terminal) |
-| 12 | Terminal: ping test results |
-| 13 | Terminal: df -h output |
-| 14 | Terminal: lsblk output |
+| Step | Screenshot Description | Status |
+|------|------------------------|--------|
+| 1 | CentOS download page | ✅ |
+| 2 | VirtualBox VM creation settings (3 images) | ✅ |
+| 3 | CentOS boot menu | ✅ |
+| 4 | User Creation screen with Name_Surname | ✅ |
+| 5 | Root Password configuration | ✅ |
+| 6 | Network & Host Name configuration | ✅ |
+| 7 | Installation Destination with "Custom" selected | ✅ |
+| 8 | Manual Partitioning showing all partitions | ✅ |
+| 9 | Summary of Changes dialog | ✅ |
+| 10 | Installation progress screen | ✅ |
+| 11 | Installation completion screen | ✅ |
+| 12 | Successful login (desktop or terminal) | ✅ |
+| 13 | Terminal: ping test results | ✅ |
+| 14 | Terminal: df -h output | ✅ |
+| 15 | Terminal: lsblk output | ✅ |
 
-TOTAL: 14 Screenshots Required
+TOTAL: 16 Screenshots Added (All complete)
