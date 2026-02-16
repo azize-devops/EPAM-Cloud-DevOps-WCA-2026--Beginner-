@@ -7,24 +7,24 @@ https://www.virtualbox.org/manual/
 
 ### Key Chapters to Review:
 
-####    1. Chapter 1 - First Steps
+#### 1. Chapter 1 - First Steps
 - 1.1 Why is Virtualization Useful?
 - 1.2 Some Terminology
 - 1.3 Features Overview
 - 1.4 Supported Host Operating Systems
 - 1.5 Installing Oracle VM VirtualBox
 
-####    2. Chapter 1.8 - Creating Your First Virtual Machine
+#### 2. Chapter 1.8 - Creating Your First Virtual Machine
 - Step-by-step VM creation guide
 - Hardware allocation (RAM, CPU, Disk)
 - Installation media setup
 
-####    3. Chapter 1.9 - Running Your Virtual Machine
+#### 3. Chapter 1.9 - Running Your Virtual Machine
 - Starting and stopping VMs
 - Keyboard and mouse capture
 - Host key usage
 
-####    4. Chapter 1.14 - Cloning Virtual Machines
+#### 4. Chapter 1.14 - Cloning Virtual Machines
 - Full clone vs Linked clone
 - Cloning process
 
@@ -243,7 +243,7 @@ Ubuntu desktop after login (VM1)
   <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Ubuntu%20desktop%20after%20login%20(VM1).png" alt="Ubuntu desktop after login (VM1)" width="900">
 </p>
 
-##  TASK 5: VM control options - start, stop, reboot, save state
+## TASK 5: VM control options - start, stop, reboot, save state
 
 ### HOST KEY INFORMATION
 
@@ -390,7 +390,7 @@ VM in -Saved-state in Manager
   <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VM%20in%20-Saved-state%20in%20Manager.png" alt="VM in -Saved-state in Manager" width="900">
 </p>
 
-##  TASK 6: Clone VM1 to create VM2
+## TASK 6: Clone VM1 to create VM2
 
 ### CLONING METHODS
 
@@ -445,7 +445,7 @@ Clone dialog - Name and MAC address
    - VM2 depends on VM1
 
 Clone dialog - Clone type selection
-<p align="center">0
+<p align="center">
   <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Clone%20dialog%20-%20Clone%20type%20selection.png" alt="Clone dialog - Clone type selection" width="900">
 </p>
 
@@ -461,7 +461,7 @@ Clone dialog - Clone type selection
 - May take several minutes for Full Clone
 
 Clone progress bar
-<p align="center">0
+<p align="center">
   <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Clone%20progress%20bar.png" alt="Clone progress bar" width="900">
 </p>
 
@@ -471,7 +471,7 @@ Clone progress bar
 - Both VMs can run simultaneously (with different MAC addresses)
 
 Both VM1 and VM2 in VirtualBox Manager
-<p align="center">0
+<p align="center">
   <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Both%20VM1%20and%20VM2%20in%20VirtualBox%20Manager.png" alt="Both VM1 and VM2 in VirtualBox Manager" width="900">
 </p>
 
@@ -488,7 +488,7 @@ Both VM1 and VM2 in VirtualBox Manager
     ```
 
 VM2 running with hostname verification
-<p align="center">0
+<p align="center">
   <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/VM2%20running%20with%20hostname%20verification.png" alt="VM2 running with hostname verification" width="900">
 </p>
 
@@ -500,7 +500,7 @@ VM2 running with hostname verification
 4. Each VM has independent resources (RAM, CPU, network)
 
 Both VMs running simultaneously
-<p align="center">0
+<p align="center">
   <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/1_Hypervisor%20Essentials/Virtualization%20Introduction/Both%20VMs%20running%20simultaneously.png" alt="Both VMs running simultaneously" width="900">
 </p>
 
