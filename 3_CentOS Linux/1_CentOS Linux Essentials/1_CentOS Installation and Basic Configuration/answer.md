@@ -380,26 +380,3 @@ $ sudo passwd Name_Surname
 ```bash
 $ cat /etc/passwd | grep Name_Surname
 ```
-
-
-## SUMMARY OF SCREENSHOTS
-
-| Step | Screenshot Description | Status |
-|------|------------------------|--------|
-| 1 | CentOS download page | ✅ |
-| 2 | VirtualBox VM creation settings (3 images) | ✅ |
-| 3 | CentOS boot menu | ✅ |
-| 4 | User Creation screen with Name_Surname | ✅ |
-| 5 | Root Password configuration | ✅ |
-| 6 | Network & Host Name configuration | ✅ |
-| 7 | Installation Destination with "Custom" selected | ✅ |
-| 8 | Manual Partitioning showing all partitions | ✅ |
-| 9 | Summary of Changes dialog | ✅ |
-| 10 | Installation progress screen | ✅ |
-| 11 | Installation completion screen | ✅ |
-| 12 | Successful login (desktop or terminal) | ✅ |
-| 13 | Terminal: ping test results | ✅ |
-| 14 | Terminal: df -h output | ✅ |
-| 15 | Terminal: lsblk output | ✅ |
-
-TOTAL: 16 Screenshots Added (All complete)
