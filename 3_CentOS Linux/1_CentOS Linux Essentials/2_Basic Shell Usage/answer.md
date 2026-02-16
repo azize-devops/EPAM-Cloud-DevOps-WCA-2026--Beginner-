@@ -13,14 +13,11 @@ Methods to open terminal in CentOS:
 **Method 3: Right-click on Desktop**
 - Right-click > Open Terminal
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                          |
-|                                                                  |
-|  Terminal window showing:                                        |
-|  - Empty terminal with command prompt                            |
-|  - Username and hostname visible (user@hostname:~$)              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 1**
+>
+> Terminal window showing:
+> - Empty terminal with command prompt
+> - Username and hostname visible (user@hostname:~$)
 
 
 ## TASK 2: Navigate to home folder of your user
@@ -57,15 +54,12 @@ Expected Output:
 /home/Name_Surname
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ cd ~                                                        |
-|  - $ pwd                                                         |
-|  - /home/Name_Surname                                            |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 2**
+>
+> Terminal showing:
+> - $ cd ~
+> - $ pwd
+> - /home/Name_Surname
 
 
 ## TASK 3: Create folder homework in current directory
@@ -89,16 +83,13 @@ Explanation:
 - mkdir = make directory
 - Creates a new directory named "homework" in current location
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ mkdir homework                                              |
-|  - $ ls -la                                                      |
-|  - Output with "homework" directory listed                       |
-|  - drwxr-xr-x ... homework                                       |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 3**
+>
+> Terminal showing:
+> - $ mkdir homework
+> - $ ls -la
+> - Output with "homework" directory listed
+> - drwxr-xr-x ... homework
 
 
 ## TASK 4: Create file file1 in homework folder
@@ -122,16 +113,13 @@ Explanation:
 - touch creates an empty file (or updates timestamp if file exists)
 - homework/file1 specifies the path where file should be created
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ touch homework/file1                                        |
-|  - $ ls -la homework/                                            |
-|  - Output showing file1 with size 0                              |
-|  - -rw-r--r-- ... 0 ... file1                                    |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 4**
+>
+> Terminal showing:
+> - $ touch homework/file1
+> - $ ls -la homework/
+> - Output showing file1 with size 0
+> - -rw-r--r-- ... 0 ... file1
 
 
 ## TASK 5: Write your name and surname into file1 file
@@ -158,15 +146,12 @@ Explanation:
 - > redirects output and overwrites file content
 - >> would append to file instead of overwriting
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ echo "Name Surname" > homework/file1                        |
-|  - Command executes without error                                |
-|  - Prompt returns to next line                                   |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 5**
+>
+> Terminal showing:
+> - $ echo "Name Surname" > homework/file1
+> - Command executes without error
+> - Prompt returns to next line
 
 
 ## TASK 6: View the contents of file1 in the console
@@ -193,15 +178,12 @@ Explanation:
 - cat = concatenate and display file contents
 - Useful for viewing small files
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ cat homework/file1                                          |
-|  - Name Surname                                                  |
-|  - Your actual name and surname displayed                        |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 6**
+>
+> Terminal showing:
+> - $ cat homework/file1
+> - Name Surname
+> - Your actual name and surname displayed
 
 
 ## TASK 7: Navigate to the root of your file system
@@ -235,16 +217,13 @@ Expected Output:
 bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ cd /                                                        |
-|  - $ pwd                                                         |
-|  - /                                                             |
-|  - (Optional: $ ls showing root directories)                     |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 7**
+>
+> Terminal showing:
+> - $ cd /
+> - $ pwd
+> - /
+> - (Optional: $ ls showing root directories)
 
 
 ## TASK 8: Create file2 with same timestamp as file1 (without changing directory)
@@ -286,20 +265,17 @@ Expected Output:
 /
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ pwd                                                         |
-|  - /    <-- still at root                                        |
-|  - $ touch -r ~/homework/file1 ~/homework/file2                  |
-|  - $ ls -la ~/homework/                                          |
-|  - file1 and file2 with SAME TIMESTAMP:                          |
-|    ... Jan 15 10:01 file1                                        |
-|    ... Jan 15 10:01 file2                                        |
-|        ^^^^^^^^^^^^^ timestamps match                            |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 8**
+>
+> Terminal showing:
+> - $ pwd
+> - /    <-- still at root
+> - $ touch -r ~/homework/file1 ~/homework/file2
+> - $ ls -la ~/homework/
+> - file1 and file2 with SAME TIMESTAMP:
+>   ... Jan 15 10:01 file1
+>   ... Jan 15 10:01 file2
+>   (timestamps match)
 
 
 ## TASK 9: Find files modified less than 1 hour ago
@@ -334,16 +310,13 @@ Alternative with -mtime (days):
 $ find ~ -type f -mtime 0    # Modified today (less than 24 hours ago)
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ find ~ -type f -mmin -60                                    |
-|  - /home/Name_Surname/homework/file1                             |
-|  - /home/Name_Surname/homework/file2                             |
-|  - Both files appear in the output                               |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 9**
+>
+> Terminal showing:
+> - $ find ~ -type f -mmin -60
+> - /home/Name_Surname/homework/file1
+> - /home/Name_Surname/homework/file2
+> - Both files appear in the output
 
 
 ## TASK 10: Review your task
@@ -385,18 +358,15 @@ Expected Output:
 /home/Name_Surname/homework/file2
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 10 <<<                         |
-|                                                                  |
-|  Terminal showing ALL verification commands:                     |
-|  - $ ls -la ~/homework/                                          |
-|    (shows file1 and file2 with same timestamp)                   |
-|  - $ cat ~/homework/file1                                        |
-|    Name Surname                                                  |
-|  - $ find ~ -type f -mmin -60                                    |
-|    (shows both files)                                            |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 10**
+>
+> Terminal showing ALL verification commands:
+> - $ ls -la ~/homework/
+>   (shows file1 and file2 with same timestamp)
+> - $ cat ~/homework/file1
+>   Name Surname
+> - $ find ~ -type f -mmin -60
+>   (shows both files)
 
 
 ## TASK 11: Remove homework folder
@@ -437,18 +407,15 @@ Explanation:
 - -f = force (no confirmation prompts)
 - Be VERY careful with rm -rf, especially as root!
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 11 <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ rm -rf ~/homework                                           |
-|  - $ ls ~/homework                                               |
-|  - ls: cannot access '/home/.../homework': No such file or dir   |
-|  - OR                                                            |
-|  - $ ls -la ~/ | grep homework                                   |
-|  - (no output - folder doesn't exist)                            |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 11**
+>
+> Terminal showing:
+> - $ rm -rf ~/homework
+> - $ ls ~/homework
+> - ls: cannot access '/home/.../homework': No such file or dir
+> - OR
+> - $ ls -la ~/ | grep homework
+> - (no output - folder doesn't exist)
 
 
 ## COMPLETE COMMAND SEQUENCE SUMMARY

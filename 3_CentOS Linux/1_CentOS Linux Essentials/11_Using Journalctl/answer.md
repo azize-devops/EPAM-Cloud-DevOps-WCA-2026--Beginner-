@@ -7,14 +7,11 @@ Methods:
 - Activities > Search "Terminal"
 - Right-click on Desktop > Open Terminal
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                          |
-|                                                                  |
-|  Terminal window showing:                                        |
-|  - Empty terminal with command prompt                            |
-|  - Username and hostname visible (user@hostname:~$)              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 1**
+>
+> Terminal window showing:
+> - Empty terminal with command prompt
+> - Username and hostname visible (user@hostname:~$)
 
 
 ## TASK 2: Install nginx service
@@ -45,15 +42,12 @@ Explanation:
 - nginx is not in default CentOS repositories
 - EPEL provides additional packages including nginx
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2a <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ sudo yum install epel-release -y                            |
-|  - Installation progress                                         |
-|  - "Complete!" message                                           |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 2a**
+>
+> Terminal showing:
+> - $ sudo yum install epel-release -y
+> - Installation progress
+> - "Complete!" message
 
 
 ### STEP 2: Install nginx
@@ -101,17 +95,14 @@ nginx-1.20.1-10.el7.x86_64
 nginx-filesystem-1.20.1-10.el7.noarch
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2b <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ sudo yum install nginx -y                                   |
-|  - Installation progress                                         |
-|  - "Complete!" message                                           |
-|  - $ nginx -v                                                    |
-|  - nginx version: nginx/1.20.1                                   |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 2b**
+>
+> Terminal showing:
+> - $ sudo yum install nginx -y
+> - Installation progress
+> - "Complete!" message
+> - $ nginx -v
+> - nginx version: nginx/1.20.1
 
 
 ## TASK 3: Start nginx service
@@ -168,19 +159,16 @@ Output:
 ...
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ sudo systemctl start nginx                                  |
-|  - $ systemctl status nginx                                      |
-|  - ● nginx.service - The nginx HTTP and reverse proxy server     |
-|  - Active: active (running) since ...                            |
-|  - Log entries showing successful start                          |
-|  - "configuration file ... syntax is ok"                         |
-|  - "Started The nginx HTTP and reverse proxy server"             |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 3**
+>
+> Terminal showing:
+> - $ sudo systemctl start nginx
+> - $ systemctl status nginx
+> - nginx.service - The nginx HTTP and reverse proxy server
+> - Active: active (running) since ...
+> - Log entries showing successful start
+> - "configuration file ... syntax is ok"
+> - "Started The nginx HTTP and reverse proxy server"
 
 
 ## TASK 4: Stop nginx service
@@ -219,16 +207,13 @@ Output:
 inactive
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ sudo systemctl stop nginx                                   |
-|  - $ systemctl status nginx                                      |
-|  - Active: inactive (dead)                                       |
-|  - Log entries showing "Stopped The nginx..."                    |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 4**
+>
+> Terminal showing:
+> - $ sudo systemctl stop nginx
+> - $ systemctl status nginx
+> - Active: inactive (dead)
+> - Log entries showing "Stopped The nginx..."
 
 
 ## TASK 5: Check nginx service logs
@@ -254,16 +239,13 @@ Explanation:
 - `-u nginx` = Show logs only for nginx unit
 - Shows all logs from beginning of journal
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5a <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ journalctl -u nginx                                         |
-|  - Log entries for nginx service                                 |
-|  - Start and stop events visible                                 |
-|  - Configuration test messages                                   |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 5a**
+>
+> Terminal showing:
+> - $ journalctl -u nginx
+> - Log entries for nginx service
+> - Start and stop events visible
+> - Configuration test messages
 
 
 ### METHOD 2: Show recent logs with -n flag
@@ -352,16 +334,13 @@ Tue 2024-01-15 10:00:00.123456 UTC [s=abc123;i=1234;b=xyz789;...]
     ...
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5b <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ journalctl -u nginx -n 10                                   |
-|  - OR $ journalctl -u nginx --since "1 hour ago"                 |
-|  - Recent nginx log entries                                      |
-|  - Timestamps and messages visible                               |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 5b**
+>
+> Terminal showing:
+> - $ journalctl -u nginx -n 10
+> - OR $ journalctl -u nginx --since "1 hour ago"
+> - Recent nginx log entries
+> - Timestamps and messages visible
 
 
 ## TASK 6: Introduce error by moving nginx config file
@@ -394,17 +373,14 @@ Output:
 -rw-r--r--. 1 root root 2469 Jan 15 10:00 ./nginx.conf
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ sudo mv /etc/nginx/nginx.conf ./                            |
-|  - $ ls -la /etc/nginx/nginx.conf                                |
-|  - ls: cannot access ... No such file or directory               |
-|  - $ ls -la ./nginx.conf                                         |
-|  - File exists in current directory                              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 6**
+>
+> Terminal showing:
+> - $ sudo mv /etc/nginx/nginx.conf ./
+> - $ ls -la /etc/nginx/nginx.conf
+> - ls: cannot access ... No such file or directory
+> - $ ls -la ./nginx.conf
+> - File exists in current directory
 
 
 ## TASK 7: Attempt to start nginx service
@@ -446,20 +422,17 @@ Important observations:
 - nginx: [emerg] open() "/etc/nginx/nginx.conf" failed (2: No such file or directory)
 - nginx: configuration file /etc/nginx/nginx.conf test failed
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ sudo systemctl start nginx                                  |
-|  - "Job for nginx.service failed..." message                     |
-|  - $ systemctl status nginx                                      |
-|  - Active: failed (Result: exit-code)                            |
-|  - Error message:                                                |
-|    nginx: [emerg] open() "/etc/nginx/nginx.conf" failed          |
-|    (2: No such file or directory)                                |
-|  - "Failed to start The nginx HTTP and reverse proxy server"     |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 7**
+>
+> Terminal showing:
+> - $ sudo systemctl start nginx
+> - "Job for nginx.service failed..." message
+> - $ systemctl status nginx
+> - Active: failed (Result: exit-code)
+> - Error message:
+>   nginx: [emerg] open() "/etc/nginx/nginx.conf" failed
+>   (2: No such file or directory)
+> - "Failed to start The nginx HTTP and reverse proxy server"
 
 
 ## TASK 8: View only error entries in nginx logs
@@ -489,17 +462,14 @@ Explanation:
   - 6 = info
   - 7 = debug
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 8a <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ journalctl -u nginx -p err                                  |
-|  - Only error messages displayed:                                |
-|    nginx: [emerg] open() "/etc/nginx/nginx.conf" failed          |
-|    (2: No such file or directory)                                |
-|    nginx: configuration file ... test failed                     |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 8a**
+>
+> Terminal showing:
+> - $ journalctl -u nginx -p err
+> - Only error messages displayed:
+>   nginx: [emerg] open() "/etc/nginx/nginx.conf" failed
+>   (2: No such file or directory)
+>   nginx: configuration file ... test failed
 
 
 ### METHOD 2: Using priority range
@@ -541,16 +511,13 @@ $ journalctl -u nginx | grep -i "failed"
 $ journalctl -u nginx | grep -E "error|failed|emerg"
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 8b <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ journalctl -u nginx -p err --since "10 minutes ago"         |
-|  - Error entries with timestamp                                  |
-|  - OR $ journalctl -u nginx | grep -i failed                     |
-|  - Filtered error messages                                       |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 8b**
+>
+> Terminal showing:
+> - $ journalctl -u nginx -p err --since "10 minutes ago"
+> - Error entries with timestamp
+> - OR $ journalctl -u nginx | grep -i failed
+> - Filtered error messages
 
 
 ### METHOD 5: Using journalctl -xe for detailed errors
@@ -598,16 +565,13 @@ Output:
 }
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 8c <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ journalctl -xe                                              |
-|  - Detailed error explanation                                    |
-|  - "Unit nginx.service has failed"                               |
-|  - Error context and description                                 |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 8c**
+>
+> Terminal showing:
+> - $ journalctl -xe
+> - Detailed error explanation
+> - "Unit nginx.service has failed"
+> - Error context and description
 
 
 ## RESTORE NGINX (After completing the task)
@@ -643,17 +607,14 @@ Output:
    Active: active (running) since ...
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 9 (Optional) <<<               |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ sudo mv ./nginx.conf /etc/nginx/nginx.conf                  |
-|  - $ sudo systemctl start nginx                                  |
-|  - $ systemctl status nginx                                      |
-|  - Active: active (running)                                      |
-|  - nginx successfully restored and running                       |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 9 (Optional)**
+>
+> Terminal showing:
+> - $ sudo mv ./nginx.conf /etc/nginx/nginx.conf
+> - $ sudo systemctl start nginx
+> - $ systemctl status nginx
+> - Active: active (running)
+> - nginx successfully restored and running
 
 
 ## COMPLETE COMMAND SEQUENCE

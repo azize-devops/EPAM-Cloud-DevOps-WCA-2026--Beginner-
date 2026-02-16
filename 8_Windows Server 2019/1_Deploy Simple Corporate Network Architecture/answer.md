@@ -5,9 +5,7 @@ using Windows Server 2019 with VirtualBox. You will create a main server
 with DHCP and Routing services, and two client VMs in separate network
 segments with traffic filtering rules.
 
-================================================================================
-                    PART 1: VIRTUALBOX NETWORK CONFIGURATION
-================================================================================
+## PART 1: VIRTUALBOX NETWORK CONFIGURATION
 
 Before creating VMs, we need to configure VirtualBox networks.
 
@@ -49,9 +47,7 @@ If you want a dedicated NAT network instead of the default NAT:
    - Enable Network
 4. Click OK
 
-================================================================================
-                    PART 2: CREATE VIRTUAL MACHINES
-================================================================================
+## PART 2: CREATE VIRTUAL MACHINES
 
 STEP 2.1: CREATE MAIN SERVER VM (LAB1SRV1)
 ------------------------------------------
@@ -129,9 +125,7 @@ STEP 2.3: CREATE CLIENT VM 2 (LAB1BUS1 - BUSINESS)
 
 4. Install Windows Server 2019
 
-================================================================================
-                    PART 3: CONFIGURE MAIN SERVER (LAB1SRV1)
-================================================================================
+## PART 3: CONFIGURE MAIN SERVER (LAB1SRV1)
 
 STEP 3.1: RENAME COMPUTER AND CONFIGURE STATIC IPs
 --------------------------------------------------
@@ -199,13 +193,13 @@ Using Server Manager:
 
 Using PowerShell (Alternative):
 
-    Install-WindowsFeature -Name DHCP -IncludeManagementTools
-    Install-WindowsFeature -Name Routing -IncludeManagementTools
-    Install-WindowsFeature -Name RSAT-RemoteAccess-Mgmt
+```powershell
+Install-WindowsFeature -Name DHCP -IncludeManagementTools
+Install-WindowsFeature -Name Routing -IncludeManagementTools
+Install-WindowsFeature -Name RSAT-RemoteAccess-Mgmt
+```
 
-================================================================================
-                    PART 4: CONFIGURE DHCP SERVICE
-================================================================================
+## PART 4: CONFIGURE DHCP SERVICE
 
 STEP 4.1: OPEN DHCP MANAGEMENT CONSOLE
 --------------------------------------
@@ -326,17 +320,20 @@ In DHCP console, you should see:
 
 PowerShell verification:
 
-    Get-DhcpServerv4Scope
+```powershell
+Get-DhcpServerv4Scope
+```
 
 Expected output:
-    ScopeId       SubnetMask      Name              State
-    -------       ----------      ----              -----
-    192.168.1.0   255.255.255.0   Accounting Network Active
-    192.168.2.0   255.255.255.0   Business Network   Active
 
-================================================================================
-                    PART 5: CONFIGURE ROUTING AND REMOTE ACCESS
-================================================================================
+```
+ScopeId       SubnetMask      Name              State
+-------       ----------      ----              -----
+192.168.1.0   255.255.255.0   Accounting Network Active
+192.168.2.0   255.255.255.0   Business Network   Active
+```
+
+## PART 5: CONFIGURE ROUTING AND REMOTE ACCESS
 
 STEP 5.1: ENABLE ROUTING AND REMOTE ACCESS
 ------------------------------------------
@@ -391,12 +388,12 @@ STEP 5.3: ENABLE IP ROUTING (IF NOT ALREADY)
 
 PowerShell alternative:
 
-    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" -Name "IPEnableRouter" -Value 1
-    Restart-Service RemoteAccess
+```powershell
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" -Name "IPEnableRouter" -Value 1
+Restart-Service RemoteAccess
+```
 
-================================================================================
-                    PART 6: CONFIGURE TRAFFIC FILTERING (ACCESS RULES)
-================================================================================
+## PART 6: CONFIGURE TRAFFIC FILTERING (ACCESS RULES)
 
 This is the critical part - allowing Business->Accounting but denying Accounting->Business.
 
@@ -536,34 +533,36 @@ Make sure the rules are applied correctly:
 
 PowerShell Commands for Firewall Rules:
 
-    # Block Accounting to Business
-    New-NetFirewallRule -DisplayName "Block Accounting to Business" `
-        -Direction Inbound `
-        -LocalAddress 192.168.2.0/24 `
-        -RemoteAddress 192.168.1.0/24 `
-        -Action Block `
-        -Profile Any
+```powershell
+# Block Accounting to Business
+New-NetFirewallRule -DisplayName "Block Accounting to Business" `
+    -Direction Inbound `
+    -LocalAddress 192.168.2.0/24 `
+    -RemoteAddress 192.168.1.0/24 `
+    -Action Block `
+    -Profile Any
 
-    # Allow Business to Accounting
-    New-NetFirewallRule -DisplayName "Allow Business to Accounting" `
-        -Direction Inbound `
-        -LocalAddress 192.168.1.0/24 `
-        -RemoteAddress 192.168.2.0/24 `
-        -Action Allow `
-        -Profile Any
+# Allow Business to Accounting
+New-NetFirewallRule -DisplayName "Allow Business to Accounting" `
+    -Direction Inbound `
+    -LocalAddress 192.168.1.0/24 `
+    -RemoteAddress 192.168.2.0/24 `
+    -Action Allow `
+    -Profile Any
+```
 
 METHOD 3: USING NETSH ROUTING FILTERS (ALTERNATIVE)
 ---------------------------------------------------
 
-    # Add filter to block Accounting -> Business on the routing level
-    netsh routing ip add filter name="Accounting" filtertype=input \
-        srcaddr=192.168.1.0 srcmask=255.255.255.0 \
-        dstaddr=192.168.2.0 dstmask=255.255.255.0 \
-        proto=any action=drop
+```batch
+# Add filter to block Accounting -> Business on the routing level
+netsh routing ip add filter name="Accounting" filtertype=input ^
+    srcaddr=192.168.1.0 srcmask=255.255.255.0 ^
+    dstaddr=192.168.2.0 dstmask=255.255.255.0 ^
+    proto=any action=drop
+```
 
-================================================================================
-                    PART 7: CONFIGURE CLIENT VMs
-================================================================================
+## PART 7: CONFIGURE CLIENT VMs
 
 STEP 7.1: CONFIGURE LAB1ACC1 (ACCOUNTING CLIENT)
 ------------------------------------------------
@@ -588,14 +587,17 @@ STEP 7.1: CONFIGURE LAB1ACC1 (ACCOUNTING CLIENT)
    - Run: ipconfig /all
 
 Expected output:
-    Windows IP Configuration
 
-    Ethernet adapter Ethernet:
-       Connection-specific DNS Suffix  . :
-       IPv4 Address. . . . . . . . . . . : 192.168.1.100-200 (from DHCP range)
-       Subnet Mask . . . . . . . . . . . : 255.255.255.0
-       Default Gateway . . . . . . . . . : 192.168.1.1
-       DHCP Server . . . . . . . . . . . : 192.168.1.1
+```
+Windows IP Configuration
+
+Ethernet adapter Ethernet:
+   Connection-specific DNS Suffix  . :
+   IPv4 Address. . . . . . . . . . . : 192.168.1.100-200 (from DHCP range)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.1.1
+   DHCP Server . . . . . . . . . . . : 192.168.1.1
+```
 
 STEP 7.2: CONFIGURE LAB1BUS1 (BUSINESS CLIENT)
 ----------------------------------------------
@@ -613,15 +615,16 @@ STEP 7.2: CONFIGURE LAB1BUS1 (BUSINESS CLIENT)
    - ipconfig /all
 
 Expected output:
-    Ethernet adapter Ethernet:
-       IPv4 Address. . . . . . . . . . . : 192.168.2.100-200 (from DHCP range)
-       Subnet Mask . . . . . . . . . . . : 255.255.255.0
-       Default Gateway . . . . . . . . . : 192.168.2.1
-       DHCP Server . . . . . . . . . . . : 192.168.2.1
 
-================================================================================
-                    PART 8: VERIFICATION AND TESTING
-================================================================================
+```
+Ethernet adapter Ethernet:
+   IPv4 Address. . . . . . . . . . . : 192.168.2.100-200 (from DHCP range)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.2.1
+   DHCP Server . . . . . . . . . . . : 192.168.2.1
+```
+
+## PART 8: VERIFICATION AND TESTING
 
 STEP 8.1: VERIFY CONFIGURATION ON LAB1SRV1 (MAIN SERVER)
 --------------------------------------------------------
@@ -630,92 +633,128 @@ Command: ipconfig /all
 
 Expected output (3 adapters):
 
-    Windows IP Configuration
+```
+Windows IP Configuration
 
-    Host Name . . . . . . . . . . . . : LAB1SRV1
+Host Name . . . . . . . . . . . . : LAB1SRV1
 
-    Ethernet adapter Internet:
-       IPv4 Address. . . . . . . . . . . : 10.0.2.15 (NAT IP)
-       Subnet Mask . . . . . . . . . . . : 255.255.255.0
-       Default Gateway . . . . . . . . . : 10.0.2.2
+Ethernet adapter Internet:
+   IPv4 Address. . . . . . . . . . . : 10.0.2.15 (NAT IP)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 10.0.2.2
 
-    Ethernet adapter Accounting:
-       IPv4 Address. . . . . . . . . . . : 192.168.1.1
-       Subnet Mask . . . . . . . . . . . : 255.255.255.0
-       Default Gateway . . . . . . . . . :
+Ethernet adapter Accounting:
+   IPv4 Address. . . . . . . . . . . : 192.168.1.1
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . :
 
-    Ethernet adapter Business:
-       IPv4 Address. . . . . . . . . . . : 192.168.2.1
-       Subnet Mask . . . . . . . . . . . : 255.255.255.0
-       Default Gateway . . . . . . . . . :
+Ethernet adapter Business:
+   IPv4 Address. . . . . . . . . . . : 192.168.2.1
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . :
+```
 
 Command: route print
 
 Expected output shows routes to all three networks:
-    Network Destination    Netmask          Gateway       Interface
-    0.0.0.0                0.0.0.0          10.0.2.2      10.0.2.15
-    10.0.2.0               255.255.255.0    On-link       10.0.2.15
-    192.168.1.0            255.255.255.0    On-link       192.168.1.1
-    192.168.2.0            255.255.255.0    On-link       192.168.2.1
+
+```
+Network Destination    Netmask          Gateway       Interface
+0.0.0.0                0.0.0.0          10.0.2.2      10.0.2.15
+10.0.2.0               255.255.255.0    On-link       10.0.2.15
+192.168.1.0            255.255.255.0    On-link       192.168.1.1
+192.168.2.0            255.255.255.0    On-link       192.168.2.1
+```
 
 STEP 8.2: TEST FROM LAB1ACC1 (ACCOUNTING)
 -----------------------------------------
 
 1. Check IP configuration:
-    ipconfig /all
 
-    Expected: IP in 192.168.1.100-200 range
+```batch
+ipconfig /all
+```
+
+Expected: IP in 192.168.1.100-200 range
 
 2. Check routing table:
-    route print
 
-    Expected: Default gateway 192.168.1.1
+```batch
+route print
+```
+
+Expected: Default gateway 192.168.1.1
 
 3. Test connectivity to gateway:
-    ping 192.168.1.1
 
-    Expected: Reply from 192.168.1.1
+```batch
+ping 192.168.1.1
+```
+
+Expected: Reply from 192.168.1.1
 
 4. Test connectivity to Business network (SHOULD FAIL):
-    ping 192.168.2.1
 
-    Expected: Request timed out (or Destination unreachable)
+```batch
+ping 192.168.2.1
+```
 
-    tracert -d 192.168.2.100
+Expected: Request timed out (or Destination unreachable)
 
-    Expected: Packets blocked, trace fails
+```batch
+tracert -d 192.168.2.100
+```
+
+Expected: Packets blocked, trace fails
 
 5. Test Internet connectivity (SHOULD WORK):
-    ping 8.8.8.8
 
-    Expected: Reply from 8.8.8.8
+```batch
+ping 8.8.8.8
+```
+
+Expected: Reply from 8.8.8.8
 
 STEP 8.3: TEST FROM LAB1BUS1 (BUSINESS)
 ---------------------------------------
 
 1. Check IP configuration:
-    ipconfig /all
 
-    Expected: IP in 192.168.2.100-200 range
+```batch
+ipconfig /all
+```
+
+Expected: IP in 192.168.2.100-200 range
 
 2. Check routing table:
-    route print
 
-    Expected: Default gateway 192.168.2.1
+```batch
+route print
+```
+
+Expected: Default gateway 192.168.2.1
 
 3. Test connectivity to Accounting network (SHOULD WORK):
-    ping 192.168.1.1
 
-    Expected: Reply from 192.168.1.1
+```batch
+ping 192.168.1.1
+```
 
-    tracert -d 192.168.1.100
+Expected: Reply from 192.168.1.1
 
-    Expected: Trace shows path through 192.168.2.1 to 192.168.1.x
+```batch
+tracert -d 192.168.1.100
+```
+
+Expected: Trace shows path through 192.168.2.1 to 192.168.1.x
 
 4. Test Internet connectivity (SHOULD WORK):
-    ping 8.8.8.8
 
-    Expected: Reply from 8.8.8.8
+```batch
+ping 8.8.8.8
+```
+
+Expected: Reply from 8.8.8.8
 
 STEP 8.4: VERIFY DHCP LEASES ON SERVER
 --------------------------------------
@@ -725,12 +764,13 @@ STEP 8.4: VERIFY DHCP LEASES ON SERVER
 3. You should see active leases for both clients
 
 PowerShell:
-    Get-DhcpServerv4Lease -ScopeId 192.168.1.0
-    Get-DhcpServerv4Lease -ScopeId 192.168.2.0
 
-================================================================================
-                    PART 9: SCREENSHOTS FOR SUBMISSION
-================================================================================
+```powershell
+Get-DhcpServerv4Lease -ScopeId 192.168.1.0
+Get-DhcpServerv4Lease -ScopeId 192.168.2.0
+```
+
+## PART 9: SCREENSHOTS FOR SUBMISSION
 
 Capture the following screenshots (with host DateTime visible):
 
@@ -763,15 +803,16 @@ Capture the following screenshots (with host DateTime visible):
    - DHCP Address Leases showing both clients
    - ping tests between networks showing traffic rules work
 
-================================================================================
-                    TROUBLESHOOTING
-================================================================================
+## TROUBLESHOOTING
 
 PROBLEM: DHCP not giving out addresses
 --------------------------------------
 Solutions:
 1. Verify DHCP Server service is running:
-   Get-Service DHCPServer
+
+```powershell
+Get-Service DHCPServer
+```
 
 2. Authorize DHCP server (required in domain environments)
 
@@ -788,7 +829,10 @@ Solutions:
    - RRAS console -> NAT -> Verify public interface
 
 2. Check IP forwarding is enabled:
-   Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" -Name IPEnableRouter
+
+```powershell
+Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" -Name IPEnableRouter
+```
 
 3. Verify default gateway on clients points to server
 
@@ -803,36 +847,44 @@ Solutions:
 
 3. Test with firewall temporarily disabled to isolate issue
 
-4. Use: netsh advfirewall firewall show rule name=all
+4. Use:
+
+```batch
+netsh advfirewall firewall show rule name=all
+```
 
 PROBLEM: Routing not working between networks
 ---------------------------------------------
 Solutions:
 1. Enable IP routing:
-   Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" -Name "IPEnableRouter" -Value 1
+
+```powershell
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" -Name "IPEnableRouter" -Value 1
+```
 
 2. Restart Routing and Remote Access service
 
 3. Verify all interfaces are added to RRAS
 
-================================================================================
-                    SUMMARY
-================================================================================
+## SUMMARY
 
-Network Architecture:
-+------------------+     +------------------+     +------------------+
-|    LAB1ACC1      |     |    LAB1SRV1      |     |    LAB1BUS1      |
-|   (Accounting)   |     |   (Main Server)  |     |   (Business)     |
-|                  |     |                  |     |                  |
-| 192.168.1.x/24   |<--->| 192.168.1.1      |     | 192.168.2.x/24   |
-|                  |     | 192.168.2.1      |<--->|                  |
-|                  |     | 10.0.2.x (NAT)   |     |                  |
-+------------------+     +--------+---------+     +------------------+
-                                 |
-                                 v
-                         +-------+--------+
-                         |   INTERNET     |
-                         +----------------+
+> **Network Architecture Diagram**
+>
+> ```
+> +------------------+     +------------------+     +------------------+
+> |    LAB1ACC1      |     |    LAB1SRV1      |     |    LAB1BUS1      |
+> |   (Accounting)   |     |   (Main Server)  |     |   (Business)     |
+> |                  |     |                  |     |                  |
+> | 192.168.1.x/24   |<--->| 192.168.1.1      |     | 192.168.2.x/24   |
+> |                  |     | 192.168.2.1      |<--->|                  |
+> |                  |     | 10.0.2.x (NAT)   |     |                  |
+> +------------------+     +--------+---------+     +------------------+
+>                                  |
+>                                  v
+>                          +-------+--------+
+>                          |   INTERNET     |
+>                          +----------------+
+> ```
 
 Traffic Rules:
 - Business (192.168.2.0/24) -> Accounting (192.168.1.0/24): ALLOWED
@@ -851,4 +903,3 @@ Key Verification Commands:
 - ping <IP> (test connectivity)
 - Get-DhcpServerv4Scope (verify DHCP scopes)
 - Get-DhcpServerv4Lease -ScopeId <scope> (check leases)
-

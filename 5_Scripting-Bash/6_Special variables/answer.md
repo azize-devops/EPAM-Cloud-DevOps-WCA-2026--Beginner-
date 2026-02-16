@@ -4,128 +4,120 @@ This guide covers bash special (reserved) variables including positional
 parameters, argument handling, and exit codes.
 
 
-================================================================================
-                      UNDERSTANDING SPECIAL VARIABLES
-================================================================================
+## UNDERSTANDING SPECIAL VARIABLES
 
 Special variables in bash are predefined variables with special meanings:
 
 Positional Parameters:
-    $0              Script name
-    $1, $2, ...     Arguments (1st, 2nd, ...)
-    ${10}, ${11}    Arguments 10+ (braces required)
+- $0              Script name
+- $1, $2, ...     Arguments (1st, 2nd, ...)
+- ${10}, ${11}    Arguments 10+ (braces required)
 
 Argument Related:
-    $#              Number of arguments
-    $@              All arguments (as separate words)
-    $*              All arguments (as single word)
+- $#              Number of arguments
+- $@              All arguments (as separate words)
+- $*              All arguments (as single word)
 
 Process Related:
-    $$              Current shell PID
-    $!              Last background process PID
-    $?              Exit status of last command
+- $$              Current shell PID
+- $!              Last background process PID
+- $?              Exit status of last command
 
 Other:
-    $_              Last argument of previous command
-    $-              Current shell options
-
-================================================================================
+- $_              Last argument of previous command
+- $-              Current shell options
 
 
-TASK 1: Create the script
--------------------------
+## TASK 1: Create the script
 
 Create my_script.sh in your home directory:
 
-    cd ~
-    touch my_script.sh
-    chmod +x my_script.sh
+```bash
+cd ~
+touch my_script.sh
+chmod +x my_script.sh
+```
 
 Edit the script:
 
-    vim my_script.sh
-    # or
-    nano my_script.sh
+```bash
+vim my_script.sh
+# or
+nano my_script.sh
+```
 
 Script content:
 
-    #!/bin/bash
+```bash
+#!/bin/bash
 
-    # Print the name of the script
-    echo $0
+# Print the name of the script
+echo $0
 
-    # Print all arguments
-    echo $@
+# Print all arguments
+echo $@
 
-    # Print the number of arguments
-    echo $#
+# Print the number of arguments
+echo $#
 
-    # Print 2nd and 4th argument
-    echo $2 $4
+# Print 2nd and 4th argument
+echo $2 $4
 
-    # Compare 1st and 2nd arguments and print exit code
-    [[ $1 -eq $2 ]]
-    echo $?
+# Compare 1st and 2nd arguments and print exit code
+[[ $1 -eq $2 ]]
+echo $?
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                   |
-|                                                          |
-|  Show: Creating my_script.sh                             |
-|  Expected: touch and chmod commands                      |
-+----------------------------------------------------------+
+> **Screenshot 1**
+> - Show: Creating my_script.sh
+> - Expected: touch and chmod commands
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                   |
-|                                                          |
-|  Show: Script content in editor                          |
-|  Expected: Complete script with all special variables    |
-+----------------------------------------------------------+
+> **Screenshot 2**
+> - Show: Script content in editor
+> - Expected: Complete script with all special variables
 
 Alternative - Create using cat heredoc:
 
-    cat > ~/my_script.sh << 'EOF'
-    #!/bin/bash
+```bash
+cat > ~/my_script.sh << 'EOF'
+#!/bin/bash
 
-    # Print the name of the script
-    echo $0
+# Print the name of the script
+echo $0
 
-    # Print all arguments
-    echo $@
+# Print all arguments
+echo $@
 
-    # Print the number of arguments
-    echo $#
+# Print the number of arguments
+echo $#
 
-    # Print 2nd and 4th argument
-    echo $2 $4
+# Print 2nd and 4th argument
+echo $2 $4
 
-    # Compare 1st and 2nd arguments and print exit code
-    [[ $1 -eq $2 ]]
-    echo $?
-    EOF
+# Compare 1st and 2nd arguments and print exit code
+[[ $1 -eq $2 ]]
+echo $?
+EOF
 
-    chmod +x ~/my_script.sh
+chmod +x ~/my_script.sh
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                   |
-|                                                          |
-|  Show: Creating script with heredoc                      |
-|  Expected: Script created via command line               |
-+----------------------------------------------------------+
+> **Screenshot 3**
+> - Show: Creating script with heredoc
+> - Expected: Script created via command line
 
 Verify script content:
 
-    cat ~/my_script.sh
+```bash
+cat ~/my_script.sh
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                   |
-|                                                          |
-|  Show: cat my_script.sh output                           |
-|  Expected: Complete script displayed                     |
-+----------------------------------------------------------+
+> **Screenshot 4**
+> - Show: cat my_script.sh output
+> - Expected: Complete script displayed
 
 
-UNDERSTANDING THE SCRIPT LINE BY LINE
--------------------------------------
+## UNDERSTANDING THE SCRIPT LINE BY LINE
 
 Line: echo $0
 - $0 = name of the script (./my_script.sh)
@@ -155,41 +147,40 @@ Line: echo $?
 - 1 = failure (arguments were not equal)
 
 
-TASK 2: Execute with ./my_script.sh 1 2 hello world
----------------------------------------------------
+## TASK 2: Execute with ./my_script.sh 1 2 hello world
 
 Run the script with the specified arguments:
 
-    ./my_script.sh 1 2 hello world
+```bash
+./my_script.sh 1 2 hello world
+```
 
 Expected output:
-    ./my_script.sh
-    1 2 hello world
-    4
-    2 world
-    1
+```
+./my_script.sh
+1 2 hello world
+4
+2 world
+1
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                   |
-|                                                          |
-|  Show: First script execution                            |
-|  Expected: All 5 lines of output                         |
-+----------------------------------------------------------+
+> **Screenshot 5**
+> - Show: First script execution
+> - Expected: All 5 lines of output
 
 Output breakdown:
 
-    ./my_script.sh       <- $0 (script name)
-    1 2 hello world      <- $@ (all arguments)
-    4                    <- $# (argument count)
-    2 world              <- $2 and $4 (2nd and 4th args)
-    1                    <- $? (exit code: 1 != 2, so exit 1)
+```
+./my_script.sh       <- $0 (script name)
+1 2 hello world      <- $@ (all arguments)
+4                    <- $# (argument count)
+2 world              <- $2 and $4 (2nd and 4th args)
+1                    <- $? (exit code: 1 != 2, so exit 1)
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                   |
-|                                                          |
-|  Show: Output with annotations                           |
-|  Expected: Each line explained                           |
-+----------------------------------------------------------+
+> **Screenshot 6**
+> - Show: Output with annotations
+> - Expected: Each line explained
 
 Why is the last output 1?
 - [[ 1 -eq 2 ]] checks if 1 equals 2
@@ -197,45 +188,43 @@ Why is the last output 1?
 - Failed comparison returns exit code 1
 
 
-TASK 3 & 4: Change arguments so -eq returns 0
----------------------------------------------
+## TASK 3 & 4: Change arguments so -eq returns 0
 
 For -eq to return 0 (success), the first two arguments must be equal.
 
 Run with matching first two arguments:
 
-    ./my_script.sh 5 5 hello world
+```bash
+./my_script.sh 5 5 hello world
+```
 
 Expected output:
-    ./my_script.sh
-    5 5 hello world
-    4
-    5 world
-    0                    <- Now 0 because 5 == 5
+```
+./my_script.sh
+5 5 hello world
+4
+5 world
+0                    <- Now 0 because 5 == 5
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                   |
-|                                                          |
-|  Show: Second script execution with equal args           |
-|  Expected: Last line is 0                                |
-+----------------------------------------------------------+
+> **Screenshot 7**
+> - Show: Second script execution with equal args
+> - Expected: Last line is 0
 
 Other valid examples:
 
-    ./my_script.sh 10 10 hello world    # 10 == 10, exit 0
-    ./my_script.sh 0 0 foo bar          # 0 == 0, exit 0
-    ./my_script.sh 42 42 test data      # 42 == 42, exit 0
+```bash
+./my_script.sh 10 10 hello world    # 10 == 10, exit 0
+./my_script.sh 0 0 foo bar          # 0 == 0, exit 0
+./my_script.sh 42 42 test data      # 42 == 42, exit 0
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                   |
-|                                                          |
-|  Show: Multiple test runs with equal arguments           |
-|  Expected: Exit code 0 in each case                      |
-+----------------------------------------------------------+
+> **Screenshot 8**
+> - Show: Multiple test runs with equal arguments
+> - Expected: Exit code 0 in each case
 
 
-UNDERSTANDING [[ ]] AND EXIT CODES
-----------------------------------
+## UNDERSTANDING [[ ]] AND EXIT CODES
 
 The [[ ]] construct:
 - Modern bash conditional expression
@@ -243,90 +232,85 @@ The [[ ]] construct:
 - More powerful than [ ] (single brackets)
 
 Exit codes:
-    0 = Success (true)
-    1 = Failure (false)
-    Other = Various error codes
+- 0 = Success (true)
+- 1 = Failure (false)
+- Other = Various error codes
 
 Example:
 
-    [[ 5 -eq 5 ]]
-    echo $?           # 0 (true, equal)
+```bash
+[[ 5 -eq 5 ]]
+echo $?           # 0 (true, equal)
 
-    [[ 5 -eq 3 ]]
-    echo $?           # 1 (false, not equal)
+[[ 5 -eq 3 ]]
+echo $?           # 1 (false, not equal)
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                   |
-|                                                          |
-|  Show: [[ ]] exit code examples                          |
-|  Expected: 0 for true, 1 for false                       |
-+----------------------------------------------------------+
+> **Screenshot 9**
+> - Show: [[ ]] exit code examples
+> - Expected: 0 for true, 1 for false
 
 
-ADDITIONAL EXAMPLES WITH SPECIAL VARIABLES
-------------------------------------------
+## ADDITIONAL EXAMPLES WITH SPECIAL VARIABLES
 
 Example script showing all special variables:
 
-    #!/bin/bash
+```bash
+#!/bin/bash
 
-    echo "Script name: $0"
-    echo "First argument: $1"
-    echo "Second argument: $2"
-    echo "All arguments (\$@): $@"
-    echo "All arguments (\$*): $*"
-    echo "Number of arguments: $#"
-    echo "Process ID: $$"
-    echo "Exit status of last command: $?"
+echo "Script name: $0"
+echo "First argument: $1"
+echo "Second argument: $2"
+echo "All arguments (\$@): $@"
+echo "All arguments (\$*): $*"
+echo "Number of arguments: $#"
+echo "Process ID: $$"
+echo "Exit status of last command: $?"
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 10 <<<                  |
-|                                                          |
-|  Show: Extended example script                           |
-|  Expected: All special variables demonstrated            |
-+----------------------------------------------------------+
+> **Screenshot 10**
+> - Show: Extended example script
+> - Expected: All special variables demonstrated
 
 
-DIFFERENCE BETWEEN $@ AND $*
-----------------------------
+## DIFFERENCE BETWEEN $@ AND $*
 
 Both represent all arguments, but behave differently when quoted:
 
-    # Script: test_args.sh
-    #!/bin/bash
-    echo "Using \$@:"
-    for arg in "$@"; do
-        echo "  Arg: $arg"
-    done
+```bash
+# Script: test_args.sh
+#!/bin/bash
+echo "Using \$@:"
+for arg in "$@"; do
+    echo "  Arg: $arg"
+done
 
-    echo "Using \$*:"
-    for arg in "$*"; do
-        echo "  Arg: $arg"
-    done
+echo "Using \$*:"
+for arg in "$*"; do
+    echo "  Arg: $arg"
+done
+```
 
 Running: ./test_args.sh "hello world" foo bar
 
 Output:
-    Using $@:
-      Arg: hello world     <- Preserves "hello world" as one arg
-      Arg: foo
-      Arg: bar
-    Using $*:
-      Arg: hello world foo bar    <- All as single string
+```
+Using $@:
+  Arg: hello world     <- Preserves "hello world" as one arg
+  Arg: foo
+  Arg: bar
+Using $*:
+  Arg: hello world foo bar    <- All as single string
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 11 <<<                  |
-|                                                          |
-|  Show: Difference between $@ and $*                      |
-|  Expected: $@ preserves argument boundaries              |
-+----------------------------------------------------------+
+> **Screenshot 11**
+> - Show: Difference between $@ and $*
+> - Expected: $@ preserves argument boundaries
 
 Best Practice: Use "$@" (with quotes) to preserve argument boundaries.
 
 
-================================================================================
-                        SPECIAL VARIABLES REFERENCE
-================================================================================
+## SPECIAL VARIABLES REFERENCE
 
 | Variable | Description                                  | Example Value     |
 |----------|----------------------------------------------|-------------------|
@@ -343,12 +327,8 @@ Best Practice: Use "$@" (with quotes) to preserve argument boundaries.
 | $_       | Last argument of previous command            | lastarg           |
 | $-       | Current shell options                        | himBHs            |
 
-================================================================================
 
-
-================================================================================
-                        NUMERIC COMPARISON OPERATORS
-================================================================================
+## NUMERIC COMPARISON OPERATORS
 
 Used inside [[ ]] or [ ]:
 
@@ -363,12 +343,8 @@ Used inside [[ ]] or [ ]:
 
 Note: These are for INTEGER comparison only!
 
-================================================================================
 
-
-================================================================================
-                        STRING COMPARISON OPERATORS
-================================================================================
+## STRING COMPARISON OPERATORS
 
 Used inside [[ ]]:
 
@@ -381,12 +357,8 @@ Used inside [[ ]]:
 | -z       | String is empty          | [[ -z $a ]]        |
 | -n       | String is not empty      | [[ -n $a ]]        |
 
-================================================================================
 
-
-================================================================================
-                           EXIT CODES
-================================================================================
+## EXIT CODES
 
 | Code | Meaning                                              |
 |------|------------------------------------------------------|
@@ -400,15 +372,14 @@ Used inside [[ ]]:
 | 255  | Exit status out of range                             |
 
 Setting exit code in script:
-    exit 0    # Success
-    exit 1    # Failure
 
-================================================================================
+```bash
+exit 0    # Success
+exit 1    # Failure
+```
 
 
-================================================================================
-                             TROUBLESHOOTING
-================================================================================
+## TROUBLESHOOTING
 
 Problem: $10 doesn't work (shows $1 followed by 0)
 Solution: Use braces for arguments 10+: ${10}
@@ -418,22 +389,21 @@ Solution: Quote variables: "$1" instead of $1
 
 Problem: -eq gives "integer expression expected"
 Solution: -eq is for numbers only. Use == for strings:
-    [[ "hello" == "hello" ]]
+
+```bash
+[[ "hello" == "hello" ]]
+```
 
 Problem: $? shows wrong exit code
 Solution: $? only shows LAST command's exit code.
-    Capture immediately: result=$?
+Capture immediately: result=$?
 
 Problem: Script name shows full path instead of ./script.sh
 Solution: $0 shows exactly how script was called.
-    Use $(basename $0) for just the filename.
-
-================================================================================
+Use $(basename $0) for just the filename.
 
 
-================================================================================
-                              SELF-REVIEW CHECKLIST
-================================================================================
+## SELF-REVIEW CHECKLIST
 
 [ ] my_script.sh created and is executable
 [ ] Script prints $0 (script name)
@@ -446,6 +416,3 @@ Solution: $0 shows exactly how script was called.
 [ ] Second run with equal first two args shows exit code 0
 [ ] Understand difference between $@ and $*
 [ ] Understand numeric comparison operators
-
-================================================================================
-

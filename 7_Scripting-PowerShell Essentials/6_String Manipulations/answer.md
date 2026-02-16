@@ -4,377 +4,381 @@ This guide covers PowerShell string manipulation techniques including
 sorting, removing duplicates, and case conversion.
 
 
-================================================================================
-                     STRING MANIPULATION OVERVIEW
-================================================================================
+## STRING MANIPULATION OVERVIEW
 
 Key concepts:
-    - ToCharArray()          Convert string to character array
-    - Sort-Object -Unique    Sort and remove duplicates
-    - -join                  Join array elements into string
-    - -split                 Split string by delimiter
-    - ToUpper() / ToLower()  Case conversion
-    - Substring()            Extract part of string
 
-================================================================================
+```powershell
+- ToCharArray()          # Convert string to character array
+- Sort-Object -Unique    # Sort and remove duplicates
+- -join                  # Join array elements into string
+- -split                 # Split string by delimiter
+- ToUpper() / ToLower()  # Case conversion
+- Substring()            # Extract part of string
+```
 
 
-TASK 1: Create Sorted Unique String from Two Strings
------------------------------------------------------
+## TASK 1: Create Sorted Unique String from Two Strings
 
 Given strings:
 
-    $str1 = "xyaabbbccccdefww"
-    $str2 = "xxxxyyyyabklmopq"
+```powershell
+$str1 = "xyaabbbccccdefww"
+$str2 = "xxxxyyyyabklmopq"
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                   |
-|                                                          |
-|  Show: Define the two input strings                      |
-|  Expected: Both variables created                        |
-+----------------------------------------------------------+
+> **Screenshot 1**
+>
+> Show: Define the two input strings
+> Expected: Both variables created
 
 Solution - Step by step:
 
 Step 1: Combine the strings
 
-    $combined = $str1 + $str2
+```powershell
+$combined = $str1 + $str2
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                   |
-|                                                          |
-|  Show: Combined string                                   |
-|  Expected: "xyaabbbccccdefwwxxxxyyyyabklmopq"            |
-+----------------------------------------------------------+
+> **Screenshot 2**
+>
+> Show: Combined string
+> Expected: "xyaabbbccccdefwwxxxxyyyyabklmopq"
 
 Step 2: Convert to character array
 
-    $charArray = $combined.ToCharArray()
+```powershell
+$charArray = $combined.ToCharArray()
+```
 
 Step 3: Sort and get unique characters
 
-    $sorted = $charArray | Sort-Object -Unique
+```powershell
+$sorted = $charArray | Sort-Object -Unique
+```
 
 Step 4: Join back to string
 
-    $result = -join $sorted
+```powershell
+$result = -join $sorted
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                   |
-|                                                          |
-|  Show: Step by step execution                            |
-|  Expected: Each transformation visible                   |
-+----------------------------------------------------------+
+> **Screenshot 3**
+>
+> Show: Step by step execution
+> Expected: Each transformation visible
 
 Complete one-liner solution:
 
-    $str1 = "xyaabbbccccdefww"
-    $str2 = "xxxxyyyyabklmopq"
+```powershell
+$str1 = "xyaabbbccccdefww"
+$str2 = "xxxxyyyyabklmopq"
 
-    $result = -join (($str1 + $str2).ToCharArray() | Sort-Object -Unique)
+$result = -join (($str1 + $str2).ToCharArray() | Sort-Object -Unique)
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                   |
-|                                                          |
-|  Show: One-liner solution                                |
-|  Expected: Single line that produces result              |
-+----------------------------------------------------------+
+> **Screenshot 4**
+>
+> Show: One-liner solution
+> Expected: Single line that produces result
 
 Display the result:
 
-    $result
+```powershell
+$result
+```
 
 Expected output:
 
-    abcdefklmopqwxy
+```
+abcdefklmopqwxy
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                   |
-|                                                          |
-|  Show: Final result                                      |
-|  Expected: "abcdefklmopqwxy"                             |
-+----------------------------------------------------------+
+> **Screenshot 5**
+>
+> Show: Final result
+> Expected: "abcdefklmopqwxy"
 
 Alternative solutions:
 
-    # Using Select-Object -Unique
-    $result = -join (($str1 + $str2).ToCharArray() | Select-Object -Unique | Sort-Object)
+```powershell
+# Using Select-Object -Unique
+$result = -join (($str1 + $str2).ToCharArray() | Select-Object -Unique | Sort-Object)
 
-    # Using .NET HashSet for unique values
-    $chars = [System.Collections.Generic.HashSet[char]]::new(($str1 + $str2).ToCharArray())
-    $result = -join ($chars | Sort-Object)
+# Using .NET HashSet for unique values
+$chars = [System.Collections.Generic.HashSet[char]]::new(($str1 + $str2).ToCharArray())
+$result = -join ($chars | Sort-Object)
 
-    # Using Get-Unique (requires sorted input first)
-    $result = -join (($str1 + $str2).ToCharArray() | Sort-Object | Get-Unique)
+# Using Get-Unique (requires sorted input first)
+$result = -join (($str1 + $str2).ToCharArray() | Sort-Object | Get-Unique)
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                   |
-|                                                          |
-|  Show: Alternative solutions                             |
-|  Expected: Different approaches with same result         |
-+----------------------------------------------------------+
+> **Screenshot 6**
+>
+> Show: Alternative solutions
+> Expected: Different approaches with same result
 
 As a function:
 
-    function Get-SortedUniqueString {
-        param(
-            [string]$String1,
-            [string]$String2
-        )
-        return -join (($String1 + $String2).ToCharArray() | Sort-Object -Unique)
-    }
+```powershell
+function Get-SortedUniqueString {
+    param(
+        [string]$String1,
+        [string]$String2
+    )
+    return -join (($String1 + $String2).ToCharArray() | Sort-Object -Unique)
+}
 
-    # Usage
-    Get-SortedUniqueString -String1 "xyaabbbccccdefww" -String2 "xxxxyyyyabklmopq"
+# Usage
+Get-SortedUniqueString -String1 "xyaabbbccccdefww" -String2 "xxxxyyyyabklmopq"
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                   |
-|                                                          |
-|  Show: Function implementation                           |
-|  Expected: Reusable function with parameters             |
-+----------------------------------------------------------+
+> **Screenshot 7**
+>
+> Show: Function implementation
+> Expected: Reusable function with parameters
 
 
-TASK 2: Convert Dash/Underscore to CamelCase/PascalCase
--------------------------------------------------------
+## TASK 2: Convert Dash/Underscore to CamelCase/PascalCase
 
 Given strings:
 
-    $inputString1 = "the-stealth-warrior"
-    $inputString2 = "The_Stealth_Warrior"
+```powershell
+$inputString1 = "the-stealth-warrior"
+$inputString2 = "The_Stealth_Warrior"
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                   |
-|                                                          |
-|  Show: Define input strings                              |
-|  Expected: Both test strings created                     |
-+----------------------------------------------------------+
+> **Screenshot 8**
+>
+> Show: Define input strings
+> Expected: Both test strings created
 
 Solution for camelCase (first word lowercase):
 
-    function ConvertTo-CamelCase {
-        param([string]$inputString)
+```powershell
+function ConvertTo-CamelCase {
+    param([string]$inputString)
 
-        # Split by dash or underscore
-        $words = $inputString -split '[-_]'
+    # Split by dash or underscore
+    $words = $inputString -split '[-_]'
 
-        # First word: lowercase
-        $result = $words[0].ToLower()
+    # First word: lowercase
+    $result = $words[0].ToLower()
 
-        # Remaining words: capitalize first letter
-        for ($i = 1; $i -lt $words.Length; $i++) {
-            $word = $words[$i]
-            $result += $word.Substring(0,1).ToUpper() + $word.Substring(1).ToLower()
-        }
-
-        return $result
+    # Remaining words: capitalize first letter
+    for ($i = 1; $i -lt $words.Length; $i++) {
+        $word = $words[$i]
+        $result += $word.Substring(0,1).ToUpper() + $word.Substring(1).ToLower()
     }
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                   |
-|                                                          |
-|  Show: ConvertTo-CamelCase function                      |
-|  Expected: Function definition                           |
-+----------------------------------------------------------+
+    return $result
+}
+```
+
+> **Screenshot 9**
+>
+> Show: ConvertTo-CamelCase function
+> Expected: Function definition
 
 Test camelCase:
 
-    ConvertTo-CamelCase "the-stealth-warrior"
+```powershell
+ConvertTo-CamelCase "the-stealth-warrior"
+```
 
 Expected output:
 
-    theStealthWarrior
+```
+theStealthWarrior
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 10 <<<                  |
-|                                                          |
-|  Show: CamelCase result                                  |
-|  Expected: "theStealthWarrior"                           |
-+----------------------------------------------------------+
+> **Screenshot 10**
+>
+> Show: CamelCase result
+> Expected: "theStealthWarrior"
 
 Solution for PascalCase (all words capitalized):
 
-    function ConvertTo-PascalCase {
-        param([string]$inputString)
+```powershell
+function ConvertTo-PascalCase {
+    param([string]$inputString)
 
-        # Split by dash or underscore
-        $words = $inputString -split '[-_]'
+    # Split by dash or underscore
+    $words = $inputString -split '[-_]'
 
-        # All words: capitalize first letter
-        $result = ""
-        foreach ($word in $words) {
-            $result += $word.Substring(0,1).ToUpper() + $word.Substring(1).ToLower()
-        }
-
-        return $result
+    # All words: capitalize first letter
+    $result = ""
+    foreach ($word in $words) {
+        $result += $word.Substring(0,1).ToUpper() + $word.Substring(1).ToLower()
     }
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 11 <<<                  |
-|                                                          |
-|  Show: ConvertTo-PascalCase function                     |
-|  Expected: Function definition                           |
-+----------------------------------------------------------+
+    return $result
+}
+```
+
+> **Screenshot 11**
+>
+> Show: ConvertTo-PascalCase function
+> Expected: Function definition
 
 Test PascalCase:
 
-    ConvertTo-PascalCase "The_Stealth_Warrior"
+```powershell
+ConvertTo-PascalCase "The_Stealth_Warrior"
+```
 
 Expected output:
 
-    TheStealthWarrior
+```
+TheStealthWarrior
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 12 <<<                  |
-|                                                          |
-|  Show: PascalCase result                                 |
-|  Expected: "TheStealthWarrior"                           |
-+----------------------------------------------------------+
+> **Screenshot 12**
+>
+> Show: PascalCase result
+> Expected: "TheStealthWarrior"
 
 Combined function with switch:
 
-    function ConvertTo-Case {
-        param(
-            [string]$inputString,
-            [ValidateSet("Camel", "Pascal")]
-            [string]$CaseType = "Camel"
-        )
+```powershell
+function ConvertTo-Case {
+    param(
+        [string]$inputString,
+        [ValidateSet("Camel", "Pascal")]
+        [string]$CaseType = "Camel"
+    )
 
-        $words = $inputString -split '[-_]'
-        $result = ""
+    $words = $inputString -split '[-_]'
+    $result = ""
 
-        for ($i = 0; $i -lt $words.Length; $i++) {
-            $word = $words[$i]
+    for ($i = 0; $i -lt $words.Length; $i++) {
+        $word = $words[$i]
 
-            if ($i -eq 0 -and $CaseType -eq "Camel") {
-                # First word lowercase for camelCase
-                $result += $word.ToLower()
-            } else {
-                # Capitalize first letter
-                $result += $word.Substring(0,1).ToUpper() + $word.Substring(1).ToLower()
-            }
+        if ($i -eq 0 -and $CaseType -eq "Camel") {
+            # First word lowercase for camelCase
+            $result += $word.ToLower()
+        } else {
+            # Capitalize first letter
+            $result += $word.Substring(0,1).ToUpper() + $word.Substring(1).ToLower()
         }
-
-        return $result
     }
 
-    # Usage
-    ConvertTo-Case "the-stealth-warrior" -CaseType Camel   # theStealthWarrior
-    ConvertTo-Case "the-stealth-warrior" -CaseType Pascal  # TheStealthWarrior
+    return $result
+}
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 13 <<<                  |
-|                                                          |
-|  Show: Combined function with CaseType parameter         |
-|  Expected: Both case types from single function          |
-+----------------------------------------------------------+
+# Usage
+ConvertTo-Case "the-stealth-warrior" -CaseType Camel   # theStealthWarrior
+ConvertTo-Case "the-stealth-warrior" -CaseType Pascal  # TheStealthWarrior
+```
+
+> **Screenshot 13**
+>
+> Show: Combined function with CaseType parameter
+> Expected: Both case types from single function
 
 One-liner solutions:
 
-    # CamelCase one-liner
-    $inputString = "the-stealth-warrior"
-    $words = $inputString -split '[-_]'
-    $result = $words[0].ToLower() + (($words | Select-Object -Skip 1 | ForEach-Object {
-        $_.Substring(0,1).ToUpper() + $_.Substring(1).ToLower()
-    }) -join '')
+```powershell
+# CamelCase one-liner
+$inputString = "the-stealth-warrior"
+$words = $inputString -split '[-_]'
+$result = $words[0].ToLower() + (($words | Select-Object -Skip 1 | ForEach-Object {
+    $_.Substring(0,1).ToUpper() + $_.Substring(1).ToLower()
+}) -join '')
 
-    # PascalCase one-liner
-    $inputString = "The_Stealth_Warrior"
-    $result = ($inputString -split '[-_]' | ForEach-Object {
-        $_.Substring(0,1).ToUpper() + $_.Substring(1).ToLower()
-    }) -join ''
+# PascalCase one-liner
+$inputString = "The_Stealth_Warrior"
+$result = ($inputString -split '[-_]' | ForEach-Object {
+    $_.Substring(0,1).ToUpper() + $_.Substring(1).ToLower()
+}) -join ''
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 14 <<<                  |
-|                                                          |
-|  Show: One-liner solutions                               |
-|  Expected: Compact code alternatives                     |
-+----------------------------------------------------------+
+> **Screenshot 14**
+>
+> Show: One-liner solutions
+> Expected: Compact code alternatives
 
 Using .NET TextInfo (alternative approach):
 
-    $textInfo = (Get-Culture).TextInfo
+```powershell
+$textInfo = (Get-Culture).TextInfo
 
-    # Convert to Title Case then remove separators
-    $inputString = "the-stealth-warrior"
-    $titled = $textInfo.ToTitleCase($inputString.Replace("-", " ").Replace("_", " "))
-    $result = $titled.Replace(" ", "")
+# Convert to Title Case then remove separators
+$inputString = "the-stealth-warrior"
+$titled = $textInfo.ToTitleCase($inputString.Replace("-", " ").Replace("_", " "))
+$result = $titled.Replace(" ", "")
 
-    # For camelCase, lowercase the first character
-    $camelResult = $result.Substring(0,1).ToLower() + $result.Substring(1)
+# For camelCase, lowercase the first character
+$camelResult = $result.Substring(0,1).ToLower() + $result.Substring(1)
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 15 <<<                  |
-|                                                          |
-|  Show: .NET TextInfo approach                            |
-|  Expected: Alternative using culture info                |
-+----------------------------------------------------------+
+> **Screenshot 15**
+>
+> Show: .NET TextInfo approach
+> Expected: Alternative using culture info
 
 Additional test cases:
 
-    # Test various inputs
-    ConvertTo-CamelCase "hello-world"           # helloWorld
-    ConvertTo-CamelCase "UPPER_CASE_TEST"       # upperCaseTest
-    ConvertTo-CamelCase "mixed-Case_Test"       # mixedCaseTest
+```powershell
+# Test various inputs
+ConvertTo-CamelCase "hello-world"           # helloWorld
+ConvertTo-CamelCase "UPPER_CASE_TEST"       # upperCaseTest
+ConvertTo-CamelCase "mixed-Case_Test"       # mixedCaseTest
 
-    ConvertTo-PascalCase "hello-world"          # HelloWorld
-    ConvertTo-PascalCase "UPPER_CASE_TEST"      # UpperCaseTest
-    ConvertTo-PascalCase "mixed-Case_Test"      # MixedCaseTest
+ConvertTo-PascalCase "hello-world"          # HelloWorld
+ConvertTo-PascalCase "UPPER_CASE_TEST"      # UpperCaseTest
+ConvertTo-PascalCase "mixed-Case_Test"      # MixedCaseTest
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 16 <<<                  |
-|                                                          |
-|  Show: Multiple test cases                               |
-|  Expected: Various inputs converted correctly            |
-+----------------------------------------------------------+
+> **Screenshot 16**
+>
+> Show: Multiple test cases
+> Expected: Various inputs converted correctly
 
 
-COMPLETE SOLUTION SCRIPT
-------------------------
+## COMPLETE SOLUTION SCRIPT
 
-    # Task 1: Sorted Unique String
-    $str1 = "xyaabbbccccdefww"
-    $str2 = "xxxxyyyyabklmopq"
-    $sortedUnique = -join (($str1 + $str2).ToCharArray() | Sort-Object -Unique)
-    Write-Host "Sorted Unique: $sortedUnique"
+```powershell
+# Task 1: Sorted Unique String
+$str1 = "xyaabbbccccdefww"
+$str2 = "xxxxyyyyabklmopq"
+$sortedUnique = -join (($str1 + $str2).ToCharArray() | Sort-Object -Unique)
+Write-Host "Sorted Unique: $sortedUnique"
 
-    # Task 2: Case Conversion Functions
-    function ConvertTo-CamelCase {
-        param([string]$inputString)
-        $words = $inputString -split '[-_]'
-        $result = $words[0].ToLower()
-        for ($i = 1; $i -lt $words.Length; $i++) {
-            $word = $words[$i]
-            $result += $word.Substring(0,1).ToUpper() + $word.Substring(1).ToLower()
-        }
-        return $result
+# Task 2: Case Conversion Functions
+function ConvertTo-CamelCase {
+    param([string]$inputString)
+    $words = $inputString -split '[-_]'
+    $result = $words[0].ToLower()
+    for ($i = 1; $i -lt $words.Length; $i++) {
+        $word = $words[$i]
+        $result += $word.Substring(0,1).ToUpper() + $word.Substring(1).ToLower()
     }
+    return $result
+}
 
-    function ConvertTo-PascalCase {
-        param([string]$inputString)
-        $words = $inputString -split '[-_]'
-        $result = ""
-        foreach ($word in $words) {
-            $result += $word.Substring(0,1).ToUpper() + $word.Substring(1).ToLower()
-        }
-        return $result
+function ConvertTo-PascalCase {
+    param([string]$inputString)
+    $words = $inputString -split '[-_]'
+    $result = ""
+    foreach ($word in $words) {
+        $result += $word.Substring(0,1).ToUpper() + $word.Substring(1).ToLower()
     }
+    return $result
+}
 
-    # Test Task 2
-    Write-Host "CamelCase: $(ConvertTo-CamelCase 'the-stealth-warrior')"
-    Write-Host "PascalCase: $(ConvertTo-PascalCase 'The_Stealth_Warrior')"
+# Test Task 2
+Write-Host "CamelCase: $(ConvertTo-CamelCase 'the-stealth-warrior')"
+Write-Host "PascalCase: $(ConvertTo-PascalCase 'The_Stealth_Warrior')"
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 17 <<<                  |
-|                                                          |
-|  Show: Complete solution script                          |
-|  Expected: All tasks working together                    |
-+----------------------------------------------------------+
+> **Screenshot 17**
+>
+> Show: Complete solution script
+> Expected: All tasks working together
 
 
-================================================================================
-                     STRING METHODS REFERENCE
-================================================================================
+## STRING METHODS REFERENCE
 
 | Method              | Description                  | Example                    |
 |---------------------|------------------------------|----------------------------|
@@ -388,12 +392,8 @@ COMPLETE SOLUTION SCRIPT
 | .Length             | Get string length            | "hello".Length             |
 | .IndexOf(s)         | Find position of substring   | "hello".IndexOf("l")       |
 
-================================================================================
 
-
-================================================================================
-                     POWERSHELL OPERATORS REFERENCE
-================================================================================
+## POWERSHELL OPERATORS REFERENCE
 
 | Operator            | Description                  | Example                    |
 |---------------------|------------------------------|----------------------------|
@@ -404,12 +404,8 @@ COMPLETE SOLUTION SCRIPT
 | +                   | Concatenate strings          | "a" + "b"                  |
 | *                   | Repeat string                | "a" * 3                    |
 
-================================================================================
 
-
-================================================================================
-                     SORT-OBJECT OPTIONS
-================================================================================
+## SORT-OBJECT OPTIONS
 
 | Parameter           | Description                  | Example                    |
 |---------------------|------------------------------|----------------------------|
@@ -418,65 +414,72 @@ COMPLETE SOLUTION SCRIPT
 | -Property           | Sort by property             | Sort-Object -Property Name |
 | -CaseSensitive      | Case-sensitive sort          | Sort-Object -CaseSensitive |
 
-================================================================================
 
-
-================================================================================
-                             TROUBLESHOOTING
-================================================================================
+## TROUBLESHOOTING
 
 Problem: "You cannot call a method on a null-valued expression"
 Solution: Check if string is empty before calling methods
-    if ($inputString) { $inputString.ToCharArray() }
+
+```powershell
+if ($inputString) { $inputString.ToCharArray() }
+```
 
 Problem: Substring throws index out of range
 Solution: Check string length first
-    if ($word.Length -gt 0) { $word.Substring(0,1) }
+
+```powershell
+if ($word.Length -gt 0) { $word.Substring(0,1) }
+```
 
 Problem: Split not working as expected
 Solution: Use -split operator for regex, .Split() for simple chars
-    "a-b_c" -split '[-_]'    # Regex pattern
-    "a-b".Split("-")         # Simple character
+
+```powershell
+"a-b_c" -split '[-_]'    # Regex pattern
+"a-b".Split("-")         # Simple character
+```
 
 Problem: Sorting gives unexpected results
 Solution: Ensure you're sorting the right type
-    $str.ToCharArray() | Sort-Object    # Sort characters
-    $array | Sort-Object                 # Sort array items
+
+```powershell
+$str.ToCharArray() | Sort-Object    # Sort characters
+$array | Sort-Object                 # Sort array items
+```
 
 Problem: First letter not capitalizing
 Solution: Handle empty strings
-    if ($word.Length -gt 0) {
-        $word.Substring(0,1).ToUpper() + $word.Substring(1).ToLower()
-    }
+
+```powershell
+if ($word.Length -gt 0) {
+    $word.Substring(0,1).ToUpper() + $word.Substring(1).ToLower()
+}
+```
 
 Problem: Result has extra spaces
 Solution: Use .Trim() and check join separator
-    $result = ($words | ForEach-Object { ... }) -join ''  # Empty string join
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 18 <<<                  |
-|                                                          |
-|  Show: Summary of all completed tasks                    |
-|  Expected: Both string manipulation tasks working        |
-+----------------------------------------------------------+
+```powershell
+$result = ($words | ForEach-Object { ... }) -join ''  # Empty string join
+```
+
+> **Screenshot 18**
+>
+> Show: Summary of all completed tasks
+> Expected: Both string manipulation tasks working
 
 
-================================================================================
-                     SELF-REVIEW CHECKLIST
-================================================================================
+## SELF-REVIEW CHECKLIST
 
-[ ] Combined two strings into one
-[ ] Converted string to character array using ToCharArray()
-[ ] Used Sort-Object -Unique to sort and remove duplicates
-[ ] Joined array back to string using -join
-[ ] Result "abcdefklmopqwxy" achieved
-[ ] Split string by dash/underscore using -split '[-_]'
-[ ] Implemented CamelCase conversion (first word lowercase)
-[ ] Implemented PascalCase conversion (all words capitalized)
-[ ] "the-stealth-warrior" converts to "theStealthWarrior"
-[ ] "The_Stealth_Warrior" converts to "TheStealthWarrior"
-[ ] Understand Substring() method for case manipulation
-[ ] Know difference between -split operator and .Split() method
-
-================================================================================
-
+- [ ] Combined two strings into one
+- [ ] Converted string to character array using ToCharArray()
+- [ ] Used Sort-Object -Unique to sort and remove duplicates
+- [ ] Joined array back to string using -join
+- [ ] Result "abcdefklmopqwxy" achieved
+- [ ] Split string by dash/underscore using -split '[-_]'
+- [ ] Implemented CamelCase conversion (first word lowercase)
+- [ ] Implemented PascalCase conversion (all words capitalized)
+- [ ] "the-stealth-warrior" converts to "theStealthWarrior"
+- [ ] "The_Stealth_Warrior" converts to "TheStealthWarrior"
+- [ ] Understand Substring() method for case manipulation
+- [ ] Know difference between -split operator and .Split() method

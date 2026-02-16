@@ -4,9 +4,7 @@ This guide covers Python virtual environments, package installation with pip,
 and using the Python interactive shell.
 
 
-================================================================================
-                     WHAT IS A VIRTUAL ENVIRONMENT?
-================================================================================
+## WHAT IS A VIRTUAL ENVIRONMENT?
 
 A virtual environment is an isolated Python environment that allows you to:
 
@@ -17,22 +15,21 @@ A virtual environment is an isolated Python environment that allows you to:
 
 Diagram:
 
-    System Python
-    ├── Global packages
-    │
-    ├── Project A (venv_a)
-    │   └── Package X v1.0
-    │   └── Package Y v2.0
-    │
-    └── Project B (venv_b)
-        └── Package X v2.0  (different version!)
-        └── Package Z v1.0
+```
+System Python
+├── Global packages
+│
+├── Project A (venv_a)
+│   └── Package X v1.0
+│   └── Package Y v2.0
+│
+└── Project B (venv_b)
+    └── Package X v2.0  (different version!)
+    └── Package Z v1.0
+```
 
-================================================================================
 
-
-STEP 1: Open Terminal
----------------------
+## STEP 1: Open Terminal
 
 Windows:
 - Press Win+R, type "cmd" and press Enter
@@ -46,293 +43,300 @@ Linux:
 - Press Ctrl+Alt+T
 - Or find Terminal in applications
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                   |
-|                                                          |
-|  Show: Terminal opened                                   |
-|  Expected: Clean terminal window                         |
-+----------------------------------------------------------+
+> **Screenshot 1**
+>
+> Show: Terminal opened
+> Expected: Clean terminal window
 
 Navigate to your project directory:
 
-    # Windows
-    cd Desktop
+```bash
+# Windows
+cd Desktop
 
-    # macOS/Linux
-    cd ~/Desktop
+# macOS/Linux
+cd ~/Desktop
+```
 
 
-STEP 2: Create Virtual Environment
------------------------------------
+## STEP 2: Create Virtual Environment
 
 Create a virtual environment named "testenv":
 
-    python3 -m venv testenv
+```bash
+python3 -m venv testenv
 
-    # On Windows, you might need:
-    python -m venv testenv
+# On Windows, you might need:
+python -m venv testenv
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                   |
-|                                                          |
-|  Show: Creating virtual environment                      |
-|  Expected: python3 -m venv testenv command               |
-+----------------------------------------------------------+
+> **Screenshot 2**
+>
+> Show: Creating virtual environment
+> Expected: python3 -m venv testenv command
 
 Understanding the command:
 
-    python3         # Python interpreter
-    -m venv         # Run the venv module
-    testenv         # Name of the virtual environment folder
+```
+python3         # Python interpreter
+-m venv         # Run the venv module
+testenv         # Name of the virtual environment folder
+```
 
 This creates a "testenv" folder with:
 
-    testenv/
-    ├── bin/           # (Linux/macOS) or Scripts/ (Windows)
-    │   ├── activate   # Activation script
-    │   ├── pip        # Package installer
-    │   └── python     # Python interpreter
-    ├── include/       # C headers
-    ├── lib/           # Installed packages
-    └── pyvenv.cfg     # Configuration file
+```
+testenv/
+├── bin/           # (Linux/macOS) or Scripts/ (Windows)
+│   ├── activate   # Activation script
+│   ├── pip        # Package installer
+│   └── python     # Python interpreter
+├── include/       # C headers
+├── lib/           # Installed packages
+└── pyvenv.cfg     # Configuration file
+```
 
 Verify the folder was created:
 
-    # Windows
-    dir testenv
+```bash
+# Windows
+dir testenv
 
-    # macOS/Linux
-    ls -la testenv
+# macOS/Linux
+ls -la testenv
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                   |
-|                                                          |
-|  Show: testenv folder contents                           |
-|  Expected: bin/Scripts, include, lib folders             |
-+----------------------------------------------------------+
+> **Screenshot 3**
+>
+> Show: testenv folder contents
+> Expected: bin/Scripts, include, lib folders
 
 
-STEP 3: Activate Virtual Environment
-------------------------------------
+## STEP 3: Activate Virtual Environment
 
 Activate the virtual environment:
 
-    # Linux/macOS
-    source testenv/bin/activate
+```bash
+# Linux/macOS
+source testenv/bin/activate
 
-    # Windows (Command Prompt)
-    testenv\Scripts\activate
+# Windows (Command Prompt)
+testenv\Scripts\activate
 
-    # Windows (PowerShell)
-    testenv\Scripts\Activate.ps1
+# Windows (PowerShell)
+testenv\Scripts\Activate.ps1
 
-    # Windows (Git Bash)
-    source testenv/Scripts/activate
+# Windows (Git Bash)
+source testenv/Scripts/activate
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                   |
-|                                                          |
-|  Show: Activating virtual environment                    |
-|  Expected: source testenv/bin/activate command           |
-+----------------------------------------------------------+
+> **Screenshot 4**
+>
+> Show: Activating virtual environment
+> Expected: source testenv/bin/activate command
 
 After activation, your prompt changes:
 
-    # Before
-    user@computer:~$
+```bash
+# Before
+user@computer:~$
 
-    # After
-    (testenv) user@computer:~$
+# After
+(testenv) user@computer:~$
+```
 
 The (testenv) prefix indicates you're in the virtual environment.
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                   |
-|                                                          |
-|  Show: Prompt with (testenv) prefix                      |
-|  Expected: Virtual environment name in prompt            |
-+----------------------------------------------------------+
+> **Screenshot 5**
+>
+> Show: Prompt with (testenv) prefix
+> Expected: Virtual environment name in prompt
 
 Verify you're in the virtual environment:
 
-    which python    # Linux/macOS
-    where python    # Windows
+```bash
+which python    # Linux/macOS
+where python    # Windows
+```
 
 Expected output (shows path inside testenv):
     /path/to/testenv/bin/python
 
 
-STEP 4: Install emoji Package
------------------------------
+## STEP 4: Install emoji Package
 
 Install the emoji package using pip:
 
-    pip install emoji
+```bash
+pip install emoji
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                   |
-|                                                          |
-|  Show: pip install emoji command                         |
-|  Expected: Package download and installation             |
-+----------------------------------------------------------+
+> **Screenshot 6**
+>
+> Show: pip install emoji command
+> Expected: Package download and installation
 
 Expected output:
 
-    Collecting emoji
-      Downloading emoji-2.x.x-py3-none-any.whl (xxx kB)
-    Installing collected packages: emoji
-    Successfully installed emoji-2.x.x
+```
+Collecting emoji
+  Downloading emoji-2.x.x-py3-none-any.whl (xxx kB)
+Installing collected packages: emoji
+Successfully installed emoji-2.x.x
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                   |
-|                                                          |
-|  Show: Successful installation message                   |
-|  Expected: "Successfully installed emoji-x.x.x"          |
-+----------------------------------------------------------+
+> **Screenshot 7**
+>
+> Show: Successful installation message
+> Expected: "Successfully installed emoji-x.x.x"
 
 Verify installation:
 
-    pip list
+```bash
+pip list
+```
 
 Expected output (shows installed packages):
 
-    Package    Version
-    ---------- -------
-    emoji      2.x.x
-    pip        xx.x.x
-    setuptools xx.x.x
+```
+Package    Version
+---------- -------
+emoji      2.x.x
+pip        xx.x.x
+setuptools xx.x.x
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                   |
-|                                                          |
-|  Show: pip list output                                   |
-|  Expected: emoji package in the list                     |
-+----------------------------------------------------------+
+> **Screenshot 8**
+>
+> Show: pip list output
+> Expected: emoji package in the list
 
 
-STEP 5: Enter Python Shell
---------------------------
+## STEP 5: Enter Python Shell
 
 Start the Python interactive shell:
 
-    python3
-    # or on Windows:
-    python
+```bash
+python3
+# or on Windows:
+python
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                   |
-|                                                          |
-|  Show: Python shell started                              |
-|  Expected: Python version and >>> prompt                 |
-+----------------------------------------------------------+
+> **Screenshot 9**
+>
+> Show: Python shell started
+> Expected: Python version and >>> prompt
 
 You'll see the Python prompt:
 
-    Python 3.x.x (default, ...)
-    [GCC x.x.x] on linux
-    Type "help", "copyright", "credits" or "license" for more information.
-    >>>
+```
+Python 3.x.x (default, ...)
+[GCC x.x.x] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
 
 The >>> indicates you're in the Python interactive shell.
 
 
-STEP 6: Import emoji Module
----------------------------
+## STEP 6: Import emoji Module
 
 In the Python shell, import the emoji module:
 
-    >>> import emoji
+```python
+>>> import emoji
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 10 <<<                  |
-|                                                          |
-|  Show: import emoji command                              |
-|  Expected: No error, returns to >>> prompt               |
-+----------------------------------------------------------+
+> **Screenshot 10**
+>
+> Show: import emoji command
+> Expected: No error, returns to >>> prompt
 
 If successful, it returns to the >>> prompt with no output.
 If there's an error, you'll see "ModuleNotFoundError".
 
 
-STEP 7: Print with Emoji
-------------------------
+## STEP 7: Print with Emoji
 
 Execute the print command with emoji:
 
-    >>> print(emoji.emojize("Hello, world! :thumbs_up:"))
+```python
+>>> print(emoji.emojize("Hello, world! :thumbs_up:"))
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 11 <<<                  |
-|                                                          |
-|  Show: print command with emoji                          |
-|  Expected: Command visible in Python shell               |
-+----------------------------------------------------------+
+> **Screenshot 11**
+>
+> Show: print command with emoji
+> Expected: Command visible in Python shell
 
 Expected output:
 
-    Hello, world! 👍
+```
+Hello, world! 👍
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 12 <<<                  |
-|                                                          |
-|  Show: Output with thumbs up emoji                       |
-|  Expected: "Hello, world! 👍" displayed                  |
-+----------------------------------------------------------+
+> **Screenshot 12**
+>
+> Show: Output with thumbs up emoji
+> Expected: "Hello, world! 👍" displayed
 
 Understanding the code:
 
-    emoji.emojize()         # Function to convert emoji codes
-    "Hello, world!"         # Regular text
-    :thumbs_up:             # Emoji shortcode
-    print()                 # Display the result
+```python
+emoji.emojize()         # Function to convert emoji codes
+"Hello, world!"         # Regular text
+:thumbs_up:             # Emoji shortcode
+print()                 # Display the result
+```
 
 Try more emojis:
 
-    >>> print(emoji.emojize(":red_heart:"))
-    ❤️
+```python
+>>> print(emoji.emojize(":red_heart:"))
+❤️
 
-    >>> print(emoji.emojize(":snake: Python is awesome! :fire:"))
-    🐍 Python is awesome! 🔥
+>>> print(emoji.emojize(":snake: Python is awesome! :fire:"))
+🐍 Python is awesome! 🔥
 
-    >>> print(emoji.emojize(":check_mark_button: Task completed!"))
-    ✅ Task completed!
+>>> print(emoji.emojize(":check_mark_button: Task completed!"))
+✅ Task completed!
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 13 <<<                  |
-|                                                          |
-|  Show: Multiple emoji examples                           |
-|  Expected: Various emojis displayed                      |
-+----------------------------------------------------------+
+> **Screenshot 13**
+>
+> Show: Multiple emoji examples
+> Expected: Various emojis displayed
 
 
-EXIT AND DEACTIVATE
--------------------
+## EXIT AND DEACTIVATE
 
 Exit Python shell:
 
-    >>> exit()
-    # or press Ctrl+D (Linux/macOS) or Ctrl+Z then Enter (Windows)
+```python
+>>> exit()
+# or press Ctrl+D (Linux/macOS) or Ctrl+Z then Enter (Windows)
+```
 
 Deactivate virtual environment:
 
-    deactivate
+```bash
+deactivate
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 14 <<<                  |
-|                                                          |
-|  Show: Deactivating virtual environment                  |
-|  Expected: Prompt returns to normal (no testenv prefix)  |
-+----------------------------------------------------------+
+> **Screenshot 14**
+>
+> Show: Deactivating virtual environment
+> Expected: Prompt returns to normal (no testenv prefix)
 
 After deactivate, your prompt returns to normal:
 
-    (testenv) user@computer:~$    # Before
-    user@computer:~$              # After
+```bash
+(testenv) user@computer:~$    # Before
+user@computer:~$              # After
+```
 
 
-================================================================================
-                     VIRTUAL ENVIRONMENT COMMANDS
-================================================================================
+## VIRTUAL ENVIRONMENT COMMANDS
 
 | Command                              | Description                    |
 |--------------------------------------|--------------------------------|
@@ -347,12 +351,8 @@ After deactivate, your prompt returns to normal:
 | pip freeze > requirements.txt        | Save requirements to file      |
 | pip install -r requirements.txt      | Install from requirements      |
 
-================================================================================
 
-
-================================================================================
-                     COMMON EMOJI SHORTCODES
-================================================================================
+## COMMON EMOJI SHORTCODES
 
 | Shortcode          | Emoji | Description              |
 |--------------------|-------|--------------------------|
@@ -369,12 +369,8 @@ After deactivate, your prompt returns to normal:
 
 Find more at: https://carpedm20.github.io/emoji/
 
-================================================================================
 
-
-================================================================================
-                     WHY USE VIRTUAL ENVIRONMENTS?
-================================================================================
+## WHY USE VIRTUAL ENVIRONMENTS?
 
 1. Dependency Isolation
    - Each project has its own packages
@@ -397,33 +393,44 @@ Find more at: https://carpedm20.github.io/emoji/
    - Test with different Python/package versions
    - Easy to create fresh environment
 
-================================================================================
 
-
-================================================================================
-                             TROUBLESHOOTING
-================================================================================
+## TROUBLESHOOTING
 
 Problem: "python3: command not found"
 Solution: Use 'python' instead, or install Python 3
-    python -m venv testenv
+
+```bash
+python -m venv testenv
+```
 
 Problem: "venv is not recognized"
 Solution: Install python3-venv package (Linux)
-    sudo apt install python3-venv
+
+```bash
+sudo apt install python3-venv
+```
 
 Problem: "source: command not found" (Windows)
 Solution: Use Windows activation command
-    testenv\Scripts\activate
+
+```bash
+testenv\Scripts\activate
+```
 
 Problem: PowerShell script execution disabled
 Solution: Enable script execution
-    Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
 
 Problem: "ModuleNotFoundError: No module named 'emoji'"
 Solution: Ensure venv is activated before pip install
-    source testenv/bin/activate
-    pip install emoji
+
+```bash
+source testenv/bin/activate
+pip install emoji
+```
 
 Problem: Emoji not displaying correctly
 Solution: Terminal may not support Unicode
@@ -435,17 +442,13 @@ Solution: You're not in virtual environment
     - Activate venv first
     - Never use sudo pip install
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 15 <<<                  |
-|                                                          |
-|  Show: Complete workflow from start to finish            |
-|  Expected: All steps visible in terminal                 |
-+----------------------------------------------------------+
+> **Screenshot 15**
+>
+> Show: Complete workflow from start to finish
+> Expected: All steps visible in terminal
 
 
-================================================================================
-                     SELF-REVIEW CHECKLIST
-================================================================================
+## SELF-REVIEW CHECKLIST
 
 [ ] Terminal opened successfully
 [ ] Virtual environment created with python3 -m venv testenv
@@ -457,6 +460,3 @@ Solution: You're not in virtual environment
 [ ] "Hello, world! 👍" displayed in console
 [ ] Understand purpose of virtual environments
 [ ] Know how to activate/deactivate venv
-
-================================================================================
-

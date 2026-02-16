@@ -4,9 +4,7 @@ This guide covers environment variables, the export command, PATH manipulation,
 and making scripts globally accessible.
 
 
-================================================================================
-                    UNDERSTANDING ENVIRONMENT VARIABLES
-================================================================================
+## UNDERSTANDING ENVIRONMENT VARIABLES
 
 Environment Variables:
 - Special variables available to all child processes
@@ -26,210 +24,213 @@ Common Environment Variables:
 - $PWD: Current working directory
 - $EDITOR: Default text editor
 
-================================================================================
 
-
-TASK 1: Create homework folder
-------------------------------
+## TASK 1: Create homework folder
 
 Create the homework folder in your home directory:
 
-    cd ~
-    mkdir homework
+```bash
+cd ~
+mkdir homework
+```
 
 Verify the folder was created:
 
-    ls -la | grep homework
+```bash
+ls -la | grep homework
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                   |
-|                                                          |
-|  Show: mkdir homework and ls output                      |
-|  Expected: homework folder in listing                    |
-+----------------------------------------------------------+
+> **Screenshot 1**
+> - Show: mkdir homework and ls output
+> - Expected: homework folder in listing
 
 
-TASK 2: Create SURNAME environment variable
--------------------------------------------
+## TASK 2: Create SURNAME environment variable
 
 Create the environment variable using export:
 
-    export SURNAME=YourSurname
+```bash
+export SURNAME=YourSurname
 
-    # Example:
-    export SURNAME=Smith
+# Example:
+export SURNAME=Smith
+```
 
 Verify the variable is set:
 
-    echo $SURNAME
+```bash
+echo $SURNAME
+```
 
 Expected output:
-    Smith
+```
+Smith
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                   |
-|                                                          |
-|  Show: export SURNAME and echo $SURNAME                  |
-|  Expected: Surname value displayed                       |
-+----------------------------------------------------------+
+> **Screenshot 2**
+> - Show: export SURNAME and echo $SURNAME
+> - Expected: Surname value displayed
 
 Understanding export:
 
-    # Local variable (NOT available to child processes)
-    SURNAME=Smith
-    bash -c 'echo $SURNAME'    # Empty - child can't see it
+```bash
+# Local variable (NOT available to child processes)
+SURNAME=Smith
+bash -c 'echo $SURNAME'    # Empty - child can't see it
 
-    # Environment variable (available to child processes)
-    export SURNAME=Smith
-    bash -c 'echo $SURNAME'    # Smith - child can see it
+# Environment variable (available to child processes)
+export SURNAME=Smith
+bash -c 'echo $SURNAME'    # Smith - child can see it
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                   |
-|                                                          |
-|  Show: Difference between local and exported variable    |
-|  Expected: Child process can access exported variable    |
-+----------------------------------------------------------+
+> **Screenshot 3**
+> - Show: Difference between local and exported variable
+> - Expected: Child process can access exported variable
 
 
-TASK 3: Verify SURNAME in environment using env
------------------------------------------------
+## TASK 3: Verify SURNAME in environment using env
 
 Use env command to list all environment variables:
 
-    env | grep SURNAME
+```bash
+env | grep SURNAME
+```
 
 Expected output:
-    SURNAME=Smith
+```
+SURNAME=Smith
+```
 
 Alternative methods:
 
-    # Using printenv
-    printenv SURNAME
+```bash
+# Using printenv
+printenv SURNAME
 
-    # Using printenv to list all
-    printenv | grep SURNAME
+# Using printenv to list all
+printenv | grep SURNAME
 
-    # Using export to list exported variables
-    export | grep SURNAME
+# Using export to list exported variables
+export | grep SURNAME
 
-    # Using set (shows all variables, including local)
-    set | grep SURNAME
+# Using set (shows all variables, including local)
+set | grep SURNAME
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                   |
-|                                                          |
-|  Show: env | grep SURNAME output                         |
-|  Expected: SURNAME=YourSurname                           |
-+----------------------------------------------------------+
+> **Screenshot 4**
+> - Show: env | grep SURNAME output
+> - Expected: SURNAME=YourSurname
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                   |
-|                                                          |
-|  Show: printenv SURNAME output                           |
-|  Expected: YourSurname                                   |
-+----------------------------------------------------------+
+> **Screenshot 5**
+> - Show: printenv SURNAME output
+> - Expected: YourSurname
 
 
-TASK 4: Create script that prints SURNAME
------------------------------------------
+## TASK 4: Create script that prints SURNAME
 
 Create a script in the homework folder:
 
-    cd ~/homework
-    touch my_script.sh
-    chmod +x my_script.sh
+```bash
+cd ~/homework
+touch my_script.sh
+chmod +x my_script.sh
+```
 
 Edit the script:
 
-    vim my_script.sh
-    # or
-    nano my_script.sh
+```bash
+vim my_script.sh
+# or
+nano my_script.sh
+```
 
 Script content:
 
-    #!/bin/bash
-    echo $SURNAME
+```bash
+#!/bin/bash
+echo $SURNAME
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                   |
-|                                                          |
-|  Show: Creating my_script.sh                             |
-|  Expected: touch and chmod commands                      |
-+----------------------------------------------------------+
+> **Screenshot 6**
+> - Show: Creating my_script.sh
+> - Expected: touch and chmod commands
 
 Alternative - Create using echo:
 
-    echo '#!/bin/bash' > ~/homework/my_script.sh
-    echo 'echo $SURNAME' >> ~/homework/my_script.sh
-    chmod +x ~/homework/my_script.sh
+```bash
+echo '#!/bin/bash' > ~/homework/my_script.sh
+echo 'echo $SURNAME' >> ~/homework/my_script.sh
+chmod +x ~/homework/my_script.sh
+```
 
 Alternative - Create using cat heredoc:
 
-    cat > ~/homework/my_script.sh << 'EOF'
-    #!/bin/bash
-    echo $SURNAME
-    EOF
-    chmod +x ~/homework/my_script.sh
+```bash
+cat > ~/homework/my_script.sh << 'EOF'
+#!/bin/bash
+echo $SURNAME
+EOF
+chmod +x ~/homework/my_script.sh
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                   |
-|                                                          |
-|  Show: Script content                                    |
-|  Expected: #!/bin/bash and echo $SURNAME                 |
-+----------------------------------------------------------+
+> **Screenshot 7**
+> - Show: Script content
+> - Expected: #!/bin/bash and echo $SURNAME
 
 Verify script content:
 
-    cat ~/homework/my_script.sh
+```bash
+cat ~/homework/my_script.sh
+```
 
 Expected output:
-    #!/bin/bash
-    echo $SURNAME
+```
+#!/bin/bash
+echo $SURNAME
+```
 
 Test the script with full path:
 
-    ~/homework/my_script.sh
+```bash
+~/homework/my_script.sh
+```
 
 Expected output:
-    Smith
+```
+Smith
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                   |
-|                                                          |
-|  Show: Running script with full path                     |
-|  Expected: Surname displayed                             |
-+----------------------------------------------------------+
+> **Screenshot 8**
+> - Show: Running script with full path
+> - Expected: Surname displayed
 
 
-TASK 5: Add homework folder to PATH
------------------------------------
+## TASK 5: Add homework folder to PATH
 
 Add the homework folder to your PATH:
 
-    export PATH="$PATH:$HOME/homework"
+```bash
+export PATH="$PATH:$HOME/homework"
 
-    # Or using explicit path:
-    export PATH="$PATH:/home/username/homework"
+# Or using explicit path:
+export PATH="$PATH:/home/username/homework"
+```
 
 Verify PATH was updated:
 
-    echo $PATH
+```bash
+echo $PATH
+```
 
 You should see ~/homework (or /home/username/homework) at the end of PATH.
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                   |
-|                                                          |
-|  Show: export PATH command                               |
-|  Expected: Command executed                              |
-+----------------------------------------------------------+
+> **Screenshot 9**
+> - Show: export PATH command
+> - Expected: Command executed
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 10 <<<                  |
-|                                                          |
-|  Show: echo $PATH output                                 |
-|  Expected: homework folder visible in PATH               |
-+----------------------------------------------------------+
+> **Screenshot 10**
+> - Show: echo $PATH output
+> - Expected: homework folder visible in PATH
 
 Understanding PATH:
 - PATH is a colon-separated list of directories
@@ -239,57 +240,56 @@ Understanding PATH:
 - Add to beginning: PATH="/new/path:$PATH"
 
 
-TASK 6: Run script by name only
--------------------------------
+## TASK 6: Run script by name only
 
 Now you can run the script from anywhere by typing only its name:
 
-    my_script.sh
+```bash
+my_script.sh
+```
 
 Expected output:
-    Smith
+```
+Smith
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 11 <<<                  |
-|                                                          |
-|  Show: Running my_script.sh without path                 |
-|  Expected: Surname displayed                             |
-+----------------------------------------------------------+
+> **Screenshot 11**
+> - Show: Running my_script.sh without path
+> - Expected: Surname displayed
 
 Verify which script is being executed:
 
-    which my_script.sh
+```bash
+which my_script.sh
+```
 
 Expected output:
-    /home/username/homework/my_script.sh
+```
+/home/username/homework/my_script.sh
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 12 <<<                  |
-|                                                          |
-|  Show: which my_script.sh output                         |
-|  Expected: Full path to script in homework folder        |
-+----------------------------------------------------------+
+> **Screenshot 12**
+> - Show: which my_script.sh output
+> - Expected: Full path to script in homework folder
 
 Test from different directories:
 
-    cd /tmp
-    my_script.sh
+```bash
+cd /tmp
+my_script.sh
 
-    cd /
-    my_script.sh
+cd /
+my_script.sh
+```
 
 The script should work from any directory.
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 13 <<<                  |
-|                                                          |
-|  Show: Running script from different directories         |
-|  Expected: Same output (Surname) regardless of location  |
-+----------------------------------------------------------+
+> **Screenshot 13**
+> - Show: Running script from different directories
+> - Expected: Same output (Surname) regardless of location
 
 
-MAKING CHANGES PERMANENT
-------------------------
+## MAKING CHANGES PERMANENT
 
 The changes made above are temporary (lost when terminal closes).
 
@@ -297,47 +297,44 @@ To make them permanent, add to shell configuration file:
 
 For Bash (~/.bashrc or ~/.bash_profile):
 
-    echo 'export SURNAME=Smith' >> ~/.bashrc
-    echo 'export PATH="$PATH:$HOME/homework"' >> ~/.bashrc
+```bash
+echo 'export SURNAME=Smith' >> ~/.bashrc
+echo 'export PATH="$PATH:$HOME/homework"' >> ~/.bashrc
 
-    # Reload configuration
-    source ~/.bashrc
+# Reload configuration
+source ~/.bashrc
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 14 <<<                  |
-|                                                          |
-|  Show: Adding to .bashrc for persistence                 |
-|  Expected: export commands added to file                 |
-+----------------------------------------------------------+
+> **Screenshot 14**
+> - Show: Adding to .bashrc for persistence
+> - Expected: export commands added to file
 
 For system-wide (all users):
 
-    # Add to /etc/environment or /etc/profile.d/custom.sh
-    sudo vim /etc/profile.d/custom.sh
+```bash
+# Add to /etc/environment or /etc/profile.d/custom.sh
+sudo vim /etc/profile.d/custom.sh
+```
 
 
-UNSETTING ENVIRONMENT VARIABLES
--------------------------------
+## UNSETTING ENVIRONMENT VARIABLES
 
 To remove an environment variable:
 
-    unset SURNAME
+```bash
+unset SURNAME
 
-    # Verify it's removed
-    echo $SURNAME      # Empty
-    env | grep SURNAME # No output
+# Verify it's removed
+echo $SURNAME      # Empty
+env | grep SURNAME # No output
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 15 <<<                  |
-|                                                          |
-|  Show: unset SURNAME and verification                    |
-|  Expected: Variable no longer exists                     |
-+----------------------------------------------------------+
+> **Screenshot 15**
+> - Show: unset SURNAME and verification
+> - Expected: Variable no longer exists
 
 
-================================================================================
-                    ENVIRONMENT VARIABLE COMMANDS
-================================================================================
+## ENVIRONMENT VARIABLE COMMANDS
 
 | Command                    | Description                              |
 |----------------------------|------------------------------------------|
@@ -351,12 +348,8 @@ To remove an environment variable:
 | export                     | List all exported variables              |
 | export -n VAR              | Remove export (make local)               |
 
-================================================================================
 
-
-================================================================================
-                           PATH MANIPULATION
-================================================================================
+## PATH MANIPULATION
 
 | Operation                  | Command                                  |
 |----------------------------|------------------------------------------|
@@ -369,17 +362,15 @@ To remove an environment variable:
 | Search PATH manually       | echo $PATH | tr ':' '\n'                 |
 
 PATH Format:
-    /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/home/user/homework
-    └─────┬─────┘ └───┬───┘ └─┬─┘ └───┬────┘ └─┬──┘ └───────┬───────┘
-          │          │       │        │        │            │
-    Searched left to right, first match wins
+```
+/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/home/user/homework
+└─────┬─────┘ └───┬───┘ └─┬─┘ └───┬────┘ └─┬──┘ └───────┬───────┘
+      │          │       │        │        │            │
+Searched left to right, first match wins
+```
 
-================================================================================
 
-
-================================================================================
-                    COMMON ENVIRONMENT VARIABLES
-================================================================================
+## COMMON ENVIRONMENT VARIABLES
 
 | Variable     | Description                          | Example Value          |
 |--------------|--------------------------------------|------------------------|
@@ -396,12 +387,8 @@ PATH Format:
 | HOSTNAME     | Computer hostname                    | mycomputer             |
 | LOGNAME      | Login name                           | username               |
 
-================================================================================
 
-
-================================================================================
-                    SHELL CONFIGURATION FILES
-================================================================================
+## SHELL CONFIGURATION FILES
 
 | File              | When Loaded                    | Use For                |
 |-------------------|--------------------------------|------------------------|
@@ -412,19 +399,15 @@ PATH Format:
 | ~/.profile        | Login shell (sh compatible)    | Portable settings      |
 
 Loading Order (Login Shell):
-    1. /etc/profile
-    2. ~/.bash_profile OR ~/.bash_login OR ~/.profile
+1. /etc/profile
+2. ~/.bash_profile OR ~/.bash_login OR ~/.profile
 
 Loading Order (Interactive Non-Login):
-    1. /etc/bashrc
-    2. ~/.bashrc
-
-================================================================================
+1. /etc/bashrc
+2. ~/.bashrc
 
 
-================================================================================
-                             TROUBLESHOOTING
-================================================================================
+## TROUBLESHOOTING
 
 Problem: "command not found" after adding to PATH
 Solutions:
@@ -435,14 +418,20 @@ Solutions:
 
 Problem: Variable not available in child process
 Solution: Use export to make it environment variable
-    export SURNAME=Smith
+
+```bash
+export SURNAME=Smith
+```
 
 Problem: Changes lost after terminal restart
 Solution: Add export commands to ~/.bashrc
 
 Problem: env doesn't show variable but echo does
 Solution: Variable is local, not exported. Use:
-    export VARNAME
+
+```bash
+export VARNAME
+```
 
 Problem: PATH changes not working
 Solutions:
@@ -452,15 +441,14 @@ Solutions:
 
 Problem: Wrong version of command running
 Solution: Check with 'which' and 'type -a':
-    which python
-    type -a python
 
-================================================================================
+```bash
+which python
+type -a python
+```
 
 
-================================================================================
-                              SELF-REVIEW CHECKLIST
-================================================================================
+## SELF-REVIEW CHECKLIST
 
 [ ] homework folder created in home directory
 [ ] SURNAME environment variable created with export
@@ -474,6 +462,3 @@ Solution: Check with 'which' and 'type -a':
 [ ] Script runs with just: my_script.sh
 [ ] which my_script.sh shows correct path
 [ ] Script works from any directory
-
-================================================================================
-

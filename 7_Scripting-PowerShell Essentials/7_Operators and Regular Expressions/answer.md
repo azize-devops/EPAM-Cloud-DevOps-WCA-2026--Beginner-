@@ -1,636 +1,533 @@
 # OPERATORS AND REGULAR EXPRESSIONS - ANSWER
 
-This guide covers PowerShell regular expressions, pattern matching,
-and text transformation techniques.
+This guide covers PowerShell operators and regular expressions (regex)
+for pattern matching, string manipulation, and validation.
 
 
-================================================================================
-                     REGEX BASICS IN POWERSHELL
-================================================================================
+## OPERATORS AND REGEX OVERVIEW
 
-Key operators:
-    -match       Test if pattern matches (returns $true/$false)
-    -notmatch    Test if pattern does NOT match
-    -replace     Replace pattern with new text
-    -split       Split string by pattern
+Comparison operators:
 
-Automatic variable:
-    $Matches     Contains match results after -match operator
+| Operator | Description                    | Example                    |
+|----------|--------------------------------|----------------------------|
+| -eq      | Equal                          | 5 -eq 5                    |
+| -ne      | Not equal                      | 5 -ne 3                    |
+| -gt      | Greater than                   | 5 -gt 3                    |
+| -lt      | Less than                      | 3 -lt 5                    |
+| -ge      | Greater or equal               | 5 -ge 5                    |
+| -le      | Less or equal                  | 3 -le 5                    |
+| -like    | Wildcard match                 | "hello" -like "h*"         |
+| -match   | Regex match                    | "hello" -match "^h"        |
+| -replace | Regex replace                  | "cat" -replace "c","b"     |
 
-Common patterns:
-    \w           Word character (letter, digit, underscore)
-    \d           Digit (0-9)
-    \s           Whitespace
-    +            One or more
-    *            Zero or more
-    ?            Zero or one
-    ^            Start of string
-    $            End of string
-    [a-z]        Character range
-    ()           Capture group
+Regex special characters:
 
-================================================================================
+| Pattern  | Description                    | Example                    |
+|----------|--------------------------------|----------------------------|
+| ^        | Start of string                | ^hello                     |
+| $        | End of string                  | world$                     |
+| .        | Any single character           | h.llo                      |
+| *        | Zero or more                   | ab*c                       |
+| +        | One or more                    | ab+c                       |
+| ?        | Zero or one                    | colou?r                    |
+| \d       | Digit                          | \d+                        |
+| \w       | Word character                 | \w+                        |
+| \s       | Whitespace                     | \s+                        |
+| [abc]    | Character class                | [aeiou]                    |
+| (group)  | Capture group                  | (\d{3})                    |
 
 
-TASK 1: Find Lowercase Letters Joined with Underscore or Dash
---------------------------------------------------------------
+## TASK 1: Validate Phone Number with Regex
 
-Create task1.ps1:
+Goal: Validate US phone numbers in format: (XXX) XXX-XXXX
 
-    param([string]$inputString)
+Phone number format requirements:
+- Starts with (
+- Three digits
+- Followed by )
+- Space
+- Three digits
+- Hyphen
+- Four digits
 
-    if ($inputString -match '[a-z]+[-_][a-z]+') {
-        $Matches[0]
+Regex pattern:
+
+```powershell
+$pattern = '^\(\d{3}\) \d{3}-\d{4}$'
+```
+
+Breakdown:
+- `^` - Start of string
+- `\(` - Literal opening parenthesis
+- `\d{3}` - Exactly 3 digits
+- `\)` - Literal closing parenthesis
+- ` ` - Space
+- `\d{3}` - Exactly 3 digits
+- `-` - Literal hyphen
+- `\d{4}` - Exactly 4 digits
+- `$` - End of string
+
+> **Screenshot 1**
+>
+> Show: Regex pattern explanation
+> Expected: Pattern breakdown visible
+
+Validation function:
+
+```powershell
+function Test-PhoneNumber {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$PhoneNumber
+    )
+
+    $pattern = '^\(\d{3}\) \d{3}-\d{4}$'
+
+    if ($PhoneNumber -match $pattern) {
+        Write-Host "Valid phone number: $PhoneNumber" -ForegroundColor Green
+        return $true
     }
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                   |
-|                                                          |
-|  Show: task1.ps1 script content                          |
-|  Expected: Regex pattern for lowercase-dash-lowercase    |
-+----------------------------------------------------------+
-
-Pattern explanation:
-
-    [a-z]+      One or more lowercase letters
-    [-_]        Either dash or underscore
-    [a-z]+      One or more lowercase letters
-
-Test Example 1:
-
-    .\task1.ps1 "A Balrog is a powerful fictional monster in Middle-earth"
-
-Expected output:
-
-    Middle-earth
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                   |
-|                                                          |
-|  Show: task1.ps1 execution with Middle-earth             |
-|  Expected: Returns Middle-earth                          |
-+----------------------------------------------------------+
-
-Test Example 2:
-
-    .\task1.ps1 "The symbol underscore, also called low_line or low dash."
-
-Expected output:
-
-    low_line
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                   |
-|                                                          |
-|  Show: task1.ps1 execution with low_line                 |
-|  Expected: Returns low_line                              |
-+----------------------------------------------------------+
-
-Alternative - Find all matches:
-
-    param([string]$inputString)
-
-    $pattern = '[a-z]+[-_][a-z]+'
-    [regex]::Matches($inputString, $pattern) | ForEach-Object { $_.Value }
-
-Extended pattern (includes uppercase start):
-
-    param([string]$inputString)
-
-    if ($inputString -match '[A-Za-z]*[a-z]+[-_][a-z]+') {
-        $Matches[0]
+    else {
+        Write-Host "Invalid phone number: $PhoneNumber" -ForegroundColor Red
+        return $false
     }
+}
+```
 
+> **Screenshot 2**
+>
+> Show: Test-PhoneNumber function
+> Expected: Function definition
 
-TASK 2: Match Word at End of String
-------------------------------------
+Test valid numbers:
 
-Create task2.ps1:
+```powershell
+Test-PhoneNumber "(123) 456-7890"
+# Output: Valid phone number: (123) 456-7890
 
-    param([string]$inputString)
+Test-PhoneNumber "(555) 123-4567"
+# Output: Valid phone number: (555) 123-4567
 
-    if ($inputString -match '\w+$') {
-        $Matches[0]
+Test-PhoneNumber "(800) 555-0100"
+# Output: Valid phone number: (800) 555-0100
+```
+
+> **Screenshot 3**
+>
+> Show: Valid phone number tests
+> Expected: Green "Valid" messages
+
+Test invalid numbers:
+
+```powershell
+Test-PhoneNumber "123-456-7890"
+# Output: Invalid phone number: 123-456-7890
+
+Test-PhoneNumber "(123)456-7890"
+# Output: Invalid phone number: (123)456-7890 (missing space)
+
+Test-PhoneNumber "(123) 456-789"
+# Output: Invalid phone number: (123) 456-789 (only 3 digits at end)
+
+Test-PhoneNumber "1234567890"
+# Output: Invalid phone number: 1234567890
+```
+
+> **Screenshot 4**
+>
+> Show: Invalid phone number tests
+> Expected: Red "Invalid" messages
+
+Alternative patterns for different formats:
+
+```powershell
+# Multiple format support
+$patterns = @(
+    '^\(\d{3}\) \d{3}-\d{4}$',      # (123) 456-7890
+    '^\d{3}-\d{3}-\d{4}$',          # 123-456-7890
+    '^\d{3}\.\d{3}\.\d{4}$',        # 123.456.7890
+    '^\d{10}$'                       # 1234567890
+)
+
+function Test-PhoneNumber {
+    param([string]$PhoneNumber)
+
+    foreach ($pattern in $patterns) {
+        if ($PhoneNumber -match $pattern) {
+            return $true
+        }
     }
+    return $false
+}
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                   |
-|                                                          |
-|  Show: task2.ps1 script content                          |
-|  Expected: Regex pattern for word at end                 |
-+----------------------------------------------------------+
-
-Pattern explanation:
-
-    \w+         One or more word characters
-    $           End of string anchor
-
-Test:
-
-    .\task2.ps1 "Ents or talking trees are derived from the Old English word for giant"
-
-Expected output:
-
-    giant
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                   |
-|                                                          |
-|  Show: task2.ps1 execution                               |
-|  Expected: Returns giant                                 |
-+----------------------------------------------------------+
-
-Alternative patterns:
-
-    # Only letters at end
-    if ($inputString -match '[a-zA-Z]+$') { $Matches[0] }
-
-    # Using split (last element)
-    ($inputString -split '\s+')[-1]
-
-    # Remove punctuation first
-    if ($inputString.TrimEnd('.!?') -match '\w+$') { $Matches[0] }
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                   |
-|                                                          |
-|  Show: Alternative solutions                             |
-|  Expected: Different approaches                          |
-+----------------------------------------------------------+
+> **Screenshot 5**
+>
+> Show: Multi-format phone validation
+> Expected: Different patterns supported
 
 
-TASK 3: Match IP Address
--------------------------
+## TASK 2: Validate Email Address with Regex
 
-Create task3.ps1:
+Goal: Validate email addresses
 
-    param([string]$inputString)
+Email format requirements:
+- Username part (letters, numbers, dots, underscores, hyphens)
+- @ symbol
+- Domain name (letters, numbers, hyphens)
+- Dot
+- TLD (2+ letters)
 
-    if ($inputString -match '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}') {
-        $Matches[0]
+Basic regex pattern:
+
+```powershell
+$pattern = '^[\w\.-]+@[\w\.-]+\.\w{2,}$'
+```
+
+Breakdown:
+- `^` - Start of string
+- `[\w\.-]+` - One or more word chars, dots, or hyphens
+- `@` - Literal @ symbol
+- `[\w\.-]+` - One or more word chars, dots, or hyphens
+- `\.` - Literal dot
+- `\w{2,}` - Two or more word characters (TLD)
+- `$` - End of string
+
+> **Screenshot 6**
+>
+> Show: Email regex pattern
+> Expected: Pattern explanation
+
+Validation function:
+
+```powershell
+function Test-EmailAddress {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$Email
+    )
+
+    $pattern = '^[\w\.-]+@[\w\.-]+\.\w{2,}$'
+
+    if ($Email -match $pattern) {
+        Write-Host "Valid email: $Email" -ForegroundColor Green
+        return $true
     }
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                   |
-|                                                          |
-|  Show: task3.ps1 script content                          |
-|  Expected: IP address regex pattern                      |
-+----------------------------------------------------------+
-
-Pattern explanation:
-
-    \d{1,3}     1 to 3 digits
-    \.          Literal dot (escaped)
-    \d{1,3}     1 to 3 digits (repeated 3 more times)
-
-Test:
-
-    .\task3.ps1 "Reply from 10.8.216.77: bytes=32 time<1ms TTL=128"
-
-Expected output:
-
-    10.8.216.77
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                   |
-|                                                          |
-|  Show: task3.ps1 execution                               |
-|  Expected: Returns 10.8.216.77                           |
-+----------------------------------------------------------+
-
-Alternative - More strict IP validation:
-
-    param([string]$inputString)
-
-    # Pattern that validates 0-255 range
-    $pattern = '\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b'
-
-    if ($inputString -match $pattern) {
-        $Matches[0]
+    else {
+        Write-Host "Invalid email: $Email" -ForegroundColor Red
+        return $false
     }
+}
+```
 
-Simplified pattern:
+> **Screenshot 7**
+>
+> Show: Test-EmailAddress function
+> Expected: Function definition
 
-    param([string]$inputString)
+Test valid emails:
 
-    if ($inputString -match '\b(\d+\.){3}\d+\b') {
-        $Matches[0]
+```powershell
+Test-EmailAddress "user@example.com"
+# Output: Valid email: user@example.com
+
+Test-EmailAddress "john.doe@company.org"
+# Output: Valid email: john.doe@company.org
+
+Test-EmailAddress "test_user123@domain.co.uk"
+# Output: Valid email: test_user123@domain.co.uk
+
+Test-EmailAddress "info@sub.domain.com"
+# Output: Valid email: info@sub.domain.com
+```
+
+> **Screenshot 8**
+>
+> Show: Valid email tests
+> Expected: Green "Valid" messages
+
+Test invalid emails:
+
+```powershell
+Test-EmailAddress "invalid-email"
+# Output: Invalid email: invalid-email
+
+Test-EmailAddress "@nodomain.com"
+# Output: Invalid email: @nodomain.com
+
+Test-EmailAddress "user@"
+# Output: Invalid email: user@
+
+Test-EmailAddress "user@domain"
+# Output: Invalid email: user@domain (no TLD)
+
+Test-EmailAddress "user name@domain.com"
+# Output: Invalid email: user name@domain.com (space)
+```
+
+> **Screenshot 9**
+>
+> Show: Invalid email tests
+> Expected: Red "Invalid" messages
+
+More strict email pattern:
+
+```powershell
+$strictPattern = '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+```
+
+> **Screenshot 10**
+>
+> Show: Strict email pattern
+> Expected: RFC-compliant pattern
+
+
+## TASK 3: Extract Information Using Regex
+
+Goal: Extract specific data from text using capture groups.
+
+Extract domain from email:
+
+```powershell
+$email = "user@example.com"
+$pattern = '@(.+)$'
+
+if ($email -match $pattern) {
+    $domain = $Matches[1]
+    Write-Host "Domain: $domain"
+    # Output: Domain: example.com
+}
+```
+
+> **Screenshot 11**
+>
+> Show: Domain extraction
+> Expected: "example.com" extracted
+
+Extract parts of phone number:
+
+```powershell
+$phone = "(123) 456-7890"
+$pattern = '^\((\d{3})\) (\d{3})-(\d{4})$'
+
+if ($phone -match $pattern) {
+    $areaCode = $Matches[1]
+    $exchange = $Matches[2]
+    $subscriber = $Matches[3]
+
+    Write-Host "Area Code: $areaCode"
+    Write-Host "Exchange: $exchange"
+    Write-Host "Subscriber: $subscriber"
+}
+```
+
+Expected output:
+
+```
+Area Code: 123
+Exchange: 456
+Subscriber: 7890
+```
+
+> **Screenshot 12**
+>
+> Show: Phone number parts extraction
+> Expected: Three parts extracted
+
+Named capture groups:
+
+```powershell
+$phone = "(123) 456-7890"
+$pattern = '^\((?<area>\d{3})\) (?<exchange>\d{3})-(?<subscriber>\d{4})$'
+
+if ($phone -match $pattern) {
+    Write-Host "Area Code: $($Matches.area)"
+    Write-Host "Exchange: $($Matches.exchange)"
+    Write-Host "Subscriber: $($Matches.subscriber)"
+}
+```
+
+> **Screenshot 13**
+>
+> Show: Named capture groups
+> Expected: Named groups used
+
+Extract all matches with Select-String:
+
+```powershell
+$text = "Contact us at info@company.com or support@company.com"
+$pattern = '[\w\.-]+@[\w\.-]+\.\w+'
+
+$matches = [regex]::Matches($text, $pattern)
+
+foreach ($match in $matches) {
+    Write-Host "Found: $($match.Value)"
+}
+```
+
+Expected output:
+
+```
+Found: info@company.com
+Found: support@company.com
+```
+
+> **Screenshot 14**
+>
+> Show: Multiple match extraction
+> Expected: Both emails found
+
+
+## COMPLETE SOLUTION SCRIPT
+
+```powershell
+# Phone Number Validation
+function Test-PhoneNumber {
+    param([string]$PhoneNumber)
+
+    $pattern = '^\(\d{3}\) \d{3}-\d{4}$'
+
+    if ($PhoneNumber -match $pattern) {
+        Write-Host "Valid phone: $PhoneNumber" -ForegroundColor Green
+        return $true
     }
+    Write-Host "Invalid phone: $PhoneNumber" -ForegroundColor Red
+    return $false
+}
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                   |
-|                                                          |
-|  Show: IP validation alternatives                        |
-|  Expected: Different regex approaches                    |
-+----------------------------------------------------------+
+# Email Validation
+function Test-EmailAddress {
+    param([string]$Email)
 
+    $pattern = '^[\w\.-]+@[\w\.-]+\.\w{2,}$'
 
-TASK 4: Convert Date Format mm-dd-yyyy to dd-mm-yyyy
------------------------------------------------------
-
-Create task4.ps1:
-
-    param([string]$inputString)
-
-    $inputString -replace '(\d{2})-(\d{2})-(\d{4})', '$2-$1-$3'
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 10 <<<                  |
-|                                                          |
-|  Show: task4.ps1 script content                          |
-|  Expected: Date conversion with capture groups           |
-+----------------------------------------------------------+
-
-Pattern explanation:
-
-    (\d{2})     Capture group 1: month (2 digits)
-    -           Literal dash
-    (\d{2})     Capture group 2: day (2 digits)
-    -           Literal dash
-    (\d{4})     Capture group 3: year (4 digits)
-
-    '$2-$1-$3'  Replacement: day-month-year
-
-Test:
-
-    .\task4.ps1 "09-17-1991"
-
-Expected output:
-
-    17-09-1991
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 11 <<<                  |
-|                                                          |
-|  Show: task4.ps1 execution                               |
-|  Expected: Returns 17-09-1991                            |
-+----------------------------------------------------------+
-
-Alternative using named groups:
-
-    param([string]$inputString)
-
-    if ($inputString -match '(?<month>\d{2})-(?<day>\d{2})-(?<year>\d{4})') {
-        "$($Matches['day'])-$($Matches['month'])-$($Matches['year'])"
+    if ($Email -match $pattern) {
+        Write-Host "Valid email: $Email" -ForegroundColor Green
+        return $true
     }
+    Write-Host "Invalid email: $Email" -ForegroundColor Red
+    return $false
+}
 
-Using DateTime parsing:
+# Test phone numbers
+Write-Host "`n=== Phone Number Tests ===" -ForegroundColor Cyan
+Test-PhoneNumber "(123) 456-7890"
+Test-PhoneNumber "123-456-7890"
+Test-PhoneNumber "(555) 123-4567"
 
-    param([string]$inputString)
+# Test emails
+Write-Host "`n=== Email Tests ===" -ForegroundColor Cyan
+Test-EmailAddress "user@example.com"
+Test-EmailAddress "invalid-email"
+Test-EmailAddress "test@domain.org"
+```
 
-    $date = [DateTime]::ParseExact($inputString, "MM-dd-yyyy", $null)
-    $date.ToString("dd-MM-yyyy")
+> **Screenshot 15**
+>
+> Show: Complete script with tests
+> Expected: All validations working
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 12 <<<                  |
-|                                                          |
-|  Show: Alternative date conversion methods               |
-|  Expected: Named groups and DateTime approaches          |
-+----------------------------------------------------------+
 
+## COMMON REGEX PATTERNS
 
-TASK 5: Find Words At Least 6 Characters Long
------------------------------------------------
+| Pattern              | Description                    | Example Match          |
+|----------------------|--------------------------------|------------------------|
+| `^\d{5}$`            | 5-digit ZIP code               | 12345                  |
+| `^\d{5}-\d{4}$`      | ZIP+4 code                     | 12345-6789             |
+| `^[A-Z]{2}\d{6}$`    | License plate                  | AB123456               |
+| `^\d{3}-\d{2}-\d{4}$`| SSN format                     | 123-45-6789            |
+| `^#[0-9A-Fa-f]{6}$`  | Hex color code                 | #FF5733                |
+| `^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$` | IP address     | 192.168.1.1            |
+| `^https?://`         | URL protocol                   | http:// or https://    |
 
-Create task5.ps1:
 
-    param([string]$inputString)
+## -REPLACE OPERATOR
 
-    [regex]::Matches($inputString, '\b[a-zA-Z]{6,}\b') | ForEach-Object { $_.Value }
+Basic replacement:
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 13 <<<                  |
-|                                                          |
-|  Show: task5.ps1 script content                          |
-|  Expected: Regex for 6+ character words                  |
-+----------------------------------------------------------+
+```powershell
+"Hello World" -replace "World", "PowerShell"
+# Output: Hello PowerShell
 
-Pattern explanation:
+"cat bat rat" -replace "at", "ow"
+# Output: cow bow row
 
-    \b          Word boundary
-    [a-zA-Z]    Letter characters only
-    {6,}        6 or more occurrences
-    \b          Word boundary
+"abc123def456" -replace "\d+", "X"
+# Output: abcXdefX
+```
 
-Test:
+Using capture groups:
 
-    .\task5.ps1 "Tue Sep 15 2020 15:39:48 GMT+0300 (Belarus Local Time)"
+```powershell
+# Swap first and last name
+"John Doe" -replace "(\w+) (\w+)", '$2, $1'
+# Output: Doe, John
 
-Expected output:
+# Format phone number
+"1234567890" -replace "(\d{3})(\d{3})(\d{4})", '($1) $2-$3'
+# Output: (123) 456-7890
+```
 
-    Belarus
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 14 <<<                  |
-|                                                          |
-|  Show: task5.ps1 execution                               |
-|  Expected: Returns Belarus                               |
-+----------------------------------------------------------+
+## TROUBLESHOOTING
 
-Alternative - Using Select-String:
+Problem: Pattern matches when it shouldn't
+Solution: Use anchors ^ and $
 
-    param([string]$inputString)
+```powershell
+"abc123" -match "\d+"      # True (partial match)
+"abc123" -match "^\d+$"    # False (full match required)
+```
 
-    $inputString | Select-String -Pattern '\b[a-zA-Z]{6,}\b' -AllMatches |
-        ForEach-Object { $_.Matches.Value }
+Problem: Special characters not matching
+Solution: Escape special characters with \
 
-Alternative - Using split and filter:
-
-    param([string]$inputString)
-
-    $inputString -split '\W+' | Where-Object { $_.Length -ge 6 -and $_ -match '^[a-zA-Z]+$' }
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 15 <<<                  |
-|                                                          |
-|  Show: Alternative word filtering methods                |
-|  Expected: Different approaches                          |
-+----------------------------------------------------------+
-
-Test with multiple long words:
-
-    .\task5.ps1 "PowerShell scripting enables automation"
-
-Expected output:
-
-    PowerShell
-    scripting
-    enables
-    automation
-
-
-TASK 6: Remove Multiple Spaces
--------------------------------
-
-Create task6.ps1:
-
-    param([string]$inputString)
-
-    ($inputString -replace '\s+', ' ').Trim()
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 16 <<<                  |
-|                                                          |
-|  Show: task6.ps1 script content                          |
-|  Expected: Multiple space removal pattern                |
-+----------------------------------------------------------+
-
-Pattern explanation:
-
-    \s+         One or more whitespace characters
-    ' '         Replace with single space
-    .Trim()     Remove leading/trailing spaces
-
-Test:
-
-    .\task6.ps1 " kube-system   coredns-869cb84759-drhbg                     1/1     Running   0          4h5m"
-
-Expected output:
-
-    kube-system coredns-869cb84759-drhbg 1/1 Running 0 4h5m
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 17 <<<                  |
-|                                                          |
-|  Show: task6.ps1 execution                               |
-|  Expected: Clean single-spaced output                    |
-+----------------------------------------------------------+
-
-Alternative approaches:
-
-    # Using regex with explicit spaces
-    param([string]$inputString)
-    ($inputString -replace '  +', ' ').Trim()
-
-    # Using split and join
-    param([string]$inputString)
-    ($inputString.Trim() -split '\s+') -join ' '
-
-    # Using .NET Regex
-    param([string]$inputString)
-    [regex]::Replace($inputString.Trim(), '\s{2,}', ' ')
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 18 <<<                  |
-|                                                          |
-|  Show: Alternative space removal methods                 |
-|  Expected: Different approaches                          |
-+----------------------------------------------------------+
-
-
-COMPLETE SCRIPT FILES
----------------------
-
-All scripts in one location:
-
-task1.ps1:
-    param([string]$inputString)
-    if ($inputString -match '[a-z]+[-_][a-z]+') { $Matches[0] }
-
-task2.ps1:
-    param([string]$inputString)
-    if ($inputString -match '\w+$') { $Matches[0] }
-
-task3.ps1:
-    param([string]$inputString)
-    if ($inputString -match '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}') { $Matches[0] }
-
-task4.ps1:
-    param([string]$inputString)
-    $inputString -replace '(\d{2})-(\d{2})-(\d{4})', '$2-$1-$3'
-
-task5.ps1:
-    param([string]$inputString)
-    [regex]::Matches($inputString, '\b[a-zA-Z]{6,}\b') | ForEach-Object { $_.Value }
-
-task6.ps1:
-    param([string]$inputString)
-    ($inputString -replace '\s+', ' ').Trim()
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 19 <<<                  |
-|                                                          |
-|  Show: All script files created                          |
-|  Expected: Six .ps1 files in directory                   |
-+----------------------------------------------------------+
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 20 <<<                  |
-|                                                          |
-|  Show: All tasks tested successfully                     |
-|  Expected: Complete test run of all scripts              |
-+----------------------------------------------------------+
-
-
-================================================================================
-                     REGEX PATTERN REFERENCE
-================================================================================
-
-| Pattern     | Description                    | Example                       |
-|-------------|--------------------------------|-------------------------------|
-| .           | Any character except newline   | a.c matches "abc"             |
-| \d          | Digit [0-9]                    | \d+ matches "123"             |
-| \D          | Non-digit                      | \D+ matches "abc"             |
-| \w          | Word char [a-zA-Z0-9_]         | \w+ matches "hello_1"         |
-| \W          | Non-word character             | \W matches "!"                |
-| \s          | Whitespace                     | \s+ matches "   "             |
-| \S          | Non-whitespace                 | \S+ matches "text"            |
-| \b          | Word boundary                  | \bword\b exact match          |
-| ^           | Start of string                | ^Start matches "Start..."     |
-| $           | End of string                  | end$ matches "...end"         |
-| [abc]       | Character class                | [aeiou] matches vowels        |
-| [^abc]      | Negated class                  | [^0-9] matches non-digits     |
-| [a-z]       | Range                          | [a-z]+ matches lowercase      |
-| *           | Zero or more                   | ab*c matches "ac", "abc"      |
-| +           | One or more                    | ab+c matches "abc", "abbc"    |
-| ?           | Zero or one                    | ab?c matches "ac", "abc"      |
-| {n}         | Exactly n times                | \d{3} matches "123"           |
-| {n,}        | n or more times                | \d{3,} matches "1234"         |
-| {n,m}       | Between n and m times          | \d{2,4} matches "12", "1234"  |
-| (...)       | Capture group                  | (\d+) captures digits         |
-| (?:...)     | Non-capturing group            | (?:\d+) groups without capture|
-| \1, \2      | Backreference                  | (\w)\1 matches "aa", "bb"     |
-| $1, $2      | Replacement reference          | -replace '(a)', '$1$1'        |
-
-================================================================================
-
-
-================================================================================
-                     POWERSHELL REGEX OPERATORS
-================================================================================
-
-| Operator    | Description                    | Example                       |
-|-------------|--------------------------------|-------------------------------|
-| -match      | Pattern match (case-insensitive)| "Hello" -match 'h'           |
-| -cmatch     | Case-sensitive match           | "Hello" -cmatch 'H'           |
-| -notmatch   | Pattern does not match         | "Hello" -notmatch '\d'        |
-| -replace    | Replace pattern                | "abc" -replace 'b', 'x'       |
-| -creplace   | Case-sensitive replace         | "ABC" -creplace 'A', 'x'      |
-| -split      | Split by pattern               | "a-b-c" -split '-'            |
-
-================================================================================
-
-
-================================================================================
-                     $MATCHES AUTOMATIC VARIABLE
-================================================================================
-
-After -match, $Matches contains:
-
-    $Matches[0]     Full match
-    $Matches[1]     First capture group
-    $Matches[2]     Second capture group
-    $Matches['name'] Named capture group
-
-Example:
-
-    "John Smith 30" -match '(\w+)\s(\w+)\s(\d+)'
-    $Matches[0]     # "John Smith 30"
-    $Matches[1]     # "John"
-    $Matches[2]     # "Smith"
-    $Matches[3]     # "30"
-
-Named groups:
-
-    "John Smith 30" -match '(?<first>\w+)\s(?<last>\w+)\s(?<age>\d+)'
-    $Matches['first']  # "John"
-    $Matches['last']   # "Smith"
-    $Matches['age']    # "30"
-
-================================================================================
-
-
-================================================================================
-                     [REGEX] CLASS METHODS
-================================================================================
-
-| Method                   | Description                              |
-|--------------------------|------------------------------------------|
-| [regex]::Match()         | Returns first match                      |
-| [regex]::Matches()       | Returns all matches                      |
-| [regex]::Replace()       | Replace with pattern                     |
-| [regex]::Split()         | Split by pattern                         |
-| [regex]::IsMatch()       | Test if pattern matches                  |
-
-Examples:
-
-    # Find all matches
-    [regex]::Matches("a1b2c3", '\d') | ForEach-Object { $_.Value }
-    # Returns: 1, 2, 3
-
-    # Replace with callback
-    [regex]::Replace("hello", '.', { $args[0].Value.ToUpper() })
-    # Returns: HELLO
-
-================================================================================
-
-
-================================================================================
-                             TROUBLESHOOTING
-================================================================================
-
-Problem: Pattern doesn't match expected text
-Solution: Test pattern in isolation, check escaping
-    "test" -match 'test'    # Simple test first
-    "a.b" -match 'a\.b'     # Escape special chars
-
-Problem: $Matches is empty or null
-Solution: $Matches only populated after successful -match
-    if ($string -match $pattern) { $Matches[0] }
-
-Problem: Backslash issues in pattern
-Solution: Use single quotes or escape properly
-    'path\\file'      # Single quotes (literal)
-    "path\\\\file"    # Double quotes (escape twice)
-
-Problem: -replace removes too much
-Solution: Make pattern more specific, use anchors
-    "aaa" -replace 'a+', 'b'     # "b" (greedy)
-    "aaa" -replace 'a', 'b'      # "bbb" (each)
+```powershell
+"(test)" -match "\(test\)"  # Correct
+"(test)" -match "(test)"    # Wrong - creates capture group
+```
 
 Problem: Case sensitivity issues
-Solution: Use -cmatch/-creplace for case-sensitive
-    "ABC" -match 'abc'    # True (case-insensitive)
-    "ABC" -cmatch 'abc'   # False (case-sensitive)
+Solution: Use -imatch for case-insensitive
 
-Problem: Capture groups not working in -replace
-Solution: Use single quotes around replacement string
-    'ab' -replace '(a)(b)', '$2$1'    # Correct: "ba"
-    "ab" -replace "(a)(b)", "$2$1"    # May not work as expected
+```powershell
+"HELLO" -match "hello"      # False (case sensitive)
+"HELLO" -imatch "hello"     # True (case insensitive)
+```
 
-Problem: Script not accepting arguments
-Solution: Add param() block at top of script
-    param([string]$inputString)
-    # Rest of script
+Problem: $Matches is empty
+Solution: Ensure -match succeeded first
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 21 <<<                  |
-|                                                          |
-|  Show: Summary of all regex tasks                        |
-|  Expected: All six patterns working correctly            |
-+----------------------------------------------------------+
+```powershell
+if ($string -match $pattern) {
+    $Matches[1]  # Safe to access
+}
+```
+
+Problem: Only first match returned
+Solution: Use [regex]::Matches for all
+
+```powershell
+$allMatches = [regex]::Matches($text, $pattern)
+```
+
+> **Screenshot 16**
+>
+> Show: Summary of regex tasks
+> Expected: Both validation functions working
 
 
-================================================================================
-                     SELF-REVIEW CHECKLIST
-================================================================================
+## SELF-REVIEW CHECKLIST
 
-[ ] Task 1: Pattern [a-z]+[-_][a-z]+ finds dash/underscore words
-[ ] Task 1: "Middle-earth" and "low_line" correctly matched
-[ ] Task 2: Pattern \w+$ matches word at end of string
-[ ] Task 2: "giant" correctly extracted
-[ ] Task 3: IP address pattern \d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} works
-[ ] Task 3: "10.8.216.77" correctly matched
-[ ] Task 4: Capture groups swap date format correctly
-[ ] Task 4: "09-17-1991" becomes "17-09-1991"
-[ ] Task 5: Pattern \b[a-zA-Z]{6,}\b finds 6+ char words
-[ ] Task 5: "Belarus" correctly found
-[ ] Task 6: Pattern \s+ replaces multiple spaces with single
-[ ] Task 6: Output is clean single-spaced string
-[ ] Understand -match operator and $Matches variable
-[ ] Understand -replace operator with capture groups
-[ ] Know how to use [regex]::Matches() for multiple matches
-[ ] Scripts accept command line arguments with param()
-
-================================================================================
-
+- [ ] Phone number regex validates (XXX) XXX-XXXX format
+- [ ] Pattern uses \d for digits and \( \) for literal parentheses
+- [ ] Test-PhoneNumber returns true for valid numbers
+- [ ] Test-PhoneNumber returns false for invalid formats
+- [ ] Email regex validates user@domain.tld format
+- [ ] Pattern handles dots, underscores in usernames
+- [ ] Test-EmailAddress returns true for valid emails
+- [ ] Test-EmailAddress returns false for invalid formats
+- [ ] Understand capture groups with ()
+- [ ] Know how to access $Matches array
+- [ ] Understand -match vs -like operators
+- [ ] Know common regex metacharacters

@@ -4,9 +4,7 @@ This guide covers installing Visual Studio Code, Python extensions,
 and running your first Python program.
 
 
-================================================================================
-                     STEP 1: DOWNLOAD VISUAL STUDIO CODE
-================================================================================
+## STEP 1: DOWNLOAD VISUAL STUDIO CODE
 
 1. Open your browser and go to:
    https://code.visualstudio.com/
@@ -16,12 +14,9 @@ and running your first Python program.
    - macOS: Download the .dmg file
    - Linux: Download .deb or .rpm package
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                   |
-|                                                          |
-|  Show: VS Code download page                             |
-|  Expected: Download button visible                       |
-+----------------------------------------------------------+
+> **Screenshot 1**
+> - Show: VS Code download page
+> - Expected: Download button visible
 
 3. Run the installer and follow the installation wizard:
    - Accept the license agreement
@@ -30,34 +25,28 @@ and running your first Python program.
      [x] Add "Open with Code" to context menu
      [x] Add to PATH
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                   |
-|                                                          |
-|  Show: VS Code installation wizard                       |
-|  Expected: Installation options selected                 |
-+----------------------------------------------------------+
+> **Screenshot 2**
+> - Show: VS Code installation wizard
+> - Expected: Installation options selected
 
 4. Complete the installation and launch VS Code.
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                   |
-|                                                          |
-|  Show: VS Code welcome screen                            |
-|  Expected: Fresh VS Code installation                    |
-+----------------------------------------------------------+
+> **Screenshot 3**
+> - Show: VS Code welcome screen
+> - Expected: Fresh VS Code installation
 
 
-================================================================================
-                     STEP 2: INSTALL PYTHON (if not installed)
-================================================================================
+## STEP 2: INSTALL PYTHON (if not installed)
 
 Check if Python is installed:
 
-    # Windows (Command Prompt or PowerShell)
-    python --version
+```bash
+# Windows (Command Prompt or PowerShell)
+python --version
 
-    # macOS/Linux
-    python3 --version
+# macOS/Linux
+python3 --version
+```
 
 If Python is not installed:
 
@@ -69,33 +58,29 @@ If Python is not installed:
    - [x] IMPORTANT: Check "Add Python to PATH"
    - Click "Install Now"
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                   |
-|                                                          |
-|  Show: Python installer with "Add to PATH" checked       |
-|  Expected: Checkbox selected before installation         |
-+----------------------------------------------------------+
+> **Screenshot 4**
+> - Show: Python installer with "Add to PATH" checked
+> - Expected: Checkbox selected before installation
 
 Verify installation:
 
-    python --version
-    # or
-    python3 --version
+```bash
+python --version
+# or
+python3 --version
+```
 
 Expected output:
-    Python 3.x.x
+```
+Python 3.x.x
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                   |
-|                                                          |
-|  Show: Python version check in terminal                  |
-|  Expected: Python 3.x.x displayed                        |
-+----------------------------------------------------------+
+> **Screenshot 5**
+> - Show: Python version check in terminal
+> - Expected: Python 3.x.x displayed
 
 
-================================================================================
-                     STEP 3: INSTALL VS CODE EXTENSIONS
-================================================================================
+## STEP 3: INSTALL VS CODE EXTENSIONS
 
 Method 1: Install from VS Code
 
@@ -105,21 +90,15 @@ Method 1: Install from VS Code
 
 3. Search for "Python" and install the Microsoft Python extension
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                   |
-|                                                          |
-|  Show: VS Code Extensions marketplace                    |
-|  Expected: Python extension search results               |
-+----------------------------------------------------------+
+> **Screenshot 6**
+> - Show: VS Code Extensions marketplace
+> - Expected: Python extension search results
 
 4. Search for "Pylance" and install it
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                   |
-|                                                          |
-|  Show: Pylance extension installation                    |
-|  Expected: Pylance extension page with Install button    |
-+----------------------------------------------------------+
+> **Screenshot 7**
+> - Show: Pylance extension installation
+> - Expected: Pylance extension page with Install button
 
 Method 2: Install from Marketplace links
 
@@ -133,17 +112,12 @@ Method 2: Install from Marketplace links
    https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
    - Same process as above
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                   |
-|                                                          |
-|  Show: Both extensions installed                         |
-|  Expected: Python and Pylance in installed extensions    |
-+----------------------------------------------------------+
+> **Screenshot 8**
+> - Show: Both extensions installed
+> - Expected: Python and Pylance in installed extensions
 
 
-================================================================================
-                     STEP 4: CREATE AND OPEN TEST.PY
-================================================================================
+## STEP 4: CREATE AND OPEN TEST.PY
 
 Method 1: Create from VS Code
 
@@ -157,24 +131,23 @@ Method 1: Create from VS Code
    - Name: test.py
    - Save
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                   |
-|                                                          |
-|  Show: Save As dialog with test.py                       |
-|  Expected: File name as test.py                          |
-+----------------------------------------------------------+
+> **Screenshot 9**
+> - Show: Save As dialog with test.py
+> - Expected: File name as test.py
 
 Method 2: Create from terminal
 
-    # Windows
-    cd Desktop
-    echo. > test.py
-    code test.py
+```bash
+# Windows
+cd Desktop
+echo. > test.py
+code test.py
 
-    # macOS/Linux
-    cd ~/Desktop
-    touch test.py
-    code test.py
+# macOS/Linux
+cd ~/Desktop
+touch test.py
+code test.py
+```
 
 Method 3: Create from File Explorer
 
@@ -184,45 +157,39 @@ Method 3: Create from File Explorer
 4. Right-click > Open with Code
 
 
-================================================================================
-                     STEP 5: WRITE THE CODE
-================================================================================
+## STEP 5: WRITE THE CODE
 
 In the test.py file, type:
 
-    print("Hello, python!")
+```python
+print("Hello, python!")
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 10 <<<                  |
-|                                                          |
-|  Show: test.py with print statement                      |
-|  Expected: Code visible in VS Code editor                |
-+----------------------------------------------------------+
+> **Screenshot 10**
+> - Show: test.py with print statement
+> - Expected: Code visible in VS Code editor
 
 Understanding the code:
 
-    print()             # Built-in function to output text
-    "Hello, python!"    # String (text) to be printed
-    print("...")        # Outputs the string to console
+```python
+print()             # Built-in function to output text
+"Hello, python!"    # String (text) to be printed
+print("...")        # Outputs the string to console
+```
 
 Save the file: Ctrl+S (or Cmd+S on macOS)
 
 
-================================================================================
-                     STEP 6: RUN THE SCRIPT
-================================================================================
+## STEP 6: RUN THE SCRIPT
 
 Method 1: Run Button (Recommended)
 
 1. Look at the top-right corner of VS Code
 2. Click the "Run" button (play icon ▶)
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 11 <<<                  |
-|                                                          |
-|  Show: Run button location in VS Code                    |
-|  Expected: Play button visible at top-right              |
-+----------------------------------------------------------+
+> **Screenshot 11**
+> - Show: Run button location in VS Code
+> - Expected: Play button visible at top-right
 
 Method 2: Right-click menu
 
@@ -235,18 +202,17 @@ Method 3: Terminal command
 
 2. Run the script:
 
-    # Windows
-    python test.py
+```bash
+# Windows
+python test.py
 
-    # macOS/Linux
-    python3 test.py
+# macOS/Linux
+python3 test.py
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 12 <<<                  |
-|                                                          |
-|  Show: Terminal with python command                      |
-|  Expected: python test.py command visible                |
-+----------------------------------------------------------+
+> **Screenshot 12**
+> - Show: Terminal with python command
+> - Expected: python test.py command visible
 
 Method 4: Keyboard shortcut
 
@@ -254,25 +220,20 @@ Method 4: Keyboard shortcut
 - Or Ctrl+F5 to run without debugging
 
 
-================================================================================
-                     EXPECTED OUTPUT
-================================================================================
+## EXPECTED OUTPUT
 
 After running the script, you should see in the terminal:
 
-    Hello, python!
+```
+Hello, python!
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 13 <<<                  |
-|                                                          |
-|  Show: Console output "Hello, python!"                   |
-|  Expected: Output visible in VS Code terminal            |
-+----------------------------------------------------------+
+> **Screenshot 13**
+> - Show: Console output "Hello, python!"
+> - Expected: Output visible in VS Code terminal
 
 
-================================================================================
-                     VS CODE PYTHON FEATURES
-================================================================================
+## VS CODE PYTHON FEATURES
 
 With Python and Pylance extensions installed, you get:
 
@@ -286,54 +247,46 @@ With Python and Pylance extensions installed, you get:
 | Run button           | One-click script execution               |
 | Terminal             | Integrated terminal for commands         |
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 14 <<<                  |
-|                                                          |
-|  Show: IntelliSense autocomplete in action               |
-|  Expected: Dropdown with suggestions                     |
-+----------------------------------------------------------+
+> **Screenshot 14**
+> - Show: IntelliSense autocomplete in action
+> - Expected: Dropdown with suggestions
 
 
-================================================================================
-                     TROUBLESHOOTING
-================================================================================
+## TROUBLESHOOTING
 
-Problem: "python is not recognized as a command"
-Solution: Python not in PATH
-    - Reinstall Python with "Add to PATH" checked
-    - Or add manually to system environment variables
+**Problem:** "python is not recognized as a command"
+**Solution:** Python not in PATH
+- Reinstall Python with "Add to PATH" checked
+- Or add manually to system environment variables
 
-Problem: VS Code doesn't recognize Python
-Solution: Select Python interpreter
-    - Press Ctrl+Shift+P
-    - Type "Python: Select Interpreter"
-    - Choose your Python installation
+**Problem:** VS Code doesn't recognize Python
+**Solution:** Select Python interpreter
+- Press Ctrl+Shift+P
+- Type "Python: Select Interpreter"
+- Choose your Python installation
 
-Problem: Run button not visible
-Solution: Ensure Python extension is installed
-    - Check Extensions sidebar
-    - Install Microsoft Python extension
+**Problem:** Run button not visible
+**Solution:** Ensure Python extension is installed
+- Check Extensions sidebar
+- Install Microsoft Python extension
 
-Problem: "No module named..." error
-Solution: Install the required module
-    pip install module_name
+**Problem:** "No module named..." error
+**Solution:** Install the required module
+```bash
+pip install module_name
+```
 
-Problem: Wrong Python version running
-Solution: Select correct interpreter
-    - Click Python version in bottom-left of VS Code
-    - Select the correct Python installation
+**Problem:** Wrong Python version running
+**Solution:** Select correct interpreter
+- Click Python version in bottom-left of VS Code
+- Select the correct Python installation
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 15 <<<                  |
-|                                                          |
-|  Show: Python interpreter selection                      |
-|  Expected: List of available Python interpreters         |
-+----------------------------------------------------------+
+> **Screenshot 15**
+> - Show: Python interpreter selection
+> - Expected: List of available Python interpreters
 
 
-================================================================================
-                     USEFUL VS CODE SHORTCUTS
-================================================================================
+## USEFUL VS CODE SHORTCUTS
 
 | Shortcut           | Action                           |
 |--------------------|----------------------------------|
@@ -348,19 +301,14 @@ Solution: Select correct interpreter
 | Shift+Alt+F        | Format document                  |
 
 
-================================================================================
-                     SELF-REVIEW CHECKLIST
-================================================================================
+## SELF-REVIEW CHECKLIST
 
-[ ] Visual Studio Code installed
-[ ] Python installed and in PATH
-[ ] Python extension installed in VS Code
-[ ] Pylance extension installed in VS Code
-[ ] test.py file created
-[ ] print("Hello, python!") code written
-[ ] Script executed successfully
-[ ] "Hello, python!" displayed in console
-[ ] Understand how to run Python scripts in VS Code
-
-================================================================================
-
+- [ ] Visual Studio Code installed
+- [ ] Python installed and in PATH
+- [ ] Python extension installed in VS Code
+- [ ] Pylance extension installed in VS Code
+- [ ] test.py file created
+- [ ] print("Hello, python!") code written
+- [ ] Script executed successfully
+- [ ] "Hello, python!" displayed in console
+- [ ] Understand how to run Python scripts in VS Code

@@ -7,14 +7,11 @@ Methods:
 - Activities > Search "Terminal"
 - Right-click on Desktop > Open Terminal
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                          |
-|                                                                  |
-|  Terminal window showing:                                        |
-|  - Empty terminal with command prompt                            |
-|  - Username and hostname visible (user@hostname:~$)              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 1**
+>
+> Terminal window showing:
+> - Empty terminal with command prompt
+> - Username and hostname visible (user@hostname:~$)
 
 
 ## TASK 2: Inspect RAM usage using free command
@@ -56,17 +53,14 @@ Explanation:
 - Gi = Gibibytes (1024-based)
 - Mi = Mebibytes
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2a <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ free -h                                                     |
-|  - Output table with columns:                                    |
-|    total, used, free, shared, buff/cache, available              |
-|  - Mem row with RAM values                                       |
-|  - Swap row with swap values                                     |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 2a**
+>
+> Terminal showing:
+> - $ free -h
+> - Output table with columns:
+>   total, used, free, shared, buff/cache, available
+> - Mem row with RAM values
+> - Swap row with swap values
 
 
 ### METHOD 3: Show output in megabytes
@@ -122,15 +116,12 @@ Total:        5.8Gi       1.2Gi       3.5Gi
 Explanation:
 - -t = show total line (RAM + Swap combined)
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2b <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ free -h -t                                                  |
-|  - Output with Mem, Swap, and Total rows                         |
-|  - Total row showing combined RAM + Swap                         |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 2b**
+>
+> Terminal showing:
+> - $ free -h -t
+> - Output with Mem, Swap, and Total rows
+> - Total row showing combined RAM + Swap
 
 
 ### METHOD 6: Continuous monitoring
@@ -192,15 +183,12 @@ $ top
 $ htop
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2c <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ cat /proc/meminfo                                           |
-|  - Detailed memory information:                                  |
-|    MemTotal, MemFree, MemAvailable, Buffers, Cached, etc.        |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 2c**
+>
+> Terminal showing:
+> - $ cat /proc/meminfo
+> - Detailed memory information:
+>   MemTotal, MemFree, MemAvailable, Buffers, Cached, etc.
 
 
 ## TASK 3: Calculate total, free and cached RAM
@@ -275,20 +263,17 @@ $ free -m | grep Mem | awk '{print $6}'
 
 Output: 1211
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 3a <<<                         |
-|                                                                  |
-|  Terminal showing extraction of specific values:                 |
-|  - $ free -h                                                     |
-|  - (full output shown)                                           |
-|  - $ free -m | grep Mem | awk '{print "Total:", $2, "MB"}'       |
-|  - Total: 3934 MB                                                |
-|  - $ free -m | grep Mem | awk '{print "Free:", $4, "MB"}'        |
-|  - Free: 1506 MB                                                 |
-|  - $ free -m | grep Mem | awk '{print "Cached:", $6, "MB"}'      |
-|  - Cached: 1211 MB                                               |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 3a**
+>
+> Terminal showing extraction of specific values:
+> - $ free -h
+> - (full output shown)
+> - $ free -m | grep Mem | awk '{print "Total:", $2, "MB"}'
+> - Total: 3934 MB
+> - $ free -m | grep Mem | awk '{print "Free:", $4, "MB"}'
+> - Free: 1506 MB
+> - $ free -m | grep Mem | awk '{print "Cached:", $6, "MB"}'
+> - Cached: 1211 MB
 
 
 ### ALTERNATIVE: Using /proc/meminfo
@@ -311,17 +296,14 @@ Explanation:
 - Cached = Disk cache
 - Buffers = Buffer cache
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 3b <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ grep -E "MemTotal|MemFree|^Cached|Buffers" /proc/meminfo    |
-|  - MemTotal:        4028436 kB                                   |
-|  - MemFree:         1542820 kB                                   |
-|  - Buffers:          123456 kB                                   |
-|  - Cached:          1116528 kB                                   |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 3b**
+>
+> Terminal showing:
+> - $ grep -E "MemTotal|MemFree|^Cached|Buffers" /proc/meminfo
+> - MemTotal:        4028436 kB
+> - MemFree:         1542820 kB
+> - Buffers:          123456 kB
+> - Cached:          1116528 kB
 
 
 ### MEMORY SUMMARY SCRIPT
@@ -349,15 +331,12 @@ Cached:     1211 MB (1.18 GB)
 Available:  2432 MB (2.38 GB)
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 3c <<<                         |
-|                                                                  |
-|  Terminal showing memory summary:                                |
-|  - Memory summary output with all values:                        |
-|    Total RAM, Used RAM, Free RAM, Cached, Available              |
-|  - Values in both MB and GB                                      |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 3c**
+>
+> Terminal showing memory summary:
+> - Memory summary output with all values:
+>   Total RAM, Used RAM, Free RAM, Cached, Available
+> - Values in both MB and GB
 
 
 ### UNDERSTANDING AVAILABLE vs FREE
@@ -403,17 +382,14 @@ Explanation:
 - %MEM = Percentage of total RAM
 - RSS = Resident Set Size (actual RAM used in KB)
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4a <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ ps aux --sort=-%mem | head -11                              |
-|  - Header row: USER PID %CPU %MEM VSZ RSS TTY STAT START TIME CMD|
-|  - Top processes sorted by memory                                |
-|  - First process (after header) is highest memory consumer       |
-|  - %MEM and RSS columns clearly visible                          |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 4a**
+>
+> Terminal showing:
+> - $ ps aux --sort=-%mem | head -11
+> - Header row: USER PID %CPU %MEM VSZ RSS TTY STAT START TIME CMD
+> - Top processes sorted by memory
+> - First process (after header) is highest memory consumer
+> - %MEM and RSS columns clearly visible
 
 
 ### METHOD 2: Show only process name and memory
@@ -440,16 +416,13 @@ Output:
 Process: firefox - Memory: 15.2% - PID: 2345
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4b <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - Command to find top memory process                            |
-|  - Output showing:                                               |
-|    Process: [name] - Memory: [%] - PID: [number]                 |
-|  - Clear identification of the highest RAM consumer              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 4b**
+>
+> Terminal showing:
+> - Command to find top memory process
+> - Output showing:
+>   Process: [name] - Memory: [%] - PID: [number]
+> - Clear identification of the highest RAM consumer
 
 
 ### METHOD 3: Using top command (interactive)
@@ -482,16 +455,13 @@ Top commands:
 - k = Kill process
 - q = Quit
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4c <<<                         |
-|                                                                  |
-|  top command showing (sorted by memory):                         |
-|  - System summary at top (load, tasks, CPU, memory)              |
-|  - Process list sorted by %MEM (after pressing 'M')              |
-|  - First process in list is highest memory consumer              |
-|  - PID, USER, %MEM, COMMAND columns visible                      |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 4c**
+>
+> top command showing (sorted by memory):
+> - System summary at top (load, tasks, CPU, memory)
+> - Process list sorted by %MEM (after pressing 'M')
+> - First process in list is highest memory consumer
+> - PID, USER, %MEM, COMMAND columns visible
 
 
 ### METHOD 4: Using top in batch mode (non-interactive)
@@ -531,16 +501,13 @@ $ sudo yum install htop -y   # CentOS/RHEL
 $ sudo apt install htop -y    # Ubuntu/Debian
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4d <<<                         |
-|                                                                  |
-|  htop command showing (if installed):                            |
-|  - Colorful process viewer                                       |
-|  - Memory and CPU bars at top                                    |
-|  - Process list with memory usage                                |
-|  - Sorted by memory percentage                                   |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 4d**
+>
+> htop command showing (if installed):
+> - Colorful process viewer
+> - Memory and CPU bars at top
+> - Process list with memory usage
+> - Sorted by memory percentage
 
 
 ### METHOD 6: Using smem (detailed memory analysis)
@@ -573,16 +540,13 @@ Output:
  2345  1234 /usr/lib/firefox/firefox    15.2  2.5
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4e <<<                         |
-|                                                                  |
-|  Terminal showing one-liner result:                              |
-|  - $ ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -2        |
-|  - Header row                                                    |
-|  - Single process row showing top memory consumer                |
-|  - PID, command, %MEM clearly visible                            |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 4e**
+>
+> Terminal showing one-liner result:
+> - $ ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -2
+> - Header row
+> - Single process row showing top memory consumer
+> - PID, command, %MEM clearly visible
 
 
 ### COMPLETE ANALYSIS EXAMPLE
@@ -606,15 +570,12 @@ user1    4567   2.8    28      slack
 root     789    2.1    21      Xorg
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4f <<<                         |
-|                                                                  |
-|  Terminal showing complete analysis:                             |
-|  - Top 5 RAM-consuming processes                                 |
-|  - Formatted table with USER, PID, %MEM, RSS, COMMAND            |
-|  - Clear identification of memory usage per process              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 4f**
+>
+> Terminal showing complete analysis:
+> - Top 5 RAM-consuming processes
+> - Formatted table with USER, PID, %MEM, RSS, COMMAND
+> - Clear identification of memory usage per process
 
 
 ## COMPLETE COMMAND SEQUENCE

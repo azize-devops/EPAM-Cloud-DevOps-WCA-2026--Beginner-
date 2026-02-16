@@ -50,34 +50,26 @@ Client_2 Configuration:
 - Adapter 1: Internal Network, name "Net3"
 - Adapter 2: Internal Network, name "Net4"
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                   |
-|                                                          |
-|  Show: VirtualBox with all 3 VMs listed                  |
-|  Expected: Server_1, Client_1, Client_2 visible          |
-+----------------------------------------------------------+
+> **Screenshot 1**
+>
+> Show: VirtualBox with all 3 VMs listed
+> Expected: Server_1, Client_1, Client_2 visible
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                   |
-|                                                          |
-|  Show: Server_1 network settings (3 adapters)            |
-|  Expected: Adapter1=Bridged, Adapter2=Net2,              |
-|            Adapter3=Net3                                 |
-+----------------------------------------------------------+
+> **Screenshot 2**
+>
+> Show: Server_1 network settings (3 adapters)
+> Expected: Adapter1=Bridged, Adapter2=Net2,
+> Adapter3=Net3
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                   |
-|                                                          |
-|  Show: Client_1 network settings (2 adapters)            |
-|  Expected: Adapter1=Net2, Adapter2=Net4                  |
-+----------------------------------------------------------+
+> **Screenshot 3**
+>
+> Show: Client_1 network settings (2 adapters)
+> Expected: Adapter1=Net2, Adapter2=Net4
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                   |
-|                                                          |
-|  Show: Client_2 network settings (2 adapters)            |
-|  Expected: Adapter1=Net3, Adapter2=Net4                  |
-+----------------------------------------------------------+
+> **Screenshot 4**
+>
+> Show: Client_2 network settings (2 adapters)
+> Expected: Adapter1=Net3, Adapter2=Net4
 
 
 ## TASK 1: Configure static addresses on all interfaces on Server_1
@@ -95,12 +87,10 @@ Typical interface names:
 - enp0s8 (Int2 - Net2)
 - enp0s9 (Int3 - Net3)
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                   |
-|                                                          |
-|  Show: ip link show output on Server_1                   |
-|  Expected: Three network interfaces listed               |
-+----------------------------------------------------------+
+> **Screenshot 5**
+>
+> Show: ip link show output on Server_1
+> Expected: Three network interfaces listed
 
 ### Step 2: Configure Int1 (Bridged - Net1)
 
@@ -134,12 +124,10 @@ GATEWAY=192.168.1.1
 DNS1=8.8.8.8
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                   |
-|                                                          |
-|  Show: ifcfg-enp0s3 configuration file                   |
-|  Expected: Static IP config for Net1 (192.168.1.200)     |
-+----------------------------------------------------------+
+> **Screenshot 6**
+>
+> Show: ifcfg-enp0s3 configuration file
+> Expected: Static IP config for Net1 (192.168.1.200)
 
 ### Step 3: Configure Int2 (Internal - Net2)
 
@@ -159,12 +147,10 @@ IPADDR=10.10.2.1
 NETMASK=255.255.255.0
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                   |
-|                                                          |
-|  Show: ifcfg-enp0s8 configuration file                   |
-|  Expected: Static IP config for Net2 (10.10.2.1)         |
-+----------------------------------------------------------+
+> **Screenshot 7**
+>
+> Show: ifcfg-enp0s8 configuration file
+> Expected: Static IP config for Net2 (10.10.2.1)
 
 ### Step 4: Configure Int3 (Internal - Net3)
 
@@ -184,12 +170,10 @@ IPADDR=10.10.3.1
 NETMASK=255.255.255.0
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                   |
-|                                                          |
-|  Show: ifcfg-enp0s9 configuration file                   |
-|  Expected: Static IP config for Net3 (10.10.3.1)         |
-+----------------------------------------------------------+
+> **Screenshot 8**
+>
+> Show: ifcfg-enp0s9 configuration file
+> Expected: Static IP config for Net3 (10.10.3.1)
 
 ### Step 5: Restart network and verify
 
@@ -202,13 +186,11 @@ sudo nmcli networking off && sudo nmcli networking on
 ip addr show
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                   |
-|                                                          |
-|  Show: ip addr show on Server_1 after configuration      |
-|  Expected: All 3 interfaces with correct IPs             |
-|            192.168.1.200, 10.10.2.1, 10.10.3.1           |
-+----------------------------------------------------------+
+> **Screenshot 9**
+>
+> Show: ip addr show on Server_1 after configuration
+> Expected: All 3 interfaces with correct IPs
+> 192.168.1.200, 10.10.2.1, 10.10.3.1
 
 ### Step 6: Enable IP forwarding on Server_1
 
@@ -224,12 +206,10 @@ sudo sysctl -p
 cat /proc/sys/net/ipv4/ip_forward
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 10 <<<                  |
-|                                                          |
-|  Show: IP forwarding enabled                             |
-|  Expected: Output shows "1" for ip_forward               |
-+----------------------------------------------------------+
+> **Screenshot 10**
+>
+> Show: IP forwarding enabled
+> Expected: Output shows "1" for ip_forward
 
 
 ## TASK 2: Configure DHCP service on Server_1
@@ -277,12 +257,10 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 }
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 11 <<<                  |
-|                                                          |
-|  Show: /etc/dhcp/dhcpd.conf content                      |
-|  Expected: DHCP configuration for Net2 and Net3          |
-+----------------------------------------------------------+
+> **Screenshot 11**
+>
+> Show: /etc/dhcp/dhcpd.conf content
+> Expected: DHCP configuration for Net2 and Net3
 
 ### Step 3: Start and enable DHCP service
 
@@ -292,12 +270,10 @@ sudo systemctl enable dhcpd
 sudo systemctl status dhcpd
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 12 <<<                  |
-|                                                          |
-|  Show: systemctl status dhcpd                            |
-|  Expected: Active: active (running)                      |
-+----------------------------------------------------------+
+> **Screenshot 12**
+>
+> Show: systemctl status dhcpd
+> Expected: Active: active (running)
 
 ### Step 4: Configure Client_1 Int1 for DHCP
 
@@ -326,12 +302,10 @@ sudo systemctl restart network
 ip addr show enp0s3
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 13 <<<                  |
-|                                                          |
-|  Show: Client_1 receiving IP via DHCP                    |
-|  Expected: IP address in range 10.10.2.10-50             |
-+----------------------------------------------------------+
+> **Screenshot 13**
+>
+> Show: Client_1 receiving IP via DHCP
+> Expected: IP address in range 10.10.2.10-50
 
 ### Step 5: Configure Client_2 Int1 for DHCP
 
@@ -346,12 +320,10 @@ sudo systemctl restart network
 ip addr show enp0s3
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 14 <<<                  |
-|                                                          |
-|  Show: Client_2 receiving IP via DHCP                    |
-|  Expected: IP address in range 10.10.3.10-50             |
-+----------------------------------------------------------+
+> **Screenshot 14**
+>
+> Show: Client_2 receiving IP via DHCP
+> Expected: IP address in range 10.10.3.10-50
 
 ### Step 6: Configure Client_1 and Client_2 Int2 (Net4) - Static
 
@@ -391,12 +363,10 @@ IPADDR=10.10.4.20
 NETMASK=255.255.255.0
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 15 <<<                  |
-|                                                          |
-|  Show: Client_1 and Client_2 Net4 interface config       |
-|  Expected: 10.10.4.10 (Client_1), 10.10.4.20 (Client_2)  |
-+----------------------------------------------------------+
+> **Screenshot 15**
+>
+> Show: Client_1 and Client_2 Net4 interface config
+> Expected: 10.10.4.10 (Client_1), 10.10.4.20 (Client_2)
 
 
 ## TASK 3: Configure loopback IPs and routing
@@ -423,12 +393,10 @@ ip addr add 10.20.1.1/32 dev lo label lo:0
 ip addr add 10.20.2.1/32 dev lo label lo:1
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 16 <<<                  |
-|                                                          |
-|  Show: ip addr show lo on Client_1                       |
-|  Expected: lo:0 with 10.20.1.1, lo:1 with 10.20.2.1      |
-+----------------------------------------------------------+
+> **Screenshot 16**
+>
+> Show: ip addr show lo on Client_1
+> Expected: lo:0 with 10.20.1.1, lo:1 with 10.20.2.1
 
 ### Step 2: Configure routing on Client_2
 
@@ -450,13 +418,11 @@ Verify routing table:
 ip route show
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 17 <<<                  |
-|                                                          |
-|  Show: ip route show on Client_2                         |
-|  Expected: Route to 10.20.1.1 via 10.10.3.1              |
-|            Route to 10.20.2.1 via 10.10.4.10             |
-+----------------------------------------------------------+
+> **Screenshot 17**
+>
+> Show: ip route show on Client_2
+> Expected: Route to 10.20.1.1 via 10.10.3.1
+> Route to 10.20.2.1 via 10.10.4.10
 
 ### Step 3: Configure routing on Server_1
 
@@ -470,12 +436,10 @@ sudo ip route add 10.20.2.1/32 via 10.10.2.10
 sudo ip route add 10.20.0.0/16 via 10.10.2.10
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 18 <<<                  |
-|                                                          |
-|  Show: ip route show on Server_1                         |
-|  Expected: Routes to 10.20.x.x via Client_1              |
-+----------------------------------------------------------+
+> **Screenshot 18**
+>
+> Show: ip route show on Server_1
+> Expected: Routes to 10.20.x.x via Client_1
 
 ### Step 4: Test with traceroute
 
@@ -499,12 +463,10 @@ traceroute to 10.20.1.1 (10.20.1.1), 30 hops max
  2  10.10.2.10 (10.10.2.10)  1.0 ms  <- Client_1
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 19 <<<                  |
-|                                                          |
-|  Show: traceroute 10.20.1.1 from Client_2                |
-|  Expected: Path through Server_1 (10.10.3.1)             |
-+----------------------------------------------------------+
+> **Screenshot 19**
+>
+> Show: traceroute 10.20.1.1 from Client_2
+> Expected: Path through Server_1 (10.10.3.1)
 
 From Client_2, trace to IPaddr2 (should go via Net4 directly):
 
@@ -519,12 +481,10 @@ traceroute to 10.20.2.1 (10.20.2.1), 30 hops max
  1  10.10.4.10 (10.10.4.10)  0.3 ms  <- Client_1 directly
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 20 <<<                  |
-|                                                          |
-|  Show: traceroute 10.20.2.1 from Client_2                |
-|  Expected: Direct path via Net4 (10.10.4.10)             |
-+----------------------------------------------------------+
+> **Screenshot 20**
+>
+> Show: traceroute 10.20.2.1 from Client_2
+> Expected: Direct path via Net4 (10.10.4.10)
 
 
 ## TASK 4: Configure SSH service
@@ -541,12 +501,10 @@ sudo systemctl enable sshd
 sudo systemctl status sshd
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 21 <<<                  |
-|                                                          |
-|  Show: sshd status on all three machines                 |
-|  Expected: Active: active (running) on each              |
-+----------------------------------------------------------+
+> **Screenshot 21**
+>
+> Show: sshd status on all three machines
+> Expected: Active: active (running) on each
 
 ### Step 2: Test SSH connectivity
 
@@ -574,19 +532,15 @@ From Client_2 to Client_1:
 ssh user@10.10.4.10
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 22 <<<                  |
-|                                                          |
-|  Show: SSH from Client_1 to Server_1                     |
-|  Expected: Successful SSH connection                     |
-+----------------------------------------------------------+
+> **Screenshot 22**
+>
+> Show: SSH from Client_1 to Server_1
+> Expected: Successful SSH connection
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 23 <<<                  |
-|                                                          |
-|  Show: SSH between Client_1 and Client_2                 |
-|  Expected: Successful SSH connection via Net4            |
-+----------------------------------------------------------+
+> **Screenshot 23**
+>
+> Show: SSH between Client_1 and Client_2
+> Expected: Successful SSH connection via Net4
 
 
 ## TASK 5: Configure firewall on Server_1
@@ -615,12 +569,10 @@ sudo iptables -A INPUT -p tcp --dport 22 -s 10.10.2.0/24 -j ACCEPT
 sudo iptables -A INPUT -p tcp --dport 22 -s 10.10.3.0/24 -j DROP
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 24 <<<                  |
-|                                                          |
-|  Show: iptables rules for SSH                            |
-|  Expected: ACCEPT from 10.10.2.0/24, DROP from 10.10.3.0/24|
-+----------------------------------------------------------+
+> **Screenshot 24**
+>
+> Show: iptables rules for SSH
+> Expected: ACCEPT from 10.10.2.0/24, DROP from 10.10.3.0/24
 
 ### Step 3: Configure ICMP rules for Client_2
 
@@ -634,12 +586,10 @@ sudo iptables -A FORWARD -p icmp -s 10.10.3.0/24 -d 10.20.1.1 -j ACCEPT
 sudo iptables -A FORWARD -p icmp -s 10.10.3.0/24 -d 10.20.2.1 -j DROP
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 25 <<<                  |
-|                                                          |
-|  Show: iptables rules for ICMP                           |
-|  Expected: ACCEPT ICMP to 10.20.1.1, DROP to 10.20.2.1   |
-+----------------------------------------------------------+
+> **Screenshot 25**
+>
+> Show: iptables rules for ICMP
+> Expected: ACCEPT ICMP to 10.20.1.1, DROP to 10.20.2.1
 
 ### Step 4: Save iptables rules
 
@@ -655,12 +605,10 @@ sudo service iptables save
 sudo iptables -L -n -v
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 26 <<<                  |
-|                                                          |
-|  Show: iptables -L -n -v output                          |
-|  Expected: All configured rules visible                  |
-+----------------------------------------------------------+
+> **Screenshot 26**
+>
+> Show: iptables -L -n -v output
+> Expected: All configured rules visible
 
 ### Step 6: Test firewall rules
 
@@ -677,19 +625,15 @@ ssh user@10.10.3.1
 # Expected: Connection timeout or refused
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 27 <<<                  |
-|                                                          |
-|  Show: SSH from Client_1 succeeds                        |
-|  Expected: Successful login                              |
-+----------------------------------------------------------+
+> **Screenshot 27**
+>
+> Show: SSH from Client_1 succeeds
+> Expected: Successful login
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 28 <<<                  |
-|                                                          |
-|  Show: SSH from Client_2 blocked                         |
-|  Expected: Connection timeout/refused                    |
-+----------------------------------------------------------+
+> **Screenshot 28**
+>
+> Show: SSH from Client_2 blocked
+> Expected: Connection timeout/refused
 
 Test ping from Client_2:
 
@@ -698,19 +642,15 @@ ping 10.20.1.1   # Should work
 ping 10.20.2.1   # Should be blocked
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 29 <<<                  |
-|                                                          |
-|  Show: ping 10.20.1.1 from Client_2                      |
-|  Expected: Ping successful                               |
-+----------------------------------------------------------+
+> **Screenshot 29**
+>
+> Show: ping 10.20.1.1 from Client_2
+> Expected: Ping successful
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 30 <<<                  |
-|                                                          |
-|  Show: ping 10.20.2.1 from Client_2                      |
-|  Expected: Ping blocked (no response)                    |
-+----------------------------------------------------------+
+> **Screenshot 30**
+>
+> Show: ping 10.20.2.1 from Client_2
+> Expected: Ping blocked (no response)
 
 
 ## TASK 6: Configure NAT on Server_1
@@ -740,12 +680,10 @@ sudo iptables -A FORWARD -i enp0s9 -o enp0s3 -j ACCEPT
 sudo iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 31 <<<                  |
-|                                                          |
-|  Show: iptables NAT rules                                |
-|  Expected: MASQUERADE rule in nat table                  |
-+----------------------------------------------------------+
+> **Screenshot 31**
+>
+> Show: iptables NAT rules
+> Expected: MASQUERADE rule in nat table
 
 ### Step 3: Verify NAT configuration
 
@@ -753,12 +691,10 @@ sudo iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
 sudo iptables -t nat -L -n -v
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 32 <<<                  |
-|                                                          |
-|  Show: iptables -t nat -L -n -v output                   |
-|  Expected: POSTROUTING chain with MASQUERADE             |
-+----------------------------------------------------------+
+> **Screenshot 32**
+>
+> Show: iptables -t nat -L -n -v output
+> Expected: POSTROUTING chain with MASQUERADE
 
 ### Step 4: Save iptables rules
 
@@ -780,12 +716,10 @@ On Client_2:
 sudo ip route add default via 10.10.3.1
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 33 <<<                  |
-|                                                          |
-|  Show: Default route on Client_1 and Client_2            |
-|  Expected: default via Server_1's interface IP           |
-+----------------------------------------------------------+
+> **Screenshot 33**
+>
+> Show: Default route on Client_1 and Client_2
+> Expected: default via Server_1's interface IP
 
 ### Step 6: Test Internet connectivity
 
@@ -801,19 +735,15 @@ From Client_2:
 ping -c 4 8.8.8.8
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 34 <<<                  |
-|                                                          |
-|  Show: ping 8.8.8.8 from Client_1                        |
-|  Expected: Successful ping to Google DNS                 |
-+----------------------------------------------------------+
+> **Screenshot 34**
+>
+> Show: ping 8.8.8.8 from Client_1
+> Expected: Successful ping to Google DNS
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 35 <<<                  |
-|                                                          |
-|  Show: ping 8.8.8.8 from Client_2                        |
-|  Expected: Successful ping to Google DNS                 |
-+----------------------------------------------------------+
+> **Screenshot 35**
+>
+> Show: ping 8.8.8.8 from Client_2
+> Expected: Successful ping to Google DNS
 
 
 ## COMPLETE IPTABLES RULES SUMMARY

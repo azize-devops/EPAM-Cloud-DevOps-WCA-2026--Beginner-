@@ -22,12 +22,10 @@ VM2 (SSH Server):
 
 Ensure both VMs are on the same network and can communicate.
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                   |
-|                                                          |
-|  Show: VirtualBox/VMware with both VMs listed            |
-|  Expected: VM1 and VM2 visible in VM manager             |
-+----------------------------------------------------------+
+> **Screenshot 1**
+>
+> Show: VirtualBox/VMware with both VMs listed
+> Expected: VM1 and VM2 visible in VM manager
 
 Get IP addresses on both machines:
 
@@ -39,13 +37,11 @@ hostname -I
 
 Note: Replace Name_Surname with your actual name (e.g., John_Doe)
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                   |
-|                                                          |
-|  Show: IP addresses of both VMs                          |
-|  Expected: VM1 IP (e.g., 192.168.1.100)                  |
-|            VM2 IP (e.g., 192.168.1.101)                  |
-+----------------------------------------------------------+
+> **Screenshot 2**
+>
+> Show: IP addresses of both VMs
+> Expected: VM1 IP (e.g., 192.168.1.100)
+> VM2 IP (e.g., 192.168.1.101)
 
 
 ## TASK 2: Create user Name_Surname with home directory on VM2
@@ -72,19 +68,15 @@ Expected output from id command:
 uid=1001(Name_Surname) gid=1001(Name_Surname) groups=1001(Name_Surname)
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                   |
-|                                                          |
-|  Show: useradd command on VM2                            |
-|  Expected: User creation command executed                |
-+----------------------------------------------------------+
+> **Screenshot 3**
+>
+> Show: useradd command on VM2
+> Expected: User creation command executed
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                   |
-|                                                          |
-|  Show: id Name_Surname and ls /home/Name_Surname         |
-|  Expected: User ID info and home directory listing       |
-+----------------------------------------------------------+
+> **Screenshot 4**
+>
+> Show: id Name_Surname and ls /home/Name_Surname
+> Expected: User ID info and home directory listing
 
 
 ## TASK 3: Verify sshd service and ssh clients on both machines
@@ -130,26 +122,20 @@ Expected output:
 OpenSSH_7.4p1, OpenSSL 1.0.2k-fips  26 Jan 2017
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                   |
-|                                                          |
-|  Show: systemctl status sshd on VM1                      |
-|  Expected: Active: active (running) status               |
-+----------------------------------------------------------+
+> **Screenshot 5**
+>
+> Show: systemctl status sshd on VM1
+> Expected: Active: active (running) status
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                   |
-|                                                          |
-|  Show: systemctl status sshd on VM2                      |
-|  Expected: Active: active (running) status               |
-+----------------------------------------------------------+
+> **Screenshot 6**
+>
+> Show: systemctl status sshd on VM2
+> Expected: Active: active (running) status
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                   |
-|                                                          |
-|  Show: ssh -V on both machines                           |
-|  Expected: OpenSSH version information                   |
-+----------------------------------------------------------+
+> **Screenshot 7**
+>
+> Show: ssh -V on both machines
+> Expected: OpenSSH version information
 
 
 ## TASK 4: Verify ping connectivity from VM1 to VM2
@@ -173,12 +159,10 @@ PING 192.168.1.101 (192.168.1.101) 56(84) bytes of data.
 4 packets transmitted, 4 received, 0% packet loss, time 3002ms
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                   |
-|                                                          |
-|  Show: ping command from VM1 to VM2                      |
-|  Expected: Successful ping with 0% packet loss           |
-+----------------------------------------------------------+
+> **Screenshot 8**
+>
+> Show: ping command from VM1 to VM2
+> Expected: Successful ping with 0% packet loss
 
 If ping fails, check:
 - Firewall settings on both VMs
@@ -216,12 +200,10 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                   |
-|                                                          |
-|  Show: ssh-keygen command execution on VM1               |
-|  Expected: Key generation with fingerprint displayed     |
-+----------------------------------------------------------+
+> **Screenshot 9**
+>
+> Show: ssh-keygen command execution on VM1
+> Expected: Key generation with fingerprint displayed
 
 ### Step 2: View the generated keys
 
@@ -233,12 +215,10 @@ ls -la ~/.ssh/
 cat ~/.ssh/id_rsa_namesurname.pub
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 10 <<<                  |
-|                                                          |
-|  Show: ls ~/.ssh/ and cat public key                     |
-|  Expected: id_rsa_namesurname and id_rsa_namesurname.pub |
-+----------------------------------------------------------+
+> **Screenshot 10**
+>
+> Show: ls ~/.ssh/ and cat public key
+> Expected: id_rsa_namesurname and id_rsa_namesurname.pub
 
 ### Step 3: Copy public key to VM2
 
@@ -262,12 +242,10 @@ echo "ssh-rsa AAAA..." >> ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 11 <<<                  |
-|                                                          |
-|  Show: ssh-copy-id command execution                     |
-|  Expected: "Number of key(s) added: 1" message           |
-+----------------------------------------------------------+
+> **Screenshot 11**
+>
+> Show: ssh-copy-id command execution
+> Expected: "Number of key(s) added: 1" message
 
 ### Step 4: Verify authorized_keys on VM2
 
@@ -276,12 +254,10 @@ chmod 600 ~/.ssh/authorized_keys
 cat /home/Name_Surname/.ssh/authorized_keys
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 12 <<<                  |
-|                                                          |
-|  Show: authorized_keys content on VM2                    |
-|  Expected: Public key from VM1 visible                   |
-+----------------------------------------------------------+
+> **Screenshot 12**
+>
+> Show: authorized_keys content on VM2
+> Expected: Public key from VM1 visible
 
 
 ## TASK 6: SSH to VM2 using SSH keys (no password)
@@ -307,20 +283,16 @@ hostname
 whoami
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 13 <<<                  |
-|                                                          |
-|  Show: SSH connection from VM1 to VM2                    |
-|  Expected: Successful login without password prompt      |
-|            Prompt shows Name_Surname@VM2                 |
-+----------------------------------------------------------+
+> **Screenshot 13**
+>
+> Show: SSH connection from VM1 to VM2
+> Expected: Successful login without password prompt
+> Prompt shows Name_Surname@VM2
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 14 <<<                  |
-|                                                          |
-|  Show: hostname and whoami on VM2                        |
-|  Expected: VM2 hostname and Name_Surname user            |
-+----------------------------------------------------------+
+> **Screenshot 14**
+>
+> Show: hostname and whoami on VM2
+> Expected: VM2 hostname and Name_Surname user
 
 Exit from VM2:
 ```bash
@@ -358,20 +330,16 @@ Verify the config:
 cat ~/.ssh/config
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 15 <<<                  |
-|                                                          |
-|  Show: Creating ~/.ssh/config file                       |
-|  Expected: Config content with Host, HostName, User,     |
-|            IdentityFile settings                         |
-+----------------------------------------------------------+
+> **Screenshot 15**
+>
+> Show: Creating ~/.ssh/config file
+> Expected: Config content with Host, HostName, User,
+> IdentityFile settings
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 16 <<<                  |
-|                                                          |
-|  Show: cat ~/.ssh/config output                          |
-|  Expected: Complete SSH config displayed                 |
-+----------------------------------------------------------+
+> **Screenshot 16**
+>
+> Show: cat ~/.ssh/config output
+> Expected: Complete SSH config displayed
 
 Now test the simplified connection:
 
@@ -381,12 +349,10 @@ Now test the simplified connection:
 ssh VM2
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 17 <<<                  |
-|                                                          |
-|  Show: ssh VM2 command (using config)                    |
-|  Expected: Successful login using simplified command     |
-+----------------------------------------------------------+
+> **Screenshot 17**
+>
+> Show: ssh VM2 command (using config)
+> Expected: Successful login using simplified command
 
 
 ## TASK 8: Copy file from VM1 to VM2 using scp
@@ -398,12 +364,10 @@ echo "This is a test file from VM1" > ./testfile.txt
 cat ./testfile.txt
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 18 <<<                  |
-|                                                          |
-|  Show: Creating test file on VM1                         |
-|  Expected: File created with content                     |
-+----------------------------------------------------------+
+> **Screenshot 18**
+>
+> Show: Creating test file on VM1
+> Expected: File created with content
 
 ### Step 2: Copy the file to VM2 using scp
 
@@ -422,12 +386,10 @@ Expected output:
 testfile.txt                                  100%   30     0.0KB/s   00:00
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 19 <<<                  |
-|                                                          |
-|  Show: scp command execution                             |
-|  Expected: File transfer with 100% progress              |
-+----------------------------------------------------------+
+> **Screenshot 19**
+>
+> Show: scp command execution
+> Expected: File transfer with 100% progress
 
 ### Step 3: Verify file on VM2
 
@@ -445,13 +407,11 @@ Expected output:
 This is a test file from VM1
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 20 <<<                  |
-|                                                          |
-|  Show: File verification on VM2                          |
-|  Expected: testfile.txt present in Name_Surname home     |
-|            with correct content                          |
-+----------------------------------------------------------+
+> **Screenshot 20**
+>
+> Show: File verification on VM2
+> Expected: testfile.txt present in Name_Surname home
+> with correct content
 
 
 ## SSH COMMANDS REFERENCE

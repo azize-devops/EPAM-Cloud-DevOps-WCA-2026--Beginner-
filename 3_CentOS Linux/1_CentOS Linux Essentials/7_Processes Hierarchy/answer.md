@@ -7,14 +7,11 @@ Methods:
 - Activities > Search "Terminal"
 - Right-click on Desktop > Open Terminal
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                          |
-|                                                                  |
-|  Terminal window showing:                                        |
-|  - Empty terminal with command prompt                            |
-|  - Username and hostname visible (user@hostname:~$)              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 1**
+>
+> Terminal window showing:
+> - Empty terminal with command prompt
+> - Username and hostname visible (user@hostname:~$)
 
 
 ## TASK 2: Create script.sh with sleep 5m content
@@ -49,20 +46,17 @@ Explanation:
 - `#!/bin/bash` = shebang line, specifies interpreter
 - `sleep 5m` = sleep for 5 minutes (keeps script running)
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - cat > script.sh << 'EOF' command                              |
-|  - Script content typed                                          |
-|  - EOF to close                                                  |
-|  - cat script.sh command                                         |
-|  - Output showing:                                               |
-|    #!/bin/bash                                                   |
-|                                                                  |
-|    sleep 5m                                                      |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 2**
+>
+> Terminal showing:
+> - cat > script.sh << 'EOF' command
+> - Script content typed
+> - EOF to close
+> - cat script.sh command
+> - Output showing:
+>   #!/bin/bash
+>
+>   sleep 5m
 
 
 ## TASK 3: Make executable and run in background
@@ -87,16 +81,13 @@ Explanation:
 - `[1]` = job number
 - `12345` = Process ID (PID) - yours will be different
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ chmod +x script.sh                                          |
-|  - $ ./script.sh &                                               |
-|  - [1] 12345    <-- job number and PID visible                   |
-|  - $            <-- prompt returns immediately                   |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 3**
+>
+> Terminal showing:
+> - $ chmod +x script.sh
+> - $ ./script.sh &
+> - [1] 12345    <-- job number and PID visible
+> - $            <-- prompt returns immediately
 
 
 ## TASK 4: Verify script running with jobs command
@@ -133,17 +124,14 @@ Job statuses:
 - Stopped = suspended (Ctrl+Z)
 - Done = completed
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ jobs                                                        |
-|  - [1]+  Running                 ./script.sh &                   |
-|  - $ jobs -l                                                     |
-|  - [1]+ 12345 Running            ./script.sh &                   |
-|        ^^^^^ PID visible here                                    |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 4**
+>
+> Terminal showing:
+> - $ jobs
+> - [1]+  Running                 ./script.sh &
+> - $ jobs -l
+> - [1]+ 12345 Running            ./script.sh &
+>   (PID visible here)
 
 
 ## TASK 5: Inspect processes with top and ps commands
@@ -177,17 +165,14 @@ Useful top commands:
 - M = sort by memory
 - h = help
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5a <<<                         |
-|                                                                  |
-|  top command showing:                                            |
-|  - System summary at top (uptime, tasks, CPU, memory)            |
-|  - Process list below                                            |
-|  - script.sh process visible in the list                         |
-|  - sleep process visible (child of script.sh)                    |
-|  - PID, USER, COMMAND columns visible                            |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 5a**
+>
+> top command showing:
+> - System summary at top (uptime, tasks, CPU, memory)
+> - Process list below
+> - script.sh process visible in the list
+> - sleep process visible (child of script.sh)
+> - PID, USER, COMMAND columns visible
 
 
 ### METHOD 2: Using ps (snapshot)
@@ -235,17 +220,14 @@ user1    12346  0.0  0.0   5500  1000 pts/0    S    10:15   0:00 sleep 5m
 ...
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5b <<<                         |
-|                                                                  |
-|  ps aux command showing:                                         |
-|  - $ ps aux | grep script                                        |
-|  - user1  12345  0.0  0.0  ... /bin/bash ./script.sh             |
-|  - user1  12346  0.0  0.0  ... sleep 5m                          |
-|  - Both script.sh and sleep processes visible                    |
-|  - USER, PID, COMMAND columns clearly showing                    |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 5b**
+>
+> ps aux command showing:
+> - $ ps aux | grep script
+> - user1  12345  0.0  0.0  ... /bin/bash ./script.sh
+> - user1  12346  0.0  0.0  ... sleep 5m
+> - Both script.sh and sleep processes visible
+> - USER, PID, COMMAND columns clearly showing
 
 
 ## TASK 6: Find the PID of your script
@@ -309,19 +291,16 @@ Expected Output:
 12345
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                          |
-|                                                                  |
-|  Terminal showing multiple PID finding methods:                  |
-|  - $ echo $!                                                     |
-|  - 12345                                                         |
-|  - $ pgrep -f script.sh                                          |
-|  - 12345                                                         |
-|  - $ ps aux | grep script.sh                                     |
-|  - user1 12345 ... /bin/bash ./script.sh                         |
-|  - All methods showing SAME PID number                           |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 6**
+>
+> Terminal showing multiple PID finding methods:
+> - $ echo $!
+> - 12345
+> - $ pgrep -f script.sh
+> - 12345
+> - $ ps aux | grep script.sh
+> - user1 12345 ... /bin/bash ./script.sh
+> - All methods showing SAME PID number
 
 
 ## TASK 7: Find command and user information about your script
@@ -413,22 +392,18 @@ Expected Output:
 12345 11111 user1    1001  1001 S    10:15:00 00:00:00 /bin/bash ./script.sh
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                          |
-|                                                                  |
-|  Terminal showing user and command information:                  |
-|  - $ ps -p 12345 -o pid,user,cmd                                 |
-|  -   PID USER     CMD                                            |
-|  - 12345 user1    /bin/bash ./script.sh                          |
-|                                                                  |
-|  OR                                                              |
-|                                                                  |
-|  - $ ps -f | grep script.sh                                      |
-|  - user1 12345 11111 0 10:15 pts/0 00:00:00 /bin/bash ./script.sh|
-|    ^^^^^ ^^^^^ ^^^^^                        ^^^^^^^^^^^^^^^^^^^^  |
-|    USER  PID   PPID                         COMMAND               |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 7**
+>
+> Terminal showing user and command information:
+> - $ ps -p 12345 -o pid,user,cmd
+> -   PID USER     CMD
+> - 12345 user1    /bin/bash ./script.sh
+>
+> OR
+>
+> - $ ps -f | grep script.sh
+> - user1 12345 11111 0 10:15 pts/0 00:00:00 /bin/bash ./script.sh
+>   (USER, PID, PPID, COMMAND columns visible)
 
 
 ## BONUS: Managing background processes

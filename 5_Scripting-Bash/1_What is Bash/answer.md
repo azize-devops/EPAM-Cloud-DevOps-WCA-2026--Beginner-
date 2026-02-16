@@ -4,9 +4,7 @@ This guide introduces Bash (Bourne Again SHell), the most widely used
 command-line interpreter in Linux/Unix systems.
 
 
-================================================================================
-                           WHAT IS BASH?
-================================================================================
+## WHAT IS BASH?
 
 Bash (Bourne Again SHell) is:
 - A command-line interpreter (shell)
@@ -21,11 +19,8 @@ Key features:
 - Shell scripting capabilities
 - Customizable environment
 
-================================================================================
 
-
-TASK 1: Open a terminal
------------------------
+## TASK 1: Open a terminal
 
 Different ways to open a terminal:
 
@@ -46,189 +41,183 @@ On Windows (WSL):
 - Start Menu > Ubuntu (or other distro)
 - Windows Terminal > Ubuntu tab
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                   |
-|                                                          |
-|  Show: Terminal window opened                            |
-|  Expected: Command prompt visible                        |
-|  Example: [user@hostname ~]$ or user@hostname:~$         |
-+----------------------------------------------------------+
+> **Screenshot 1**
+> - Show: Terminal window opened
+> - Expected: Command prompt visible
+> - Example: [user@hostname ~]$ or user@hostname:~$
 
 Understanding the prompt:
 
-    [user@hostname ~]$
-     │    │        │ │
-     │    │        │ └── $ = regular user (# = root)
-     │    │        └──── ~ = current directory (home)
-     │    └───────────── hostname = computer name
-     └────────────────── user = username
+```bash
+[user@hostname ~]$
+ │    │        │ │
+ │    │        │ └── $ = regular user (# = root)
+ │    │        └──── ~ = current directory (home)
+ │    └───────────── hostname = computer name
+ └────────────────── user = username
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                   |
-|                                                          |
-|  Show: Terminal prompt details                           |
-|  Expected: Username, hostname, current directory visible |
-+----------------------------------------------------------+
+> **Screenshot 2**
+> - Show: Terminal prompt details
+> - Expected: Username, hostname, current directory visible
 
 
-TASK 2: Verify bash version
----------------------------
+## TASK 2: Verify bash version
 
 Run the bash version command:
 
-    bash --version
+```bash
+bash --version
+```
 
 Expected output (example):
-    GNU bash, version 4.4.20(1)-release (x86_64-redhat-linux-gnu)
-    Copyright (C) 2016 Free Software Foundation, Inc.
-    License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+```
+GNU bash, version 4.4.20(1)-release (x86_64-redhat-linux-gnu)
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 
-    This is free software; you are free to change and redistribute it.
-    There is NO WARRANTY, to the extent permitted by law.
+This is free software; you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                   |
-|                                                          |
-|  Show: bash --version output                             |
-|  Expected: GNU bash version and copyright info           |
-+----------------------------------------------------------+
+> **Screenshot 3**
+> - Show: bash --version output
+> - Expected: GNU bash version and copyright info
 
 Alternative version check methods:
 
-    # Check using $BASH_VERSION variable
-    echo $BASH_VERSION
+```bash
+# Check using $BASH_VERSION variable
+echo $BASH_VERSION
 
-    # Check which shell is being used
-    echo $SHELL
+# Check which shell is being used
+echo $SHELL
 
-    # Check current shell process
-    echo $0
+# Check current shell process
+echo $0
 
-    # Display shell and version
-    echo "Shell: $SHELL, Version: $BASH_VERSION"
+# Display shell and version
+echo "Shell: $SHELL, Version: $BASH_VERSION"
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                   |
-|                                                          |
-|  Show: Alternative version check commands                |
-|  Expected: BASH_VERSION and SHELL variables displayed    |
-+----------------------------------------------------------+
+> **Screenshot 4**
+> - Show: Alternative version check commands
+> - Expected: BASH_VERSION and SHELL variables displayed
 
 
-TASK 3: Run some commands
--------------------------
+## TASK 3: Run some commands
 
 Try running various basic commands:
 
 Example 1: Hello World
 
-    echo "Hello world"
+```bash
+echo "Hello world"
+```
 
 Expected output:
-    Hello world
+```
+Hello world
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                   |
-|                                                          |
-|  Show: echo "Hello world" output                         |
-|  Expected: Hello world                                   |
-+----------------------------------------------------------+
+> **Screenshot 5**
+> - Show: echo "Hello world" output
+> - Expected: Hello world
 
 Example 2: Print current date and time
 
-    date
+```bash
+date
+```
 
 Expected output:
-    Tue Feb 10 12:30:45 UTC 2026
+```
+Tue Feb 10 12:30:45 UTC 2026
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                   |
-|                                                          |
-|  Show: date command output                               |
-|  Expected: Current date and time                         |
-+----------------------------------------------------------+
+> **Screenshot 6**
+> - Show: date command output
+> - Expected: Current date and time
 
 Example 3: Print current directory
 
-    pwd
+```bash
+pwd
+```
 
 Expected output:
-    /home/username
+```
+/home/username
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                   |
-|                                                          |
-|  Show: pwd command output                                |
-|  Expected: Current working directory path                |
-+----------------------------------------------------------+
+> **Screenshot 7**
+> - Show: pwd command output
+> - Expected: Current working directory path
 
 Example 4: List files in current directory
 
-    ls
-    ls -la
+```bash
+ls
+ls -la
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                   |
-|                                                          |
-|  Show: ls and ls -la output                              |
-|  Expected: File listing in current directory             |
-+----------------------------------------------------------+
+> **Screenshot 8**
+> - Show: ls and ls -la output
+> - Expected: File listing in current directory
 
 Example 5: Display system information
 
-    uname -a
+```bash
+uname -a
+```
 
 Expected output:
-    Linux hostname 3.10.0-1160.el7.x86_64 #1 SMP ... x86_64 GNU/Linux
+```
+Linux hostname 3.10.0-1160.el7.x86_64 #1 SMP ... x86_64 GNU/Linux
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                   |
-|                                                          |
-|  Show: uname -a output                                   |
-|  Expected: System and kernel information                 |
-+----------------------------------------------------------+
+> **Screenshot 9**
+> - Show: uname -a output
+> - Expected: System and kernel information
 
 Example 6: Show current user
 
-    whoami
+```bash
+whoami
+```
 
 Expected output:
-    username
+```
+username
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 10 <<<                  |
-|                                                          |
-|  Show: whoami command output                             |
-|  Expected: Current username                              |
-+----------------------------------------------------------+
+> **Screenshot 10**
+> - Show: whoami command output
+> - Expected: Current username
 
 Example 7: Show hostname
 
-    hostname
+```bash
+hostname
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 11 <<<                  |
-|                                                          |
-|  Show: hostname command output                           |
-|  Expected: Computer hostname                             |
-+----------------------------------------------------------+
+> **Screenshot 11**
+> - Show: hostname command output
+> - Expected: Computer hostname
 
 Example 8: Clear the screen
 
-    clear
-    # or use keyboard shortcut: Ctrl + L
+```bash
+clear
+# or use keyboard shortcut: Ctrl + L
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 12 <<<                  |
-|                                                          |
-|  Show: Terminal after clear command                      |
-|  Expected: Clean terminal with only prompt               |
-+----------------------------------------------------------+
+> **Screenshot 12**
+> - Show: Terminal after clear command
+> - Expected: Clean terminal with only prompt
 
 
-================================================================================
-                        BASIC BASH COMMANDS REFERENCE
-================================================================================
+## BASIC BASH COMMANDS REFERENCE
 
 | Command        | Description                              | Example           |
 |----------------|------------------------------------------|-------------------|
@@ -245,12 +234,8 @@ Example 8: Clear the screen
 | man            | Show manual page                         | man ls            |
 | exit           | Exit the shell                           | exit              |
 
-================================================================================
 
-
-================================================================================
-                          ECHO COMMAND OPTIONS
-================================================================================
+## ECHO COMMAND OPTIONS
 
 | Command                    | Description                              |
 |----------------------------|------------------------------------------|
@@ -265,16 +250,15 @@ Example 8: Clear the screen
 | echo "Hello" >> file.txt   | Redirect output to file (append)         |
 
 Example escape sequences with -e:
-    echo -e "Line1\nLine2"      # Newline
-    echo -e "Col1\tCol2"        # Tab
-    echo -e "\e[31mRed\e[0m"    # Colored text (red)
 
-================================================================================
+```bash
+echo -e "Line1\nLine2"      # Newline
+echo -e "Col1\tCol2"        # Tab
+echo -e "\e[31mRed\e[0m"    # Colored text (red)
+```
 
 
-================================================================================
-                          KEYBOARD SHORTCUTS
-================================================================================
+## KEYBOARD SHORTCUTS
 
 | Shortcut       | Description                              |
 |----------------|------------------------------------------|
@@ -292,12 +276,8 @@ Example escape sequences with -e:
 | Up Arrow       | Previous command in history              |
 | Down Arrow     | Next command in history                  |
 
-================================================================================
 
-
-================================================================================
-                         SHELL TYPES AND DIFFERENCES
-================================================================================
+## SHELL TYPES AND DIFFERENCES
 
 | Shell  | Description                                    | Path          |
 |--------|------------------------------------------------|---------------|
@@ -310,14 +290,13 @@ Example escape sequences with -e:
 | tcsh   | Enhanced C Shell                               | /bin/tcsh     |
 
 Check available shells on your system:
-    cat /etc/shells
 
-================================================================================
+```bash
+cat /etc/shells
+```
 
 
-================================================================================
-                           BASH CONFIGURATION FILES
-================================================================================
+## BASH CONFIGURATION FILES
 
 | File              | When Loaded                              |
 |-------------------|------------------------------------------|
@@ -332,12 +311,8 @@ Login vs Non-Login Shell:
 - Login shell: When you log in (SSH, TTY login)
 - Non-login shell: Opening terminal in GUI
 
-================================================================================
 
-
-================================================================================
-                             TROUBLESHOOTING
-================================================================================
+## TROUBLESHOOTING
 
 Problem: "command not found"
 Solutions:
@@ -363,12 +338,8 @@ Solutions:
 - Check current shell: echo $0
 - Change default shell: chsh -s /bin/bash
 
-================================================================================
 
-
-================================================================================
-                              SELF-REVIEW CHECKLIST
-================================================================================
+## SELF-REVIEW CHECKLIST
 
 [ ] Terminal opened successfully
 [ ] Command prompt visible and understood
@@ -379,6 +350,3 @@ Solutions:
 [ ] pwd shows current directory
 [ ] ls lists directory contents
 [ ] Basic keyboard shortcuts work (Ctrl+L, Tab)
-
-================================================================================
-

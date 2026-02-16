@@ -7,14 +7,11 @@ Methods:
 - Activities > Search "Terminal"
 - Right-click on Desktop > Open Terminal
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                          |
-|                                                                  |
-|  Terminal window showing:                                        |
-|  - Empty terminal with command prompt                            |
-|  - Username and hostname visible (user@hostname:~$)              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 1**
+>
+> Terminal window showing:
+> - Empty terminal with command prompt
+> - Username and hostname visible (user@hostname:~$)
 
 
 ## TASK 2: Create two users: user1, user2
@@ -43,18 +40,15 @@ uid=1001(user1) gid=1001(user1) groups=1001(user1)
 uid=1002(user2) gid=1002(user2) groups=1002(user2)
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ sudo useradd user1                                          |
-|  - $ sudo useradd user2                                          |
-|  - $ id user1                                                    |
-|  - uid=1001(user1) gid=1001(user1) groups=1001(user1)            |
-|  - $ id user2                                                    |
-|  - uid=1002(user2) gid=1002(user2) groups=1002(user2)            |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 2**
+>
+> Terminal showing:
+> - $ sudo useradd user1
+> - $ sudo useradd user2
+> - $ id user1
+> - uid=1001(user1) gid=1001(user1) groups=1001(user1)
+> - $ id user2
+> - uid=1002(user2) gid=1002(user2) groups=1002(user2)
 
 
 ## TASK 3: Switch to user1
@@ -79,18 +73,14 @@ Output:
 user1
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ su - user1                                                  |
-|  - Password: ********                                            |
-|  - $ whoami                                                      |
-|  - user1                                                         |
-|    ^^^^^                                                         |
-|    Confirms switched to user1                                    |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 3**
+>
+> Terminal showing:
+> - $ su - user1
+> - Password: ********
+> - $ whoami
+> - user1
+>   (Confirms switched to user1)
 
 
 ## TASK 4: Create folder /tmp/homework with 700 permissions
@@ -121,18 +111,14 @@ Explanation of 700:
 - 0 (group): --- (no permissions)
 - 0 (others): --- (no permissions)
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ mkdir /tmp/homework                                         |
-|  - $ chmod 700 /tmp/homework                                     |
-|  - $ ls -la /tmp | grep homework                                 |
-|  - drwx------. 2 user1 user1 4096 Jan 15 10:00 homework          |
-|     ^^^                                                          |
-|     rwx for owner only (700)                                     |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 4**
+>
+> Terminal showing:
+> - $ mkdir /tmp/homework
+> - $ chmod 700 /tmp/homework
+> - $ ls -la /tmp | grep homework
+> - drwx------. 2 user1 user1 4096 Jan 15 10:00 homework
+>   (rwx for owner only - 700)
 
 
 ## TASK 5: Create 3 files with specific content and permissions
@@ -171,22 +157,19 @@ Permission breakdown:
 | write | 600 | rw------- | read + write |
 | execute | 700 | rwx------ | read+write+execute |
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ echo "Hello" > /tmp/homework/read                           |
-|  - $ touch /tmp/homework/write                                   |
-|  - $ echo "echo Hello" > /tmp/homework/execute                   |
-|  - $ chmod 400 /tmp/homework/read                                |
-|  - $ chmod 600 /tmp/homework/write                               |
-|  - $ chmod 700 /tmp/homework/execute                             |
-|  - $ ls -la /tmp/homework/                                       |
-|  - -r-------- ... read       (400 = read only)                   |
-|  - -rw------- ... write      (600 = read+write)                  |
-|  - -rwx------ ... execute    (700 = read+write+execute)          |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 5**
+>
+> Terminal showing:
+> - $ echo "Hello" > /tmp/homework/read
+> - $ touch /tmp/homework/write
+> - $ echo "echo Hello" > /tmp/homework/execute
+> - $ chmod 400 /tmp/homework/read
+> - $ chmod 600 /tmp/homework/write
+> - $ chmod 700 /tmp/homework/execute
+> - $ ls -la /tmp/homework/
+> - -r-------- ... read       (400 = read only)
+> - -rw------- ... write      (600 = read+write)
+> - -rwx------ ... execute    (700 = read+write+execute)
 
 
 ## TASK 6: Attempt to list /tmp/homework contents using user2
@@ -216,21 +199,17 @@ Explanation:
 - user2 is NOT the owner and has no permissions (others = 0)
 - user2 CANNOT access the directory
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ sudo -u user2 ls -la /tmp/homework/                         |
-|  - ls: cannot open directory '/tmp/homework/': Permission denied |
-|    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  |
-|    user2 has NO access to directory (others = 0)                 |
-|                                                                  |
-|  OR using su:                                                    |
-|  - $ su - user2                                                  |
-|  - $ ls -la /tmp/homework/                                       |
-|  - ls: cannot open directory '/tmp/homework/': Permission denied |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 6**
+>
+> Terminal showing:
+> - $ sudo -u user2 ls -la /tmp/homework/
+> - ls: cannot open directory '/tmp/homework/': Permission denied
+>   (user2 has NO access to directory - others = 0)
+>
+> OR using su:
+> - $ su - user2
+> - $ ls -la /tmp/homework/
+> - ls: cannot open directory '/tmp/homework/': Permission denied
 
 
 ## TASK 7: Fix permissions to allow user2 to view but NOT modify files
@@ -284,21 +263,17 @@ Output:
 touch: cannot touch '/tmp/homework/test': Permission denied
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ chmod 755 /tmp/homework                                     |
-|  - $ ls -la /tmp | grep homework                                 |
-|  - drwxr-xr-x ... homework   (755 = others can list)             |
-|  - $ sudo -u user2 ls -la /tmp/homework/                         |
-|  - (shows file listing - SUCCESS)                                |
-|  - $ sudo -u user2 touch /tmp/homework/test                      |
-|  - touch: cannot touch ... Permission denied                     |
-|    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                       |
-|    user2 CAN list but CANNOT create files                        |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 7**
+>
+> Terminal showing:
+> - $ chmod 755 /tmp/homework
+> - $ ls -la /tmp | grep homework
+> - drwxr-xr-x ... homework   (755 = others can list)
+> - $ sudo -u user2 ls -la /tmp/homework/
+> - (shows file listing - SUCCESS)
+> - $ sudo -u user2 touch /tmp/homework/test
+> - touch: cannot touch ... Permission denied
+>   (user2 CAN list but CANNOT create files)
 
 
 ## TASK 8: Fix permissions to allow user2 to view AND modify files inside
@@ -338,21 +313,16 @@ $ sudo -u user2 rm /tmp/homework/test
 
 (Both commands succeed)
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ chmod 757 /tmp/homework                                     |
-|  - $ ls -la /tmp | grep homework                                 |
-|  - drwxr-xrwx ... homework   (757 = others can write)            |
-|        ^^^                                                       |
-|        rwx for others                                            |
-|  - $ sudo -u user2 touch /tmp/homework/test                      |
-|  - (succeeds - no error)                                         |
-|  - $ sudo -u user2 rm /tmp/homework/test                         |
-|  - (succeeds - no error)                                         |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 8**
+>
+> Terminal showing:
+> - $ chmod 757 /tmp/homework
+> - $ ls -la /tmp | grep homework
+> - drwxr-xrwx ... homework   (757 = others can write, rwx for others)
+> - $ sudo -u user2 touch /tmp/homework/test
+> - (succeeds - no error)
+> - $ sudo -u user2 rm /tmp/homework/test
+> - (succeeds - no error)
 
 
 ## TASK 9: Fix file permissions to allow user2 actions according to naming
@@ -409,19 +379,16 @@ Permission summary:
 | write | 666 | rw-rw-rw- | read+write (rw-) |
 | execute | 755 | rwxr-xr-x | read+execute (r-x) |
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ chmod 644 /tmp/homework/read                                |
-|  - $ chmod 666 /tmp/homework/write                               |
-|  - $ chmod 755 /tmp/homework/execute                             |
-|  - $ ls -la /tmp/homework/                                       |
-|  - -rw-r--r-- ... read      (644 = others can read)              |
-|  - -rw-rw-rw- ... write     (666 = others can read+write)        |
-|  - -rwxr-xr-x ... execute   (755 = others can read+execute)      |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 9**
+>
+> Terminal showing:
+> - $ chmod 644 /tmp/homework/read
+> - $ chmod 666 /tmp/homework/write
+> - $ chmod 755 /tmp/homework/execute
+> - $ ls -la /tmp/homework/
+> - -rw-r--r-- ... read      (644 = others can read)
+> - -rw-rw-rw- ... write     (666 = others can read+write)
+> - -rwxr-xr-x ... execute   (755 = others can read+execute)
 
 
 ## TASK 10: Using user2 - read, write, execute the files
@@ -470,24 +437,21 @@ Hello
 
 All operations successful!
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 10 <<<                         |
-|                                                                  |
-|  Terminal showing (as user2):                                    |
-|  - $ cat /tmp/homework/read                                      |
-|  - Hello                                                         |
-|    ^^^^^ READ operation SUCCESS                                  |
-|                                                                  |
-|  - $ echo "Hello" > /tmp/homework/write                          |
-|  - $ cat /tmp/homework/write                                     |
-|  - Hello                                                         |
-|    ^^^^^ WRITE operation SUCCESS                                 |
-|                                                                  |
-|  - $ /tmp/homework/execute                                       |
-|  - Hello                                                         |
-|    ^^^^^ EXECUTE operation SUCCESS                               |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 10**
+>
+> Terminal showing (as user2):
+> - $ cat /tmp/homework/read
+> - Hello
+>   (READ operation SUCCESS)
+>
+> - $ echo "Hello" > /tmp/homework/write
+> - $ cat /tmp/homework/write
+> - Hello
+>   (WRITE operation SUCCESS)
+>
+> - $ /tmp/homework/execute
+> - Hello
+>   (EXECUTE operation SUCCESS)
 
 
 ## TASK 11: Create immutable and ownership files (as user1)
@@ -525,19 +489,16 @@ Explanation of 770:
 - 7 (group): rwx
 - 0 (others): --- (no access)
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 11 <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ touch /tmp/homework/immutable                               |
-|  - $ touch /tmp/homework/ownership                               |
-|  - $ chmod 770 /tmp/homework/immutable                           |
-|  - $ chmod 770 /tmp/homework/ownership                           |
-|  - $ ls -la /tmp/homework/immutable /tmp/homework/ownership      |
-|  - -rwxrwx--- ... immutable   (770)                              |
-|  - -rwxrwx--- ... ownership   (770)                              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 11**
+>
+> Terminal showing:
+> - $ touch /tmp/homework/immutable
+> - $ touch /tmp/homework/ownership
+> - $ chmod 770 /tmp/homework/immutable
+> - $ chmod 770 /tmp/homework/ownership
+> - $ ls -la /tmp/homework/immutable /tmp/homework/ownership
+> - -rwxrwx--- ... immutable   (770)
+> - -rwxrwx--- ... ownership   (770)
 
 
 ## TASK 12: Change ownership so user2 can write to ownership file
@@ -583,21 +544,17 @@ Output:
 test
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 12 <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ sudo chown user2 /tmp/homework/ownership                    |
-|  - $ ls -la /tmp/homework/ownership                              |
-|  - -rwxrwx---. 1 user2 user1 0 Jan 15 10:10 ownership            |
-|                  ^^^^^                                           |
-|                  owner changed to user2                          |
-|  - $ sudo -u user2 bash -c 'echo "test" > /tmp/homework/ownership'
-|  - $ sudo -u user2 cat /tmp/homework/ownership                   |
-|  - test                                                          |
-|    ^^^^ user2 can write - SUCCESS                                |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 12**
+>
+> Terminal showing:
+> - $ sudo chown user2 /tmp/homework/ownership
+> - $ ls -la /tmp/homework/ownership
+> - -rwxrwx---. 1 user2 user1 0 Jan 15 10:10 ownership
+>   (owner changed to user2)
+> - $ sudo -u user2 bash -c 'echo "test" > /tmp/homework/ownership'
+> - $ sudo -u user2 cat /tmp/homework/ownership
+> - test
+>   (user2 can write - SUCCESS)
 
 
 ## TASK 13: Make immutable file, attempt removal, fix and remove
@@ -686,34 +643,28 @@ Output:
 ls: cannot access '/tmp/homework/immutable': No such file or directory
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 13 <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ sudo chattr +i /tmp/homework/immutable                      |
-|  - $ lsattr /tmp/homework/immutable                              |
-|  - ----i--------------- /tmp/homework/immutable                  |
-|       ^                                                          |
-|       immutable flag set                                         |
-|                                                                  |
-|  - $ rm /tmp/homework/immutable                                  |
-|  - rm: cannot remove ... Operation not permitted                 |
-|    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                 |
-|    CANNOT remove - even root cannot delete!                      |
-|                                                                  |
-|  - $ sudo chattr -i /tmp/homework/immutable                      |
-|  - $ lsattr /tmp/homework/immutable                              |
-|  - -------------------- /tmp/homework/immutable                  |
-|    (no i flag)                                                   |
-|                                                                  |
-|  - $ rm /tmp/homework/immutable                                  |
-|  - (succeeds - no error)                                         |
-|  - $ ls /tmp/homework/immutable                                  |
-|  - ls: cannot access ... No such file or directory               |
-|    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                  |
-|    File deleted successfully                                     |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 13**
+>
+> Terminal showing:
+> - $ sudo chattr +i /tmp/homework/immutable
+> - $ lsattr /tmp/homework/immutable
+> - ----i--------------- /tmp/homework/immutable
+>   (immutable flag set)
+>
+> - $ rm /tmp/homework/immutable
+> - rm: cannot remove ... Operation not permitted
+>   (CANNOT remove - even root cannot delete!)
+>
+> - $ sudo chattr -i /tmp/homework/immutable
+> - $ lsattr /tmp/homework/immutable
+> - -------------------- /tmp/homework/immutable
+>   (no i flag)
+>
+> - $ rm /tmp/homework/immutable
+> - (succeeds - no error)
+> - $ ls /tmp/homework/immutable
+> - ls: cannot access ... No such file or directory
+>   (File deleted successfully)
 
 
 ## CLEANUP (Optional)

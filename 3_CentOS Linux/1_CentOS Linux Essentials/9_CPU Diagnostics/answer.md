@@ -7,14 +7,11 @@ Methods:
 - Activities > Search "Terminal"
 - Right-click on Desktop > Open Terminal
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                          |
-|                                                                  |
-|  Terminal window showing:                                        |
-|  - Empty terminal with command prompt                            |
-|  - Username and hostname visible (user@hostname:~$)              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 1**
+>
+> Terminal window showing:
+> - Empty terminal with command prompt
+> - Username and hostname visible (user@hostname:~$)
 
 
 ## TASK 2: Inspect CPU usage using top, htop, and uptime
@@ -56,17 +53,14 @@ Useful top shortcuts:
 - k = Kill a process
 - q = Quit
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2a <<<                         |
-|                                                                  |
-|  top command showing:                                            |
-|  - System uptime and load average at top                         |
-|  - Tasks summary (running, sleeping, stopped, zombie)            |
-|  - %Cpu(s) line with us, sy, ni, id, wa, hi, si, st values       |
-|  - Memory summary                                                |
-|  - Process list with PID, USER, %CPU, %MEM, COMMAND              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 2a**
+>
+> top command showing:
+> - System uptime and load average at top
+> - Tasks summary (running, sleeping, stopped, zombie)
+> - %Cpu(s) line with us, sy, ni, id, wa, hi, si, st values
+> - Memory summary
+> - Process list with PID, USER, %CPU, %MEM, COMMAND
 
 
 ### Show individual CPU cores in top:
@@ -80,15 +74,12 @@ While in top, press '1' (number one):
 %Cpu3  :  3.8 us,  1.5 sy,  0.0 ni, 94.0 id,  0.4 wa,  0.1 hi,  0.2 si,  0.0 st
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2b <<<                         |
-|                                                                  |
-|  top command with individual CPU cores:                          |
-|  - Press '1' in top to show per-CPU statistics                   |
-|  - Each CPU core shown separately (Cpu0, Cpu1, Cpu2, Cpu3, ...)  |
-|  - Usage percentages for each core                               |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 2b**
+>
+> top command with individual CPU cores:
+> - Press '1' in top to show per-CPU statistics
+> - Each CPU core shown separately (Cpu0, Cpu1, Cpu2, Cpu3, ...)
+> - Usage percentages for each core
 
 
 ### METHOD 2: Using htop command (enhanced interactive)
@@ -120,17 +111,14 @@ htop shortcuts:
 - F9 = Kill
 - F10 = Quit
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2c <<<                         |
-|                                                                  |
-|  htop command showing:                                           |
-|  - CPU usage bars for each core (colored)                        |
-|  - Memory and Swap usage bars                                    |
-|  - Tasks, load average, uptime                                   |
-|  - Process list with tree view option                            |
-|  - Function key shortcuts at bottom                              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 2c**
+>
+> htop command showing:
+> - CPU usage bars for each core (colored)
+> - Memory and Swap usage bars
+> - Tasks, load average, uptime
+> - Process list with tree view option
+> - Function key shortcuts at bottom
 
 
 ### METHOD 3: Using uptime command
@@ -150,15 +138,12 @@ Explanation:
 - 2 users = Number of logged-in users
 - load average: 0.52, 0.48, 0.45 = CPU load averages for 1, 5, 15 minutes
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2d <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ uptime                                                      |
-|  - Output with time, uptime duration, users, load average        |
-|  - Load average values: X.XX, X.XX, X.XX                         |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 2d**
+>
+> Terminal showing:
+> - $ uptime
+> - Output with time, uptime duration, users, load average
+> - Load average values: X.XX, X.XX, X.XX
 
 
 ### METHOD 4: Using mpstat (CPU statistics)
@@ -195,15 +180,12 @@ Output:
 10:30:45 AM    3    3.80    0.00    1.50    0.40    0.10    0.20    0.00    0.00    0.00   94.00
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2e <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ mpstat -P ALL                                               |
-|  - CPU statistics for all cores                                  |
-|  - %usr, %sys, %iowait, %idle columns visible                    |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 2e**
+>
+> Terminal showing:
+> - $ mpstat -P ALL
+> - CPU statistics for all cores
+> - %usr, %sys, %iowait, %idle columns visible
 
 
 ### METHOD 5: Using vmstat
@@ -228,15 +210,12 @@ CPU columns:
 - wa = Wait I/O
 - st = Stolen time
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2f <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ vmstat 1 5                                                  |
-|  - Multiple lines showing CPU usage over time                    |
-|  - CPU columns: us, sy, id, wa, st                               |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 2f**
+>
+> Terminal showing:
+> - $ vmstat 1 5
+> - Multiple lines showing CPU usage over time
+> - CPU columns: us, sy, id, wa, st
 
 
 ## TASK 3: Find the number of CPU cores in your system
@@ -274,19 +253,16 @@ Key Information:
 Formula: CPU(s) = Socket(s) x Core(s) per socket x Thread(s) per core
 Example: 4 = 1 x 2 x 2
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 3a <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ lscpu                                                       |
-|  - Output with CPU information:                                  |
-|    CPU(s):              4                                        |
-|    Core(s) per socket:  2                                        |
-|    Thread(s) per core:  2                                        |
-|    Socket(s):           1                                        |
-|    Model name:          Intel...                                 |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 3a**
+>
+> Terminal showing:
+> - $ lscpu
+> - Output with CPU information:
+>   CPU(s):              4
+>   Core(s) per socket:  2
+>   Thread(s) per core:  2
+>   Socket(s):           1
+>   Model name:          Intel...
 
 
 ### METHOD 2: Using /proc/cpuinfo
@@ -317,16 +293,13 @@ cpu cores       : 2
 ...
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 3b <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ grep -c "^processor" /proc/cpuinfo                          |
-|  - Output: 4 (or your number of CPU cores)                       |
-|  - $ cat /proc/cpuinfo | grep -E "processor|model name"          |
-|  - Processor entries and model names listed                      |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 3b**
+>
+> Terminal showing:
+> - $ grep -c "^processor" /proc/cpuinfo
+> - Output: 4 (or your number of CPU cores)
+> - $ cat /proc/cpuinfo | grep -E "processor|model name"
+> - Processor entries and model names listed
 
 
 ### METHOD 3: Using nproc command
@@ -347,15 +320,12 @@ For all installed processors:
 $ nproc --all
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 3c <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ nproc                                                       |
-|  - Output: 4 (or your number of CPUs)                            |
-|  - Simple, single number output                                  |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 3c**
+>
+> Terminal showing:
+> - $ nproc
+> - Output: 4 (or your number of CPUs)
+> - Simple, single number output
 
 
 ### METHOD 4: Using getconf
@@ -398,15 +368,12 @@ Threads per Core: 2
 CPU Model: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 3d <<<                         |
-|                                                                  |
-|  Terminal showing CPU summary:                                   |
-|  - Total CPUs, Physical Cores, Sockets                           |
-|  - Threads per Core                                              |
-|  - CPU Model name                                                |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 3d**
+>
+> Terminal showing CPU summary:
+> - Total CPUs, Physical Cores, Sockets
+> - Threads per Core
+> - CPU Model name
 
 
 ## TASK 4: Find current CPU load
@@ -445,15 +412,12 @@ Output:
                                                      1min  5min  15min
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4a <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ uptime                                                      |
-|  - Load average values clearly visible                           |
-|  - Format: load average: X.XX, X.XX, X.XX                        |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 4a**
+>
+> Terminal showing:
+> - $ uptime
+> - Load average values clearly visible
+> - Format: load average: X.XX, X.XX, X.XX
 
 
 ### METHOD 2: Using /proc/loadavg
@@ -474,15 +438,12 @@ Explanation:
 - 2/245 = Running processes / Total processes
 - 12345 = Last process ID used
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4b <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ cat /proc/loadavg                                           |
-|  - Output: X.XX X.XX X.XX X/XXX XXXXX                            |
-|  - Load averages and process counts                              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 4b**
+>
+> Terminal showing:
+> - $ cat /proc/loadavg
+> - Output: X.XX X.XX X.XX X/XXX XXXXX
+> - Load averages and process counts
 
 
 ### METHOD 3: Using top (first line)
@@ -518,15 +479,12 @@ user1    pts/1    192.168.1.100    09:30    1:00   0.10s  0.05s bash
 
 First line shows same info as uptime.
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4c <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ w                                                           |
-|  - First line with load average                                  |
-|  - User session information below                                |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 4c**
+>
+> Terminal showing:
+> - $ w
+> - First line with load average
+> - User session information below
 
 
 ### METHOD 5: Load with interpretation
@@ -551,15 +509,12 @@ Load Average: 0.52 0.48 0.45
 15-min Load: 0.45 (11% of 4 cores)
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4d <<<                         |
-|                                                                  |
-|  Terminal showing load interpretation:                           |
-|  - CPU Cores count                                               |
-|  - Load averages with percentages                                |
-|  - Clear indication of CPU utilization                           |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 4d**
+>
+> Terminal showing load interpretation:
+> - CPU Cores count
+> - Load averages with percentages
+> - Clear indication of CPU utilization
 
 
 ## TASK 5: Find the process that utilizes the most CPU
@@ -584,17 +539,14 @@ Explanation:
 - head -11 = Show header + top 10 processes
 - %CPU = CPU utilization percentage
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5a <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ ps aux --sort=-%cpu | head -11                              |
-|  - Header row with columns                                       |
-|  - Top processes sorted by CPU usage                             |
-|  - First process after header is highest CPU consumer            |
-|  - %CPU column clearly visible                                   |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 5a**
+>
+> Terminal showing:
+> - $ ps aux --sort=-%cpu | head -11
+> - Header row with columns
+> - Top processes sorted by CPU usage
+> - First process after header is highest CPU consumer
+> - %CPU column clearly visible
 
 
 ### METHOD 2: Show only top CPU process
@@ -608,15 +560,12 @@ Output:
 Process: firefox - CPU: 25.0% - PID: 1234
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5b <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - Command to find single top CPU process                        |
-|  - Output: Process: [name] - CPU: [%] - PID: [number]            |
-|  - Clear identification of highest CPU consumer                  |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 5b**
+>
+> Terminal showing:
+> - Command to find single top CPU process
+> - Output: Process: [name] - CPU: [%] - PID: [number]
+> - Clear identification of highest CPU consumer
 
 
 ### METHOD 3: Using top (sorted by CPU - default)
@@ -630,16 +579,13 @@ Press 'P' to re-sort by CPU if needed.
 
 The first process in the list uses most CPU.
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5c <<<                         |
-|                                                                  |
-|  top command showing:                                            |
-|  - Process list sorted by CPU (default)                          |
-|  - First process is highest CPU consumer                         |
-|  - %CPU column visible                                           |
-|  - PID and COMMAND columns visible                               |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 5c**
+>
+> top command showing:
+> - Process list sorted by CPU (default)
+> - First process is highest CPU consumer
+> - %CPU column visible
+> - PID and COMMAND columns visible
 
 
 ### METHOD 4: Using top in batch mode
@@ -675,16 +621,13 @@ Then press F6 and select PERCENT_CPU, or start with:
 $ htop --sort-key PERCENT_CPU
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5d <<<                         |
-|                                                                  |
-|  htop command showing:                                           |
-|  - Processes sorted by CPU usage                                 |
-|  - CPU% column highlighted                                       |
-|  - First process is highest CPU consumer                         |
-|  - Colored bars showing CPU usage                                |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 5d**
+>
+> htop command showing:
+> - Processes sorted by CPU usage
+> - CPU% column highlighted
+> - First process is highest CPU consumer
+> - Colored bars showing CPU usage
 
 
 ### METHOD 6: Using pidstat (per-process CPU)
@@ -730,15 +673,12 @@ user1    4567   3.8    0:45     slack
 root     789    2.1    0:30     Xorg
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5e <<<                         |
-|                                                                  |
-|  Terminal showing complete analysis:                             |
-|  - Top 5 CPU-consuming processes                                 |
-|  - Formatted table with USER, PID, %CPU, TIME, COMMAND           |
-|  - Clear ranking of CPU usage                                    |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 5e**
+>
+> Terminal showing complete analysis:
+> - Top 5 CPU-consuming processes
+> - Formatted table with USER, PID, %CPU, TIME, COMMAND
+> - Clear ranking of CPU usage
 
 
 ## COMPLETE COMMAND SEQUENCE

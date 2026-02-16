@@ -7,14 +7,11 @@ Methods:
 - Activities > Search "Terminal"
 - Right-click on Desktop > Open Terminal
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                          |
-|                                                                  |
-|  Terminal window showing:                                        |
-|  - Empty terminal with command prompt                            |
-|  - Username and hostname visible (user@hostname:~$)              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 1**
+>
+> Terminal window showing:
+> - Empty terminal with command prompt
+> - Username and hostname visible (user@hostname:~$)
 
 
 ## TASK 2: Create script and script.sh files with content
@@ -94,20 +91,17 @@ Output:
 echo Hello
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - File creation command (cat with heredoc or echo)              |
-|  - $ cat script                                                  |
-|  - Output:                                                       |
-|    #!/bin/bash                                                   |
-|                                                                  |
-|    echo Hello                                                    |
-|  - $ cat script.sh                                               |
-|  - Same output for script.sh                                     |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 2**
+>
+> Terminal showing:
+> - File creation command (cat with heredoc or echo)
+> - $ cat script
+> - Output:
+>   #!/bin/bash
+>
+>   echo Hello
+> - $ cat script.sh
+> - Same output for script.sh
 
 
 ## TASK 3: Make files executable with chmod +x
@@ -140,18 +134,15 @@ Explanation:
 - Before: -rw-r--r-- (read/write only)
 - After:  -rwxr-xr-x (read/write/execute)
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ chmod +x script script.sh                                   |
-|  - $ ls -la script script.sh                                     |
-|  - Output with x permission visible:                             |
-|    -rwxr-xr-x ... script                                         |
-|    -rwxr-xr-x ... script.sh                                      |
-|     ^^^  ^^^  <- x permissions for user, group, others           |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 3**
+>
+> Terminal showing:
+> - $ chmod +x script script.sh
+> - $ ls -la script script.sh
+> - Output with x permission visible:
+>   -rwxr-xr-x ... script
+>   -rwxr-xr-x ... script.sh
+>   (x permissions for user, group, others)
 
 
 ## TASK 4: Create soft link (symbolic link) called script_soft for file script
@@ -182,18 +173,14 @@ Explanation of output:
 - -> script shows it points to the original file
 - Size (6) is the length of the target filename "script"
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ ln -s script script_soft                                    |
-|  - $ ls -la script_soft                                          |
-|  - Output showing soft link:                                     |
-|    lrwxrwxrwx ... script_soft -> script                          |
-|    ^                           ^^^^^^^^^^                        |
-|    l = link type               arrow shows target                |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 4**
+>
+> Terminal showing:
+> - $ ln -s script script_soft
+> - $ ls -la script_soft
+> - Output showing soft link:
+>   lrwxrwxrwx ... script_soft -> script
+>   (l = link type, arrow shows target)
 
 
 ## TASK 5: Create hard link called script_hard for file script.sh
@@ -237,19 +224,15 @@ Output:
 
 (Same inode number confirms hard link)
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ ln script.sh script_hard                                    |
-|  - $ ls -li script.sh script_hard                                |
-|  - Output showing same inode number:                             |
-|    12345678 -rwxr-xr-x. 2 ... script_hard                        |
-|    12345678 -rwxr-xr-x. 2 ... script.sh                          |
-|    ^^^^^^^^             ^                                        |
-|    same inode           link count = 2                           |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 5**
+>
+> Terminal showing:
+> - $ ln script.sh script_hard
+> - $ ls -li script.sh script_hard
+> - Output showing same inode number:
+>   12345678 -rwxr-xr-x. 2 ... script_hard
+>   12345678 -rwxr-xr-x. 2 ... script.sh
+>   (same inode, link count = 2)
 
 
 ## TASK 6: Execute both script_soft and script_hard files
@@ -277,17 +260,14 @@ $ /bin/bash script_soft
 $ /bin/bash script_hard
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ ./script_soft                                               |
-|  - Hello                                                         |
-|  - $ ./script_hard                                               |
-|  - Hello                                                         |
-|  - Both scripts produce same output                              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 6**
+>
+> Terminal showing:
+> - $ ./script_soft
+> - Hello
+> - $ ./script_hard
+> - Hello
+> - Both scripts produce same output
 
 
 ## TASK 7: Remove original files script and script.sh
@@ -323,20 +303,17 @@ Note:
 - script_soft still exists but points to non-existent file (broken link)
 - script_hard still exists with link count now 1
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ rm script script.sh                                         |
-|  - $ ls -la script script.sh                                     |
-|  - ls: cannot access 'script': No such file or directory         |
-|  - ls: cannot access 'script.sh': No such file or directory      |
-|  - $ ls -la script_soft script_hard                              |
-|  - Both links still exist:                                       |
-|    lrwxrwxrwx ... script_soft -> script (broken)                 |
-|    -rwxr-xr-x. 1 ... script_hard (link count now 1)              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 7**
+>
+> Terminal showing:
+> - $ rm script script.sh
+> - $ ls -la script script.sh
+> - ls: cannot access 'script': No such file or directory
+> - ls: cannot access 'script.sh': No such file or directory
+> - $ ls -la script_soft script_hard
+> - Both links still exist:
+>   lrwxrwxrwx ... script_soft -> script (broken)
+>   -rwxr-xr-x. 1 ... script_hard (link count now 1)
 
 
 ## TASK 8: Execute both script_soft and script_hard files (after deletion)
@@ -378,23 +355,18 @@ Explanation:
 - Deleting original only removed one name, data still exists
 - script_hard is now the only name pointing to that data
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ ./script_soft                                               |
-|  - bash: ./script_soft: No such file or directory                |
-|    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                |
-|    SOFT LINK FAILS - target file deleted                         |
-|                                                                  |
-|  - $ ./script_hard                                               |
-|  - Hello                                                         |
-|    ^^^^^                                                         |
-|    HARD LINK WORKS - data still exists                           |
-|                                                                  |
-|  This demonstrates the key difference between soft and hard links|
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 8**
+>
+> Terminal showing:
+> - $ ./script_soft
+> - bash: ./script_soft: No such file or directory
+>   (SOFT LINK FAILS - target file deleted)
+>
+> - $ ./script_hard
+> - Hello
+>   (HARD LINK WORKS - data still exists)
+>
+> This demonstrates the key difference between soft and hard links
 
 
 ## TASK 9: Remove all created files
@@ -416,16 +388,13 @@ ls: cannot access 'script*': No such file or directory
 
 All files cleaned up successfully.
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ rm script_soft script_hard                                  |
-|  - $ ls -la script*                                              |
-|  - ls: cannot access 'script*': No such file or directory        |
-|  - All files removed successfully                                |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 9**
+>
+> Terminal showing:
+> - $ rm script_soft script_hard
+> - $ ls -la script*
+> - ls: cannot access 'script*': No such file or directory
+> - All files removed successfully
 
 
 ## SOFT LINK vs HARD LINK COMPARISON

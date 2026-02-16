@@ -36,26 +36,20 @@ Option C - Host-Only Adapter:
 - VMs can communicate with each other and host
 - No internet access
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                   |
-|                                                          |
-|  Show: VirtualBox/VMware with both VMs visible           |
-|  Expected: VM1 and VM2 in the VM list                    |
-+----------------------------------------------------------+
+> **Screenshot 1**
+>
+> Show: VirtualBox/VMware with both VMs visible
+> Expected: VM1 and VM2 in the VM list
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                   |
-|                                                          |
-|  Show: Network settings for VM1                          |
-|  Expected: Adapter type (Bridged/Internal/Host-Only)     |
-+----------------------------------------------------------+
+> **Screenshot 2**
+>
+> Show: Network settings for VM1
+> Expected: Adapter type (Bridged/Internal/Host-Only)
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                   |
-|                                                          |
-|  Show: Network settings for VM2                          |
-|  Expected: Same network type as VM1                      |
-+----------------------------------------------------------+
+> **Screenshot 3**
+>
+> Show: Network settings for VM2
+> Expected: Same network type as VM1
 
 After booting both VMs, get IP addresses:
 
@@ -75,20 +69,16 @@ ip a
 
 Note the IP addresses (e.g., VM1: 192.168.1.100, VM2: 192.168.1.101)
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                   |
-|                                                          |
-|  Show: "ip addr show" output on VM1                      |
-|  Expected: IP address visible (e.g., 192.168.1.100)      |
-|            Look for inet under eth0/enp0s3               |
-+----------------------------------------------------------+
+> **Screenshot 4**
+>
+> Show: "ip addr show" output on VM1
+> Expected: IP address visible (e.g., 192.168.1.100)
+> Look for inet under eth0/enp0s3
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                   |
-|                                                          |
-|  Show: "ip addr show" output on VM2                      |
-|  Expected: IP address visible (e.g., 192.168.1.101)      |
-+----------------------------------------------------------+
+> **Screenshot 5**
+>
+> Show: "ip addr show" output on VM2
+> Expected: IP address visible (e.g., 192.168.1.101)
 
 Test connectivity between VMs:
 
@@ -98,12 +88,10 @@ ping -c 3 <VM1_IP_ADDRESS>
 # Example: ping -c 3 192.168.1.100
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                   |
-|                                                          |
-|  Show: Ping from VM2 to VM1                              |
-|  Expected: Successful ping replies (0% packet loss)      |
-+----------------------------------------------------------+
+> **Screenshot 6**
+>
+> Show: Ping from VM2 to VM1
+> Expected: Successful ping replies (0% packet loss)
 
 
 ## TASK 2: Install and start httpd service on VM1
@@ -131,19 +119,15 @@ Expected status output:
    Active: active (running) since ...
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                   |
-|                                                          |
-|  Show: yum install httpd -y on VM1                       |
-|  Expected: Installation complete message                 |
-+----------------------------------------------------------+
+> **Screenshot 7**
+>
+> Show: yum install httpd -y on VM1
+> Expected: Installation complete message
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                   |
-|                                                          |
-|  Show: systemctl status httpd on VM1                     |
-|  Expected: Active: active (running) status               |
-+----------------------------------------------------------+
+> **Screenshot 8**
+>
+> Show: systemctl status httpd on VM1
+> Expected: Active: active (running) status
 
 Configure firewall to allow HTTP traffic:
 
@@ -165,12 +149,10 @@ sudo systemctl stop firewalld
 sudo systemctl disable firewalld
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                   |
-|                                                          |
-|  Show: Firewall configuration or disable                 |
-|  Expected: HTTP service added or firewall stopped        |
-+----------------------------------------------------------+
+> **Screenshot 9**
+>
+> Show: Firewall configuration or disable
+> Expected: HTTP service added or firewall stopped
 
 
 ## TASK 3: Create file /var/www/html/index.html on VM1
@@ -211,19 +193,15 @@ Expected output:
 Hello
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 10 <<<                  |
-|                                                          |
-|  Show: Creating index.html file on VM1                   |
-|  Expected: echo or vim command execution                 |
-+----------------------------------------------------------+
+> **Screenshot 10**
+>
+> Show: Creating index.html file on VM1
+> Expected: echo or vim command execution
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 11 <<<                  |
-|                                                          |
-|  Show: cat /var/www/html/index.html output               |
-|  Expected: "Hello" displayed                             |
-+----------------------------------------------------------+
+> **Screenshot 11**
+>
+> Show: cat /var/www/html/index.html output
+> Expected: "Hello" displayed
 
 Test locally on VM1:
 ```bash
@@ -235,12 +213,10 @@ Expected output:
 Hello
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 12 <<<                  |
-|                                                          |
-|  Show: curl http://localhost on VM1                      |
-|  Expected: "Hello" response                              |
-+----------------------------------------------------------+
+> **Screenshot 12**
+>
+> Show: curl http://localhost on VM1
+> Expected: "Hello" response
 
 
 ## TASK 4: Configure VM2 to resolve myserver.local to VM1's IP
@@ -279,19 +255,15 @@ cat /etc/hosts
 grep myserver /etc/hosts
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 13 <<<                  |
-|                                                          |
-|  Show: Editing /etc/hosts on VM2                         |
-|  Expected: vim or nano with the new entry                |
-+----------------------------------------------------------+
+> **Screenshot 13**
+>
+> Show: Editing /etc/hosts on VM2
+> Expected: vim or nano with the new entry
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 14 <<<                  |
-|                                                          |
-|  Show: cat /etc/hosts output on VM2                      |
-|  Expected: myserver.local entry visible with VM1's IP    |
-+----------------------------------------------------------+
+> **Screenshot 14**
+>
+> Show: cat /etc/hosts output on VM2
+> Expected: myserver.local entry visible with VM1's IP
 
 Test name resolution:
 ```bash
@@ -302,12 +274,10 @@ ping -c 3 myserver.local
 getent hosts myserver.local
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 15 <<<                  |
-|                                                          |
-|  Show: ping myserver.local from VM2                      |
-|  Expected: Ping resolves to VM1's IP and succeeds        |
-+----------------------------------------------------------+
+> **Screenshot 15**
+>
+> Show: ping myserver.local from VM2
+> Expected: Ping resolves to VM1's IP and succeeds
 
 
 ## TASK 5: Verify access using curl from VM2
@@ -337,19 +307,15 @@ curl -I myserver.local
 curl -L myserver.local:80
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 16 <<<                  |
-|                                                          |
-|  Show: curl -L myserver.local on VM2                     |
-|  Expected: "Hello" response from VM1's httpd server      |
-+----------------------------------------------------------+
+> **Screenshot 16**
+>
+> Show: curl -L myserver.local on VM2
+> Expected: "Hello" response from VM1's httpd server
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 17 <<<                  |
-|                                                          |
-|  Show: curl -v myserver.local (verbose) on VM2           |
-|  Expected: Connection details and "Hello" response       |
-+----------------------------------------------------------+
+> **Screenshot 17**
+>
+> Show: curl -v myserver.local (verbose) on VM2
+> Expected: Connection details and "Hello" response
 
 
 ## NETWORK COMMANDS REFERENCE

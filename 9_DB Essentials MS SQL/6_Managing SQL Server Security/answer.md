@@ -4,9 +4,9 @@ This guide covers SQL Server security configuration including creating
 logins, users, roles, and permissions, as well as contained database
 users for portable database authentication.
 
-================================================================================
+---
                     UNDERSTANDING SQL SERVER SECURITY
-================================================================================
+---
 
 SECURITY HIERARCHY:
 ------------------
@@ -34,9 +34,9 @@ AUTHENTICATION TYPES:
 | SQL Server Auth | Username/password stored in SQL Server. Cross-platform |
 | Contained DB User | Auth at database level. Portable with database. |
 
-================================================================================
+---
                     PART 1: CREATE WINDOWS LOCAL ACCOUNTS
-================================================================================
+---
 
 For service accounts, we need Windows local accounts first.
 
@@ -102,9 +102,9 @@ STEP 1.3: CREATE WINDOWS ACCOUNTS USING NET USER
     wmic useraccount where "name='svc_sqlapp'" set PasswordExpires=false
     wmic useraccount where "name='svc_sqlmaint'" set PasswordExpires=false
 
-================================================================================
+---
                     PART 2: CREATE SQL SERVER LOGINS
-================================================================================
+---
 
 STEP 2.1: CREATE LOGINS FOR ALL USERS
 -------------------------------------
@@ -166,9 +166,9 @@ Connect to SQL Server as administrator and run:
 NOTE: Replace YOURSERVER with your actual computer name.
 Find it with: SELECT SERVERPROPERTY('MachineName');
 
-================================================================================
+---
                     PART 3: CREATE DATABASE USERS AND ROLES
-================================================================================
+---
 
 STEP 3.1: CREATE CUSTOM TABLE FOR APPLICATION SERVICE
 -----------------------------------------------------
@@ -284,9 +284,9 @@ STEP 3.3: CREATE CUSTOM DATABASE ROLES
     ORDER BY name;
     GO
 
-================================================================================
+---
                     PART 4: ASSIGN PERMISSIONS
-================================================================================
+---
 
 STEP 4.1: DEVELOPER PERMISSIONS (Read/Write All Data)
 -----------------------------------------------------
@@ -457,9 +457,9 @@ STEP 4.6: SUMMARY OF ALL PERMISSIONS
     ORDER BY r.name, m.name;
     GO
 
-================================================================================
+---
                     PART 5: VERIFY ACCESS FOR EACH USER
-================================================================================
+---
 
 STEP 5.1: TEST DEVELOPER ACCESS (Dev1)
 --------------------------------------
@@ -608,9 +608,9 @@ STEP 5.6: VERIFICATION SCRIPT (RUN AS EACH USER)
     END CATCH
     GO
 
-================================================================================
+---
                     PART 6: CREATE CONTAINED DATABASE (LabDB)
-================================================================================
+---
 
 STEP 6.1: ENABLE CONTAINED DATABASE AUTHENTICATION
 --------------------------------------------------
@@ -717,9 +717,9 @@ a contained user, as they don't have a server-level login!
     SELECT SUSER_NAME() AS LoginName, USER_NAME() AS UserName;
     SELECT * FROM dbo.TestData;
 
-================================================================================
+---
                     PART 7: MIGRATE DATABASE TO INSTANCE2
-================================================================================
+---
 
 STEP 7.1: ENSURE INSTANCE2 SUPPORTS CONTAINED DATABASES
 -------------------------------------------------------
@@ -807,9 +807,9 @@ Connect to Instance2 with contained user:
 KEY POINT: No server-level login was created on Instance2!
 The LabUser authentication is entirely contained within the database.
 
-================================================================================
+---
                     ALTERNATIVE MIGRATION METHODS
-================================================================================
+---
 
 METHOD 1: DETACH/ATTACH
 -----------------------
@@ -836,9 +836,9 @@ METHOD 2: USING DATA MIGRATION ASSISTANT
 5. Migrate schema and data
 6. Containment settings preserved
 
-================================================================================
+---
                     SUMMARY
-================================================================================
+---
 
 USERS AND PERMISSIONS CREATED:
 -----------------------------

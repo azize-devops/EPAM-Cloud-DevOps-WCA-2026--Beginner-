@@ -11,12 +11,10 @@ Open a terminal application:
 - Or use keyboard shortcut: Ctrl + Alt + T
 - Or right-click on desktop and select "Open Terminal"
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                   |
-|                                                          |
-|  Show: Terminal window opened and ready                  |
-|  Prompt visible: [user@hostname ~]$                      |
-+----------------------------------------------------------+
+> **Screenshot 1**
+>
+> Show: Terminal window opened and ready
+> Prompt visible: [user@hostname ~]$
 
 
 ## TASK 2: Find httpd package in yum repos
@@ -53,20 +51,16 @@ yum info httpd
 yum list available | grep httpd
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                   |
-|                                                          |
-|  Show: Output of "yum search httpd" command              |
-|  Expected: List of httpd-related packages                |
-+----------------------------------------------------------+
+> **Screenshot 2**
+>
+> Show: Output of "yum search httpd" command
+> Expected: List of httpd-related packages
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                   |
-|                                                          |
-|  Show: Output of "yum info httpd" command                |
-|  Expected: Detailed package information (version, size,  |
-|            repository, description)                      |
-+----------------------------------------------------------+
+> **Screenshot 3**
+>
+> Show: Output of "yum info httpd" command
+> Expected: Detailed package information (version, size,
+> repository, description)
 
 
 ## TASK 3: Install httpd
@@ -95,13 +89,11 @@ Installed:
 Complete!
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                   |
-|                                                          |
-|  Show: yum install httpd command execution               |
-|  Expected: Dependency resolution and installation        |
-|            progress with "Complete!" message             |
-+----------------------------------------------------------+
+> **Screenshot 4**
+>
+> Show: yum install httpd command execution
+> Expected: Dependency resolution and installation
+> progress with "Complete!" message
 
 
 ## TASK 4: Start httpd. Verify that it's running
@@ -138,20 +130,16 @@ Expected output from systemctl status:
            ...
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                   |
-|                                                          |
-|  Show: systemctl start httpd command                     |
-|  Expected: Command executes without error                |
-+----------------------------------------------------------+
+> **Screenshot 5**
+>
+> Show: systemctl start httpd command
+> Expected: Command executes without error
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                   |
-|                                                          |
-|  Show: systemctl status httpd output                     |
-|  Expected: Active: active (running) status               |
-|            Green dot indicator                           |
-+----------------------------------------------------------+
+> **Screenshot 6**
+>
+> Show: systemctl status httpd output
+> Expected: Active: active (running) status
+> Green dot indicator
 
 Optional - Test with curl:
 
@@ -159,12 +147,10 @@ Optional - Test with curl:
 curl http://localhost
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                   |
-|                                                          |
-|  Show: curl http://localhost or browser test             |
-|  Expected: Apache test page or welcome message           |
-+----------------------------------------------------------+
+> **Screenshot 7**
+>
+> Show: curl http://localhost or browser test
+> Expected: Apache test page or welcome message
 
 
 ## TASK 5: Remove httpd
@@ -204,12 +190,10 @@ sudo yum autoremove httpd
 sudo yum erase httpd
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                   |
-|                                                          |
-|  Show: yum remove httpd command execution                |
-|  Expected: Package removal with "Complete!" message      |
-+----------------------------------------------------------+
+> **Screenshot 8**
+>
+> Show: yum remove httpd command execution
+> Expected: Package removal with "Complete!" message
 
 
 ## TASK 6: Find nginx package in yum repos
@@ -229,13 +213,11 @@ No matches found
 This is because nginx is not available in the default CentOS repositories.
 It requires the EPEL (Extra Packages for Enterprise Linux) repository.
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                   |
-|                                                          |
-|  Show: yum search nginx with no results                  |
-|  Expected: "No matches found" or empty result            |
-|            (before EPEL installation)                    |
-+----------------------------------------------------------+
+> **Screenshot 9**
+>
+> Show: yum search nginx with no results
+> Expected: "No matches found" or empty result
+> (before EPEL installation)
 
 
 ## TASK 7: Find out which repo provides nginx and install it
@@ -285,26 +267,20 @@ nginx-all-modules.noarch : A meta package that installs all available Nginx modu
 ...
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 10 <<<                  |
-|                                                          |
-|  Show: yum install epel-release command                  |
-|  Expected: EPEL repository installation                  |
-+----------------------------------------------------------+
+> **Screenshot 10**
+>
+> Show: yum install epel-release command
+> Expected: EPEL repository installation
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 11 <<<                  |
-|                                                          |
-|  Show: yum repolist after EPEL installation              |
-|  Expected: epel repository visible in the list           |
-+----------------------------------------------------------+
+> **Screenshot 11**
+>
+> Show: yum repolist after EPEL installation
+> Expected: epel repository visible in the list
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 12 <<<                  |
-|                                                          |
-|  Show: yum search nginx after EPEL installation          |
-|  Expected: nginx packages found from EPEL repo           |
-+----------------------------------------------------------+
+> **Screenshot 12**
+>
+> Show: yum search nginx after EPEL installation
+> Expected: nginx packages found from EPEL repo
 
 
 ## TASK 8: Install nginx
@@ -331,13 +307,11 @@ Dependency Installed:
 Complete!
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 13 <<<                  |
-|                                                          |
-|  Show: yum install nginx command execution               |
-|  Expected: nginx installation from epel repo             |
-|            with dependencies and "Complete!" message     |
-+----------------------------------------------------------+
+> **Screenshot 13**
+>
+> Show: yum install nginx command execution
+> Expected: nginx installation from epel repo
+> with dependencies and "Complete!" message
 
 
 ## TASK 9: Start nginx. Verify that it's running
@@ -381,27 +355,21 @@ ss -tlnp | grep :80
 curl http://localhost
 ```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 14 <<<                  |
-|                                                          |
-|  Show: systemctl start nginx command                     |
-|  Expected: Command executes without error                |
-+----------------------------------------------------------+
+> **Screenshot 14**
+>
+> Show: systemctl start nginx command
+> Expected: Command executes without error
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 15 <<<                  |
-|                                                          |
-|  Show: systemctl status nginx output                     |
-|  Expected: Active: active (running) status               |
-|            Green dot, PID information                    |
-+----------------------------------------------------------+
+> **Screenshot 15**
+>
+> Show: systemctl status nginx output
+> Expected: Active: active (running) status
+> Green dot, PID information
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 16 <<<                  |
-|                                                          |
-|  Show: curl http://localhost or browser test             |
-|  Expected: nginx welcome page                            |
-+----------------------------------------------------------+
+> **Screenshot 16**
+>
+> Show: curl http://localhost or browser test
+> Expected: nginx welcome page
 
 
 ## YUM COMMAND REFERENCE

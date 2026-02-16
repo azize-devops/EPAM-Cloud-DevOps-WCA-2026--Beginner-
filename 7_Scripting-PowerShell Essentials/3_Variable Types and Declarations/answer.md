@@ -4,19 +4,21 @@ This guide covers PowerShell variables, data types, type declarations,
 and how to check the type of objects.
 
 
-================================================================================
-                     POWERSHELL VARIABLE BASICS
-================================================================================
+## POWERSHELL VARIABLE BASICS
 
 Variable syntax:
-    $variableName = value
+
+```powershell
+$variableName = value
+```
 
 Naming rules:
-    - Must start with $
-    - Can contain letters, numbers, underscores
-    - Case-insensitive ($Name = $name)
+- Must start with $
+- Can contain letters, numbers, underscores
+- Case-insensitive ($Name = $name)
 
 Common data types:
+
 | Type            | Description              | Example                    |
 |-----------------|--------------------------|----------------------------|
 | [string]        | Text                     | "Hello World"              |
@@ -28,340 +30,383 @@ Common data types:
 | [array]         | Collection               | @(1, 2, 3)                 |
 | [hashtable]     | Key-value pairs          | @{Name="John"; Age=30}     |
 
-================================================================================
 
-
-TASK 1: Create String Variable with 19790525
---------------------------------------------
+## TASK 1: Create String Variable with 19790525
 
 Create a string variable:
 
-    [string]$myDate = "19790525"
+```powershell
+[string]$myDate = "19790525"
+```
 
 Or simply (PowerShell infers string from quotes):
 
-    $myDate = "19790525"
+```powershell
+$myDate = "19790525"
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                   |
-|                                                          |
-|  Show: Creating string variable                          |
-|  Expected: [string]$myDate = "19790525"                  |
-+----------------------------------------------------------+
+> **Screenshot 1**
+>
+> Show: Creating string variable
+> Expected: [string]$myDate = "19790525"
 
 Verify the variable value:
 
-    $myDate
+```powershell
+$myDate
+```
 
 Expected output:
 
-    19790525
+```
+19790525
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                   |
-|                                                          |
-|  Show: Variable value displayed                          |
-|  Expected: 19790525 shown                                |
-+----------------------------------------------------------+
+> **Screenshot 2**
+>
+> Show: Variable value displayed
+> Expected: 19790525 shown
 
 Check the variable type:
 
-    $myDate.GetType()
+```powershell
+$myDate.GetType()
+```
 
 Expected output:
 
-    IsPublic IsSerial Name                                     BaseType
-    -------- -------- ----                                     --------
-    True     True     String                                   System.Object
+```
+IsPublic IsSerial Name                                     BaseType
+-------- -------- ----                                     --------
+True     True     String                                   System.Object
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                   |
-|                                                          |
-|  Show: GetType() result                                  |
-|  Expected: String type confirmed                         |
-+----------------------------------------------------------+
+> **Screenshot 3**
+>
+> Show: GetType() result
+> Expected: String type confirmed
 
 Alternative: Get just the type name
 
-    $myDate.GetType().Name
+```powershell
+$myDate.GetType().Name
+```
 
 Expected output:
 
-    String
+```
+String
+```
 
 Why use [string] for numbers?
-    - Without [string]: $myDate = 19790525 creates an Int32
-    - With [string]: $myDate = "19790525" creates a String
-    - The quotes or [string] cast ensure it's treated as text
+- Without [string]: $myDate = 19790525 creates an Int32
+- With [string]: $myDate = "19790525" creates a String
+- The quotes or [string] cast ensure it's treated as text
 
 
-TASK 2: List Home Directory Path and Get Datatype
---------------------------------------------------
+## TASK 2: List Home Directory Path and Get Datatype
 
 Get user's home directory path:
 
-    $homePath = $HOME
+```powershell
+$homePath = $HOME
+```
 
 Or:
 
-    $homePath = $env:USERPROFILE
+```powershell
+$homePath = $env:USERPROFILE
+```
 
 Display the path:
 
-    $homePath
+```powershell
+$homePath
+```
 
 Expected output (example):
 
-    C:\Users\YourUsername
+```
+C:\Users\YourUsername
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                   |
-|                                                          |
-|  Show: Home directory path                               |
-|  Expected: C:\Users\Username displayed                   |
-+----------------------------------------------------------+
+> **Screenshot 4**
+>
+> Show: Home directory path
+> Expected: C:\Users\Username displayed
 
 Get the datatype:
 
-    $homePath.GetType()
+```powershell
+$homePath.GetType()
+```
 
 Expected output:
 
-    IsPublic IsSerial Name                                     BaseType
-    -------- -------- ----                                     --------
-    True     True     String                                   System.Object
+```
+IsPublic IsSerial Name                                     BaseType
+-------- -------- ----                                     --------
+True     True     String                                   System.Object
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                   |
-|                                                          |
-|  Show: GetType() for home path                           |
-|  Expected: String type shown                             |
-+----------------------------------------------------------+
+> **Screenshot 5**
+>
+> Show: GetType() for home path
+> Expected: String type shown
 
 Short form:
 
-    $homePath.GetType().Name
+```powershell
+$homePath.GetType().Name
+```
 
 Expected output:
 
-    String
+```
+String
+```
 
 Alternative: Using Get-Item
 
-    $homeDir = Get-Item $HOME
-    $homeDir.GetType().Name
+```powershell
+$homeDir = Get-Item $HOME
+$homeDir.GetType().Name
+```
 
 Expected output:
 
-    DirectoryInfo
+```
+DirectoryInfo
+```
 
 
-TASK 3: List Single File and Get Datatype
-------------------------------------------
+## TASK 3: List Single File and Get Datatype
 
 Get a single file from home directory:
 
-    $singleFile = Get-ChildItem $HOME -File | Select-Object -First 1
+```powershell
+$singleFile = Get-ChildItem $HOME -File | Select-Object -First 1
+```
 
 Or specify a known file:
 
-    $singleFile = Get-Item "$HOME\Desktop.ini"
+```powershell
+$singleFile = Get-Item "$HOME\Desktop.ini"
+```
 
 Or:
 
-    $singleFile = Get-ChildItem $HOME -File -Name "*.txt" | Select-Object -First 1
+```powershell
+$singleFile = Get-ChildItem $HOME -File -Name "*.txt" | Select-Object -First 1
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                   |
-|                                                          |
-|  Show: Getting single file                               |
-|  Expected: File object stored in variable                |
-+----------------------------------------------------------+
+> **Screenshot 6**
+>
+> Show: Getting single file
+> Expected: File object stored in variable
 
 Display the file:
 
-    $singleFile
+```powershell
+$singleFile
+```
 
 Expected output (example):
 
-        Directory: C:\Users\YourUsername
+```
+    Directory: C:\Users\YourUsername
 
-    Mode                 LastWriteTime         Length Name
-    ----                 -------------         ------ ----
-    -a----         1/15/2024   9:30 AM            256 .gitconfig
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         1/15/2024   9:30 AM            256 .gitconfig
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                   |
-|                                                          |
-|  Show: Single file information                           |
-|  Expected: File details displayed                        |
-+----------------------------------------------------------+
+> **Screenshot 7**
+>
+> Show: Single file information
+> Expected: File details displayed
 
 Get the datatype:
 
-    $singleFile.GetType()
+```powershell
+$singleFile.GetType()
+```
 
 Expected output:
 
-    IsPublic IsSerial Name                                     BaseType
-    -------- -------- ----                                     --------
-    True     True     FileInfo                                 System.IO.FileSystemInfo
+```
+IsPublic IsSerial Name                                     BaseType
+-------- -------- ----                                     --------
+True     True     FileInfo                                 System.IO.FileSystemInfo
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                   |
-|                                                          |
-|  Show: GetType() for file                                |
-|  Expected: FileInfo type shown                           |
-+----------------------------------------------------------+
+> **Screenshot 8**
+>
+> Show: GetType() for file
+> Expected: FileInfo type shown
 
 Short form:
 
-    $singleFile.GetType().Name
+```powershell
+$singleFile.GetType().Name
+```
 
 Expected output:
 
-    FileInfo
+```
+FileInfo
+```
 
 Understanding FileInfo:
-    - Full type: System.IO.FileInfo
-    - Represents a file on the filesystem
-    - Has properties: Name, Length, Extension, LastWriteTime, etc.
+- Full type: System.IO.FileInfo
+- Represents a file on the filesystem
+- Has properties: Name, Length, Extension, LastWriteTime, etc.
 
 
-TASK 4: List Single Directory and Get Datatype
------------------------------------------------
+## TASK 4: List Single Directory and Get Datatype
 
 Get a single directory from home directory:
 
-    $singleDir = Get-ChildItem $HOME -Directory | Select-Object -First 1
+```powershell
+$singleDir = Get-ChildItem $HOME -Directory | Select-Object -First 1
+```
 
 Or specify a known directory:
 
-    $singleDir = Get-Item "$HOME\Desktop"
+```powershell
+$singleDir = Get-Item "$HOME\Desktop"
+```
 
 Or:
 
-    $singleDir = Get-Item "$HOME\Documents"
+```powershell
+$singleDir = Get-Item "$HOME\Documents"
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                   |
-|                                                          |
-|  Show: Getting single directory                          |
-|  Expected: Directory object stored in variable           |
-+----------------------------------------------------------+
+> **Screenshot 9**
+>
+> Show: Getting single directory
+> Expected: Directory object stored in variable
 
 Display the directory:
 
-    $singleDir
+```powershell
+$singleDir
+```
 
 Expected output (example):
 
-        Directory: C:\Users\YourUsername
+```
+    Directory: C:\Users\YourUsername
 
-    Mode                 LastWriteTime         Length Name
-    ----                 -------------         ------ ----
-    d-----         1/20/2024  10:15 AM                Desktop
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         1/20/2024  10:15 AM                Desktop
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 10 <<<                  |
-|                                                          |
-|  Show: Single directory information                      |
-|  Expected: Directory details displayed                   |
-+----------------------------------------------------------+
+> **Screenshot 10**
+>
+> Show: Single directory information
+> Expected: Directory details displayed
 
 Get the datatype:
 
-    $singleDir.GetType()
+```powershell
+$singleDir.GetType()
+```
 
 Expected output:
 
-    IsPublic IsSerial Name                                     BaseType
-    -------- -------- ----                                     --------
-    True     True     DirectoryInfo                            System.IO.FileSystemInfo
+```
+IsPublic IsSerial Name                                     BaseType
+-------- -------- ----                                     --------
+True     True     DirectoryInfo                            System.IO.FileSystemInfo
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 11 <<<                  |
-|                                                          |
-|  Show: GetType() for directory                           |
-|  Expected: DirectoryInfo type shown                      |
-+----------------------------------------------------------+
+> **Screenshot 11**
+>
+> Show: GetType() for directory
+> Expected: DirectoryInfo type shown
 
 Short form:
 
-    $singleDir.GetType().Name
+```powershell
+$singleDir.GetType().Name
+```
 
 Expected output:
 
-    DirectoryInfo
+```
+DirectoryInfo
+```
 
 Understanding DirectoryInfo:
-    - Full type: System.IO.DirectoryInfo
-    - Represents a directory on the filesystem
-    - Has properties: Name, FullName, Parent, CreationTime, etc.
+- Full type: System.IO.DirectoryInfo
+- Represents a directory on the filesystem
+- Has properties: Name, FullName, Parent, CreationTime, etc.
 
 
-COMPLETE EXAMPLE SESSION
-------------------------
+## COMPLETE EXAMPLE SESSION
 
-    PS> [string]$myDate = "19790525"
-    PS> $myDate.GetType().Name
-    String
+```powershell
+PS> [string]$myDate = "19790525"
+PS> $myDate.GetType().Name
+String
 
-    PS> $homePath = $HOME
-    PS> $homePath
-    C:\Users\YourUsername
-    PS> $homePath.GetType().Name
-    String
+PS> $homePath = $HOME
+PS> $homePath
+C:\Users\YourUsername
+PS> $homePath.GetType().Name
+String
 
-    PS> $singleFile = Get-ChildItem $HOME -File | Select-Object -First 1
-    PS> $singleFile.GetType().Name
-    FileInfo
+PS> $singleFile = Get-ChildItem $HOME -File | Select-Object -First 1
+PS> $singleFile.GetType().Name
+FileInfo
 
-    PS> $singleDir = Get-ChildItem $HOME -Directory | Select-Object -First 1
-    PS> $singleDir.GetType().Name
-    DirectoryInfo
+PS> $singleDir = Get-ChildItem $HOME -Directory | Select-Object -First 1
+PS> $singleDir.GetType().Name
+DirectoryInfo
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 12 <<<                  |
-|                                                          |
-|  Show: Complete session with all tasks                   |
-|  Expected: All four tasks completed                      |
-+----------------------------------------------------------+
+> **Screenshot 12**
+>
+> Show: Complete session with all tasks
+> Expected: All four tasks completed
 
 
-================================================================================
-                     VARIABLE TYPE CASTING
-================================================================================
+## VARIABLE TYPE CASTING
 
 Explicit type casting:
 
-    [string]$str = 19790525      # Force string type
-    [int]$num = "42"             # Convert string to int
-    [datetime]$date = "2024-01-15"  # Convert to datetime
+```powershell
+[string]$str = 19790525      # Force string type
+[int]$num = "42"             # Convert string to int
+[datetime]$date = "2024-01-15"  # Convert to datetime
+```
 
 Check and compare types:
 
-    $var -is [string]            # Returns $true if string
-    $var -isnot [int]            # Returns $true if NOT int
-    $var.GetType().Name          # Get type name
+```powershell
+$var -is [string]            # Returns $true if string
+$var -isnot [int]            # Returns $true if NOT int
+$var.GetType().Name          # Get type name
+```
 
 Type conversion examples:
 
-    # String to Integer
-    [int]"100"                   # Result: 100
+```powershell
+# String to Integer
+[int]"100"                   # Result: 100
 
-    # Integer to String
-    [string]42                   # Result: "42"
+# Integer to String
+[string]42                   # Result: "42"
 
-    # String to DateTime
-    [datetime]"2024-01-15"       # Result: January 15, 2024
+# String to DateTime
+[datetime]"2024-01-15"       # Result: January 15, 2024
+```
 
-================================================================================
 
-
-================================================================================
-                     COMMON POWERSHELL TYPES
-================================================================================
+## COMMON POWERSHELL TYPES
 
 | .NET Type                  | PowerShell Alias | Example               |
 |----------------------------|------------------|-----------------------|
@@ -376,12 +421,8 @@ Type conversion examples:
 | System.IO.FileInfo         | -                | Get-Item file.txt     |
 | System.IO.DirectoryInfo    | -                | Get-Item C:\Folder    |
 
-================================================================================
 
-
-================================================================================
-                     USEFUL TYPE CHECKING METHODS
-================================================================================
+## USEFUL TYPE CHECKING METHODS
 
 | Method/Operator            | Description                    |
 |----------------------------|--------------------------------|
@@ -393,66 +434,72 @@ Type conversion examples:
 
 Examples:
 
-    $str = "Hello"
-    $str -is [string]           # True
-    $str -is [int]              # False
+```powershell
+$str = "Hello"
+$str -is [string]           # True
+$str -is [int]              # False
 
-    $num = 42
-    $num.GetType().FullName     # System.Int32
+$num = 42
+$num.GetType().FullName     # System.Int32
+```
 
-================================================================================
 
-
-================================================================================
-                             TROUBLESHOOTING
-================================================================================
+## TROUBLESHOOTING
 
 Problem: Variable shows number instead of string
 Solution: Use quotes or explicit [string] cast
-    [string]$var = "19790525"    # Correct
-    $var = "19790525"            # Also correct (quotes)
-    $var = 19790525              # This is Int32!
+
+```powershell
+[string]$var = "19790525"    # Correct
+$var = "19790525"            # Also correct (quotes)
+$var = 19790525              # This is Int32!
+```
 
 Problem: GetType() returns error "Cannot call on null"
 Solution: Variable is empty or null
-    if ($null -ne $var) { $var.GetType() }
+
+```powershell
+if ($null -ne $var) { $var.GetType() }
+```
 
 Problem: Get-ChildItem returns nothing
 Solution: Directory might be empty or path wrong
-    Test-Path $HOME              # Verify path exists
-    Get-ChildItem $HOME -Force   # Include hidden files
+
+```powershell
+Test-Path $HOME              # Verify path exists
+Get-ChildItem $HOME -Force   # Include hidden files
+```
 
 Problem: "Cannot find path" error
 Solution: Check path and use quotes for spaces
-    Get-Item "$HOME\My Documents"
+
+```powershell
+Get-Item "$HOME\My Documents"
+```
 
 Problem: Multiple items returned instead of one
 Solution: Use Select-Object -First 1
-    Get-ChildItem $HOME -File | Select-Object -First 1
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 13 <<<                  |
-|                                                          |
-|  Show: Summary of all variable types                     |
-|  Expected: String, String, FileInfo, DirectoryInfo       |
-+----------------------------------------------------------+
+```powershell
+Get-ChildItem $HOME -File | Select-Object -First 1
+```
+
+> **Screenshot 13**
+>
+> Show: Summary of all variable types
+> Expected: String, String, FileInfo, DirectoryInfo
 
 
-================================================================================
-                     SELF-REVIEW CHECKLIST
-================================================================================
+## SELF-REVIEW CHECKLIST
 
-[ ] Created string variable with "19790525"
-[ ] Verified variable type is String using GetType()
-[ ] Retrieved home directory path ($HOME or $env:USERPROFILE)
-[ ] Checked home path type is String
-[ ] Got single file using Get-ChildItem -File
-[ ] Verified file type is FileInfo
-[ ] Got single directory using Get-ChildItem -Directory
-[ ] Verified directory type is DirectoryInfo
-[ ] Understand difference between String and Int types
-[ ] Understand FileInfo vs DirectoryInfo types
-[ ] Know how to use GetType() method
-
-================================================================================
-
+- [ ] Created string variable with "19790525"
+- [ ] Verified variable type is String using GetType()
+- [ ] Retrieved home directory path ($HOME or $env:USERPROFILE)
+- [ ] Checked home path type is String
+- [ ] Got single file using Get-ChildItem -File
+- [ ] Verified file type is FileInfo
+- [ ] Got single directory using Get-ChildItem -Directory
+- [ ] Verified directory type is DirectoryInfo
+- [ ] Understand difference between String and Int types
+- [ ] Understand FileInfo vs DirectoryInfo types
+- [ ] Know how to use GetType() method

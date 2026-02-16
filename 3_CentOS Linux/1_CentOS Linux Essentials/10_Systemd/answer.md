@@ -7,14 +7,11 @@ Methods:
 - Activities > Search "Terminal"
 - Right-click on Desktop > Open Terminal
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                          |
-|                                                                  |
-|  Terminal window showing:                                        |
-|  - Empty terminal with command prompt                            |
-|  - Username and hostname visible (user@hostname:~$)              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 1**
+>
+> Terminal window showing:
+> - Empty terminal with command prompt
+> - Username and hostname visible (user@hostname:~$)
 
 
 ## TASK 2: List unit files available in your system
@@ -43,16 +40,13 @@ Explanation:
 - STATE: Current state (enabled, disabled, static, masked)
 - VENDOR PRESET: Default state from vendor
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2a <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ systemctl list-unit-files                                   |
-|  - List of unit files with STATE column                          |
-|  - Various services listed (.service files)                      |
-|  - enabled/disabled states visible                               |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 2a**
+>
+> Terminal showing:
+> - $ systemctl list-unit-files
+> - List of unit files with STATE column
+> - Various services listed (.service files)
+> - enabled/disabled states visible
 
 
 ### METHOD 2: List only service unit files
@@ -71,15 +65,12 @@ dbus.service                               static          -
 ...
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2b <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ systemctl list-unit-files --type=service                    |
-|  - Only .service unit files listed                               |
-|  - STATE column visible (enabled, disabled, static)              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 2b**
+>
+> Terminal showing:
+> - $ systemctl list-unit-files --type=service
+> - Only .service unit files listed
+> - STATE column visible (enabled, disabled, static)
 
 
 ### METHOD 3: List currently loaded units
@@ -164,16 +155,13 @@ httpd-2.4.6-97.el7.centos.5.x86_64
 httpd-tools-2.4.6-97.el7.centos.5.x86_64
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ sudo yum install httpd -y                                   |
-|  - Installation progress                                         |
-|  - "Complete!" message at the end                                |
-|  - Installed packages listed (httpd, apr, apr-util, etc.)        |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 3**
+>
+> Terminal showing:
+> - $ sudo yum install httpd -y
+> - Installation progress
+> - "Complete!" message at the end
+> - Installed packages listed (httpd, apr, apr-util, etc.)
 
 
 ## TASK 4: Start httpd service
@@ -206,16 +194,13 @@ apache    1236  0.0  0.1 226108  3500 ?        S    10:00   0:00 /usr/sbin/httpd
 ...
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ sudo systemctl start httpd                                  |
-|  - $ systemctl is-active httpd                                   |
-|  - Output: active                                                |
-|  - OR: ps aux | grep httpd showing httpd processes               |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 4**
+>
+> Terminal showing:
+> - $ sudo systemctl start httpd
+> - $ systemctl is-active httpd
+> - Output: active
+> - OR: ps aux | grep httpd showing httpd processes
 
 
 ## TASK 5: Check httpd service status
@@ -256,18 +241,15 @@ Understanding the output:
 | CGroup    | Control group with all related processes |
 | Log entries | Recent journal entries for this service |
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ systemctl status httpd                                      |
-|  - ● httpd.service - The Apache HTTP Server                      |
-|  - Loaded: loaded (...; disabled; ...)                           |
-|  - Active: active (running) since ...                            |
-|  - Main PID and CGroup information                               |
-|  - Journal log entries at bottom                                 |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 5**
+>
+> Terminal showing:
+> - $ systemctl status httpd
+> - httpd.service - The Apache HTTP Server
+> - Loaded: loaded (...; disabled; ...)
+> - Active: active (running) since ...
+> - Main PID and CGroup information
+> - Journal log entries at bottom
 
 
 ## TASK 6: Restart httpd service
@@ -298,16 +280,13 @@ Alternative commands:
 | reload-or-restart | Reload if supported, otherwise restart   |
 | try-restart       | Restart only if already running          |
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ sudo systemctl restart httpd                                |
-|  - $ systemctl status httpd                                      |
-|  - Active: active (running) since ... ; Xs ago                   |
-|  - New start time showing service was restarted                  |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 6**
+>
+> Terminal showing:
+> - $ sudo systemctl restart httpd
+> - $ systemctl status httpd
+> - Active: active (running) since ... ; Xs ago
+> - New start time showing service was restarted
 
 
 ## TASK 7: Enable httpd service and verify
@@ -361,18 +340,15 @@ Output:
 httpd.service                              enabled         disabled
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ sudo systemctl enable httpd                                 |
-|  - Created symlink ... message                                   |
-|  - $ systemctl is-enabled httpd                                  |
-|  - Output: enabled                                               |
-|  - $ systemctl status httpd                                      |
-|  - Loaded line showing "enabled"                                 |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 7**
+>
+> Terminal showing:
+> - $ sudo systemctl enable httpd
+> - Created symlink ... message
+> - $ systemctl is-enabled httpd
+> - Output: enabled
+> - $ systemctl status httpd
+> - Loaded line showing "enabled"
 
 
 ## TASK 8: Create script.sh with sleep 1000 content
@@ -416,18 +392,15 @@ Output:
 sleep 1000
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - Script creation command (cat, echo, or nano)                  |
-|  - $ cat ~/script.sh                                             |
-|  - Output:                                                       |
-|    #!/bin/bash                                                   |
-|                                                                  |
-|    sleep 1000                                                    |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 8**
+>
+> Terminal showing:
+> - Script creation command (cat, echo, or nano)
+> - $ cat ~/script.sh
+> - Output:
+>   #!/bin/bash
+>
+>   sleep 1000
 
 
 ## TASK 9: Make the script executable
@@ -465,15 +438,12 @@ $ ~/script.sh &
 $ ps aux | grep script.sh
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ chmod +x ~/script.sh                                        |
-|  - $ ls -la ~/script.sh                                          |
-|  - -rwxr-xr-x ... script.sh (x permission visible)               |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 9**
+>
+> Terminal showing:
+> - $ chmod +x ~/script.sh
+> - $ ls -la ~/script.sh
+> - -rwxr-xr-x ... script.sh (x permission visible)
 
 
 ## TASK 10: Create test.service unit file
@@ -574,17 +544,14 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 10a <<<                        |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - Creation of unit file (nano or cat command)                   |
-|  - $ cat /etc/systemd/system/test.service                        |
-|  - [Unit] section with Description                               |
-|  - [Service] section with ExecStart                              |
-|  - [Install] section with WantedBy                               |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 10a**
+>
+> Terminal showing:
+> - Creation of unit file (nano or cat command)
+> - $ cat /etc/systemd/system/test.service
+> - [Unit] section with Description
+> - [Service] section with ExecStart
+> - [Install] section with WantedBy
 
 
 ### STEP 3: Reload systemd daemon
@@ -597,16 +564,13 @@ $ sudo systemctl daemon-reload
 
 This tells systemd to re-read all unit files.
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 10b <<<                        |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ sudo systemctl daemon-reload                                |
-|  - (Command completes without error)                             |
-|  - $ systemctl list-unit-files | grep test                       |
-|  - test.service visible in the list                              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 10b**
+>
+> Terminal showing:
+> - $ sudo systemctl daemon-reload
+> - (Command completes without error)
+> - $ systemctl list-unit-files | grep test
+> - test.service visible in the list
 
 
 ## TASK 11: Start test service
@@ -631,15 +595,12 @@ Output:
 active
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 11 <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ sudo systemctl start test.service                           |
-|  - $ systemctl is-active test                                    |
-|  - Output: active                                                |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 11**
+>
+> Terminal showing:
+> - $ sudo systemctl start test.service
+> - $ systemctl is-active test
+> - Output: active
 
 
 ## TASK 12: Verify test service status
@@ -670,21 +631,18 @@ Understanding the output:
   - script.sh is running
   - sleep 1000 is a child process of script.sh
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 12 <<<                         |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ systemctl status test.service                               |
-|  - ● test.service - Test Service - Running script.sh             |
-|  - Loaded: loaded (/etc/systemd/system/test.service; ...)        |
-|  - Active: active (running) since ...                            |
-|  - Main PID: XXXX (script.sh)                                    |
-|  - CGroup showing:                                               |
-|    ├─XXXX /bin/bash /home/user1/script.sh                        |
-|    └─XXXX sleep 1000                                             |
-|  - "Started Test Service" log message                            |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 12**
+>
+> Terminal showing:
+> - $ systemctl status test.service
+> - test.service - Test Service - Running script.sh
+> - Loaded: loaded (/etc/systemd/system/test.service; ...)
+> - Active: active (running) since ...
+> - Main PID: XXXX (script.sh)
+> - CGroup showing:
+>   - XXXX /bin/bash /home/user1/script.sh
+>   - XXXX sleep 1000
+> - "Started Test Service" log message
 
 
 ### ADDITIONAL VERIFICATION:

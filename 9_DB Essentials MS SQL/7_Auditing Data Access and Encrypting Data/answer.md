@@ -3,9 +3,9 @@
 This guide covers SQL Server Audit configuration for security monitoring
 and Transparent Data Encryption (TDE) for protecting data at rest.
 
-================================================================================
+---
                     UNDERSTANDING SQL SERVER AUDIT
-================================================================================
+---
 
 AUDIT ARCHITECTURE:
 ------------------
@@ -39,9 +39,9 @@ AUDIT DESTINATIONS:
 | Windows Application | Windows Event Log - Application section |
 | Windows Security | Windows Event Log - Security section (requires special permissions) |
 
-================================================================================
+---
                     PART 1: CREATE SQL SERVER AUDIT
-================================================================================
+---
 
 STEP 1.1: CREATE AUDIT DIRECTORY
 --------------------------------
@@ -103,9 +103,9 @@ STEP 1.3: CREATE SQL SERVER AUDIT USING SSMS (ALTERNATIVE)
 4. Click OK
 5. Right-click the audit -> Enable
 
-================================================================================
+---
                     PART 2: CREATE SERVER AUDIT SPECIFICATION
-================================================================================
+---
 
 STEP 2.1: CREATE SERVER AUDIT SPECIFICATION (T-SQL)
 ---------------------------------------------------
@@ -152,9 +152,9 @@ AVAILABLE SERVER AUDIT ACTION GROUPS:
 | AUDIT_CHANGE_GROUP | Audit configuration changes |
 | DATABASE_PERMISSION_CHANGE_GROUP | Database permission changes |
 
-================================================================================
+---
                     PART 3: SIMULATE SERVER AUDIT EVENTS
-================================================================================
+---
 
 STEP 3.1: SIMULATE BACKUP_RESTORE_GROUP
 ---------------------------------------
@@ -228,9 +228,9 @@ STEP 3.4: SIMULATE OTHER ACTION GROUPS (OPTIONAL)
     DROP DATABASE AuditTestDB;
     GO
 
-================================================================================
+---
                     PART 4: CREATE DATABASE AUDIT SPECIFICATION (SSMS)
-================================================================================
+---
 
 STEP 4.1: CREATE DATABASE AUDIT SPECIFICATION USING SSMS GUI
 ------------------------------------------------------------
@@ -323,9 +323,9 @@ DATABASE AUDIT ACTIONS:
 | RECEIVE | RECEIVE statements (Service Broker) |
 | REFERENCES | REFERENCES permission checks |
 
-================================================================================
+---
                     PART 5: PERFORM DATABASE ACTIONS TO TRIGGER AUDIT
-================================================================================
+---
 
 STEP 5.1: PERFORM DELETE OPERATIONS
 -----------------------------------
@@ -405,9 +405,9 @@ STEP 5.4: PERFORM INSERT OPERATIONS
     PRINT 'INSERT performed - should be logged in audit';
     GO
 
-================================================================================
+---
                     PART 6: VIEW AND ANALYZE AUDIT LOGS
-================================================================================
+---
 
 STEP 6.1: VIEW AUDIT LOG USING SSMS GUI
 ---------------------------------------
@@ -545,9 +545,9 @@ STEP 6.4: EXPORT AUDIT LOG TO TABLE
     FROM sys.fn_get_audit_file('C:\SQLAudit\*.sqlaudit', DEFAULT, DEFAULT);
     GO
 
-================================================================================
+---
                     PART 7: TRANSPARENT DATA ENCRYPTION (TDE)
-================================================================================
+---
 
 TDE encrypts data at rest (data files, log files, backups) using a
 Database Encryption Key (DEK) protected by a certificate.
@@ -764,9 +764,9 @@ STEP 7.8: VERIFY TEMPDB IS ALSO ENCRYPTED
     WHERE database_id = 2;  -- tempdb
     GO
 
-================================================================================
+---
                     PART 8: RESTORING TDE DATABASE ON ANOTHER SERVER
-================================================================================
+---
 
 To restore a TDE-encrypted database on another server:
 
@@ -810,9 +810,9 @@ STEP 8.4: ON TARGET SERVER - Restore Database
         REPLACE;
     GO
 
-================================================================================
+---
                     DISABLING TDE (IF NEEDED)
-================================================================================
+---
 
     -- Disable TDE
     ALTER DATABASE AdventureWorks2019
@@ -827,9 +827,9 @@ STEP 8.4: ON TARGET SERVER - Restore Database
     DROP DATABASE ENCRYPTION KEY;
     GO
 
-================================================================================
+---
                     CLEANUP (OPTIONAL)
-================================================================================
+---
 
     -- Disable audit specifications
     ALTER SERVER AUDIT SPECIFICATION ServerAuditSpec WITH (STATE = OFF);
@@ -846,9 +846,9 @@ STEP 8.4: ON TARGET SERVER - Restore Database
     DROP SERVER AUDIT ServerSecurityAudit;
     GO
 
-================================================================================
+---
                     SUMMARY
-================================================================================
+---
 
 AUDIT COMPONENTS CREATED:
 ------------------------

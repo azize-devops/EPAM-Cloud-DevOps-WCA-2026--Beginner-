@@ -4,9 +4,7 @@ This guide covers bash variables including declaration, usage, and sourcing
 variables from external files.
 
 
-================================================================================
-                        UNDERSTANDING BASH VARIABLES
-================================================================================
+## UNDERSTANDING BASH VARIABLES
 
 Variable Basics:
 - Variables store data (strings, numbers, etc.)
@@ -20,179 +18,179 @@ Variable Types:
 - Environment variables: Available to child processes (exported)
 - Special variables: $0, $1, $?, $$, etc.
 
-================================================================================
 
-
-TASK 1: Create vars file in home folder
----------------------------------------
+## TASK 1: Create vars file in home folder
 
 Navigate to home directory and create the vars file:
 
-    cd ~
-    touch vars
+```bash
+cd ~
+touch vars
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                   |
-|                                                          |
-|  Show: Creating vars file                                |
-|  Expected: File created in home directory                |
-+----------------------------------------------------------+
+> **Screenshot 1**
+> - Show: Creating vars file
+> - Expected: File created in home directory
 
 
-TASK 2: Add FILE variable to vars file
---------------------------------------
+## TASK 2: Add FILE variable to vars file
 
 Edit the vars file and add the variable:
 
 Method 1 - Using echo:
 
-    echo 'FILE=new_file' > ~/vars
+```bash
+echo 'FILE=new_file' > ~/vars
+```
 
 Method 2 - Using vim:
 
-    vim ~/vars
-    # Press 'i', type: FILE=new_file
-    # Press Esc, then :wq
+```bash
+vim ~/vars
+# Press 'i', type: FILE=new_file
+# Press Esc, then :wq
+```
 
 Method 3 - Using nano:
 
-    nano ~/vars
-    # Type: FILE=new_file
-    # Press Ctrl+O to save, Ctrl+X to exit
+```bash
+nano ~/vars
+# Type: FILE=new_file
+# Press Ctrl+O to save, Ctrl+X to exit
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                   |
-|                                                          |
-|  Show: Adding FILE variable to vars file                 |
-|  Expected: FILE=new_file in the file                     |
-+----------------------------------------------------------+
+> **Screenshot 2**
+> - Show: Adding FILE variable to vars file
+> - Expected: FILE=new_file in the file
 
 Verify the content:
 
-    cat ~/vars
+```bash
+cat ~/vars
+```
 
 Expected output:
-    FILE=new_file
+```
+FILE=new_file
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                   |
-|                                                          |
-|  Show: cat ~/vars output                                 |
-|  Expected: FILE=new_file                                 |
-+----------------------------------------------------------+
+> **Screenshot 3**
+> - Show: cat ~/vars output
+> - Expected: FILE=new_file
 
 IMPORTANT: Variable assignment rules:
-    FILE=new_file      # Correct - no spaces
-    FILE="new_file"    # Correct - with quotes
-    FILE = new_file    # WRONG - spaces cause error
+
+```bash
+FILE=new_file      # Correct - no spaces
+FILE="new_file"    # Correct - with quotes
+FILE = new_file    # WRONG - spaces cause error
+```
 
 
-TASK 3: Create the script
--------------------------
+## TASK 3: Create the script
 
 Create script.sh in home directory:
 
-    cd ~
-    touch script.sh
-    chmod +x script.sh
+```bash
+cd ~
+touch script.sh
+chmod +x script.sh
+```
 
 Edit the script with your preferred editor:
 
-    vim script.sh
-    # or
-    nano script.sh
+```bash
+vim script.sh
+# or
+nano script.sh
+```
 
 Script content:
 
-    #!/bin/bash
+```bash
+#!/bin/bash
 
-    # Define NAME variable with your name
-    NAME=Name_Surname
+# Define NAME variable with your name
+NAME=Name_Surname
 
-    # Source the vars file to load FILE variable
-    source ~/vars
-    # Alternative: . ~/vars
+# Source the vars file to load FILE variable
+source ~/vars
+# Alternative: . ~/vars
 
-    # Create folder with name from NAME variable
-    mkdir -p "$NAME"
+# Create folder with name from NAME variable
+mkdir -p "$NAME"
 
-    # Create file in the folder with name from FILE variable
-    touch "$NAME/$FILE"
+# Create file in the folder with name from FILE variable
+touch "$NAME/$FILE"
 
-    # List contents of home folder
-    ls ~
+# List contents of home folder
+ls ~
 
-    # List contents of created folder
-    ls "$NAME"
+# List contents of created folder
+ls "$NAME"
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                   |
-|                                                          |
-|  Show: Creating script.sh                                |
-|  Expected: touch and chmod commands executed             |
-+----------------------------------------------------------+
+> **Screenshot 4**
+> - Show: Creating script.sh
+> - Expected: touch and chmod commands executed
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                   |
-|                                                          |
-|  Show: Script content in editor                          |
-|  Expected: Complete script with NAME, source, mkdir, etc.|
-+----------------------------------------------------------+
+> **Screenshot 5**
+> - Show: Script content in editor
+> - Expected: Complete script with NAME, source, mkdir, etc.
 
 Alternative - Create script using heredoc:
 
-    cat > ~/script.sh << 'EOF'
-    #!/bin/bash
+```bash
+cat > ~/script.sh << 'EOF'
+#!/bin/bash
 
-    # Define NAME variable with your name
-    NAME=Name_Surname
+# Define NAME variable with your name
+NAME=Name_Surname
 
-    # Source the vars file to load FILE variable
-    source ~/vars
+# Source the vars file to load FILE variable
+source ~/vars
 
-    # Create folder with name from NAME variable
-    mkdir -p "$NAME"
+# Create folder with name from NAME variable
+mkdir -p "$NAME"
 
-    # Create file in the folder with name from FILE variable
-    touch "$NAME/$FILE"
+# Create file in the folder with name from FILE variable
+touch "$NAME/$FILE"
 
-    # List contents of home folder
-    ls ~
+# List contents of home folder
+ls ~
 
-    # List contents of created folder
-    ls "$NAME"
-    EOF
+# List contents of created folder
+ls "$NAME"
+EOF
 
-    chmod +x ~/script.sh
+chmod +x ~/script.sh
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                   |
-|                                                          |
-|  Show: Creating script with heredoc                      |
-|  Expected: Script created via command line               |
-+----------------------------------------------------------+
+> **Screenshot 6**
+> - Show: Creating script with heredoc
+> - Expected: Script created via command line
 
 Verify script content:
 
-    cat ~/script.sh
+```bash
+cat ~/script.sh
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                   |
-|                                                          |
-|  Show: cat ~/script.sh output                            |
-|  Expected: Complete script displayed                     |
-+----------------------------------------------------------+
+> **Screenshot 7**
+> - Show: cat ~/script.sh output
+> - Expected: Complete script displayed
 
 
-UNDERSTANDING THE SOURCE COMMAND
---------------------------------
+## UNDERSTANDING THE SOURCE COMMAND
 
 The source command (or . shorthand) executes commands from a file
 in the current shell environment.
 
-    source filename
-    # or
-    . filename
+```bash
+source filename
+# or
+. filename
+```
 
 Why use source?
 - Variables defined in sourced file become available in current script
@@ -200,80 +198,75 @@ Why use source?
 - Changes to environment persist in current shell
 
 Without source (running as subprocess):
-    bash vars        # Variables NOT available in parent script
+
+```bash
+bash vars        # Variables NOT available in parent script
+```
 
 With source:
-    source vars      # Variables ARE available in current script
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                   |
-|                                                          |
-|  Show: Explanation of source command                     |
-|  Expected: Understanding source vs running as subprocess |
-+----------------------------------------------------------+
+```bash
+source vars      # Variables ARE available in current script
+```
+
+> **Screenshot 8**
+> - Show: Explanation of source command
+> - Expected: Understanding source vs running as subprocess
 
 
-TASK 4: Execute the script
---------------------------
+## TASK 4: Execute the script
 
 Run the script:
 
-    cd ~
-    ./script.sh
+```bash
+cd ~
+./script.sh
+```
 
 Expected output:
-    Name_Surname  script.sh  vars  (and other files in home)
-    new_file
+```
+Name_Surname  script.sh  vars  (and other files in home)
+new_file
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                   |
-|                                                          |
-|  Show: Script execution                                  |
-|  Expected: Output showing folder listing and new_file    |
-+----------------------------------------------------------+
+> **Screenshot 9**
+> - Show: Script execution
+> - Expected: Output showing folder listing and new_file
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 10 <<<                  |
-|                                                          |
-|  Show: First line of output (home folder listing)        |
-|  Expected: Name_Surname script.sh vars visible           |
-+----------------------------------------------------------+
+> **Screenshot 10**
+> - Show: First line of output (home folder listing)
+> - Expected: Name_Surname script.sh vars visible
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 11 <<<                  |
-|                                                          |
-|  Show: Second line of output (folder contents)           |
-|  Expected: new_file                                      |
-+----------------------------------------------------------+
+> **Screenshot 11**
+> - Show: Second line of output (folder contents)
+> - Expected: new_file
 
 
-VERIFICATION
-------------
+## VERIFICATION
 
 Verify the folder and file were created:
 
-    # Check folder exists
-    ls -la ~/Name_Surname
+```bash
+# Check folder exists
+ls -la ~/Name_Surname
 
-    # Check file exists
-    ls -la ~/Name_Surname/new_file
+# Check file exists
+ls -la ~/Name_Surname/new_file
+```
 
 Expected output:
-    drwxr-xr-x 2 user user 4096 Feb 10 12:00 .
-    drwxr-xr-x 5 user user 4096 Feb 10 12:00 ..
-    -rw-r--r-- 1 user user    0 Feb 10 12:00 new_file
+```
+drwxr-xr-x 2 user user 4096 Feb 10 12:00 .
+drwxr-xr-x 5 user user 4096 Feb 10 12:00 ..
+-rw-r--r-- 1 user user    0 Feb 10 12:00 new_file
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 12 <<<                  |
-|                                                          |
-|  Show: Verification of created folder and file           |
-|  Expected: Name_Surname folder with new_file inside      |
-+----------------------------------------------------------+
+> **Screenshot 12**
+> - Show: Verification of created folder and file
+> - Expected: Name_Surname folder with new_file inside
 
 
-================================================================================
-                        VARIABLE DECLARATION SYNTAX
-================================================================================
+## VARIABLE DECLARATION SYNTAX
 
 | Syntax                   | Description                               |
 |--------------------------|-------------------------------------------|
@@ -286,12 +279,8 @@ Expected output:
 | unset VAR                | Delete variable                           |
 | export VAR=value         | Create environment variable               |
 
-================================================================================
 
-
-================================================================================
-                        ACCESSING VARIABLES
-================================================================================
+## ACCESSING VARIABLES
 
 | Syntax                   | Description                               |
 |--------------------------|-------------------------------------------|
@@ -307,20 +296,18 @@ Expected output:
 
 Examples:
 
-    NAME="John"
-    echo $NAME           # John
-    echo ${NAME}         # John
-    echo ${NAME:-Guest}  # John (NAME is set)
-    echo ${UNSET:-Guest} # Guest (UNSET is not set)
-    echo ${#NAME}        # 4 (length)
-    echo ${NAME^^}       # JOHN (uppercase)
+```bash
+NAME="John"
+echo $NAME           # John
+echo ${NAME}         # John
+echo ${NAME:-Guest}  # John (NAME is set)
+echo ${UNSET:-Guest} # Guest (UNSET is not set)
+echo ${#NAME}        # 4 (length)
+echo ${NAME^^}       # JOHN (uppercase)
+```
 
-================================================================================
 
-
-================================================================================
-                        QUOTING VARIABLES
-================================================================================
+## QUOTING VARIABLES
 
 | Type           | Example              | Behavior                        |
 |----------------|----------------------|---------------------------------|
@@ -330,25 +317,23 @@ Examples:
 
 Examples:
 
-    FILE="my file.txt"
+```bash
+FILE="my file.txt"
 
-    # Without quotes - PROBLEM (word splitting)
-    touch $FILE         # Creates two files: "my" and "file.txt"
+# Without quotes - PROBLEM (word splitting)
+touch $FILE         # Creates two files: "my" and "file.txt"
 
-    # With double quotes - CORRECT
-    touch "$FILE"       # Creates one file: "my file.txt"
+# With double quotes - CORRECT
+touch "$FILE"       # Creates one file: "my file.txt"
 
-    # Single quotes - literal
-    echo '$FILE'        # Prints: $FILE (not the value)
+# Single quotes - literal
+echo '$FILE'        # Prints: $FILE (not the value)
+```
 
 Best Practice: Always quote variables "$VAR" to prevent word splitting.
 
-================================================================================
 
-
-================================================================================
-                        SPECIAL VARIABLES
-================================================================================
+## SPECIAL VARIABLES
 
 | Variable       | Description                                       |
 |----------------|---------------------------------------------------|
@@ -365,51 +350,52 @@ Best Practice: Always quote variables "$VAR" to prevent word splitting.
 | $PWD           | Current directory                                 |
 | $PATH          | Executable search path                            |
 
-================================================================================
 
-
-================================================================================
-                        SOURCE VS EXPORT
-================================================================================
+## SOURCE VS EXPORT
 
 source (or .):
 - Executes file in CURRENT shell
 - Variables become available in current script
 - Does NOT create new process
 
-    source vars      # Load variables into current shell
-    echo $FILE       # Works - FILE is available
+```bash
+source vars      # Load variables into current shell
+echo $FILE       # Works - FILE is available
+```
 
 export:
 - Makes variable available to CHILD processes
 - Does NOT affect parent shell
 
-    export VAR=value # Child processes can access VAR
-    bash -c 'echo $VAR'  # Works in child process
+```bash
+export VAR=value # Child processes can access VAR
+bash -c 'echo $VAR'  # Works in child process
+```
 
 Comparison:
 
-    # vars file contains: FILE=test
+```bash
+# vars file contains: FILE=test
 
-    # Without source:
-    bash vars
-    echo $FILE       # Empty - vars ran in subprocess
+# Without source:
+bash vars
+echo $FILE       # Empty - vars ran in subprocess
 
-    # With source:
-    source vars
-    echo $FILE       # test - vars ran in current shell
+# With source:
+source vars
+echo $FILE       # test - vars ran in current shell
+```
 
-================================================================================
 
-
-================================================================================
-                             TROUBLESHOOTING
-================================================================================
+## TROUBLESHOOTING
 
 Problem: "FILE: command not found"
 Solution: Remove spaces around =
-    Wrong:  FILE = new_file
-    Right:  FILE=new_file
+
+```bash
+Wrong:  FILE = new_file
+Right:  FILE=new_file
+```
 
 Problem: Variable is empty after sourcing
 Solutions:
@@ -430,15 +416,14 @@ Solutions:
 
 Problem: Word splitting issues
 Solution: Always quote variables: "$VAR"
-    mkdir $NAME      # Problem if NAME has spaces
-    mkdir "$NAME"    # Correct
 
-================================================================================
+```bash
+mkdir $NAME      # Problem if NAME has spaces
+mkdir "$NAME"    # Correct
+```
 
 
-================================================================================
-                              SELF-REVIEW CHECKLIST
-================================================================================
+## SELF-REVIEW CHECKLIST
 
 [ ] vars file created in home directory
 [ ] FILE=new_file added to vars file
@@ -455,6 +440,3 @@ Solution: Always quote variables: "$VAR"
 [ ] Output shows new_file in folder listing
 [ ] Folder ~/Name_Surname exists after execution
 [ ] File ~/Name_Surname/new_file exists after execution
-
-================================================================================
-

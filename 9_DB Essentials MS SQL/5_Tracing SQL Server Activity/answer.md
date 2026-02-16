@@ -4,9 +4,9 @@ This guide covers SQL Server Profiler usage, creating deadlock scenarios,
 and analyzing deadlock graphs to understand how SQL Server handles
 concurrent transactions and lock conflicts.
 
-================================================================================
+---
                     UNDERSTANDING DEADLOCKS
-================================================================================
+---
 
 WHAT IS A DEADLOCK?
 -------------------
@@ -39,9 +39,9 @@ LOCK TYPES:
 | Update (U) | Prevents deadlock during update reads |
 | Intent (IS/IX) | Hierarchy locks indicating lower-level locks |
 
-================================================================================
+---
                     PART 1: START SQL SERVER PROFILER
-================================================================================
+---
 
 STEP 1.1: OPEN SQL SERVER PROFILER
 ----------------------------------
@@ -108,9 +108,9 @@ If Deadlock Graph is not in the template:
    [X] Lock:Deadlock Chain
 5. Click "Run"
 
-================================================================================
+---
                     PART 2: CREATE TEST TABLES
-================================================================================
+---
 
 STEP 2.1: OPEN SSMS AND CONNECT
 -------------------------------
@@ -184,9 +184,9 @@ Expected output:
 NOTE: Global temporary tables (##) are used because they're visible across
 all sessions, which is required for our deadlock demo.
 
-================================================================================
+---
                     PART 3: CREATE DEADLOCK SCENARIO
-================================================================================
+---
 
 STEP 3.1: OPEN TWO QUERY WINDOWS
 --------------------------------
@@ -319,9 +319,9 @@ In the session that completed successfully:
     SELECT * FROM ##Suppliers;
     GO
 
-================================================================================
+---
                     PART 4: ANALYZE DEADLOCK IN SQL PROFILER
-================================================================================
+---
 
 STEP 4.1: FIND DEADLOCK EVENTS IN PROFILER
 ------------------------------------------
@@ -448,9 +448,9 @@ Sample deadlock XML structure:
       </resource-list>
     </deadlock>
 
-================================================================================
+---
                     PART 5: DEADLOCK VICTIM SELECTION CRITERIA
-================================================================================
+---
 
 SQL Server uses the following criteria to select a deadlock victim:
 
@@ -526,9 +526,9 @@ Option 2: Keep transactions short
 - Shorter transactions = lower rollback cost = more likely victim
 - But also = less work lost!
 
-================================================================================
+---
                     PART 6: MONITORING LOCKS WITH T-SQL
-================================================================================
+---
 
 Alternative to Profiler - use DMVs (Dynamic Management Views):
 
@@ -600,9 +600,9 @@ Extended Events is the modern replacement for SQL Trace/Profiler:
     ) AS data;
     GO
 
-================================================================================
+---
                     PART 7: PREVENTING DEADLOCKS
-================================================================================
+---
 
 BEST PRACTICES:
 ---------------
@@ -625,9 +625,9 @@ BEST PRACTICES:
 6. Index properly
    - Good indexes reduce lock time
 
-================================================================================
+---
                     SUMMARY
-================================================================================
+---
 
 What We Learned:
 ---------------

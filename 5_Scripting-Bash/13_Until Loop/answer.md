@@ -4,140 +4,137 @@ This guide covers bash until loops, file size checking, file manipulation,
 and the difference between while and until loops.
 
 
-================================================================================
-                        UNTIL LOOP SYNTAX
-================================================================================
+## UNTIL LOOP SYNTAX
 
 Basic until loop:
 
-    until [[ condition ]]; do
-        # commands (run until condition becomes TRUE)
-    done
+```bash
+until [[ condition ]]; do
+    # commands (run until condition becomes TRUE)
+done
+```
 
 Key difference from while:
-    - while: runs WHILE condition is TRUE
-    - until: runs UNTIL condition becomes TRUE (while it's FALSE)
+- while: runs WHILE condition is TRUE
+- until: runs UNTIL condition becomes TRUE (while it's FALSE)
 
 Comparison:
 
-    # These are equivalent:
-    while [[ $x -lt 10 ]]; do ... done
-    until [[ $x -ge 10 ]]; do ... done
+```bash
+# These are equivalent:
+while [[ $x -lt 10 ]]; do ... done
+until [[ $x -ge 10 ]]; do ... done
+```
 
-================================================================================
 
-
-TASK 1: Create the script
--------------------------
+## TASK 1: Create the script
 
 Create the script file:
 
-    cd ~
-    touch double_file.sh
-    chmod +x double_file.sh
+```bash
+cd ~
+touch double_file.sh
+chmod +x double_file.sh
+```
 
 Edit the script:
 
-    vim double_file.sh
-    # or
-    nano double_file.sh
+```bash
+vim double_file.sh
+# or
+nano double_file.sh
+```
 
 Script content:
 
-    #!/bin/bash
+```bash
+#!/bin/bash
 
-    # Read filename from user
-    read -p "Enter filename: " filename
+# Read filename from user
+read -p "Enter filename: " filename
 
-    # Check if file exists
-    if [[ ! -f "$filename" ]]; then
-        echo "File not found: $filename"
-        exit 1
-    fi
+# Check if file exists
+if [[ ! -f "$filename" ]]; then
+    echo "File not found: $filename"
+    exit 1
+fi
 
-    # Target size in KB (1024 KB = 1 MB)
-    target_size=1024
+# Target size in KB (1024 KB = 1 MB)
+target_size=1024
 
-    # Get current file size in KB
+# Get current file size in KB
+filesize=$(du -k "$filename" | awk '{print $1}')
+
+# Loop until file size exceeds target
+until [[ $filesize -gt $target_size ]]; do
+    # Combine file with itself (double it)
+    cat "$filename" "$filename" > temp_file
+    mv temp_file "$filename"
+
+    # Get new file size
     filesize=$(du -k "$filename" | awk '{print $1}')
 
-    # Loop until file size exceeds target
-    until [[ $filesize -gt $target_size ]]; do
-        # Combine file with itself (double it)
-        cat "$filename" "$filename" > temp_file
-        mv temp_file "$filename"
+    # Output current size
+    echo "Filesize: $filesize"
+done
 
-        # Get new file size
-        filesize=$(du -k "$filename" | awk '{print $1}')
+echo "Final size: $filesize KB (exceeded $target_size KB)"
+```
 
-        # Output current size
-        echo "Filesize: $filesize"
-    done
+> **Screenshot 1**
+> - Show: Creating double_file.sh
+> - Expected: touch and chmod commands
 
-    echo "Final size: $filesize KB (exceeded $target_size KB)"
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                   |
-|                                                          |
-|  Show: Creating double_file.sh                           |
-|  Expected: touch and chmod commands                      |
-+----------------------------------------------------------+
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                   |
-|                                                          |
-|  Show: Script content in editor or via cat               |
-|  Expected: Complete script with until loop               |
-+----------------------------------------------------------+
+> **Screenshot 2**
+> - Show: Script content in editor or via cat
+> - Expected: Complete script with until loop
 
 Alternative - Create using cat heredoc:
 
-    cat > ~/double_file.sh << 'EOF'
-    #!/bin/bash
+```bash
+cat > ~/double_file.sh << 'EOF'
+#!/bin/bash
 
-    # Read filename from user
-    read -p "Enter filename: " filename
+# Read filename from user
+read -p "Enter filename: " filename
 
-    # Check if file exists
-    if [[ ! -f "$filename" ]]; then
-        echo "File not found: $filename"
-        exit 1
-    fi
+# Check if file exists
+if [[ ! -f "$filename" ]]; then
+    echo "File not found: $filename"
+    exit 1
+fi
 
-    # Target size in KB (1024 KB = 1 MB)
-    target_size=1024
+# Target size in KB (1024 KB = 1 MB)
+target_size=1024
 
-    # Get current file size in KB
+# Get current file size in KB
+filesize=$(du -k "$filename" | awk '{print $1}')
+
+# Loop until file size exceeds target
+until [[ $filesize -gt $target_size ]]; do
+    # Combine file with itself (double it)
+    cat "$filename" "$filename" > temp_file
+    mv temp_file "$filename"
+
+    # Get new file size
     filesize=$(du -k "$filename" | awk '{print $1}')
 
-    # Loop until file size exceeds target
-    until [[ $filesize -gt $target_size ]]; do
-        # Combine file with itself (double it)
-        cat "$filename" "$filename" > temp_file
-        mv temp_file "$filename"
+    # Output current size
+    echo "Filesize: $filesize"
+done
 
-        # Get new file size
-        filesize=$(du -k "$filename" | awk '{print $1}')
+echo "Final size: $filesize KB (exceeded $target_size KB)"
+EOF
 
-        # Output current size
-        echo "Filesize: $filesize"
-    done
+chmod +x ~/double_file.sh
+```
 
-    echo "Final size: $filesize KB (exceeded $target_size KB)"
-    EOF
-
-    chmod +x ~/double_file.sh
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                   |
-|                                                          |
-|  Show: cat double_file.sh output                         |
-|  Expected: Complete script displayed                     |
-+----------------------------------------------------------+
+> **Screenshot 3**
+> - Show: cat double_file.sh output
+> - Expected: Complete script displayed
 
 
-UNDERSTANDING THE SCRIPT LINE BY LINE
--------------------------------------
+## UNDERSTANDING THE SCRIPT LINE BY LINE
 
 Line: read -p "Enter filename: " filename
 - Prompts user to enter a filename
@@ -173,124 +170,129 @@ Line: done
 - Ends the until loop
 
 
-TASK 2: Create the test file
-----------------------------
+## TASK 2: Create the test file
 
 Create a 4KB random file:
 
-    head -c 4KB /dev/urandom > file.txt
+```bash
+head -c 4KB /dev/urandom > file.txt
+```
 
 Verify the file was created:
 
-    ls -la file.txt
+```bash
+ls -la file.txt
+```
 
 Expected output:
-    -rw-r--r-- 1 user user 4096 Jan 15 12:00 file.txt
+```
+-rw-r--r-- 1 user user 4096 Jan 15 12:00 file.txt
+```
 
 Check file size in KB:
 
-    du -k file.txt
+```bash
+du -k file.txt
+```
 
 Expected output:
-    4       file.txt
+```
+4       file.txt
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                   |
-|                                                          |
-|  Show: Creating file.txt with head command               |
-|  Expected: head -c 4KB /dev/urandom > file.txt           |
-+----------------------------------------------------------+
+> **Screenshot 4**
+> - Show: Creating file.txt with head command
+> - Expected: head -c 4KB /dev/urandom > file.txt
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                   |
-|                                                          |
-|  Show: Verifying file.txt size                           |
-|  Expected: ls -la and du -k output                       |
-+----------------------------------------------------------+
+> **Screenshot 5**
+> - Show: Verifying file.txt size
+> - Expected: ls -la and du -k output
 
 Understanding the command:
-    head -c 4KB     # Output first 4KB of data
-    /dev/urandom    # Source of random data
-    > file.txt      # Redirect to file
+
+```bash
+head -c 4KB     # Output first 4KB of data
+/dev/urandom    # Source of random data
+> file.txt      # Redirect to file
+```
 
 
-TASK 3: Execute the script
---------------------------
+## TASK 3: Execute the script
 
 Run the script:
 
-    ./double_file.sh
+```bash
+./double_file.sh
+```
 
 When prompted, enter the filename:
 
-    Enter filename: file.txt
+```
+Enter filename: file.txt
+```
 
 Expected output:
-    Filesize: 8
-    Filesize: 16
-    Filesize: 32
-    Filesize: 64
-    Filesize: 128
-    Filesize: 256
-    Filesize: 512
-    Filesize: 1024
-    Filesize: 2048
-    Final size: 2048 KB (exceeded 1024 KB)
+```
+Filesize: 8
+Filesize: 16
+Filesize: 32
+Filesize: 64
+Filesize: 128
+Filesize: 256
+Filesize: 512
+Filesize: 1024
+Filesize: 2048
+Final size: 2048 KB (exceeded 1024 KB)
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                   |
-|                                                          |
-|  Show: Running ./double_file.sh                          |
-|  Expected: Enter filename prompt                         |
-+----------------------------------------------------------+
+> **Screenshot 6**
+> - Show: Running ./double_file.sh
+> - Expected: Enter filename prompt
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                   |
-|                                                          |
-|  Show: Script output with file sizes                     |
-|  Expected: Doubling sizes until > 1024 KB                |
-+----------------------------------------------------------+
+> **Screenshot 7**
+> - Show: Script output with file sizes
+> - Expected: Doubling sizes until > 1024 KB
 
 Size progression breakdown:
 
-    Iteration 1:  4 KB  +  4 KB  =   8 KB
-    Iteration 2:  8 KB  +  8 KB  =  16 KB
-    Iteration 3: 16 KB  + 16 KB  =  32 KB
-    Iteration 4: 32 KB  + 32 KB  =  64 KB
-    Iteration 5: 64 KB  + 64 KB  = 128 KB
-    Iteration 6: 128 KB + 128 KB = 256 KB
-    Iteration 7: 256 KB + 256 KB = 512 KB
-    Iteration 8: 512 KB + 512 KB = 1024 KB
-    Iteration 9: 1024 KB + 1024 KB = 2048 KB (> 1024, loop ends)
+```
+Iteration 1:  4 KB  +  4 KB  =   8 KB
+Iteration 2:  8 KB  +  8 KB  =  16 KB
+Iteration 3: 16 KB  + 16 KB  =  32 KB
+Iteration 4: 32 KB  + 32 KB  =  64 KB
+Iteration 5: 64 KB  + 64 KB  = 128 KB
+Iteration 6: 128 KB + 128 KB = 256 KB
+Iteration 7: 256 KB + 256 KB = 512 KB
+Iteration 8: 512 KB + 512 KB = 1024 KB
+Iteration 9: 1024 KB + 1024 KB = 2048 KB (> 1024, loop ends)
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                   |
-|                                                          |
-|  Show: Size progression explanation                      |
-|  Expected: Doubling pattern visible                      |
-+----------------------------------------------------------+
+> **Screenshot 8**
+> - Show: Size progression explanation
+> - Expected: Doubling pattern visible
 
 Verify final file size:
 
-    du -k file.txt
+```bash
+du -k file.txt
+```
 
 Expected output:
-    2048    file.txt
+```
+2048    file.txt
+```
 
-    # Or approximately 2 MB
-    ls -lh file.txt
+```bash
+# Or approximately 2 MB
+ls -lh file.txt
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                   |
-|                                                          |
-|  Show: Final file size verification                      |
-|  Expected: ~2048 KB or 2 MB                              |
-+----------------------------------------------------------+
+> **Screenshot 9**
+> - Show: Final file size verification
+> - Expected: ~2048 KB or 2 MB
 
 
-================================================================================
-                        WHILE VS UNTIL COMPARISON
-================================================================================
+## WHILE VS UNTIL COMPARISON
 
 | Aspect     | while                    | until                    |
 |------------|--------------------------|--------------------------|
@@ -300,32 +302,30 @@ Expected output:
 
 Examples:
 
-    # Count up to 5 with WHILE
-    i=1
-    while [[ $i -le 5 ]]; do
-        echo $i
-        ((i++))
-    done
+```bash
+# Count up to 5 with WHILE
+i=1
+while [[ $i -le 5 ]]; do
+    echo $i
+    ((i++))
+done
 
-    # Count up to 5 with UNTIL
-    i=1
-    until [[ $i -gt 5 ]]; do
-        echo $i
-        ((i++))
-    done
+# Count up to 5 with UNTIL
+i=1
+until [[ $i -gt 5 ]]; do
+    echo $i
+    ((i++))
+done
 
-    # Both produce: 1 2 3 4 5
+# Both produce: 1 2 3 4 5
+```
 
 When to use which:
-    - while: "Keep going AS LONG AS this is true"
-    - until: "Keep going UNTIL this becomes true"
-
-================================================================================
+- while: "Keep going AS LONG AS this is true"
+- until: "Keep going UNTIL this becomes true"
 
 
-================================================================================
-                        FILE SIZE COMMANDS
-================================================================================
+## FILE SIZE COMMANDS
 
 | Command              | Description                    | Output        |
 |----------------------|--------------------------------|---------------|
@@ -339,21 +339,19 @@ When to use which:
 
 Examples:
 
-    # Get just the size number in KB
-    du -k file.txt | awk '{print $1}'
+```bash
+# Get just the size number in KB
+du -k file.txt | awk '{print $1}'
 
-    # Get size in bytes
-    stat -c %s file.txt
+# Get size in bytes
+stat -c %s file.txt
 
-    # Human readable size
-    ls -lh file.txt | awk '{print $5}'
+# Human readable size
+ls -lh file.txt | awk '{print $5}'
+```
 
-================================================================================
 
-
-================================================================================
-                        /dev/urandom AND /dev/random
-================================================================================
+## /dev/urandom AND /dev/random
 
 | Device       | Description                              |
 |--------------|------------------------------------------|
@@ -364,113 +362,126 @@ Examples:
 
 Creating files with specific sizes:
 
-    # 1 KB file with random data
-    head -c 1KB /dev/urandom > file.bin
+```bash
+# 1 KB file with random data
+head -c 1KB /dev/urandom > file.bin
 
-    # 1 MB file with zeros
-    head -c 1MB /dev/zero > zeros.bin
+# 1 MB file with zeros
+head -c 1MB /dev/zero > zeros.bin
 
-    # 100 bytes of random data
-    head -c 100 /dev/urandom > small.bin
+# 100 bytes of random data
+head -c 100 /dev/urandom > small.bin
 
-    # Using dd command
-    dd if=/dev/urandom of=file.bin bs=1K count=4
+# Using dd command
+dd if=/dev/urandom of=file.bin bs=1K count=4
+```
 
-================================================================================
 
-
-================================================================================
-                        ALTERNATIVE SCRIPT VERSIONS
-================================================================================
+## ALTERNATIVE SCRIPT VERSIONS
 
 Version with argument instead of input:
 
-    #!/bin/bash
+```bash
+#!/bin/bash
 
-    filename=$1
-    target_size=1024
+filename=$1
+target_size=1024
 
-    if [[ ! -f "$filename" ]]; then
-        echo "Usage: $0 <filename>"
-        exit 1
-    fi
+if [[ ! -f "$filename" ]]; then
+    echo "Usage: $0 <filename>"
+    exit 1
+fi
 
+filesize=$(du -k "$filename" | awk '{print $1}')
+
+until [[ $filesize -gt $target_size ]]; do
+    cat "$filename" "$filename" > temp_file
+    mv temp_file "$filename"
     filesize=$(du -k "$filename" | awk '{print $1}')
-
-    until [[ $filesize -gt $target_size ]]; do
-        cat "$filename" "$filename" > temp_file
-        mv temp_file "$filename"
-        filesize=$(du -k "$filename" | awk '{print $1}')
-        echo "Filesize: $filesize"
-    done
+    echo "Filesize: $filesize"
+done
+```
 
 Usage:
 
-    ./double_file.sh file.txt
+```bash
+./double_file.sh file.txt
+```
 
 Version with configurable target size:
 
-    #!/bin/bash
+```bash
+#!/bin/bash
 
-    read -p "Enter filename: " filename
-    read -p "Enter target size (KB): " target_size
+read -p "Enter filename: " filename
+read -p "Enter target size (KB): " target_size
 
+filesize=$(du -k "$filename" | awk '{print $1}')
+
+until [[ $filesize -gt $target_size ]]; do
+    cat "$filename" "$filename" > temp_file
+    mv temp_file "$filename"
     filesize=$(du -k "$filename" | awk '{print $1}')
+    echo "Filesize: $filesize KB"
+done
+```
 
-    until [[ $filesize -gt $target_size ]]; do
-        cat "$filename" "$filename" > temp_file
-        mv temp_file "$filename"
-        filesize=$(du -k "$filename" | awk '{print $1}')
-        echo "Filesize: $filesize KB"
-    done
-
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 10 <<<                  |
-|                                                          |
-|  Show: Alternative script version                        |
-|  Expected: Different approach, same result               |
-+----------------------------------------------------------+
+> **Screenshot 10**
+> - Show: Alternative script version
+> - Expected: Different approach, same result
 
 
-================================================================================
-                             TROUBLESHOOTING
-================================================================================
+## TROUBLESHOOTING
 
 Problem: "No such file or directory"
 Solution: Ensure file exists before running
-    ls -la file.txt
-    head -c 4KB /dev/urandom > file.txt
+
+```bash
+ls -la file.txt
+head -c 4KB /dev/urandom > file.txt
+```
 
 Problem: "Permission denied"
 Solution: Make script executable
-    chmod +x double_file.sh
+
+```bash
+chmod +x double_file.sh
+```
 
 Problem: File size not updating
 Solution: Ensure temp file logic is correct
-    cat file file > temp    # Write to temp first
-    mv temp file            # Then rename
+
+```bash
+cat file file > temp    # Write to temp first
+mv temp file            # Then rename
+```
 
 Problem: Infinite loop
 Solution: Check condition logic
-    until [[ $size -gt 1024 ]]    # > not >=
-    # Make sure filesize is actually increasing
+
+```bash
+until [[ $size -gt 1024 ]]    # > not >=
+# Make sure filesize is actually increasing
+```
 
 Problem: du shows different values
 Solution: du reports disk blocks, actual size may vary
-    # Use stat for exact byte count
-    stat -c %s filename
+
+```bash
+# Use stat for exact byte count
+stat -c %s filename
+```
 
 Problem: /dev/urandom not found (Windows/WSL)
 Solution: Use alternative method
-    # In Windows Git Bash:
-    dd if=/dev/urandom of=file.txt bs=1024 count=4
 
-================================================================================
+```bash
+# In Windows Git Bash:
+dd if=/dev/urandom of=file.txt bs=1024 count=4
+```
 
 
-================================================================================
-                              SELF-REVIEW CHECKLIST
-================================================================================
+## SELF-REVIEW CHECKLIST
 
 [ ] Script created and executable
 [ ] Script reads filename from user input
@@ -482,6 +493,3 @@ Solution: Use alternative method
 [ ] Test file created with head -c 4KB /dev/urandom
 [ ] Script outputs correct size progression
 [ ] Understand difference between while and until
-
-================================================================================
-

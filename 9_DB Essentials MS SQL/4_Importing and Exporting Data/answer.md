@@ -4,9 +4,9 @@ This guide covers various methods of importing and exporting data in
 SQL Server, including CSV import, bcp utility, BULK INSERT, OPENROWSET,
 and Data Migration Assistant.
 
-================================================================================
+---
                     OVERVIEW: DATA IMPORT/EXPORT METHODS
-================================================================================
+---
 
 | Method | Description |
 |--------|-------------|
@@ -16,9 +16,9 @@ and Data Migration Assistant.
 | OPENROWSET | T-SQL function. Can SELECT INTO to create table. |
 | DMA | GUI tool for database migration and assessment. |
 
-================================================================================
+---
                     PART 1: CREATE DATABASE ON INSTANCE1
-================================================================================
+---
 
 STEP 1.1: CONNECT TO DEFAULT INSTANCE (INSTANCE1)
 -------------------------------------------------
@@ -44,9 +44,9 @@ STEP 1.2: CREATE LAB6 DATABASE
     WHERE name = 'Lab6';
     GO
 
-================================================================================
+---
                     PART 2: GENERATE CSV FILE WITH POWERSHELL
-================================================================================
+---
 
 STEP 2.1: POWERSHELL SCRIPT TO GENERATE CSV
 -------------------------------------------
@@ -168,9 +168,9 @@ Expected CSV content:
     "2","Jane","Johnson","jane.johnson2@company.com","555-234-5678","HR","Chicago","2019-08-20","65000.00","True"
     ...
 
-================================================================================
+---
                     PART 3: IMPORT CSV USING IMPORT FLAT FILE WIZARD
-================================================================================
+---
 
 STEP 3.1: OPEN IMPORT FLAT FILE WIZARD
 --------------------------------------
@@ -242,9 +242,9 @@ STEP 3.6: VERIFY IMPORTED DATA
     EXEC sp_help 'dbo.Employees';
     GO
 
-================================================================================
+---
                     PART 4: CREATE DATABASE ON INSTANCE2
-================================================================================
+---
 
 STEP 4.1: CONNECT TO NAMED INSTANCE (INSTANCE2)
 -----------------------------------------------
@@ -272,9 +272,9 @@ STEP 4.2: CREATE LAB6 DATABASE ON INSTANCE2
     WHERE name = 'Lab6';
     GO
 
-================================================================================
+---
                     PART 5: COPY TABLE USING BCP UTILITY
-================================================================================
+---
 
 BCP (Bulk Copy Program) is a command-line utility for bulk data transfer.
 
@@ -378,9 +378,9 @@ STEP 5.6: VERIFY DATA ON INSTANCE2
     SELECT TOP 10 * FROM dbo.Employees;
     GO
 
-================================================================================
+---
                     PART 6: IMPORT USING BULK INSERT
-================================================================================
+---
 
 BULK INSERT is a T-SQL statement for importing data from a file.
 The destination table MUST exist before running BULK INSERT.
@@ -485,9 +485,9 @@ STEP 6.5: VERIFY BULK INSERT DATA
     SELECT TOP 10 * FROM dbo.Employees_BulkInsert;
     GO
 
-================================================================================
+---
                     PART 7: IMPORT USING OPENROWSET
-================================================================================
+---
 
 OPENROWSET provides ad-hoc remote data access. Unlike BULK INSERT,
 OPENROWSET can be used with SELECT INTO to CREATE and INSERT in one statement.
@@ -642,9 +642,9 @@ STEP 7.7: VERIFY OPENROWSET DATA
     ORDER BY t.name;
     GO
 
-================================================================================
+---
                     KEY DIFFERENCES: BULK INSERT vs OPENROWSET
-================================================================================
+---
 
 | Feature | BULK INSERT | OPENROWSET |
 |---------|-------------|------------|
@@ -656,9 +656,9 @@ STEP 7.7: VERIFY OPENROWSET DATA
 | Transactions | Can be in transaction | Each is its own query |
 | Triggers | FIRE_TRIGGERS option | Triggers always fire |
 
-================================================================================
+---
                     PART 8: MIGRATE DATABASE USING DATA MIGRATION ASSISTANT
-================================================================================
+---
 
 Data Migration Assistant (DMA) is a GUI tool for assessing and migrating
 SQL Server databases.
@@ -771,9 +771,9 @@ Connect to Instance1 and verify:
     SELECT TOP 5 * FROM dbo.Employees_OpenRowset;
     GO
 
-================================================================================
+---
                     ALTERNATIVE: SCRIPT-BASED MIGRATION
-================================================================================
+---
 
 If DMA is not available, use these T-SQL alternatives:
 
@@ -832,9 +832,9 @@ OPTION 2: BACKUP AND RESTORE
         REPLACE;
     GO
 
-================================================================================
+---
                     SUMMARY
-================================================================================
+---
 
 Final Database Structure:
 ------------------------

@@ -4,84 +4,81 @@ This guide covers creating, writing, and executing bash scripts with proper
 shebang declarations and file permissions.
 
 
-TASK 1: Open a terminal
------------------------
+## TASK 1: Open a terminal
 
 Open your preferred terminal application.
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                   |
-|                                                          |
-|  Show: Terminal window opened                            |
-|  Expected: Command prompt visible                        |
-+----------------------------------------------------------+
+> **Screenshot 1**
+> - Show: Terminal window opened
+> - Expected: Command prompt visible
 
 
-TASK 2: Create script.sh in home directory
-------------------------------------------
+## TASK 2: Create script.sh in home directory
 
 Navigate to home directory and create script.sh:
 
-    cd ~
-    touch script.sh
+```bash
+cd ~
+touch script.sh
 
-    # Verify file was created
-    ls -la script.sh
+# Verify file was created
+ls -la script.sh
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                   |
-|                                                          |
-|  Show: Creating script.sh file                           |
-|  Expected: File created in home directory                |
-+----------------------------------------------------------+
+> **Screenshot 2**
+> - Show: Creating script.sh file
+> - Expected: File created in home directory
 
 
-TASK 3: Make file executable and add shebang
---------------------------------------------
+## TASK 3: Make file executable and add shebang
 
 Step 1: Make the file executable
 
-    chmod +x script.sh
+```bash
+chmod +x script.sh
 
-    # Verify permissions
-    ls -la script.sh
+# Verify permissions
+ls -la script.sh
+```
 
 Expected output:
-    -rwxr-xr-x 1 user user 0 Feb 10 12:00 script.sh
+```
+-rwxr-xr-x 1 user user 0 Feb 10 12:00 script.sh
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                   |
-|                                                          |
-|  Show: chmod +x and ls -la output                        |
-|  Expected: Execute permission (x) visible                |
-+----------------------------------------------------------+
+> **Screenshot 3**
+> - Show: chmod +x and ls -la output
+> - Expected: Execute permission (x) visible
 
 Step 2: Add the shebang line
 
 Open the file with an editor and add the shebang as the first line:
 
-    vim script.sh
-    # or
-    nano script.sh
+```bash
+vim script.sh
+# or
+nano script.sh
+```
 
 Add this as the FIRST line:
 
-    #!/bin/bash
+```bash
+#!/bin/bash
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                   |
-|                                                          |
-|  Show: Adding shebang in editor                          |
-|  Expected: #!/bin/bash as first line                     |
-+----------------------------------------------------------+
+> **Screenshot 4**
+> - Show: Adding shebang in editor
+> - Expected: #!/bin/bash as first line
 
 Understanding the Shebang (#!):
 
-    #!/bin/bash      # Use bash interpreter
-    #!/bin/sh        # Use sh (Bourne shell)
-    #!/usr/bin/env bash  # More portable (finds bash in PATH)
-    #!/usr/bin/python3   # For Python scripts
-    #!/usr/bin/perl      # For Perl scripts
+```bash
+#!/bin/bash      # Use bash interpreter
+#!/bin/sh        # Use sh (Bourne shell)
+#!/usr/bin/env bash  # More portable (finds bash in PATH)
+#!/usr/bin/python3   # For Python scripts
+#!/usr/bin/perl      # For Perl scripts
+```
 
 Why use shebang?
 - Tells the system which interpreter to use
@@ -89,242 +86,232 @@ Why use shebang?
 - Without it, script runs in current shell (may cause issues)
 
 
-TASK 4: Write the script
-------------------------
+## TASK 4: Write the script
 
 Edit script.sh and add the following content:
 
 Method 1 - Using vim:
 
-    vim script.sh
+```bash
+vim script.sh
+```
 
 Press 'i' to enter insert mode, then type:
 
-    #!/bin/bash
+```bash
+#!/bin/bash
 
-    # Write "Creating folder" to console
-    echo "Creating folder"
+# Write "Creating folder" to console
+echo "Creating folder"
 
-    # Create a folder called Name_Surname
-    mkdir Name_Surname
+# Create a folder called Name_Surname
+mkdir Name_Surname
 
-    # List folders in current directory
-    ls
+# List folders in current directory
+ls
 
-    # Write "Creating files" to console
-    echo "Creating files"
+# Write "Creating files" to console
+echo "Creating files"
 
-    # Create two files called Name and Surname inside Name_Surname folder
-    touch Name_Surname/Name Name_Surname/Surname
+# Create two files called Name and Surname inside Name_Surname folder
+touch Name_Surname/Name Name_Surname/Surname
 
-    # List contents of Name_Surname folder
-    ls Name_Surname
+# List contents of Name_Surname folder
+ls Name_Surname
+```
 
 Press Esc, then type :wq to save and quit.
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                   |
-|                                                          |
-|  Show: Complete script in editor                         |
-|  Expected: All commands visible with shebang             |
-+----------------------------------------------------------+
+> **Screenshot 5**
+> - Show: Complete script in editor
+> - Expected: All commands visible with shebang
 
 Method 2 - Using cat with heredoc:
 
-    cat > script.sh << 'EOF'
-    #!/bin/bash
+```bash
+cat > script.sh << 'EOF'
+#!/bin/bash
 
-    # Write "Creating folder" to console
-    echo "Creating folder"
+# Write "Creating folder" to console
+echo "Creating folder"
 
-    # Create a folder called Name_Surname
-    mkdir Name_Surname
+# Create a folder called Name_Surname
+mkdir Name_Surname
 
-    # List folders in current directory
-    ls
+# List folders in current directory
+ls
 
-    # Write "Creating files" to console
-    echo "Creating files"
+# Write "Creating files" to console
+echo "Creating files"
 
-    # Create two files called Name and Surname inside Name_Surname folder
-    touch Name_Surname/Name Name_Surname/Surname
+# Create two files called Name and Surname inside Name_Surname folder
+touch Name_Surname/Name Name_Surname/Surname
 
-    # List contents of Name_Surname folder
-    ls Name_Surname
-    EOF
+# List contents of Name_Surname folder
+ls Name_Surname
+EOF
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                   |
-|                                                          |
-|  Show: Creating script with heredoc                      |
-|  Expected: Script created via command line               |
-+----------------------------------------------------------+
+> **Screenshot 6**
+> - Show: Creating script with heredoc
+> - Expected: Script created via command line
 
 Verify the script content:
 
-    cat script.sh
+```bash
+cat script.sh
+```
 
 Expected output:
-    #!/bin/bash
+```
+#!/bin/bash
 
-    # Write "Creating folder" to console
-    echo "Creating folder"
+# Write "Creating folder" to console
+echo "Creating folder"
 
-    # Create a folder called Name_Surname
-    mkdir Name_Surname
+# Create a folder called Name_Surname
+mkdir Name_Surname
 
-    # List folders in current directory
-    ls
+# List folders in current directory
+ls
 
-    # Write "Creating files" to console
-    echo "Creating files"
+# Write "Creating files" to console
+echo "Creating files"
 
-    # Create two files called Name and Surname inside Name_Surname folder
-    touch Name_Surname/Name Name_Surname/Surname
+# Create two files called Name and Surname inside Name_Surname folder
+touch Name_Surname/Name Name_Surname/Surname
 
-    # List contents of Name_Surname folder
-    ls Name_Surname
+# List contents of Name_Surname folder
+ls Name_Surname
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                   |
-|                                                          |
-|  Show: cat script.sh output                              |
-|  Expected: Complete script content displayed             |
-+----------------------------------------------------------+
+> **Screenshot 7**
+> - Show: cat script.sh output
+> - Expected: Complete script content displayed
 
 
-TASK 5: Execute the script
---------------------------
+## TASK 5: Execute the script
 
 Run the script:
 
-    ./script.sh
+```bash
+./script.sh
 
-    # Or using full path:
-    ~/script.sh
+# Or using full path:
+~/script.sh
 
-    # Or using bash:
-    bash script.sh
+# Or using bash:
+bash script.sh
+```
 
 Expected output:
-    Creating folder
-    Name_Surname  script.sh  (and other files/folders in home)
-    Creating files
-    Name  Surname
+```
+Creating folder
+Name_Surname  script.sh  (and other files/folders in home)
+Creating files
+Name  Surname
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                   |
-|                                                          |
-|  Show: Script execution with ./script.sh                 |
-|  Expected: All output messages and folder listings       |
-+----------------------------------------------------------+
+> **Screenshot 8**
+> - Show: Script execution with ./script.sh
+> - Expected: All output messages and folder listings
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                   |
-|                                                          |
-|  Show: Output showing "Creating folder" and ls output    |
-|  Expected: Name_Surname visible in directory listing     |
-+----------------------------------------------------------+
+> **Screenshot 9**
+> - Show: Output showing "Creating folder" and ls output
+> - Expected: Name_Surname visible in directory listing
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 10 <<<                  |
-|                                                          |
-|  Show: Output showing "Creating files" and ls output     |
-|  Expected: Name and Surname files listed                 |
-+----------------------------------------------------------+
+> **Screenshot 10**
+> - Show: Output showing "Creating files" and ls output
+> - Expected: Name and Surname files listed
 
 
-VERIFICATION
-------------
+## VERIFICATION
 
 After running the script, verify:
 
-    # Check Name_Surname folder exists
-    ls -la ~/Name_Surname
+```bash
+# Check Name_Surname folder exists
+ls -la ~/Name_Surname
+```
 
 Expected output:
-    total 0
-    drwxr-xr-x 2 user user 4096 Feb 10 12:00 .
-    drwxr-xr-x 5 user user 4096 Feb 10 12:00 ..
-    -rw-r--r-- 1 user user    0 Feb 10 12:00 Name
-    -rw-r--r-- 1 user user    0 Feb 10 12:00 Surname
+```
+total 0
+drwxr-xr-x 2 user user 4096 Feb 10 12:00 .
+drwxr-xr-x 5 user user 4096 Feb 10 12:00 ..
+-rw-r--r-- 1 user user    0 Feb 10 12:00 Name
+-rw-r--r-- 1 user user    0 Feb 10 12:00 Surname
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 11 <<<                  |
-|                                                          |
-|  Show: ls -la ~/Name_Surname output                      |
-|  Expected: Name and Surname files present                |
-+----------------------------------------------------------+
+> **Screenshot 11**
+> - Show: ls -la ~/Name_Surname output
+> - Expected: Name and Surname files present
 
 
-RUNNING THE SCRIPT AGAIN
-------------------------
+## RUNNING THE SCRIPT AGAIN
 
 If you run the script again, mkdir will fail because the folder exists:
 
-    ./script.sh
-    mkdir: cannot create directory 'Name_Surname': File exists
+```bash
+./script.sh
+mkdir: cannot create directory 'Name_Surname': File exists
+```
 
 To handle this, you can modify the script:
 
-    # Create folder only if it doesn't exist
-    mkdir -p Name_Surname
+```bash
+# Create folder only if it doesn't exist
+mkdir -p Name_Surname
 
-    # Or add error handling
-    if [ ! -d "Name_Surname" ]; then
-        mkdir Name_Surname
-    fi
+# Or add error handling
+if [ ! -d "Name_Surname" ]; then
+    mkdir Name_Surname
+fi
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 12 <<<                  |
-|                                                          |
-|  Show: Running script twice (error message)              |
-|  Expected: "File exists" error from mkdir                |
-+----------------------------------------------------------+
+> **Screenshot 12**
+> - Show: Running script twice (error message)
+> - Expected: "File exists" error from mkdir
 
 
-IMPROVED SCRIPT VERSION
------------------------
+## IMPROVED SCRIPT VERSION
 
 Here's an improved version with better practices:
 
-    #!/bin/bash
-    #
-    # Script: script.sh
-    # Description: Creates a folder and files
-    # Author: Your Name
-    # Date: 2026-02-10
+```bash
+#!/bin/bash
+#
+# Script: script.sh
+# Description: Creates a folder and files
+# Author: Your Name
+# Date: 2026-02-10
 
-    # Variables
-    FOLDER_NAME="Name_Surname"
+# Variables
+FOLDER_NAME="Name_Surname"
 
-    # Create folder
-    echo "Creating folder"
-    mkdir -p "$FOLDER_NAME"
+# Create folder
+echo "Creating folder"
+mkdir -p "$FOLDER_NAME"
 
-    # List current directory
-    ls
+# List current directory
+ls
 
-    # Create files
-    echo "Creating files"
-    touch "$FOLDER_NAME/Name" "$FOLDER_NAME/Surname"
+# Create files
+echo "Creating files"
+touch "$FOLDER_NAME/Name" "$FOLDER_NAME/Surname"
 
-    # List folder contents
-    ls "$FOLDER_NAME"
+# List folder contents
+ls "$FOLDER_NAME"
 
-    echo "Done!"
+echo "Done!"
+```
 
-+----------------------------------------------------------+
-|                    >>> SCREENSHOT 13 <<<                  |
-|                                                          |
-|  Show: Improved script with variables                    |
-|  Expected: More professional script structure            |
-+----------------------------------------------------------+
+> **Screenshot 13**
+> - Show: Improved script with variables
+> - Expected: More professional script structure
 
 
-================================================================================
-                           SHEBANG REFERENCE
-================================================================================
+## SHEBANG REFERENCE
 
 | Shebang                  | Interpreter                               |
 |--------------------------|-------------------------------------------|
@@ -339,48 +326,42 @@ Here's an improved version with better practices:
 Best Practice: Use #!/usr/bin/env bash for portability across systems
 where bash might be in different locations.
 
-================================================================================
 
-
-================================================================================
-                        SCRIPT STRUCTURE BEST PRACTICES
-================================================================================
+## SCRIPT STRUCTURE BEST PRACTICES
 
 A well-structured script typically includes:
 
-    #!/bin/bash
-    #
-    # Script Name: myscript.sh
-    # Description: Brief description of what the script does
-    # Author: Your Name
-    # Date: YYYY-MM-DD
-    # Version: 1.0
-    #
-    # Usage: ./myscript.sh [options]
-    #
+```bash
+#!/bin/bash
+#
+# Script Name: myscript.sh
+# Description: Brief description of what the script does
+# Author: Your Name
+# Date: YYYY-MM-DD
+# Version: 1.0
+#
+# Usage: ./myscript.sh [options]
+#
 
-    # Exit on error
-    set -e
+# Exit on error
+set -e
 
-    # Variables
-    VARIABLE_NAME="value"
+# Variables
+VARIABLE_NAME="value"
 
-    # Functions
-    function_name() {
-        # Function code
-    }
+# Functions
+function_name() {
+    # Function code
+}
 
-    # Main script
-    echo "Starting script..."
-    # ... commands ...
-    echo "Script completed!"
+# Main script
+echo "Starting script..."
+# ... commands ...
+echo "Script completed!"
+```
 
-================================================================================
 
-
-================================================================================
-                          COMMON SCRIPT COMMANDS
-================================================================================
+## COMMON SCRIPT COMMANDS
 
 | Command                    | Description                              |
 |----------------------------|------------------------------------------|
@@ -397,25 +378,30 @@ A well-structured script typically includes:
 | rm file                    | Remove file                              |
 | cat file                   | Display file contents                    |
 
-================================================================================
 
-
-================================================================================
-                           SCRIPT COMMENTS
-================================================================================
+## SCRIPT COMMENTS
 
 Single-line comment:
-    # This is a comment
+
+```bash
+# This is a comment
+```
 
 Multi-line comments (using heredoc):
-    : '
-    This is a
-    multi-line
-    comment
-    '
+
+```bash
+: '
+This is a
+multi-line
+comment
+'
+```
 
 Inline comment:
-    echo "Hello"  # This prints Hello
+
+```bash
+echo "Hello"  # This prints Hello
+```
 
 Best Practices:
 - Comment complex logic
@@ -423,12 +409,8 @@ Best Practices:
 - Keep comments up to date
 - Use meaningful variable/function names
 
-================================================================================
 
-
-================================================================================
-                             TROUBLESHOOTING
-================================================================================
+## TROUBLESHOOTING
 
 Problem: "Permission denied" when running ./script.sh
 Solutions:
@@ -456,44 +438,40 @@ Solutions:
 - Verify correct quoting
 - Debug with: bash -x script.sh
 
-================================================================================
 
-
-================================================================================
-                           DEBUGGING SCRIPTS
-================================================================================
+## DEBUGGING SCRIPTS
 
 Debug options:
 
-    # Run with debug output
-    bash -x script.sh
+```bash
+# Run with debug output
+bash -x script.sh
 
-    # Add at top of script for debug mode
-    set -x    # Enable debug
-    set +x    # Disable debug
+# Add at top of script for debug mode
+set -x    # Enable debug
+set +x    # Disable debug
 
-    # Exit immediately on error
-    set -e
+# Exit immediately on error
+set -e
 
-    # Treat unset variables as error
-    set -u
+# Treat unset variables as error
+set -u
 
-    # Common combination
-    set -euo pipefail
+# Common combination
+set -euo pipefail
+```
 
 Debug output example:
-    + echo 'Creating folder'
-    Creating folder
-    + mkdir Name_Surname
-    + ls
-    Name_Surname  script.sh
+```
++ echo 'Creating folder'
+Creating folder
++ mkdir Name_Surname
++ ls
+Name_Surname  script.sh
+```
 
-================================================================================
 
-
-================================================================================
-                              SELF-REVIEW CHECKLIST
-================================================================================
+## SELF-REVIEW CHECKLIST
 
 [ ] Terminal opened successfully
 [ ] script.sh created in home directory
@@ -510,6 +488,3 @@ Debug output example:
 [ ] Output shows directory listing with Name_Surname
 [ ] Output shows "Creating files"
 [ ] Output shows Name and Surname files
-
-================================================================================
-

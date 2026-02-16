@@ -7,14 +7,11 @@ Methods:
 - Activities > Search "Terminal"
 - Right-click on Desktop > Open Terminal
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 1 <<<                          |
-|                                                                  |
-|  Terminal window showing:                                        |
-|  - Empty terminal with command prompt                            |
-|  - Username and hostname visible (user@hostname:~$)              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 1**
+>
+> Terminal window showing:
+> - Empty terminal with command prompt
+> - Username and hostname visible (user@hostname:~$)
 
 
 ## TASK 2: Create folders empty, full, final in home directory
@@ -42,19 +39,16 @@ drwxr-xr-x. 2 Name_Surname Name_Surname 4096 Jan 15 10:00 final
 drwxr-xr-x. 2 Name_Surname Name_Surname 4096 Jan 15 10:00 full
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 2 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ cd ~                                                        |
-|  - $ mkdir empty full final                                      |
-|  - $ ls -la                                                      |
-|  - Output with all three directories listed:                     |
-|    drwxr-xr-x ... empty                                          |
-|    drwxr-xr-x ... final                                          |
-|    drwxr-xr-x ... full                                           |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 2**
+>
+> Terminal showing:
+> - $ cd ~
+> - $ mkdir empty full final
+> - $ ls -la
+> - Output with all three directories listed:
+>   drwxr-xr-x ... empty
+>   drwxr-xr-x ... final
+>   drwxr-xr-x ... full
 
 
 ## TASK 3: Create file file1 in full directory
@@ -74,16 +68,13 @@ Output:
 -rw-r--r--. 1 Name_Surname Name_Surname 0 Jan 15 10:01 file1
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 3 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ touch ~/full/file1                                          |
-|  - $ ls -la ~/full/                                              |
-|  - Output showing file1:                                         |
-|    -rw-r--r-- ... 0 ... file1                                    |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 3**
+>
+> Terminal showing:
+> - $ touch ~/full/file1
+> - $ ls -la ~/full/
+> - Output showing file1:
+>   -rw-r--r-- ... 0 ... file1
 
 
 ## TASK 4: Copy empty folder to final folder
@@ -114,18 +105,15 @@ Current structure:
 ~/final/empty  (copy)
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 4 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ cp -r ~/empty ~/final/                                      |
-|  - $ ls -la ~/final/                                             |
-|  - Output showing empty folder inside final:                     |
-|    drwxr-xr-x ... empty                                          |
-|  - $ ls -la ~/                                                   |
-|  - Original empty folder still exists in home directory          |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 4**
+>
+> Terminal showing:
+> - $ cp -r ~/empty ~/final/
+> - $ ls -la ~/final/
+> - Output showing empty folder inside final:
+>   drwxr-xr-x ... empty
+> - $ ls -la ~/
+> - Original empty folder still exists in home directory
 
 
 ## TASK 5: Move empty folder to final directory under new name empty_moved
@@ -163,19 +151,16 @@ Current structure:
 ~/final/empty_moved  (moved and renamed)
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 5 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ mv ~/empty ~/final/empty_moved                              |
-|  - $ ls -la ~/final/                                             |
-|  - Both directories visible:                                     |
-|    drwxr-xr-x ... empty                                          |
-|    drwxr-xr-x ... empty_moved                                    |
-|  - $ ls -la ~/ | grep empty                                      |
-|  - (no output - empty folder moved from home)                    |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 5**
+>
+> Terminal showing:
+> - $ mv ~/empty ~/final/empty_moved
+> - $ ls -la ~/final/
+> - Both directories visible:
+>   drwxr-xr-x ... empty
+>   drwxr-xr-x ... empty_moved
+> - $ ls -la ~/ | grep empty
+> - (no output - empty folder moved from home)
 
 
 ## TASK 6: Create nested folder inside full directory
@@ -203,17 +188,14 @@ Current structure of ~/full:
 └── nested/
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 6 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ mkdir ~/full/nested                                         |
-|  - $ ls -la ~/full/                                              |
-|  - Output showing file1 and nested directory:                    |
-|    -rw-r--r-- ... file1                                          |
-|    drwxr-xr-x ... nested                                         |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 6**
+>
+> Terminal showing:
+> - $ mkdir ~/full/nested
+> - $ ls -la ~/full/
+> - Output showing file1 and nested directory:
+>   -rw-r--r-- ... file1
+>   drwxr-xr-x ... nested
 
 
 ## TASK 7: Copy all contents of full directory to final folder
@@ -249,19 +231,16 @@ Current structure of ~/final:
 └── nested/        (copied from full)
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 7 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ cp -r ~/full/* ~/final/                                     |
-|  - $ ls -la ~/final/                                             |
-|  - Output showing all items:                                     |
-|    drwxr-xr-x ... empty                                          |
-|    drwxr-xr-x ... empty_moved                                    |
-|    -rw-r--r-- ... file1        <-- copied from full              |
-|    drwxr-xr-x ... nested       <-- copied from full              |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 7**
+>
+> Terminal showing:
+> - $ cp -r ~/full/* ~/final/
+> - $ ls -la ~/final/
+> - Output showing all items:
+>   drwxr-xr-x ... empty
+>   drwxr-xr-x ... empty_moved
+>   -rw-r--r-- ... file1        <-- copied from full
+>   drwxr-xr-x ... nested       <-- copied from full
 
 
 ## TASK 8: Copy full directory to final folder
@@ -296,24 +275,21 @@ Output (~/final/full/):
 drwxr-xr-x. 2 Name_Surname Name_Surname 4096 Jan 15 10:05 nested
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 8 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ cp -r ~/full ~/final/                                       |
-|  - $ ls -la ~/final/                                             |
-|  - Output showing full directory added:                          |
-|    drwxr-xr-x ... empty                                          |
-|    drwxr-xr-x ... empty_moved                                    |
-|    -rw-r--r-- ... file1                                          |
-|    drwxr-xr-x ... full        <-- entire directory copied        |
-|    drwxr-xr-x ... nested                                         |
-|  - $ ls -la ~/final/full/                                        |
-|  - Contents of copied full directory:                            |
-|    -rw-r--r-- ... file1                                          |
-|    drwxr-xr-x ... nested                                         |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 8**
+>
+> Terminal showing:
+> - $ cp -r ~/full ~/final/
+> - $ ls -la ~/final/
+> - Output showing full directory added:
+>   drwxr-xr-x ... empty
+>   drwxr-xr-x ... empty_moved
+>   -rw-r--r-- ... file1
+>   drwxr-xr-x ... full        <-- entire directory copied
+>   drwxr-xr-x ... nested
+> - $ ls -la ~/final/full/
+> - Contents of copied full directory:
+>   -rw-r--r-- ... file1
+>   drwxr-xr-x ... nested
 
 
 ## TASK 9: Move full directory to final folder under new name full_moved
@@ -348,23 +324,20 @@ Output (home - no full folder):
 (no output)
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 9 <<<                          |
-|                                                                  |
-|  Terminal showing:                                               |
-|  - $ mv ~/full ~/final/full_moved                                |
-|  - $ ls -la ~/final/                                             |
-|  - Output showing full_moved added:                              |
-|    drwxr-xr-x ... empty                                          |
-|    drwxr-xr-x ... empty_moved                                    |
-|    -rw-r--r-- ... file1                                          |
-|    drwxr-xr-x ... full                                           |
-|    drwxr-xr-x ... full_moved  <-- moved and renamed              |
-|    drwxr-xr-x ... nested                                         |
-|  - $ ls -la ~/ | grep full                                       |
-|  - (no output - original full folder moved)                      |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 9**
+>
+> Terminal showing:
+> - $ mv ~/full ~/final/full_moved
+> - $ ls -la ~/final/
+> - Output showing full_moved added:
+>   drwxr-xr-x ... empty
+>   drwxr-xr-x ... empty_moved
+>   -rw-r--r-- ... file1
+>   drwxr-xr-x ... full
+>   drwxr-xr-x ... full_moved  <-- moved and renamed
+>   drwxr-xr-x ... nested
+> - $ ls -la ~/ | grep full
+> - (no output - original full folder moved)
 
 
 ## SELF-REVIEW: Install tree and verify structure
@@ -404,27 +377,24 @@ Expected Output:
     └── nested
 ```
 
-+------------------------------------------------------------------+
-|                    >>> SCREENSHOT 10 <<<                         |
-|                                                                  |
-|  Terminal showing tree command output:                           |
-|  - $ tree ~                                                      |
-|  - /home/Name_Surname                                            |
-|    └── final                                                     |
-|        ├── empty                                                 |
-|        ├── empty_moved                                           |
-|        ├── file1                                                 |
-|        ├── full                                                  |
-|        │   ├── file1                                             |
-|        │   └── nested                                            |
-|        ├── full_moved                                            |
-|        │   ├── file1                                             |
-|        │   └── nested                                            |
-|        └── nested                                                |
-|                                                                  |
-|  This shows the complete directory structure                     |
-|                                                                  |
-+------------------------------------------------------------------+
+> **Screenshot 10**
+>
+> Terminal showing tree command output:
+> - $ tree ~
+> - /home/Name_Surname
+>   - final
+>     - empty
+>     - empty_moved
+>     - file1
+>     - full
+>       - file1
+>       - nested
+>     - full_moved
+>       - file1
+>       - nested
+>     - nested
+>
+> This shows the complete directory structure
 
 
 ## COMPLETE COMMAND SEQUENCE
