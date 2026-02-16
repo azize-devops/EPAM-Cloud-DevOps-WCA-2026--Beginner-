@@ -213,7 +213,7 @@ bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  s
 **Screenshot 7:** cd / and pwd showing root (/)
 
 <p align="center">
-  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/2_Basic%20Shell%20Usage/cd%20-%20and%20pwd%20showing%20root%20(-).png" alt="cd - and pwd showing root" width="900">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/2_Basic%20Shell%20Usage/cd%20-%20and%20pwd%20showing%20root%20(-).png" alt="cd / and pwd showing root (/)" width="900">
 </p>
 
 
@@ -386,10 +386,10 @@ Explanation:
 - -f = force (no confirmation prompts)
 - Be VERY careful with rm -rf, especially as root!
 
-**Screenshot 11:** rm -rf ~/homework and verification folder is gone
+**Screenshot 11:** rm -r ~/homework/ and verification folder is gone
 
 <p align="center">
-  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/2_Basic%20Shell%20Usage/rm%20-rf%20~-homework%20and%20verification%20folder%20is%20gone.png" alt="rm -rf ~/homework and verification folder is gone" width="900">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/2_Basic%20Shell%20Usage/rm%20-rf%20~-homework%20and%20verification%20folder%20is%20gone.png" alt="rm -r ~/homework/ and verification folder is gone" width="900">
 </p>
 
 
