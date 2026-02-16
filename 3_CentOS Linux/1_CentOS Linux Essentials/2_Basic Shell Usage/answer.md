@@ -493,20 +493,3 @@ ls -la ~/ | grep homework
 | -size +10M | Larger than 10 MB |
 
 
-## SCREENSHOTS CHECKLIST
-
-Print this checklist and mark each screenshot as you take it:
-
-- [ ] SCREENSHOT 1  - Terminal window opened
-- [ ] SCREENSHOT 2  - cd ~ and pwd showing home directory path
-- [ ] SCREENSHOT 3  - mkdir homework and ls -la showing homework folder
-- [ ] SCREENSHOT 4  - touch homework/file1 and ls -la homework/ showing file1
-- [ ] SCREENSHOT 5  - echo "Name Surname" > homework/file1
-- [ ] SCREENSHOT 6  - cat homework/file1 showing your name
-- [ ] SCREENSHOT 7  - cd / and pwd showing root (/)
-- [ ] SCREENSHOT 8  - touch -r and ls -la showing MATCHING timestamps
-- [ ] SCREENSHOT 9  - find ~ -type f -mmin -60 showing file1 and file2
-- [ ] SCREENSHOT 10 - All verification commands (ls, cat, find)
-- [ ] SCREENSHOT 11 - rm -rf ~/homework and verification folder is gone
-
-TOTAL: 11 Screenshots Required
