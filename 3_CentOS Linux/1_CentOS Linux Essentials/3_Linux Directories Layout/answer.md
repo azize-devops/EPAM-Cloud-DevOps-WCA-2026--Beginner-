@@ -7,11 +7,11 @@ Methods:
 - Activities > Search "Terminal"
 - Right-click on Desktop > Open Terminal
 
-> **Screenshot 1**
->
-> Terminal window showing:
-> - Empty terminal with command prompt
-> - Username and hostname visible (user@hostname:~$)
+**Screenshot 1:** Terminal window opened
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/3_Linux%20Directories%20Layout/Terminal%20window%20opened.png" alt="Terminal window opened" width="900">
+</p>
 
 
 ## TASK 2: Create folders empty, full, final in home directory
@@ -39,16 +39,11 @@ drwxr-xr-x. 2 Name_Surname Name_Surname 4096 Jan 15 10:00 final
 drwxr-xr-x. 2 Name_Surname Name_Surname 4096 Jan 15 10:00 full
 ```
 
-> **Screenshot 2**
->
-> Terminal showing:
-> - $ cd ~
-> - $ mkdir empty full final
-> - $ ls -la
-> - Output with all three directories listed:
->   drwxr-xr-x ... empty
->   drwxr-xr-x ... final
->   drwxr-xr-x ... full
+**Screenshot 2:** mkdir empty full final and ls verification
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/3_Linux%20Directories%20Layout/mkdir%20empty%20full%20final%20and%20ls%20verification.png" alt="mkdir empty full final and ls verification" width="900">
+</p>
 
 
 ## TASK 3: Create file file1 in full directory
@@ -68,13 +63,11 @@ Output:
 -rw-r--r--. 1 Name_Surname Name_Surname 0 Jan 15 10:01 file1
 ```
 
-> **Screenshot 3**
->
-> Terminal showing:
-> - $ touch ~/full/file1
-> - $ ls -la ~/full/
-> - Output showing file1:
->   -rw-r--r-- ... 0 ... file1
+**Screenshot 3:** touch ~/full/file1 and ls verification
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/3_Linux%20Directories%20Layout/touch%20~-full-file1%20and%20ls%20verification.png" alt="touch ~/full/file1 and ls verification" width="900">
+</p>
 
 
 ## TASK 4: Copy empty folder to final folder
@@ -105,15 +98,11 @@ Current structure:
 ~/final/empty  (copy)
 ```
 
-> **Screenshot 4**
->
-> Terminal showing:
-> - $ cp -r ~/empty ~/final/
-> - $ ls -la ~/final/
-> - Output showing empty folder inside final:
->   drwxr-xr-x ... empty
-> - $ ls -la ~/
-> - Original empty folder still exists in home directory
+**Screenshot 4:** cp -r ~/empty ~/final/ and verification
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/3_Linux%20Directories%20Layout/cp%20-r%20~-empty%20~-final-%20and%20verification.png" alt="cp -r ~/empty ~/final/ and verification" width="900">
+</p>
 
 
 ## TASK 5: Move empty folder to final directory under new name empty_moved
@@ -151,16 +140,11 @@ Current structure:
 ~/final/empty_moved  (moved and renamed)
 ```
 
-> **Screenshot 5**
->
-> Terminal showing:
-> - $ mv ~/empty ~/final/empty_moved
-> - $ ls -la ~/final/
-> - Both directories visible:
->   drwxr-xr-x ... empty
->   drwxr-xr-x ... empty_moved
-> - $ ls -la ~/ | grep empty
-> - (no output - empty folder moved from home)
+**Screenshot 5:** mv ~/empty ~/final/empty_moved and verification
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/3_Linux%20Directories%20Layout/mv%20~-empty%20~-final-empty_moved%20and%20verification.png" alt="mv ~/empty ~/final/empty_moved and verification" width="900">
+</p>
 
 
 ## TASK 6: Create nested folder inside full directory
@@ -188,14 +172,11 @@ Current structure of ~/full:
 └── nested/
 ```
 
-> **Screenshot 6**
->
-> Terminal showing:
-> - $ mkdir ~/full/nested
-> - $ ls -la ~/full/
-> - Output showing file1 and nested directory:
->   -rw-r--r-- ... file1
->   drwxr-xr-x ... nested
+**Screenshot 6:** mkdir ~/full/nested and ls verification
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/3_Linux%20Directories%20Layout/mkdir%20~-full-nested%20and%20ls%20verification.png" alt="mkdir ~/full/nested and ls verification" width="900">
+</p>
 
 
 ## TASK 7: Copy all contents of full directory to final folder
@@ -231,16 +212,11 @@ Current structure of ~/final:
 └── nested/        (copied from full)
 ```
 
-> **Screenshot 7**
->
-> Terminal showing:
-> - $ cp -r ~/full/* ~/final/
-> - $ ls -la ~/final/
-> - Output showing all items:
->   drwxr-xr-x ... empty
->   drwxr-xr-x ... empty_moved
->   -rw-r--r-- ... file1        <-- copied from full
->   drwxr-xr-x ... nested       <-- copied from full
+**Screenshot 7:** cp -r ~/full/* ~/final/ and verification
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/3_Linux%20Directories%20Layout/cp%20-r%20~-full-%20~-final-%20and%20verification.png" alt="cp -r ~/full/* ~/final/ and verification" width="900">
+</p>
 
 
 ## TASK 8: Copy full directory to final folder
@@ -275,21 +251,11 @@ Output (~/final/full/):
 drwxr-xr-x. 2 Name_Surname Name_Surname 4096 Jan 15 10:05 nested
 ```
 
-> **Screenshot 8**
->
-> Terminal showing:
-> - $ cp -r ~/full ~/final/
-> - $ ls -la ~/final/
-> - Output showing full directory added:
->   drwxr-xr-x ... empty
->   drwxr-xr-x ... empty_moved
->   -rw-r--r-- ... file1
->   drwxr-xr-x ... full        <-- entire directory copied
->   drwxr-xr-x ... nested
-> - $ ls -la ~/final/full/
-> - Contents of copied full directory:
->   -rw-r--r-- ... file1
->   drwxr-xr-x ... nested
+**Screenshot 8:** cp -r ~/full ~/final/ and verification
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/3_Linux%20Directories%20Layout/cp%20-r%20~-full%20~-final-%20and%20verification.png" alt="cp -r ~/full ~/final/ and verification" width="900">
+</p>
 
 
 ## TASK 9: Move full directory to final folder under new name full_moved
@@ -324,20 +290,11 @@ Output (home - no full folder):
 (no output)
 ```
 
-> **Screenshot 9**
->
-> Terminal showing:
-> - $ mv ~/full ~/final/full_moved
-> - $ ls -la ~/final/
-> - Output showing full_moved added:
->   drwxr-xr-x ... empty
->   drwxr-xr-x ... empty_moved
->   -rw-r--r-- ... file1
->   drwxr-xr-x ... full
->   drwxr-xr-x ... full_moved  <-- moved and renamed
->   drwxr-xr-x ... nested
-> - $ ls -la ~/ | grep full
-> - (no output - original full folder moved)
+**Screenshot 9:** mv ~/full ~/final/full_moved and verification
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/3_Linux%20Directories%20Layout/mv%20~-full%20~-final-full_moved%20and%20verification.png" alt="mv ~/full ~/final/full_moved and verification" width="900">
+</p>
 
 
 ## SELF-REVIEW: Install tree and verify structure
@@ -377,24 +334,11 @@ Expected Output:
     └── nested
 ```
 
-> **Screenshot 10**
->
-> Terminal showing tree command output:
-> - $ tree ~
-> - /home/Name_Surname
->   - final
->     - empty
->     - empty_moved
->     - file1
->     - full
->       - file1
->       - nested
->     - full_moved
->       - file1
->       - nested
->     - nested
->
-> This shows the complete directory structure
+**Screenshot 10:** tree ~ showing final structure
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/3_Linux%20Directories%20Layout/tree%20~%20showing%20final%20structure.png" alt="tree ~ showing final structure" width="900">
+</p>
 
 
 ## COMPLETE COMMAND SEQUENCE
@@ -486,19 +430,3 @@ tree ~
 | tree dir | Show directory structure as tree |
 
 
-## SCREENSHOTS CHECKLIST
-
-Print this checklist and mark each screenshot as you take it:
-
-- [ ] SCREENSHOT 1  - Terminal window opened
-- [ ] SCREENSHOT 2  - mkdir empty full final and ls verification
-- [ ] SCREENSHOT 3  - touch ~/full/file1 and ls verification
-- [ ] SCREENSHOT 4  - cp -r ~/empty ~/final/ and verification
-- [ ] SCREENSHOT 5  - mv ~/empty ~/final/empty_moved and verification
-- [ ] SCREENSHOT 6  - mkdir ~/full/nested and ls verification
-- [ ] SCREENSHOT 7  - cp -r ~/full/* ~/final/ and verification
-- [ ] SCREENSHOT 8  - cp -r ~/full ~/final/ and verification
-- [ ] SCREENSHOT 9  - mv ~/full ~/final/full_moved and verification
-- [ ] SCREENSHOT 10 - tree ~ showing final structure
-
-TOTAL: 10 Screenshots Required
