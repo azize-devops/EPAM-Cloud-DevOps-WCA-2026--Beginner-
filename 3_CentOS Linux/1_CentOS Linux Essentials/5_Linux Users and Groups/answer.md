@@ -9,11 +9,11 @@ Methods:
 
 Note: Most commands require root privileges, so use sudo or switch to root.
 
-> **Screenshot 1**
->
-> Terminal window showing:
-> - Empty terminal with command prompt
-> - Username and hostname visible (user@hostname:~$)
+**Screenshot 1:** Terminal window opened
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/5_Linux%20Users%20and%20Groups/Terminal%20window%20opened.png" alt="Terminal window opened" width="900">
+</p>
 
 
 ## TASK 2: Create three groups: group1, group2, shared (GID 9999)
@@ -53,17 +53,11 @@ group2:x:10001:
 shared:x:9999:
 ```
 
-> **Screenshot 2**
->
-> Terminal showing:
-> - $ sudo groupadd group1
-> - $ sudo groupadd group2
-> - $ sudo groupadd -g 9999 shared
-> - $ cat /etc/group | grep -E "group1|group2|shared"
-> - Output:
->   group1:x:10000:
->   group2:x:10001:
->   shared:x:9999:    <-- GID 9999 as specified
+**Screenshot 2:** groupadd commands and /etc/group verification (GID 9999)
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/5_Linux%20Users%20and%20Groups/groupadd%20commands%20and%20-etc-group%20verification%20(GID%209999).png" alt="groupadd commands and /etc/group verification (GID 9999)" width="900">
+</p>
 
 
 ## TASK 3: Create two users with specific UID and primary groups
@@ -108,17 +102,11 @@ user1:x:1001:10000::/home/user1:/bin/bash
 user2:x:1002:10001::/home/user2:/bin/bash
 ```
 
-> **Screenshot 3**
->
-> Terminal showing:
-> - $ sudo useradd -u 1001 -g group1 user1
-> - $ sudo useradd -u 1002 -g group2 user2
-> - $ id user1
-> - uid=1001(user1) gid=10000(group1) groups=10000(group1)
->   (UID=1001, primary group=group1)
-> - $ id user2
-> - uid=1002(user2) gid=10001(group2) groups=10001(group2)
->   (UID=1002, primary group=group2)
+**Screenshot 3:** useradd commands and id verification (UID 1001, 1002)
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/5_Linux%20Users%20and%20Groups/useradd%20commands%20and%20id%20verification%20(UID%201001,%201002).png" alt="useradd commands and id verification (UID 1001, 1002)" width="900">
+</p>
 
 
 ## TASK 4: Add user1 and user2 to shared group
@@ -157,17 +145,11 @@ Output:
 shared:x:9999:user1,user2
 ```
 
-> **Screenshot 4**
->
-> Terminal showing:
-> - $ sudo usermod -aG shared user1
-> - $ sudo usermod -aG shared user2
-> - $ id user1
-> - uid=1001(user1) gid=10000(group1) groups=10000(group1),9999(shared)
->   (shared group added)
-> - $ id user2
-> - uid=1002(user2) gid=10001(group2) groups=10001(group2),9999(shared)
->   (shared group added)
+**Screenshot 4:** usermod -aG and id showing shared group membership
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/5_Linux%20Users%20and%20Groups/usermod%20-aG%20and%20id%20showing%20shared%20group%20membership.png" alt="usermod -aG and id showing shared group membership" width="900">
+</p>
 
 
 ## TASK 5: Create file /tmp/test containing "Hello" with user1
@@ -209,15 +191,11 @@ Explanation:
 - Group ownership is group1 (user1's primary group)
 - Default permissions: 644 (rw-r--r--)
 
-> **Screenshot 5**
->
-> Terminal showing:
-> - $ sudo -u user1 bash -c 'echo "Hello" > /tmp/test'
-> - $ cat /tmp/test
-> - Hello
-> - $ ls -la /tmp/test
-> - -rw-r--r--. 1 user1 group1 6 Jan 15 10:10 /tmp/test
->   (owner: user1, group: group1)
+**Screenshot 5:** File creation as user1 and ls -la showing ownership
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/5_Linux%20Users%20and%20Groups/File%20creation%20as%20user1%20and%20ls%20-la%20showing%20ownership.png" alt="File creation as user1 and ls -la showing ownership" width="900">
+</p>
 
 
 ## TASK 6: Remove public read permissions using chmod 640
@@ -250,13 +228,11 @@ Permission breakdown:
 | 4 | 100 | r-- | read only |
 | 0 | 000 | --- | none |
 
-> **Screenshot 6**
->
-> Terminal showing:
-> - $ sudo chmod 640 /tmp/test
-> - $ ls -la /tmp/test
-> - -rw-r-----. 1 user1 group1 6 Jan 15 10:10 /tmp/test
->   (rw-r----- = 640: owner:rw, group:r, others:none)
+**Screenshot 6:** chmod 640 and ls -la showing rw-r----- permissions
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/5_Linux%20Users%20and%20Groups/chmod%20640%20and%20ls%20-la%20showing%20rw-r-----%20permissions.png" alt="chmod 640 and ls -la showing rw-r----- permissions" width="900">
+</p>
 
 
 ## TASK 7: Using user2, attempt to read /tmp/test file contents
@@ -291,17 +267,11 @@ Access check:
 | Group | group1 | YES (r--) |
 | Others | user2 | NO (---) |
 
-> **Screenshot 7**
->
-> Terminal showing:
-> - $ sudo -u user2 cat /tmp/test
-> - cat: /tmp/test: Permission denied
->   (user2 CANNOT read - no permission)
->
-> OR using su:
-> - $ su - user2
-> - $ cat /tmp/test
-> - cat: /tmp/test: Permission denied
+**Screenshot 7:** user2 cat attempt showing "Permission denied"
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/5_Linux%20Users%20and%20Groups/user2%20cat%20attempt%20showing%20-Permission%20denied-.png" alt="user2 cat attempt showing Permission denied" width="900">
+</p>
 
 
 ## TASK 8: Change ownership using chown user1:shared
@@ -331,13 +301,11 @@ Now:
 - Group: shared (changed from group1)
 - Permissions: still 640
 
-> **Screenshot 8**
->
-> Terminal showing:
-> - $ sudo chown user1:shared /tmp/test
-> - $ ls -la /tmp/test
-> - -rw-r-----. 1 user1 shared 6 Jan 15 10:10 /tmp/test
->   (group changed to "shared")
+**Screenshot 8:** chown user1:shared and ls -la showing new group
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/5_Linux%20Users%20and%20Groups/chown%20user1-shared%20and%20ls%20-la%20showing%20new%20group.png" alt="chown user1:shared and ls -la showing new group" width="900">
+</p>
 
 
 ## TASK 9: Using user2, attempt to read /tmp/test file contents (again)
@@ -374,17 +342,11 @@ Access check after chown:
 
 user2 is in "shared" group -> matches Group category -> CAN READ!
 
-> **Screenshot 9**
->
-> Terminal showing:
-> - $ sudo -u user2 cat /tmp/test
-> - Hello
->   (SUCCESS! user2 can now read the file)
->
-> This works because:
-> - File group = shared
-> - user2 is member of shared group
-> - Group has read permission (r--)
+**Screenshot 9:** user2 cat showing "Hello" (success)
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/5_Linux%20Users%20and%20Groups/user2%20cat%20showing%20-Hello-%20(success).png" alt="user2 cat showing Hello (success)" width="900">
+</p>
 
 
 ## TASK 10: Remove created users and groups
@@ -425,21 +387,11 @@ id: 'user2': no such user
 (no output for getent - groups don't exist)
 ```
 
-> **Screenshot 10**
->
-> Terminal showing:
-> - $ sudo userdel -r user1
-> - $ sudo userdel -r user2
-> - $ sudo groupdel group1
-> - $ sudo groupdel group2
-> - $ sudo groupdel shared
-> - $ sudo rm /tmp/test
-> - $ id user1
-> - id: 'user1': no such user
-> - $ id user2
-> - id: 'user2': no such user
-> - $ getent group group1 group2 shared
-> - (no output - groups deleted)
+**Screenshot 10:** Cleanup commands and verification
+
+<p align="center">
+  <img src="https://github.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/blob/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/5_Linux%20Users%20and%20Groups/Cleanup%20commands%20and%20verification.png" alt="Cleanup commands and verification" width="900">
+</p>
 
 
 ## COMPLETE COMMAND SEQUENCE
@@ -586,19 +538,3 @@ Format: groupname:x:GID:members
 Example: shared:x:9999:user1,user2
 
 
-## SCREENSHOTS CHECKLIST
-
-Print this checklist and mark each screenshot as you take it:
-
-- [ ] SCREENSHOT 1  - Terminal window opened
-- [ ] SCREENSHOT 2  - groupadd commands and /etc/group verification (GID 9999)
-- [ ] SCREENSHOT 3  - useradd commands and id verification (UID 1001, 1002)
-- [ ] SCREENSHOT 4  - usermod -aG and id showing shared group membership
-- [ ] SCREENSHOT 5  - File creation as user1 and ls -la showing ownership
-- [ ] SCREENSHOT 6  - chmod 640 and ls -la showing rw-r----- permissions
-- [ ] SCREENSHOT 7  - user2 cat attempt showing "Permission denied"
-- [ ] SCREENSHOT 8  - chown user1:shared and ls -la showing new group
-- [ ] SCREENSHOT 9  - user2 cat showing "Hello" (success)
-- [ ] SCREENSHOT 10 - Cleanup commands and verification
-
-TOTAL: 10 Screenshots Required
