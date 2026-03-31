@@ -7,11 +7,9 @@ Methods:
 - Activities > Search "Terminal"
 - Right-click on Desktop > Open Terminal
 
-> **Screenshot 1**
->
-> Terminal window showing:
-> - Empty terminal with command prompt
-> - Username and hostname visible (user@hostname:~$)
+**Screenshot 1:** Terminal window opened
+
+![Terminal window opened](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/8_Memory%20Diagnostics/Terminal%20window%20opened.png)
 
 
 ## TASK 2: Inspect RAM usage using free command
@@ -53,14 +51,9 @@ Explanation:
 - Gi = Gibibytes (1024-based)
 - Mi = Mebibytes
 
-> **Screenshot 2a**
->
-> Terminal showing:
-> - $ free -h
-> - Output table with columns:
->   total, used, free, shared, buff/cache, available
-> - Mem row with RAM values
-> - Swap row with swap values
+**Screenshot 2a:** free -h output
+
+![free -h output](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/8_Memory%20Diagnostics/free%20-h%20output%20showing%20RAM%20and%20Swap.png)
 
 
 ### METHOD 3: Show output in megabytes
@@ -116,12 +109,9 @@ Total:        5.8Gi       1.2Gi       3.5Gi
 Explanation:
 - -t = show total line (RAM + Swap combined)
 
-> **Screenshot 2b**
->
-> Terminal showing:
-> - $ free -h -t
-> - Output with Mem, Swap, and Total rows
-> - Total row showing combined RAM + Swap
+**Screenshot 2b:** free -h -t showing total row
+
+![free -h -t output](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/8_Memory%20Diagnostics/free%20-h%20-t%20showing%20total%20row.png)
 
 
 ### METHOD 6: Continuous monitoring
@@ -183,12 +173,9 @@ $ top
 $ htop
 ```
 
-> **Screenshot 2c**
->
-> Terminal showing:
-> - $ cat /proc/meminfo
-> - Detailed memory information:
->   MemTotal, MemFree, MemAvailable, Buffers, Cached, etc.
+**Screenshot 2c:** /proc/meminfo detailed output
+
+![proc meminfo](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/8_Memory%20Diagnostics/proc-meminfo%20detailed%20output.png)
 
 
 ## TASK 3: Calculate total, free and cached RAM
@@ -263,17 +250,9 @@ $ free -m | grep Mem | awk '{print $6}'
 
 Output: 1211
 
-> **Screenshot 3a**
->
-> Terminal showing extraction of specific values:
-> - $ free -h
-> - (full output shown)
-> - $ free -m | grep Mem | awk '{print "Total:", $2, "MB"}'
-> - Total: 3934 MB
-> - $ free -m | grep Mem | awk '{print "Free:", $4, "MB"}'
-> - Free: 1506 MB
-> - $ free -m | grep Mem | awk '{print "Cached:", $6, "MB"}'
-> - Cached: 1211 MB
+**Screenshot 3a:** Extracted Total, Free, Cached values with awk
+
+![Extracted values](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/8_Memory%20Diagnostics/Extracted%20Total,%20Free,%20Cached%20values%20with%20awk.png)
 
 
 ### ALTERNATIVE: Using /proc/meminfo
@@ -296,14 +275,9 @@ Explanation:
 - Cached = Disk cache
 - Buffers = Buffer cache
 
-> **Screenshot 3b**
->
-> Terminal showing:
-> - $ grep -E "MemTotal|MemFree|^Cached|Buffers" /proc/meminfo
-> - MemTotal:        4028436 kB
-> - MemFree:         1542820 kB
-> - Buffers:          123456 kB
-> - Cached:          1116528 kB
+**Screenshot 3b:** grep /proc/meminfo for specific values
+
+![grep meminfo](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/8_Memory%20Diagnostics/grep%20-proc-meminfo%20for%20specific%20values.png)
 
 
 ### MEMORY SUMMARY SCRIPT
@@ -331,12 +305,9 @@ Cached:     1211 MB (1.18 GB)
 Available:  2432 MB (2.38 GB)
 ```
 
-> **Screenshot 3c**
->
-> Terminal showing memory summary:
-> - Memory summary output with all values:
->   Total RAM, Used RAM, Free RAM, Cached, Available
-> - Values in both MB and GB
+**Screenshot 3c:** Memory summary with calculated values
+
+![Memory summary](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/8_Memory%20Diagnostics/Memory%20summary%20with%20calculated%20values.png)
 
 
 ### UNDERSTANDING AVAILABLE vs FREE
@@ -382,14 +353,9 @@ Explanation:
 - %MEM = Percentage of total RAM
 - RSS = Resident Set Size (actual RAM used in KB)
 
-> **Screenshot 4a**
->
-> Terminal showing:
-> - $ ps aux --sort=-%mem | head -11
-> - Header row: USER PID %CPU %MEM VSZ RSS TTY STAT START TIME CMD
-> - Top processes sorted by memory
-> - First process (after header) is highest memory consumer
-> - %MEM and RSS columns clearly visible
+**Screenshot 4a:** ps aux --sort=-%mem showing top processes
+
+![ps aux sort mem](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/8_Memory%20Diagnostics/ps%20aux%20--sort=-%25mem%20showing%20top%20processes.png)
 
 
 ### METHOD 2: Show only process name and memory
@@ -416,13 +382,9 @@ Output:
 Process: firefox - Memory: 15.2% - PID: 2345
 ```
 
-> **Screenshot 4b**
->
-> Terminal showing:
-> - Command to find top memory process
-> - Output showing:
->   Process: [name] - Memory: [%] - PID: [number]
-> - Clear identification of the highest RAM consumer
+**Screenshot 4b:** Single top memory process identification
+
+![Single top process](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/8_Memory%20Diagnostics/Single%20top%20memory%20process%20identification.png)
 
 
 ### METHOD 3: Using top command (interactive)
@@ -455,13 +417,9 @@ Top commands:
 - k = Kill process
 - q = Quit
 
-> **Screenshot 4c**
->
-> top command showing (sorted by memory):
-> - System summary at top (load, tasks, CPU, memory)
-> - Process list sorted by %MEM (after pressing 'M')
-> - First process in list is highest memory consumer
-> - PID, USER, %MEM, COMMAND columns visible
+**Screenshot 4c:** top command sorted by memory (press M)
+
+![top sorted by memory](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/8_Memory%20Diagnostics/top%20command%20sorted%20by%20memory%20(press%20M).png)
 
 
 ### METHOD 4: Using top in batch mode (non-interactive)
@@ -497,17 +455,18 @@ $ htop --sort-key PERCENT_MEM
 
 Note: htop may need to be installed first:
 ```bash
-$ sudo yum install htop -y   # CentOS/RHEL
-$ sudo apt install htop -y    # Ubuntu/Debian
+# CentOS 9 Stream (EPEL gerekli)
+$ sudo yum install epel-release -y
+$ sudo yum config-manager --set-enabled crb
+$ sudo yum install htop -y
+
+# Ubuntu/Debian
+$ sudo apt install htop -y
 ```
 
-> **Screenshot 4d**
->
-> htop command showing (if installed):
-> - Colorful process viewer
-> - Memory and CPU bars at top
-> - Process list with memory usage
-> - Sorted by memory percentage
+**Screenshot 4d:** htop showing memory usage
+
+![htop memory](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/8_Memory%20Diagnostics/htop%20showing%20memory%20usage%20(if%20installed).png)
 
 
 ### METHOD 6: Using smem (detailed memory analysis)
@@ -540,13 +499,9 @@ Output:
  2345  1234 /usr/lib/firefox/firefox    15.2  2.5
 ```
 
-> **Screenshot 4e**
->
-> Terminal showing one-liner result:
-> - $ ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -2
-> - Header row
-> - Single process row showing top memory consumer
-> - PID, command, %MEM clearly visible
+**Screenshot 4e:** One-liner showing top RAM process
+
+![One-liner top RAM](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/8_Memory%20Diagnostics/One-liner%20showing%20top%20RAM%20process.png)
 
 
 ### COMPLETE ANALYSIS EXAMPLE
@@ -570,12 +525,9 @@ user1    4567   2.8    28      slack
 root     789    2.1    21      Xorg
 ```
 
-> **Screenshot 4f**
->
-> Terminal showing complete analysis:
-> - Top 5 RAM-consuming processes
-> - Formatted table with USER, PID, %MEM, RSS, COMMAND
-> - Clear identification of memory usage per process
+**Screenshot 4f:** Complete analysis with top 5 processes
+
+![Complete analysis](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/8_Memory%20Diagnostics/Complete%20analysis%20with%20top%205%20processes.png)
 
 
 ## COMPLETE COMMAND SEQUENCE
@@ -632,24 +584,3 @@ Sort options:
 - --sort=-%mem  : Sort by memory descending
 - --sort=%mem   : Sort by memory ascending
 - --sort=-rss   : Sort by RSS descending
-
-
-## SCREENSHOTS CHECKLIST
-
-Print this checklist and mark each screenshot as you take it:
-
-- [ ] SCREENSHOT 1  - Terminal window opened
-- [ ] SCREENSHOT 2a - free -h output showing RAM and Swap
-- [ ] SCREENSHOT 2b - free -h -t showing total row
-- [ ] SCREENSHOT 2c - /proc/meminfo detailed output
-- [ ] SCREENSHOT 3a - Extracted Total, Free, Cached values with awk
-- [ ] SCREENSHOT 3b - grep /proc/meminfo for specific values
-- [ ] SCREENSHOT 3c - Memory summary with calculated values
-- [ ] SCREENSHOT 4a - ps aux --sort=-%mem showing top processes
-- [ ] SCREENSHOT 4b - Single top memory process identification
-- [ ] SCREENSHOT 4c - top command sorted by memory (press M)
-- [ ] SCREENSHOT 4d - htop showing memory usage (if installed)
-- [ ] SCREENSHOT 4e - One-liner showing top RAM process
-- [ ] SCREENSHOT 4f - Complete analysis with top 5 processes
-
-TOTAL: 13 Screenshots Required
