@@ -515,17 +515,3 @@ Additional characters:
 |  s   | Session leader                           |
 |  l   | Multi-threaded                           |
 |  +   | In foreground process group              |
-
-
-## SCREENSHOTS CHECKLIST
-
-- [x] SCREENSHOT 1  - Terminal window opened
-- [x] SCREENSHOT 2  - Script creation (cat command) and cat output showing content
-- [x] SCREENSHOT 3  - chmod +x and ./script.sh & with [1] PID output
-- [x] SCREENSHOT 4  - jobs and jobs -l showing Running status and PID
-- [x] SCREENSHOT 5a - top command showing script.sh and sleep processes
-- [x] SCREENSHOT 5b - ps aux | grep script showing script.sh process
-- [x] SCREENSHOT 6  - Multiple PID finding methods (echo $!, pgrep, ps grep)
-- [x] SCREENSHOT 7  - ps -p or ps -f showing USER, PID, and COMMAND info
-
-TOTAL: 8 Screenshots - All completed
