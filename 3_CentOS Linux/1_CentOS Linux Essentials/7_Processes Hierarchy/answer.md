@@ -7,11 +7,9 @@ Methods:
 - Activities > Search "Terminal"
 - Right-click on Desktop > Open Terminal
 
-> **Screenshot 1**
->
-> Terminal window showing:
-> - Empty terminal with command prompt
-> - Username and hostname visible (user@hostname:~$)
+**Screenshot 1:** Terminal window opened
+
+![Terminal window opened](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/7_Processes%20Hierarchy/Terminal%20window%20opened.png)
 
 
 ## TASK 2: Create script.sh with sleep 5m content
@@ -46,17 +44,9 @@ Explanation:
 - `#!/bin/bash` = shebang line, specifies interpreter
 - `sleep 5m` = sleep for 5 minutes (keeps script running)
 
-> **Screenshot 2**
->
-> Terminal showing:
-> - cat > script.sh << 'EOF' command
-> - Script content typed
-> - EOF to close
-> - cat script.sh command
-> - Output showing:
->   #!/bin/bash
->
->   sleep 5m
+**Screenshot 2:** Script creation and verification
+
+![Script creation](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/7_Processes%20Hierarchy/Script%20creation%20(cat%20command)%20and%20cat%20output%20showing%20content.png)
 
 
 ## TASK 3: Make executable and run in background
@@ -81,13 +71,9 @@ Explanation:
 - `[1]` = job number
 - `12345` = Process ID (PID) - yours will be different
 
-> **Screenshot 3**
->
-> Terminal showing:
-> - $ chmod +x script.sh
-> - $ ./script.sh &
-> - [1] 12345    <-- job number and PID visible
-> - $            <-- prompt returns immediately
+**Screenshot 3:** chmod +x and background execution
+
+![chmod and background run](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/7_Processes%20Hierarchy/chmod%20+x%20and%20.-script.sh%20%26%20with%20%5B1%5D%20PID%20output.png)
 
 
 ## TASK 4: Verify script running with jobs command
@@ -124,14 +110,9 @@ Job statuses:
 - Stopped = suspended (Ctrl+Z)
 - Done = completed
 
-> **Screenshot 4**
->
-> Terminal showing:
-> - $ jobs
-> - [1]+  Running                 ./script.sh &
-> - $ jobs -l
-> - [1]+ 12345 Running            ./script.sh &
->   (PID visible here)
+**Screenshot 4:** jobs command output
+
+![jobs and jobs -l](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/7_Processes%20Hierarchy/jobs%20and%20jobs%20-l%20showing%20Running%20status%20and%20PID.png)
 
 
 ## TASK 5: Inspect processes with top and ps commands
@@ -165,14 +146,9 @@ Useful top commands:
 - M = sort by memory
 - h = help
 
-> **Screenshot 5a**
->
-> top command showing:
-> - System summary at top (uptime, tasks, CPU, memory)
-> - Process list below
-> - script.sh process visible in the list
-> - sleep process visible (child of script.sh)
-> - PID, USER, COMMAND columns visible
+**Screenshot 5a:** top command showing processes
+
+![top command](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/7_Processes%20Hierarchy/top%20command%20showing%20script.sh%20and%20sleep%20processes.png)
 
 
 ### METHOD 2: Using ps (snapshot)
@@ -220,14 +196,9 @@ user1    12346  0.0  0.0   5500  1000 pts/0    S    10:15   0:00 sleep 5m
 ...
 ```
 
-> **Screenshot 5b**
->
-> ps aux command showing:
-> - $ ps aux | grep script
-> - user1  12345  0.0  0.0  ... /bin/bash ./script.sh
-> - user1  12346  0.0  0.0  ... sleep 5m
-> - Both script.sh and sleep processes visible
-> - USER, PID, COMMAND columns clearly showing
+**Screenshot 5b:** ps aux | grep script output
+
+![ps aux grep](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/7_Processes%20Hierarchy/ps%20aux%20,%20grep%20script%20showing%20script.sh%20process.png)
 
 
 ## TASK 6: Find the PID of your script
@@ -291,16 +262,9 @@ Expected Output:
 12345
 ```
 
-> **Screenshot 6**
->
-> Terminal showing multiple PID finding methods:
-> - $ echo $!
-> - 12345
-> - $ pgrep -f script.sh
-> - 12345
-> - $ ps aux | grep script.sh
-> - user1 12345 ... /bin/bash ./script.sh
-> - All methods showing SAME PID number
+**Screenshot 6:** Multiple PID finding methods
+
+![PID finding methods](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/7_Processes%20Hierarchy/Multiple%20PID%20finding%20methods%20(echo%20%24!,%20pgrep,%20ps%20grep).png)
 
 
 ## TASK 7: Find command and user information about your script
@@ -392,18 +356,9 @@ Expected Output:
 12345 11111 user1    1001  1001 S    10:15:00 00:00:00 /bin/bash ./script.sh
 ```
 
-> **Screenshot 7**
->
-> Terminal showing user and command information:
-> - $ ps -p 12345 -o pid,user,cmd
-> -   PID USER     CMD
-> - 12345 user1    /bin/bash ./script.sh
->
-> OR
->
-> - $ ps -f | grep script.sh
-> - user1 12345 11111 0 10:15 pts/0 00:00:00 /bin/bash ./script.sh
->   (USER, PID, PPID, COMMAND columns visible)
+**Screenshot 7:** ps showing USER, PID, and COMMAND info
+
+![ps user command info](../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/7_Processes%20Hierarchy/ps%20-p%20or%20ps%20-f%20showing%20USER,%20PID,%20and%20COMMAND%20info.png)
 
 
 ## BONUS: Managing background processes
@@ -564,15 +519,13 @@ Additional characters:
 
 ## SCREENSHOTS CHECKLIST
 
-Print this checklist and mark each screenshot as you take it:
+- [x] SCREENSHOT 1  - Terminal window opened
+- [x] SCREENSHOT 2  - Script creation (cat command) and cat output showing content
+- [x] SCREENSHOT 3  - chmod +x and ./script.sh & with [1] PID output
+- [x] SCREENSHOT 4  - jobs and jobs -l showing Running status and PID
+- [x] SCREENSHOT 5a - top command showing script.sh and sleep processes
+- [x] SCREENSHOT 5b - ps aux | grep script showing script.sh process
+- [x] SCREENSHOT 6  - Multiple PID finding methods (echo $!, pgrep, ps grep)
+- [x] SCREENSHOT 7  - ps -p or ps -f showing USER, PID, and COMMAND info
 
-- [ ] SCREENSHOT 1  - Terminal window opened
-- [ ] SCREENSHOT 2  - Script creation (cat command) and cat output showing content
-- [ ] SCREENSHOT 3  - chmod +x and ./script.sh & with [1] PID output
-- [ ] SCREENSHOT 4  - jobs and jobs -l showing Running status and PID
-- [ ] SCREENSHOT 5a - top command showing script.sh and sleep processes
-- [ ] SCREENSHOT 5b - ps aux | grep script showing script.sh process
-- [ ] SCREENSHOT 6  - Multiple PID finding methods (echo $!, pgrep, ps grep)
-- [ ] SCREENSHOT 7  - ps -p or ps -f showing USER, PID, and COMMAND info
-
-TOTAL: 7-8 Screenshots Required
+TOTAL: 8 Screenshots - All completed
