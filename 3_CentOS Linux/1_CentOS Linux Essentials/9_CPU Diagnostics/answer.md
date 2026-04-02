@@ -7,7 +7,7 @@ Methods:
 - Activities > Search "Terminal"
 - Right-click on Desktop > Open Terminal
 
-![Terminal window opened](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/Terminal%20window%20opened.png)
+![Terminal window opened](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/Terminal%20window%20opened.png)
 
 
 ## TASK 2: Inspect CPU usage using top, htop, and uptime
@@ -49,7 +49,7 @@ Useful top shortcuts:
 - k = Kill a process
 - q = Quit
 
-![top command with CPU line visible](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/top%20command%20with%20CPU%20line%20visible.png)
+![top command with CPU line visible](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/top%20command%20with%20CPU%20line%20visible.png)
 
 
 ### Show individual CPU cores in top:
@@ -63,7 +63,7 @@ While in top, press '1' (number one):
 %Cpu3  :  3.8 us,  1.5 sy,  0.0 ni, 94.0 id,  0.4 wa,  0.1 hi,  0.2 si,  0.0 st
 ```
 
-![top with individual CPU cores](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/top%20with%20individual%20CPU%20cores%20(press%201).png)
+![top with individual CPU cores](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/top%20with%20individual%20CPU%20cores%20(press%201).png)
 
 
 ### METHOD 2: Using htop command (enhanced interactive)
@@ -95,7 +95,7 @@ htop shortcuts:
 - F9 = Kill
 - F10 = Quit
 
-![htop with colored CPU bars](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/htop%20with%20colored%20CPU%20bars.png)
+![htop with colored CPU bars](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/htop%20with%20colored%20CPU%20bars.png)
 
 
 ### METHOD 3: Using uptime command
@@ -115,7 +115,7 @@ Explanation:
 - 2 users = Number of logged-in users
 - load average: 0.52, 0.48, 0.45 = CPU load averages for 1, 5, 15 minutes
 
-![uptime command output](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/uptime%20command%20output.png)
+![uptime command output](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/uptime%20command%20output.png)
 
 
 ### METHOD 4: Using mpstat (CPU statistics)
@@ -152,7 +152,7 @@ Output:
 10:30:45 AM    3    3.80    0.00    1.50    0.40    0.10    0.20    0.00    0.00    0.00   94.00
 ```
 
-![mpstat -P ALL showing per-CPU stats](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/mpstat%20-P%20ALL%20showing%20per-CPU%20stats.png)
+![mpstat -P ALL showing per-CPU stats](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/mpstat%20-P%20ALL%20showing%20per-CPU%20stats.png)
 
 
 ### METHOD 5: Using vmstat
@@ -177,7 +177,7 @@ CPU columns:
 - wa = Wait I/O
 - st = Stolen time
 
-![vmstat showing CPU columns](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/vmstat%20showing%20CPU%20columns.png)
+![vmstat showing CPU columns](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/vmstat%20showing%20CPU%20columns.png)
 
 
 ## TASK 3: Find the number of CPU cores in your system
@@ -215,7 +215,7 @@ Key Information:
 Formula: CPU(s) = Socket(s) x Core(s) per socket x Thread(s) per core
 Example: 4 = 1 x 2 x 2
 
-![lscpu showing CPU information](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/lscpu%20showing%20CPU%20information.png)
+![lscpu showing CPU information](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/lscpu%20showing%20CPU%20information.png)
 
 
 ### METHOD 2: Using /proc/cpuinfo
@@ -246,7 +246,7 @@ cpu cores       : 2
 ...
 ```
 
-![/proc/cpuinfo with processor count](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/-proc-cpuinfo%20with%20processor%20count.png)
+![/proc/cpuinfo with processor count](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/-proc-cpuinfo%20with%20processor%20count.png)
 
 
 ### METHOD 3: Using nproc command
@@ -267,7 +267,7 @@ For all installed processors:
 $ nproc --all
 ```
 
-![nproc showing number of CPUs](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/nproc%20showing%20number%20of%20CPUs.png)
+![nproc showing number of CPUs](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/nproc%20showing%20number%20of%20CPUs.png)
 
 
 ### METHOD 4: Using getconf
@@ -310,7 +310,7 @@ Threads per Core: 2
 CPU Model: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
 ```
 
-![CPU summary script output](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/CPU%20summary%20script%20output.png)
+![CPU summary script output](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/CPU%20summary%20script%20output.png)
 
 
 ## TASK 4: Find current CPU load
@@ -349,7 +349,7 @@ Output:
                                                      1min  5min  15min
 ```
 
-![uptime with load average](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/uptime%20with%20load%20average.png)
+![uptime with load average](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/uptime%20with%20load%20average.png)
 
 
 ### METHOD 2: Using /proc/loadavg
@@ -370,7 +370,7 @@ Explanation:
 - 2/245 = Running processes / Total processes
 - 12345 = Last process ID used
 
-![/proc/loadavg output](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/-proc-loadavg%20output.png)
+![/proc/loadavg output](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/-proc-loadavg%20output.png)
 
 
 ### METHOD 3: Using top (first line)
@@ -406,7 +406,7 @@ user1    pts/1    192.168.1.100    09:30    1:00   0.10s  0.05s bash
 
 First line shows same info as uptime.
 
-![w command showing load average](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/w%20command%20showing%20load%20average.png)
+![w command showing load average](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/w%20command%20showing%20load%20average.png)
 
 
 ### METHOD 5: Load with interpretation
@@ -431,7 +431,7 @@ Load Average: 0.52 0.48 0.45
 15-min Load: 0.45 (11% of 4 cores)
 ```
 
-![Load interpretation with percentages](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/Load%20interpretation%20with%20percentages.png)
+![Load interpretation with percentages](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/Load%20interpretation%20with%20percentages.png)
 
 
 ## TASK 5: Find the process that utilizes the most CPU
@@ -456,7 +456,7 @@ Explanation:
 - head -11 = Show header + top 10 processes
 - %CPU = CPU utilization percentage
 
-![ps aux sorted by CPU](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/ps%20aux%20sorted%20by%20CPU.png)
+![ps aux sorted by CPU](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/ps%20aux%20sorted%20by%20CPU.png)
 
 
 ### METHOD 2: Show only top CPU process
@@ -470,7 +470,7 @@ Output:
 Process: firefox - CPU: 25.0% - PID: 1234
 ```
 
-![Single top CPU process identification](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/Single%20top%20CPU%20process%20identification.png)
+![Single top CPU process identification](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/Single%20top%20CPU%20process%20identification.png)
 
 
 ### METHOD 3: Using top (sorted by CPU - default)
@@ -484,7 +484,7 @@ Press 'P' to re-sort by CPU if needed.
 
 The first process in the list uses most CPU.
 
-![top sorted by CPU](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/top%20sorted%20by%20CPU.png)
+![top sorted by CPU](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/top%20sorted%20by%20CPU.png)
 
 
 ### METHOD 4: Using top in batch mode
@@ -520,7 +520,7 @@ Then press F6 and select PERCENT_CPU, or start with:
 $ htop --sort-key PERCENT_CPU
 ```
 
-![htop sorted by CPU](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/htop%20sorted%20by%20CPU.png)
+![htop sorted by CPU](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/htop%20sorted%20by%20CPU.png)
 
 
 ### METHOD 6: Using pidstat (per-process CPU)
@@ -562,7 +562,7 @@ user1    4567   3.8    0:45     slack
 root     789    2.1    0:30     Xorg
 ```
 
-![Top 5 CPU processes analysis](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/Top%205%20CPU%20processes%20analysis.png)
+![Top 5 CPU processes analysis](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/Top%205%20CPU%20processes%20analysis.png)
 
 
 ## COMPLETE COMMAND SEQUENCE
