@@ -13,6 +13,8 @@ Methods:
 > - Empty terminal with command prompt
 > - Username and hostname visible (user@hostname:~$)
 
+![Terminal window opened](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/Terminal%20window%20opened.png)
+
 
 ## TASK 2: Inspect CPU usage using top, htop, and uptime
 
@@ -62,6 +64,8 @@ Useful top shortcuts:
 > - Memory summary
 > - Process list with PID, USER, %CPU, %MEM, COMMAND
 
+![top command with CPU line visible](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/top%20command%20with%20CPU%20line%20visible.png)
+
 
 ### Show individual CPU cores in top:
 
@@ -80,6 +84,8 @@ While in top, press '1' (number one):
 > - Press '1' in top to show per-CPU statistics
 > - Each CPU core shown separately (Cpu0, Cpu1, Cpu2, Cpu3, ...)
 > - Usage percentages for each core
+
+![top with individual CPU cores](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/top%20with%20individual%20CPU%20cores%20(press%201).png)
 
 
 ### METHOD 2: Using htop command (enhanced interactive)
@@ -120,6 +126,8 @@ htop shortcuts:
 > - Process list with tree view option
 > - Function key shortcuts at bottom
 
+![htop with colored CPU bars](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/htop%20with%20colored%20CPU%20bars.png)
+
 
 ### METHOD 3: Using uptime command
 
@@ -144,6 +152,8 @@ Explanation:
 > - $ uptime
 > - Output with time, uptime duration, users, load average
 > - Load average values: X.XX, X.XX, X.XX
+
+![uptime command output](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/uptime%20command%20output.png)
 
 
 ### METHOD 4: Using mpstat (CPU statistics)
@@ -187,6 +197,8 @@ Output:
 > - CPU statistics for all cores
 > - %usr, %sys, %iowait, %idle columns visible
 
+![mpstat -P ALL showing per-CPU stats](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/mpstat%20-P%20ALL%20showing%20per-CPU%20stats.png)
+
 
 ### METHOD 5: Using vmstat
 
@@ -216,6 +228,8 @@ CPU columns:
 > - $ vmstat 1 5
 > - Multiple lines showing CPU usage over time
 > - CPU columns: us, sy, id, wa, st
+
+![vmstat showing CPU columns](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/vmstat%20showing%20CPU%20columns.png)
 
 
 ## TASK 3: Find the number of CPU cores in your system
@@ -264,6 +278,8 @@ Example: 4 = 1 x 2 x 2
 >   Socket(s):           1
 >   Model name:          Intel...
 
+![lscpu showing CPU information](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/lscpu%20showing%20CPU%20information.png)
+
 
 ### METHOD 2: Using /proc/cpuinfo
 
@@ -301,6 +317,8 @@ cpu cores       : 2
 > - $ cat /proc/cpuinfo | grep -E "processor|model name"
 > - Processor entries and model names listed
 
+![/proc/cpuinfo with processor count](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/-proc-cpuinfo%20with%20processor%20count.png)
+
 
 ### METHOD 3: Using nproc command
 
@@ -326,6 +344,8 @@ $ nproc --all
 > - $ nproc
 > - Output: 4 (or your number of CPUs)
 > - Simple, single number output
+
+![nproc showing number of CPUs](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/nproc%20showing%20number%20of%20CPUs.png)
 
 
 ### METHOD 4: Using getconf
@@ -375,6 +395,8 @@ CPU Model: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
 > - Threads per Core
 > - CPU Model name
 
+![CPU summary script output](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/CPU%20summary%20script%20output.png)
+
 
 ## TASK 4: Find current CPU load
 
@@ -419,6 +441,8 @@ Output:
 > - Load average values clearly visible
 > - Format: load average: X.XX, X.XX, X.XX
 
+![uptime with load average](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/uptime%20with%20load%20average.png)
+
 
 ### METHOD 2: Using /proc/loadavg
 
@@ -444,6 +468,8 @@ Explanation:
 > - $ cat /proc/loadavg
 > - Output: X.XX X.XX X.XX X/XXX XXXXX
 > - Load averages and process counts
+
+![/proc/loadavg output](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/-proc-loadavg%20output.png)
 
 
 ### METHOD 3: Using top (first line)
@@ -486,6 +512,8 @@ First line shows same info as uptime.
 > - First line with load average
 > - User session information below
 
+![w command showing load average](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/w%20command%20showing%20load%20average.png)
+
 
 ### METHOD 5: Load with interpretation
 
@@ -515,6 +543,8 @@ Load Average: 0.52 0.48 0.45
 > - CPU Cores count
 > - Load averages with percentages
 > - Clear indication of CPU utilization
+
+![Load interpretation with percentages](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/Load%20interpretation%20with%20percentages.png)
 
 
 ## TASK 5: Find the process that utilizes the most CPU
@@ -548,6 +578,8 @@ Explanation:
 > - First process after header is highest CPU consumer
 > - %CPU column clearly visible
 
+![ps aux sorted by CPU](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/ps%20aux%20sorted%20by%20CPU.png)
+
 
 ### METHOD 2: Show only top CPU process
 
@@ -566,6 +598,8 @@ Process: firefox - CPU: 25.0% - PID: 1234
 > - Command to find single top CPU process
 > - Output: Process: [name] - CPU: [%] - PID: [number]
 > - Clear identification of highest CPU consumer
+
+![Single top CPU process identification](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/Single%20top%20CPU%20process%20identification.png)
 
 
 ### METHOD 3: Using top (sorted by CPU - default)
@@ -586,6 +620,8 @@ The first process in the list uses most CPU.
 > - First process is highest CPU consumer
 > - %CPU column visible
 > - PID and COMMAND columns visible
+
+![top sorted by CPU](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/top%20sorted%20by%20CPU.png)
 
 
 ### METHOD 4: Using top in batch mode
@@ -629,6 +665,8 @@ $ htop --sort-key PERCENT_CPU
 > - First process is highest CPU consumer
 > - Colored bars showing CPU usage
 
+![htop sorted by CPU](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/htop%20sorted%20by%20CPU.png)
+
 
 ### METHOD 6: Using pidstat (per-process CPU)
 
@@ -655,11 +693,7 @@ $ sudo yum install sysstat -y
 ### METHOD 7: Complete CPU Analysis
 
 ```bash
-$ echo "=== TOP 5 CPU-CONSUMING PROCESSES ===" && \
-  ps aux --sort=-%cpu | awk 'NR==1 || NR<=6 {
-    if(NR==1) printf "%-8s %-6s %-6s %-8s %s\n", "USER", "PID", "%CPU", "TIME", "COMMAND"
-    else printf "%-8s %-6s %-6s %-8s %s\n", $1, $2, $3, $10, $11
-  }'
+echo "=== TOP 5 CPU-CONSUMING PROCESSES ===" && ps aux --sort=-%cpu | awk 'NR==1{printf "%-8s %-6s %-6s %-8s %s\n", "USER", "PID", "%CPU", "TIME", "COMMAND"} NR>1 && NR<=6{printf "%-8s %-6s %-6s %-8s %s\n", $1, $2, $3, $10, $11}'
 ```
 
 Output:
@@ -679,6 +713,8 @@ root     789    2.1    0:30     Xorg
 > - Top 5 CPU-consuming processes
 > - Formatted table with USER, PID, %CPU, TIME, COMMAND
 > - Clear ranking of CPU usage
+
+![Top 5 CPU processes analysis](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/Top%205%20CPU%20processes%20analysis.png)
 
 
 ## COMPLETE COMMAND SEQUENCE
