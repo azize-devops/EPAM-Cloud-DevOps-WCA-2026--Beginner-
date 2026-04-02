@@ -11,10 +11,6 @@ Open a terminal application:
 - Or use keyboard shortcut: Ctrl + Alt + T
 - Or right-click on desktop and select "Open Terminal"
 
-> **Screenshot 1**
->
-> Show: Terminal window opened and ready
-> Prompt visible: [user@hostname ~]$
 
 
 ## TASK 2: Find httpd package in yum repos
@@ -51,16 +47,6 @@ yum info httpd
 yum list available | grep httpd
 ```
 
-> **Screenshot 2**
->
-> Show: Output of "yum search httpd" command
-> Expected: List of httpd-related packages
-
-> **Screenshot 3**
->
-> Show: Output of "yum info httpd" command
-> Expected: Detailed package information (version, size,
-> repository, description)
 
 
 ## TASK 3: Install httpd
@@ -89,11 +75,6 @@ Installed:
 Complete!
 ```
 
-> **Screenshot 4**
->
-> Show: yum install httpd command execution
-> Expected: Dependency resolution and installation
-> progress with "Complete!" message
 
 
 ## TASK 4: Start httpd. Verify that it's running
@@ -129,28 +110,6 @@ Expected output from systemctl status:
            ├─1235 /usr/sbin/httpd -DFOREGROUND
            ...
 ```
-
-> **Screenshot 5**
->
-> Show: systemctl start httpd command
-> Expected: Command executes without error
-
-> **Screenshot 6**
->
-> Show: systemctl status httpd output
-> Expected: Active: active (running) status
-> Green dot indicator
-
-Optional - Test with curl:
-
-```bash
-curl http://localhost
-```
-
-> **Screenshot 7**
->
-> Show: curl http://localhost or browser test
-> Expected: Apache test page or welcome message
 
 
 ## TASK 5: Remove httpd
@@ -190,10 +149,6 @@ sudo yum autoremove httpd
 sudo yum erase httpd
 ```
 
-> **Screenshot 8**
->
-> Show: yum remove httpd command execution
-> Expected: Package removal with "Complete!" message
 
 
 ## TASK 6: Find nginx package in yum repos
@@ -204,20 +159,19 @@ Search for nginx in yum repositories:
 yum search nginx
 ```
 
-Expected output (on fresh CentOS without EPEL):
+**CentOS 7:**
 ```
 Warning: No matches found for: nginx
 No matches found
 ```
+nginx is not available in the default CentOS 7 repositories. It requires the EPEL (Extra Packages for Enterprise Linux) repository.
 
-This is because nginx is not available in the default CentOS repositories.
-It requires the EPEL (Extra Packages for Enterprise Linux) repository.
-
-> **Screenshot 9**
->
-> Show: yum search nginx with no results
-> Expected: "No matches found" or empty result
-> (before EPEL installation)
+**CentOS Stream 8/9:**
+```
+======================== Name Exactly Matched: nginx =========================
+nginx.x86_64 : A high performance web server and reverse proxy server
+```
+nginx is available in the default **AppStream** repository. EPEL is not required.
 
 
 ## TASK 7: Find out which repo provides nginx and install it
@@ -231,6 +185,8 @@ yum repolist
 # Search for nginx with provides
 yum provides nginx
 ```
+
+**CentOS 7 (EPEL Required):**
 
 nginx is provided by the EPEL repository. Install EPEL:
 
@@ -259,33 +215,27 @@ Now search for nginx again:
 yum search nginx
 ```
 
+**CentOS Stream 8/9 (No EPEL Needed):**
+
+nginx is already available in the AppStream repository:
+
+```bash
+yum info nginx
+```
+
 Expected output:
 ```
-============================== N/S matched: nginx ==============================
-nginx.x86_64 : A high performance web server and reverse proxy server
-nginx-all-modules.noarch : A meta package that installs all available Nginx modules
-...
+Available Packages
+Name         : nginx
+Version      : 1.xx.x
+Repository   : appstream
+Summary      : A high performance web server and reverse proxy server
 ```
-
-> **Screenshot 10**
->
-> Show: yum install epel-release command
-> Expected: EPEL repository installation
-
-> **Screenshot 11**
->
-> Show: yum repolist after EPEL installation
-> Expected: epel repository visible in the list
-
-> **Screenshot 12**
->
-> Show: yum search nginx after EPEL installation
-> Expected: nginx packages found from EPEL repo
 
 
 ## TASK 8: Install nginx
 
-Now install nginx from EPEL repository:
+Install nginx (from EPEL on CentOS 7, or AppStream on CentOS Stream 8/9):
 
 ```bash
 sudo yum install nginx -y
@@ -307,11 +257,6 @@ Dependency Installed:
 Complete!
 ```
 
-> **Screenshot 13**
->
-> Show: yum install nginx command execution
-> Expected: nginx installation from epel repo
-> with dependencies and "Complete!" message
 
 
 ## TASK 9: Start nginx. Verify that it's running
@@ -355,21 +300,6 @@ ss -tlnp | grep :80
 curl http://localhost
 ```
 
-> **Screenshot 14**
->
-> Show: systemctl start nginx command
-> Expected: Command executes without error
-
-> **Screenshot 15**
->
-> Show: systemctl status nginx output
-> Expected: Active: active (running) status
-> Green dot, PID information
-
-> **Screenshot 16**
->
-> Show: curl http://localhost or browser test
-> Expected: nginx welcome page
 
 
 ## YUM COMMAND REFERENCE
@@ -424,7 +354,9 @@ Solution: Check network connectivity, DNS settings, or repository configuration
 
 **Problem: "Package nginx not found"**
 
-Solution: Install EPEL repository first: `sudo yum install epel-release`
+Solution (CentOS 7): Install EPEL repository first: `sudo yum install epel-release`
+
+Note: On CentOS Stream 8/9, nginx is available in AppStream repository by default.
 
 **Problem: Port 80 already in use**
 
@@ -442,9 +374,9 @@ Solution: Use sudo for package management commands
 - [ ] httpd installed successfully
 - [ ] httpd service started and status shows "active (running)"
 - [ ] httpd removed successfully
-- [ ] yum search nginx initially shows no results (before EPEL)
-- [ ] EPEL repository installed (yum install epel-release)
-- [ ] yum repolist shows epel in the list
-- [ ] yum search nginx now shows nginx packages
-- [ ] nginx installed successfully from EPEL
+- [ ] yum search nginx executed
+  - CentOS 7: No results (EPEL required)
+  - CentOS Stream 8/9: nginx packages found (AppStream)
+- [ ] For CentOS 7: EPEL repository installed (yum install epel-release)
+- [ ] nginx installed successfully
 - [ ] nginx service started and status shows "active (running)"
