@@ -7,11 +7,7 @@ Methods:
 - Activities > Search "Terminal"
 - Right-click on Desktop > Open Terminal
 
-> **Screenshot 1**
->
-> Terminal window showing:
-> - Empty terminal with command prompt
-> - Username and hostname visible (user@hostname:~$)
+![Terminal window opened](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/11_Using%20Journalctl/Terminal%20window%20opened.png)
 
 
 ## TASK 2: Install nginx service
@@ -42,12 +38,7 @@ Explanation:
 - nginx is not in default CentOS repositories
 - EPEL provides additional packages including nginx
 
-> **Screenshot 2a**
->
-> Terminal showing:
-> - $ sudo yum install epel-release -y
-> - Installation progress
-> - "Complete!" message
+![yum install epel-release complete](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/11_Using%20Journalctl/yum%20install%20epel-release%20complete.png)
 
 
 ### STEP 2: Install nginx
@@ -95,14 +86,7 @@ nginx-1.20.1-10.el7.x86_64
 nginx-filesystem-1.20.1-10.el7.noarch
 ```
 
-> **Screenshot 2b**
->
-> Terminal showing:
-> - $ sudo yum install nginx -y
-> - Installation progress
-> - "Complete!" message
-> - $ nginx -v
-> - nginx version: nginx/1.20.1
+![yum install nginx complete with version check](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/11_Using%20Journalctl/yum%20install%20nginx%20complete%20with%20version%20check.png)
 
 
 ## TASK 3: Start nginx service
@@ -159,16 +143,7 @@ Output:
 ...
 ```
 
-> **Screenshot 3**
->
-> Terminal showing:
-> - $ sudo systemctl start nginx
-> - $ systemctl status nginx
-> - nginx.service - The nginx HTTP and reverse proxy server
-> - Active: active (running) since ...
-> - Log entries showing successful start
-> - "configuration file ... syntax is ok"
-> - "Started The nginx HTTP and reverse proxy server"
+![systemctl start nginx and status showing active](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/11_Using%20Journalctl/systemctl%20start%20nginx%20and%20status%20showing%20active.png)
 
 
 ## TASK 4: Stop nginx service
@@ -207,13 +182,7 @@ Output:
 inactive
 ```
 
-> **Screenshot 4**
->
-> Terminal showing:
-> - $ sudo systemctl stop nginx
-> - $ systemctl status nginx
-> - Active: inactive (dead)
-> - Log entries showing "Stopped The nginx..."
+![systemctl stop nginx and status showing inactive](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/11_Using%20Journalctl/systemctl%20stop%20nginx%20and%20status%20showing%20inactive.png)
 
 
 ## TASK 5: Check nginx service logs
@@ -239,13 +208,7 @@ Explanation:
 - `-u nginx` = Show logs only for nginx unit
 - Shows all logs from beginning of journal
 
-> **Screenshot 5a**
->
-> Terminal showing:
-> - $ journalctl -u nginx
-> - Log entries for nginx service
-> - Start and stop events visible
-> - Configuration test messages
+![journalctl -u nginx showing all logs](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/11_Using%20Journalctl/journalctl%20-u%20nginx%20showing%20all%20logs.png)
 
 
 ### METHOD 2: Show recent logs with -n flag
@@ -334,13 +297,7 @@ Tue 2024-01-15 10:00:00.123456 UTC [s=abc123;i=1234;b=xyz789;...]
     ...
 ```
 
-> **Screenshot 5b**
->
-> Terminal showing:
-> - $ journalctl -u nginx -n 10
-> - OR $ journalctl -u nginx --since "1 hour ago"
-> - Recent nginx log entries
-> - Timestamps and messages visible
+![journalctl -u nginx with time filter](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/11_Using%20Journalctl/journalctl%20-u%20nginx%20with%20time%20filter.png)
 
 
 ## TASK 6: Introduce error by moving nginx config file
@@ -373,14 +330,7 @@ Output:
 -rw-r--r--. 1 root root 2469 Jan 15 10:00 ./nginx.conf
 ```
 
-> **Screenshot 6**
->
-> Terminal showing:
-> - $ sudo mv /etc/nginx/nginx.conf ./
-> - $ ls -la /etc/nginx/nginx.conf
-> - ls: cannot access ... No such file or directory
-> - $ ls -la ./nginx.conf
-> - File exists in current directory
+![mv nginx.conf and verification](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/11_Using%20Journalctl/mv%20nginx.conf%20and%20verification.png)
 
 
 ## TASK 7: Attempt to start nginx service
@@ -422,17 +372,7 @@ Important observations:
 - nginx: [emerg] open() "/etc/nginx/nginx.conf" failed (2: No such file or directory)
 - nginx: configuration file /etc/nginx/nginx.conf test failed
 
-> **Screenshot 7**
->
-> Terminal showing:
-> - $ sudo systemctl start nginx
-> - "Job for nginx.service failed..." message
-> - $ systemctl status nginx
-> - Active: failed (Result: exit-code)
-> - Error message:
->   nginx: [emerg] open() "/etc/nginx/nginx.conf" failed
->   (2: No such file or directory)
-> - "Failed to start The nginx HTTP and reverse proxy server"
+![Failed start attempt with error message](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/11_Using%20Journalctl/Failed%20start%20attempt%20with%20error%20message.png)
 
 
 ## TASK 8: View only error entries in nginx logs
@@ -462,14 +402,7 @@ Explanation:
   - 6 = info
   - 7 = debug
 
-> **Screenshot 8a**
->
-> Terminal showing:
-> - $ journalctl -u nginx -p err
-> - Only error messages displayed:
->   nginx: [emerg] open() "/etc/nginx/nginx.conf" failed
->   (2: No such file or directory)
->   nginx: configuration file ... test failed
+![journalctl -u nginx -p err showing only errors](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/11_Using%20Journalctl/journalctl%20-u%20nginx%20-p%20err%20showing%20only%20errors.png)
 
 
 ### METHOD 2: Using priority range
@@ -511,13 +444,7 @@ $ journalctl -u nginx | grep -i "failed"
 $ journalctl -u nginx | grep -E "error|failed|emerg"
 ```
 
-> **Screenshot 8b**
->
-> Terminal showing:
-> - $ journalctl -u nginx -p err --since "10 minutes ago"
-> - Error entries with timestamp
-> - OR $ journalctl -u nginx | grep -i failed
-> - Filtered error messages
+![journalctl with grep or additional filters](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/11_Using%20Journalctl/journalctl%20with%20grep%20or%20additional%20filters.png)
 
 
 ### METHOD 5: Using journalctl -xe for detailed errors
@@ -565,13 +492,7 @@ Output:
 }
 ```
 
-> **Screenshot 8c**
->
-> Terminal showing:
-> - $ journalctl -xe
-> - Detailed error explanation
-> - "Unit nginx.service has failed"
-> - Error context and description
+![journalctl -xe with detailed explanation](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/11_Using%20Journalctl/journalctl%20-xe%20with%20detailed%20explanation.png)
 
 
 ## RESTORE NGINX (After completing the task)
@@ -607,14 +528,7 @@ Output:
    Active: active (running) since ...
 ```
 
-> **Screenshot 9 (Optional)**
->
-> Terminal showing:
-> - $ sudo mv ./nginx.conf /etc/nginx/nginx.conf
-> - $ sudo systemctl start nginx
-> - $ systemctl status nginx
-> - Active: active (running)
-> - nginx successfully restored and running
+![(Optional) Restored nginx running again](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/11_Using%20Journalctl/(Optional)%20Restored%20nginx%20running%20again.png)
 
 
 ## COMPLETE COMMAND SEQUENCE
@@ -770,22 +684,3 @@ $ journalctl -p err
 ```
 
 
-## SCREENSHOTS CHECKLIST
-
-Print this checklist and mark each screenshot as you take it:
-
-- [ ] SCREENSHOT 1  - Terminal window opened
-- [ ] SCREENSHOT 2a - yum install epel-release complete
-- [ ] SCREENSHOT 2b - yum install nginx complete with version check
-- [ ] SCREENSHOT 3  - systemctl start nginx and status showing active
-- [ ] SCREENSHOT 4  - systemctl stop nginx and status showing inactive
-- [ ] SCREENSHOT 5a - journalctl -u nginx showing all logs
-- [ ] SCREENSHOT 5b - journalctl -u nginx with time filter
-- [ ] SCREENSHOT 6  - mv nginx.conf and verification
-- [ ] SCREENSHOT 7  - Failed start attempt with error message
-- [ ] SCREENSHOT 8a - journalctl -u nginx -p err showing only errors
-- [ ] SCREENSHOT 8b - journalctl with grep or additional filters
-- [ ] SCREENSHOT 8c - journalctl -xe with detailed explanation
-- [ ] SCREENSHOT 9  - (Optional) Restored nginx running again
-
-TOTAL: 12-13 Screenshots Required
