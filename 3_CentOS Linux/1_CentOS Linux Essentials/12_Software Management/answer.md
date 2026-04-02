@@ -11,6 +11,7 @@ Open a terminal application:
 - Or use keyboard shortcut: Ctrl + Alt + T
 - Or right-click on desktop and select "Open Terminal"
 
+![Terminal opened successfully](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/12_Software%20Management/Terminal%20opened%20successfully.png)
 
 
 ## TASK 2: Find httpd package in yum repos
@@ -47,6 +48,9 @@ yum info httpd
 yum list available | grep httpd
 ```
 
+![yum search httpd](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/12_Software%20Management/yum%20search%20httpd%20shows%20available%20httpd%20packages.png)
+
+![yum info httpd](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/12_Software%20Management/Show-%20Output%20of%20-yum%20info%20httpd-%20command%20.png)
 
 
 ## TASK 3: Install httpd
@@ -75,6 +79,7 @@ Installed:
 Complete!
 ```
 
+![httpd installed successfully](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/12_Software%20Management/httpd%20installed%20successfully.png)
 
 
 ## TASK 4: Start httpd. Verify that it's running
@@ -110,6 +115,8 @@ Expected output from systemctl status:
            ├─1235 /usr/sbin/httpd -DFOREGROUND
            ...
 ```
+
+![httpd service started and running](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/12_Software%20Management/httpd%20service%20started%20and%20status%20shows%20-active%20(running)-.png)
 
 
 ## TASK 5: Remove httpd
@@ -149,6 +156,7 @@ sudo yum autoremove httpd
 sudo yum erase httpd
 ```
 
+![httpd removed successfully](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/12_Software%20Management/httpd%20removed%20successfully.png)
 
 
 ## TASK 6: Find nginx package in yum repos
@@ -172,6 +180,8 @@ nginx is not available in the default CentOS 7 repositories. It requires the EPE
 nginx.x86_64 : A high performance web server and reverse proxy server
 ```
 nginx is available in the default **AppStream** repository. EPEL is not required.
+
+![yum search nginx](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/12_Software%20Management/yum%20search%20nginx%20executed-CentOS%20Stream%209-%20nginx%20packages%20found%20(AppStream).png)
 
 
 ## TASK 7: Find out which repo provides nginx and install it
@@ -232,6 +242,8 @@ Repository   : appstream
 Summary      : A high performance web server and reverse proxy server
 ```
 
+![yum info nginx](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/12_Software%20Management/yum%20info%20nginx.png)
+
 
 ## TASK 8: Install nginx
 
@@ -257,6 +269,7 @@ Dependency Installed:
 Complete!
 ```
 
+![nginx installed successfully](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/12_Software%20Management/nginx%20installed%20successfully.png)
 
 
 ## TASK 9: Start nginx. Verify that it's running
@@ -300,6 +313,7 @@ ss -tlnp | grep :80
 curl http://localhost
 ```
 
+![nginx service started and running](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/12_Software%20Management/nginx%20service%20started%20and%20status%20shows%20-active%20(running)-.png)
 
 
 ## YUM COMMAND REFERENCE
