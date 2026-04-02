@@ -7,11 +7,7 @@ Methods:
 - Activities > Search "Terminal"
 - Right-click on Desktop > Open Terminal
 
-> **Screenshot 1**
->
-> Terminal window showing:
-> - Empty terminal with command prompt
-> - Username and hostname visible (user@hostname:~$)
+![Terminal window opened](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/10_Systemd/Terminal%20window%20opened.png)
 
 
 ## TASK 2: List unit files available in your system
@@ -40,13 +36,7 @@ Explanation:
 - STATE: Current state (enabled, disabled, static, masked)
 - VENDOR PRESET: Default state from vendor
 
-> **Screenshot 2a**
->
-> Terminal showing:
-> - $ systemctl list-unit-files
-> - List of unit files with STATE column
-> - Various services listed (.service files)
-> - enabled/disabled states visible
+![systemctl list-unit-files output](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/10_Systemd/systemctl%20list-unit-files%20output.png)
 
 
 ### METHOD 2: List only service unit files
@@ -65,12 +55,7 @@ dbus.service                               static          -
 ...
 ```
 
-> **Screenshot 2b**
->
-> Terminal showing:
-> - $ systemctl list-unit-files --type=service
-> - Only .service unit files listed
-> - STATE column visible (enabled, disabled, static)
+![systemctl list-unit-files --type=service output](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/10_Systemd/systemctl%20list-unit-files%20--type=service%20output.png)
 
 
 ### METHOD 3: List currently loaded units
@@ -155,13 +140,7 @@ httpd-2.4.6-97.el7.centos.5.x86_64
 httpd-tools-2.4.6-97.el7.centos.5.x86_64
 ```
 
-> **Screenshot 3**
->
-> Terminal showing:
-> - $ sudo yum install httpd -y
-> - Installation progress
-> - "Complete!" message at the end
-> - Installed packages listed (httpd, apr, apr-util, etc.)
+![yum install httpd with Complete! message](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/10_Systemd/yum%20install%20httpd%20with%20Complete!%20message.png)
 
 
 ## TASK 4: Start httpd service
@@ -194,13 +173,7 @@ apache    1236  0.0  0.1 226108  3500 ?        S    10:00   0:00 /usr/sbin/httpd
 ...
 ```
 
-> **Screenshot 4**
->
-> Terminal showing:
-> - $ sudo systemctl start httpd
-> - $ systemctl is-active httpd
-> - Output: active
-> - OR: ps aux | grep httpd showing httpd processes
+![systemctl start httpd and is-active check](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/10_Systemd/systemctl%20start%20httpd%20and%20is-active%20check.png)
 
 
 ## TASK 5: Check httpd service status
@@ -241,15 +214,7 @@ Understanding the output:
 | CGroup    | Control group with all related processes |
 | Log entries | Recent journal entries for this service |
 
-> **Screenshot 5**
->
-> Terminal showing:
-> - $ systemctl status httpd
-> - httpd.service - The Apache HTTP Server
-> - Loaded: loaded (...; disabled; ...)
-> - Active: active (running) since ...
-> - Main PID and CGroup information
-> - Journal log entries at bottom
+![systemctl status httpd (full status output)](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/10_Systemd/systemctl%20status%20httpd%20(full%20status%20output).png)
 
 
 ## TASK 6: Restart httpd service
@@ -280,13 +245,7 @@ Alternative commands:
 | reload-or-restart | Reload if supported, otherwise restart   |
 | try-restart       | Restart only if already running          |
 
-> **Screenshot 6**
->
-> Terminal showing:
-> - $ sudo systemctl restart httpd
-> - $ systemctl status httpd
-> - Active: active (running) since ... ; Xs ago
-> - New start time showing service was restarted
+![systemctl restart httpd and new status](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/10_Systemd/systemctl%20restart%20httpd%20and%20new%20status.png)
 
 
 ## TASK 7: Enable httpd service and verify
@@ -340,15 +299,7 @@ Output:
 httpd.service                              enabled         disabled
 ```
 
-> **Screenshot 7**
->
-> Terminal showing:
-> - $ sudo systemctl enable httpd
-> - Created symlink ... message
-> - $ systemctl is-enabled httpd
-> - Output: enabled
-> - $ systemctl status httpd
-> - Loaded line showing "enabled"
+![systemctl enable httpd and is-enabled verification](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/10_Systemd/systemctl%20enable%20httpd%20and%20is-enabled%20verification.png)
 
 
 ## TASK 8: Create script.sh with sleep 1000 content
@@ -392,15 +343,7 @@ Output:
 sleep 1000
 ```
 
-> **Screenshot 8**
->
-> Terminal showing:
-> - Script creation command (cat, echo, or nano)
-> - $ cat ~/script.sh
-> - Output:
->   #!/bin/bash
->
->   sleep 1000
+![script.sh creation and cat output](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/10_Systemd/script.sh%20creation%20and%20cat%20output.png)
 
 
 ## TASK 9: Make the script executable
@@ -438,12 +381,7 @@ $ ~/script.sh &
 $ ps aux | grep script.sh
 ```
 
-> **Screenshot 9**
->
-> Terminal showing:
-> - $ chmod +x ~/script.sh
-> - $ ls -la ~/script.sh
-> - -rwxr-xr-x ... script.sh (x permission visible)
+![chmod +x and ls -la showing execute permission](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/10_Systemd/chmod%20+x%20and%20ls%20-la%20showing%20execute%20permission.png)
 
 
 ## TASK 10: Create test.service unit file
@@ -544,14 +482,7 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
-> **Screenshot 10a**
->
-> Terminal showing:
-> - Creation of unit file (nano or cat command)
-> - $ cat /etc/systemd/system/test.service
-> - [Unit] section with Description
-> - [Service] section with ExecStart
-> - [Install] section with WantedBy
+![test.service unit file content](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/10_Systemd/test.service%20unit%20file%20content.png)
 
 
 ### STEP 3: Reload systemd daemon
@@ -564,13 +495,7 @@ $ sudo systemctl daemon-reload
 
 This tells systemd to re-read all unit files.
 
-> **Screenshot 10b**
->
-> Terminal showing:
-> - $ sudo systemctl daemon-reload
-> - (Command completes without error)
-> - $ systemctl list-unit-files | grep test
-> - test.service visible in the list
+![daemon-reload and unit file in list](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/10_Systemd/daemon-reload%20and%20unit%20file%20in%20list.png)
 
 
 ## TASK 11: Start test service
@@ -595,12 +520,7 @@ Output:
 active
 ```
 
-> **Screenshot 11**
->
-> Terminal showing:
-> - $ sudo systemctl start test.service
-> - $ systemctl is-active test
-> - Output: active
+![systemctl start test.service](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/10_Systemd/systemctl%20start%20test.service.png)
 
 
 ## TASK 12: Verify test service status
@@ -631,18 +551,7 @@ Understanding the output:
   - script.sh is running
   - sleep 1000 is a child process of script.sh
 
-> **Screenshot 12**
->
-> Terminal showing:
-> - $ systemctl status test.service
-> - test.service - Test Service - Running script.sh
-> - Loaded: loaded (/etc/systemd/system/test.service; ...)
-> - Active: active (running) since ...
-> - Main PID: XXXX (script.sh)
-> - CGroup showing:
->   - XXXX /bin/bash /home/user1/script.sh
->   - XXXX sleep 1000
-> - "Started Test Service" log message
+![systemctl status test.service (showing script.sh and sleep)](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/10_Systemd/systemctl%20status%20test.service%20(showing%20script.sh%20and%20sleep).png)
 
 
 ### ADDITIONAL VERIFICATION:
@@ -838,23 +747,3 @@ WantedBy=multi-user.target
 | WantedBy         | Target that wants this service                    |
 
 
-## SCREENSHOTS CHECKLIST
-
-Print this checklist and mark each screenshot as you take it:
-
-- [ ] SCREENSHOT 1   - Terminal window opened
-- [ ] SCREENSHOT 2a  - systemctl list-unit-files output
-- [ ] SCREENSHOT 2b  - systemctl list-unit-files --type=service output
-- [ ] SCREENSHOT 3   - yum install httpd with "Complete!" message
-- [ ] SCREENSHOT 4   - systemctl start httpd and is-active check
-- [ ] SCREENSHOT 5   - systemctl status httpd (full status output)
-- [ ] SCREENSHOT 6   - systemctl restart httpd and new status
-- [ ] SCREENSHOT 7   - systemctl enable httpd and is-enabled verification
-- [ ] SCREENSHOT 8   - script.sh creation and cat output
-- [ ] SCREENSHOT 9   - chmod +x and ls -la showing execute permission
-- [ ] SCREENSHOT 10a - test.service unit file content
-- [ ] SCREENSHOT 10b - daemon-reload and unit file in list
-- [ ] SCREENSHOT 11  - systemctl start test.service
-- [ ] SCREENSHOT 12  - systemctl status test.service (showing script.sh and sleep)
-
-TOTAL: 14 Screenshots Required
