@@ -7,12 +7,6 @@ Methods:
 - Activities > Search "Terminal"
 - Right-click on Desktop > Open Terminal
 
-> **Screenshot 1**
->
-> Terminal window showing:
-> - Empty terminal with command prompt
-> - Username and hostname visible (user@hostname:~$)
-
 ![Terminal window opened](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/Terminal%20window%20opened.png)
 
 
@@ -55,15 +49,6 @@ Useful top shortcuts:
 - k = Kill a process
 - q = Quit
 
-> **Screenshot 2a**
->
-> top command showing:
-> - System uptime and load average at top
-> - Tasks summary (running, sleeping, stopped, zombie)
-> - %Cpu(s) line with us, sy, ni, id, wa, hi, si, st values
-> - Memory summary
-> - Process list with PID, USER, %CPU, %MEM, COMMAND
-
 ![top command with CPU line visible](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/top%20command%20with%20CPU%20line%20visible.png)
 
 
@@ -77,13 +62,6 @@ While in top, press '1' (number one):
 %Cpu2  :  6.1 us,  2.5 sy,  0.0 ni, 90.5 id,  0.6 wa,  0.2 hi,  0.1 si,  0.0 st
 %Cpu3  :  3.8 us,  1.5 sy,  0.0 ni, 94.0 id,  0.4 wa,  0.1 hi,  0.2 si,  0.0 st
 ```
-
-> **Screenshot 2b**
->
-> top command with individual CPU cores:
-> - Press '1' in top to show per-CPU statistics
-> - Each CPU core shown separately (Cpu0, Cpu1, Cpu2, Cpu3, ...)
-> - Usage percentages for each core
 
 ![top with individual CPU cores](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/top%20with%20individual%20CPU%20cores%20(press%201).png)
 
@@ -117,15 +95,6 @@ htop shortcuts:
 - F9 = Kill
 - F10 = Quit
 
-> **Screenshot 2c**
->
-> htop command showing:
-> - CPU usage bars for each core (colored)
-> - Memory and Swap usage bars
-> - Tasks, load average, uptime
-> - Process list with tree view option
-> - Function key shortcuts at bottom
-
 ![htop with colored CPU bars](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/htop%20with%20colored%20CPU%20bars.png)
 
 
@@ -145,13 +114,6 @@ Explanation:
 - up 2 days, 5:15 = System uptime
 - 2 users = Number of logged-in users
 - load average: 0.52, 0.48, 0.45 = CPU load averages for 1, 5, 15 minutes
-
-> **Screenshot 2d**
->
-> Terminal showing:
-> - $ uptime
-> - Output with time, uptime duration, users, load average
-> - Load average values: X.XX, X.XX, X.XX
 
 ![uptime command output](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/uptime%20command%20output.png)
 
@@ -190,13 +152,6 @@ Output:
 10:30:45 AM    3    3.80    0.00    1.50    0.40    0.10    0.20    0.00    0.00    0.00   94.00
 ```
 
-> **Screenshot 2e**
->
-> Terminal showing:
-> - $ mpstat -P ALL
-> - CPU statistics for all cores
-> - %usr, %sys, %iowait, %idle columns visible
-
 ![mpstat -P ALL showing per-CPU stats](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/mpstat%20-P%20ALL%20showing%20per-CPU%20stats.png)
 
 
@@ -221,13 +176,6 @@ CPU columns:
 - id = Idle time
 - wa = Wait I/O
 - st = Stolen time
-
-> **Screenshot 2f**
->
-> Terminal showing:
-> - $ vmstat 1 5
-> - Multiple lines showing CPU usage over time
-> - CPU columns: us, sy, id, wa, st
 
 ![vmstat showing CPU columns](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/vmstat%20showing%20CPU%20columns.png)
 
@@ -267,17 +215,6 @@ Key Information:
 Formula: CPU(s) = Socket(s) x Core(s) per socket x Thread(s) per core
 Example: 4 = 1 x 2 x 2
 
-> **Screenshot 3a**
->
-> Terminal showing:
-> - $ lscpu
-> - Output with CPU information:
->   CPU(s):              4
->   Core(s) per socket:  2
->   Thread(s) per core:  2
->   Socket(s):           1
->   Model name:          Intel...
-
 ![lscpu showing CPU information](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/lscpu%20showing%20CPU%20information.png)
 
 
@@ -309,14 +246,6 @@ cpu cores       : 2
 ...
 ```
 
-> **Screenshot 3b**
->
-> Terminal showing:
-> - $ grep -c "^processor" /proc/cpuinfo
-> - Output: 4 (or your number of CPU cores)
-> - $ cat /proc/cpuinfo | grep -E "processor|model name"
-> - Processor entries and model names listed
-
 ![/proc/cpuinfo with processor count](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/-proc-cpuinfo%20with%20processor%20count.png)
 
 
@@ -337,13 +266,6 @@ For all installed processors:
 ```bash
 $ nproc --all
 ```
-
-> **Screenshot 3c**
->
-> Terminal showing:
-> - $ nproc
-> - Output: 4 (or your number of CPUs)
-> - Simple, single number output
 
 ![nproc showing number of CPUs](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/nproc%20showing%20number%20of%20CPUs.png)
 
@@ -388,13 +310,6 @@ Threads per Core: 2
 CPU Model: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
 ```
 
-> **Screenshot 3d**
->
-> Terminal showing CPU summary:
-> - Total CPUs, Physical Cores, Sockets
-> - Threads per Core
-> - CPU Model name
-
 ![CPU summary script output](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/CPU%20summary%20script%20output.png)
 
 
@@ -434,13 +349,6 @@ Output:
                                                      1min  5min  15min
 ```
 
-> **Screenshot 4a**
->
-> Terminal showing:
-> - $ uptime
-> - Load average values clearly visible
-> - Format: load average: X.XX, X.XX, X.XX
-
 ![uptime with load average](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/uptime%20with%20load%20average.png)
 
 
@@ -461,13 +369,6 @@ Explanation:
 - 0.45 = 15-minute load average
 - 2/245 = Running processes / Total processes
 - 12345 = Last process ID used
-
-> **Screenshot 4b**
->
-> Terminal showing:
-> - $ cat /proc/loadavg
-> - Output: X.XX X.XX X.XX X/XXX XXXXX
-> - Load averages and process counts
 
 ![/proc/loadavg output](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/-proc-loadavg%20output.png)
 
@@ -505,13 +406,6 @@ user1    pts/1    192.168.1.100    09:30    1:00   0.10s  0.05s bash
 
 First line shows same info as uptime.
 
-> **Screenshot 4c**
->
-> Terminal showing:
-> - $ w
-> - First line with load average
-> - User session information below
-
 ![w command showing load average](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/w%20command%20showing%20load%20average.png)
 
 
@@ -536,13 +430,6 @@ Load Average: 0.52 0.48 0.45
 5-min Load: 0.48 (12% of 4 cores)
 15-min Load: 0.45 (11% of 4 cores)
 ```
-
-> **Screenshot 4d**
->
-> Terminal showing load interpretation:
-> - CPU Cores count
-> - Load averages with percentages
-> - Clear indication of CPU utilization
 
 ![Load interpretation with percentages](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/Load%20interpretation%20with%20percentages.png)
 
@@ -569,15 +456,6 @@ Explanation:
 - head -11 = Show header + top 10 processes
 - %CPU = CPU utilization percentage
 
-> **Screenshot 5a**
->
-> Terminal showing:
-> - $ ps aux --sort=-%cpu | head -11
-> - Header row with columns
-> - Top processes sorted by CPU usage
-> - First process after header is highest CPU consumer
-> - %CPU column clearly visible
-
 ![ps aux sorted by CPU](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/ps%20aux%20sorted%20by%20CPU.png)
 
 
@@ -592,13 +470,6 @@ Output:
 Process: firefox - CPU: 25.0% - PID: 1234
 ```
 
-> **Screenshot 5b**
->
-> Terminal showing:
-> - Command to find single top CPU process
-> - Output: Process: [name] - CPU: [%] - PID: [number]
-> - Clear identification of highest CPU consumer
-
 ![Single top CPU process identification](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/Single%20top%20CPU%20process%20identification.png)
 
 
@@ -612,14 +483,6 @@ Top displays processes sorted by CPU by default.
 Press 'P' to re-sort by CPU if needed.
 
 The first process in the list uses most CPU.
-
-> **Screenshot 5c**
->
-> top command showing:
-> - Process list sorted by CPU (default)
-> - First process is highest CPU consumer
-> - %CPU column visible
-> - PID and COMMAND columns visible
 
 ![top sorted by CPU](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/top%20sorted%20by%20CPU.png)
 
@@ -656,14 +519,6 @@ Then press F6 and select PERCENT_CPU, or start with:
 ```bash
 $ htop --sort-key PERCENT_CPU
 ```
-
-> **Screenshot 5d**
->
-> htop command showing:
-> - Processes sorted by CPU usage
-> - CPU% column highlighted
-> - First process is highest CPU consumer
-> - Colored bars showing CPU usage
 
 ![htop sorted by CPU](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/htop%20sorted%20by%20CPU.png)
 
@@ -706,13 +561,6 @@ root     3456   5.2    1:00     gnome-shell
 user1    4567   3.8    0:45     slack
 root     789    2.1    0:30     Xorg
 ```
-
-> **Screenshot 5e**
->
-> Terminal showing complete analysis:
-> - Top 5 CPU-consuming processes
-> - Formatted table with USER, PID, %CPU, TIME, COMMAND
-> - Clear ranking of CPU usage
 
 ![Top 5 CPU processes analysis](../../../../docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/9_CPU%20Diagnostics/Top%205%20CPU%20processes%20analysis.png)
 
@@ -802,29 +650,3 @@ Example with 4 CPU cores:
 | > 6.0 | Overloaded |
 
 
-## SCREENSHOTS CHECKLIST
-
-Print this checklist and mark each screenshot as you take it:
-
-- [ ] SCREENSHOT 1  - Terminal window opened
-- [ ] SCREENSHOT 2a - top command with CPU line visible
-- [ ] SCREENSHOT 2b - top with individual CPU cores (press 1)
-- [ ] SCREENSHOT 2c - htop with colored CPU bars
-- [ ] SCREENSHOT 2d - uptime command output
-- [ ] SCREENSHOT 2e - mpstat -P ALL showing per-CPU stats
-- [ ] SCREENSHOT 2f - vmstat showing CPU columns
-- [ ] SCREENSHOT 3a - lscpu showing CPU information
-- [ ] SCREENSHOT 3b - /proc/cpuinfo with processor count
-- [ ] SCREENSHOT 3c - nproc showing number of CPUs
-- [ ] SCREENSHOT 3d - CPU summary script output
-- [ ] SCREENSHOT 4a - uptime with load average
-- [ ] SCREENSHOT 4b - /proc/loadavg output
-- [ ] SCREENSHOT 4c - w command showing load average
-- [ ] SCREENSHOT 4d - Load interpretation with percentages
-- [ ] SCREENSHOT 5a - ps aux sorted by CPU
-- [ ] SCREENSHOT 5b - Single top CPU process identification
-- [ ] SCREENSHOT 5c - top sorted by CPU
-- [ ] SCREENSHOT 5d - htop sorted by CPU
-- [ ] SCREENSHOT 5e - Top 5 CPU processes analysis
-
-TOTAL: 20 Screenshots Required
