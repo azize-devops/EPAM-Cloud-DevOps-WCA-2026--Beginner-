@@ -36,20 +36,18 @@ Option C - Host-Only Adapter:
 - VMs can communicate with each other and host
 - No internet access
 
-> **Screenshot 1**
->
-> Show: VirtualBox/VMware with both VMs visible
-> Expected: VM1 and VM2 in the VM list
+**VirtualBox Adapter / Linux Interface Mapping:**
+| VirtualBox | Linux Interface |
+|------------|-----------------|
+| Adapter 1  | enp0s3          |
+| Adapter 2  | enp0s8          |
+| Adapter 3  | enp0s9          |
 
-> **Screenshot 2**
->
-> Show: Network settings for VM1
-> Expected: Adapter type (Bridged/Internal/Host-Only)
+![Both VMs running](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/13_Network%20Configuration/Both%20VMs%20(VM1%20and%20VM2)%20are%20running.png)
 
-> **Screenshot 3**
->
-> Show: Network settings for VM2
-> Expected: Same network type as VM1
+![Network settings for VM1](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/13_Network%20Configuration/Network%20settings%20for%20VM1.png)
+
+![Network settings for VM2](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/13_Network%20Configuration/Network%20settings%20for%20VM2.png)
 
 After booting both VMs, get IP addresses:
 
@@ -69,16 +67,9 @@ ip a
 
 Note the IP addresses (e.g., VM1: 192.168.1.100, VM2: 192.168.1.101)
 
-> **Screenshot 4**
->
-> Show: "ip addr show" output on VM1
-> Expected: IP address visible (e.g., 192.168.1.100)
-> Look for inet under eth0/enp0s3
+![ip addr show on VM1](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/13_Network%20Configuration/-ip%20addr%20show-%20output%20on%20VM1.png)
 
-> **Screenshot 5**
->
-> Show: "ip addr show" output on VM2
-> Expected: IP address visible (e.g., 192.168.1.101)
+![ip addr show on VM2](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/13_Network%20Configuration/-ip%20addr%20show-%20output%20on%20VM2.png)
 
 Test connectivity between VMs:
 
@@ -88,10 +79,7 @@ ping -c 3 <VM1_IP_ADDRESS>
 # Example: ping -c 3 192.168.1.100
 ```
 
-> **Screenshot 6**
->
-> Show: Ping from VM2 to VM1
-> Expected: Successful ping replies (0% packet loss)
+![Ping from VM2 to VM1](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/13_Network%20Configuration/Ping%20from%20VM2%20to%20VM1.png)
 
 
 ## TASK 2: Install and start httpd service on VM1
@@ -119,15 +107,9 @@ Expected status output:
    Active: active (running) since ...
 ```
 
-> **Screenshot 7**
->
-> Show: yum install httpd -y on VM1
-> Expected: Installation complete message
+![yum install httpd on VM1](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/13_Network%20Configuration/yum%20install%20httpd%20-y%20on%20VM1.png)
 
-> **Screenshot 8**
->
-> Show: systemctl status httpd on VM1
-> Expected: Active: active (running) status
+![systemctl status httpd on VM1](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/13_Network%20Configuration/systemctl%20status%20httpd%20on%20VM1.png)
 
 Configure firewall to allow HTTP traffic:
 
@@ -149,10 +131,9 @@ sudo systemctl stop firewalld
 sudo systemctl disable firewalld
 ```
 
-> **Screenshot 9**
->
-> Show: Firewall configuration or disable
-> Expected: HTTP service added or firewall stopped
+![Firewall status](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/13_Network%20Configuration/Firewall%20status.png)
+
+![Firewall configuration](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/13_Network%20Configuration/Firewall%20configuration.png)
 
 
 ## TASK 3: Create file /var/www/html/index.html on VM1
@@ -193,15 +174,7 @@ Expected output:
 Hello
 ```
 
-> **Screenshot 10**
->
-> Show: Creating index.html file on VM1
-> Expected: echo or vim command execution
-
-> **Screenshot 11**
->
-> Show: cat /var/www/html/index.html output
-> Expected: "Hello" displayed
+![Creating index.html on VM1](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/13_Network%20Configuration/Creating%20index.html%20file%20on%20VM1.png)
 
 Test locally on VM1:
 ```bash
@@ -213,10 +186,7 @@ Expected output:
 Hello
 ```
 
-> **Screenshot 12**
->
-> Show: curl http://localhost on VM1
-> Expected: "Hello" response
+![curl localhost on VM1](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/13_Network%20Configuration/curl%20http---localhost%20on%20VM1.png)
 
 
 ## TASK 4: Configure VM2 to resolve myserver.local to VM1's IP
@@ -255,15 +225,7 @@ cat /etc/hosts
 grep myserver /etc/hosts
 ```
 
-> **Screenshot 13**
->
-> Show: Editing /etc/hosts on VM2
-> Expected: vim or nano with the new entry
-
-> **Screenshot 14**
->
-> Show: cat /etc/hosts output on VM2
-> Expected: myserver.local entry visible with VM1's IP
+![Editing /etc/hosts on VM2](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/13_Network%20Configuration/Editing%20-etc-hosts%20on%20VM2.png)
 
 Test name resolution:
 ```bash
@@ -274,10 +236,7 @@ ping -c 3 myserver.local
 getent hosts myserver.local
 ```
 
-> **Screenshot 15**
->
-> Show: ping myserver.local from VM2
-> Expected: Ping resolves to VM1's IP and succeeds
+![ping myserver.local from VM2](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/13_Network%20Configuration/ping%20myserver.local%20from%20VM2.png)
 
 
 ## TASK 5: Verify access using curl from VM2
@@ -307,15 +266,7 @@ curl -I myserver.local
 curl -L myserver.local:80
 ```
 
-> **Screenshot 16**
->
-> Show: curl -L myserver.local on VM2
-> Expected: "Hello" response from VM1's httpd server
-
-> **Screenshot 17**
->
-> Show: curl -v myserver.local (verbose) on VM2
-> Expected: Connection details and "Hello" response
+![curl myserver.local on VM2](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/13_Network%20Configuration/curl%20-L,-v%20myserver.local%20on%20VM2.png)
 
 
 ## NETWORK COMMANDS REFERENCE
@@ -418,16 +369,3 @@ Solutions:
 - For Bridged: check router DHCP
 
 
-## SELF-REVIEW CHECKLIST
-
-- [ ] Both VMs (VM1 and VM2) are running
-- [ ] Both VMs are on the same network and can ping each other
-- [ ] VM1 IP address noted (e.g., 192.168.1.100)
-- [ ] httpd installed on VM1
-- [ ] httpd service started and running on VM1
-- [ ] Firewall configured to allow HTTP on VM1
-- [ ] /var/www/html/index.html created with content "Hello"
-- [ ] curl http://localhost on VM1 returns "Hello"
-- [ ] /etc/hosts on VM2 contains: <VM1_IP> myserver.local
-- [ ] ping myserver.local from VM2 succeeds
-- [ ] curl -L myserver.local from VM2 returns "Hello"

@@ -381,16 +381,3 @@ Solution: Stop the conflicting service or use different port in config
 Solution: Use sudo for package management commands
 
 
-## SELF-REVIEW CHECKLIST
-
-- [ ] Terminal opened successfully
-- [ ] yum search httpd shows available httpd packages
-- [ ] httpd installed successfully
-- [ ] httpd service started and status shows "active (running)"
-- [ ] httpd removed successfully
-- [ ] yum search nginx executed
-  - CentOS 7: No results (EPEL required)
-  - CentOS Stream 8/9: nginx packages found (AppStream)
-- [ ] For CentOS 7: EPEL repository installed (yum install epel-release)
-- [ ] nginx installed successfully
-- [ ] nginx service started and status shows "active (running)"
