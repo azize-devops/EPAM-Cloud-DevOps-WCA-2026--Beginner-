@@ -22,10 +22,7 @@ VM2 (SSH Server):
 
 Ensure both VMs are on the same network and can communicate.
 
-> **Screenshot 1**
->
-> Show: VirtualBox/VMware with both VMs listed
-> Expected: VM1 and VM2 visible in VM manager
+![Both VMs listed](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/14_SSH%20Overview,%20SSH%20Clients/VirtualBox-VMware%20with%20both%20VMs%20listed.png)
 
 Get IP addresses on both machines:
 
@@ -37,11 +34,9 @@ hostname -I
 
 Note: Replace Name_Surname with your actual name (e.g., John_Doe)
 
-> **Screenshot 2**
->
-> Show: IP addresses of both VMs
-> Expected: VM1 IP (e.g., 192.168.1.100)
-> VM2 IP (e.g., 192.168.1.101)
+![IP address VM1](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/14_SSH%20Overview,%20SSH%20Clients/IP%20addresses%20of%20both%20VM1.png)
+
+![IP address VM2](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/14_SSH%20Overview,%20SSH%20Clients/IP%20addresses%20of%20both%20VM2.png)
 
 
 ## TASK 2: Create user Name_Surname with home directory on VM2
@@ -68,15 +63,7 @@ Expected output from id command:
 uid=1001(Name_Surname) gid=1001(Name_Surname) groups=1001(Name_Surname)
 ```
 
-> **Screenshot 3**
->
-> Show: useradd command on VM2
-> Expected: User creation command executed
-
-> **Screenshot 4**
->
-> Show: id Name_Surname and ls /home/Name_Surname
-> Expected: User ID info and home directory listing
+![useradd and id command on VM2](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/14_SSH%20Overview,%20SSH%20Clients/useradd%20com%20-%20id%20Name_Surname%20and%20ls%20-home-Name_Surname%20on%20VM2.png)
 
 
 ## TASK 3: Verify sshd service and ssh clients on both machines
@@ -122,20 +109,9 @@ Expected output:
 OpenSSH_7.4p1, OpenSSL 1.0.2k-fips  26 Jan 2017
 ```
 
-> **Screenshot 5**
->
-> Show: systemctl status sshd on VM1
-> Expected: Active: active (running) status
+![systemctl status sshd on VM1](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/14_SSH%20Overview,%20SSH%20Clients/systemctl%20status%20sshd%20on%20VM1.png)
 
-> **Screenshot 6**
->
-> Show: systemctl status sshd on VM2
-> Expected: Active: active (running) status
-
-> **Screenshot 7**
->
-> Show: ssh -V on both machines
-> Expected: OpenSSH version information
+![systemctl status sshd on VM2](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/14_SSH%20Overview,%20SSH%20Clients/systemctl%20status%20sshd%20on%20VM2.png)
 
 
 ## TASK 4: Verify ping connectivity from VM1 to VM2
@@ -159,10 +135,7 @@ PING 192.168.1.101 (192.168.1.101) 56(84) bytes of data.
 4 packets transmitted, 4 received, 0% packet loss, time 3002ms
 ```
 
-> **Screenshot 8**
->
-> Show: ping command from VM1 to VM2
-> Expected: Successful ping with 0% packet loss
+![ping from VM1 to VM2](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/14_SSH%20Overview,%20SSH%20Clients/ping%20command%20from%20VM1%20to%20VM2.png)
 
 If ping fails, check:
 - Firewall settings on both VMs
@@ -200,10 +173,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-> **Screenshot 9**
->
-> Show: ssh-keygen command execution on VM1
-> Expected: Key generation with fingerprint displayed
+![ssh-keygen on VM1](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/14_SSH%20Overview,%20SSH%20Clients/ssh-keygen%20command%20execution%20on%20VM1.png)
 
 ### Step 2: View the generated keys
 
@@ -215,10 +185,7 @@ ls -la ~/.ssh/
 cat ~/.ssh/id_rsa_namesurname.pub
 ```
 
-> **Screenshot 10**
->
-> Show: ls ~/.ssh/ and cat public key
-> Expected: id_rsa_namesurname and id_rsa_namesurname.pub
+![ls and cat public key](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/14_SSH%20Overview,%20SSH%20Clients/ls%20~-.ssh-%20and%20cat%20public%20key.png)
 
 ### Step 3: Copy public key to VM2
 
@@ -242,10 +209,7 @@ echo "ssh-rsa AAAA..." >> ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 ```
 
-> **Screenshot 11**
->
-> Show: ssh-copy-id command execution
-> Expected: "Number of key(s) added: 1" message
+![ssh-copy-id execution](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/14_SSH%20Overview,%20SSH%20Clients/ssh-copy-id%20command%20execution.png)
 
 ### Step 4: Verify authorized_keys on VM2
 
@@ -254,10 +218,7 @@ chmod 600 ~/.ssh/authorized_keys
 cat /home/Name_Surname/.ssh/authorized_keys
 ```
 
-> **Screenshot 12**
->
-> Show: authorized_keys content on VM2
-> Expected: Public key from VM1 visible
+![authorized_keys on VM2](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/14_SSH%20Overview,%20SSH%20Clients/authorized_keys%20content%20on%20VM2.png)
 
 
 ## TASK 6: SSH to VM2 using SSH keys (no password)
@@ -283,16 +244,7 @@ hostname
 whoami
 ```
 
-> **Screenshot 13**
->
-> Show: SSH connection from VM1 to VM2
-> Expected: Successful login without password prompt
-> Prompt shows Name_Surname@VM2
-
-> **Screenshot 14**
->
-> Show: hostname and whoami on VM2
-> Expected: VM2 hostname and Name_Surname user
+![SSH connection from VM1 to VM2](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/14_SSH%20Overview,%20SSH%20Clients/SSH%20connection%20from%20VM1%20to%20VM2.png)
 
 Exit from VM2:
 ```bash
@@ -330,16 +282,7 @@ Verify the config:
 cat ~/.ssh/config
 ```
 
-> **Screenshot 15**
->
-> Show: Creating ~/.ssh/config file
-> Expected: Config content with Host, HostName, User,
-> IdentityFile settings
-
-> **Screenshot 16**
->
-> Show: cat ~/.ssh/config output
-> Expected: Complete SSH config displayed
+![Creating and viewing SSH config](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/14_SSH%20Overview,%20SSH%20Clients/Creating%20and%20cat%20%20~-.ssh-config%20file.png)
 
 Now test the simplified connection:
 
@@ -349,10 +292,7 @@ Now test the simplified connection:
 ssh VM2
 ```
 
-> **Screenshot 17**
->
-> Show: ssh VM2 command (using config)
-> Expected: Successful login using simplified command
+![ssh VM2 using config](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/14_SSH%20Overview,%20SSH%20Clients/ssh%20VM2%20command%20(using%20config).png)
 
 
 ## TASK 8: Copy file from VM1 to VM2 using scp
@@ -364,10 +304,7 @@ echo "This is a test file from VM1" > ./testfile.txt
 cat ./testfile.txt
 ```
 
-> **Screenshot 18**
->
-> Show: Creating test file on VM1
-> Expected: File created with content
+![Creating test file on VM1](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/14_SSH%20Overview,%20SSH%20Clients/Creating%20test%20file%20on%20VM1.png)
 
 ### Step 2: Copy the file to VM2 using scp
 
@@ -386,10 +323,7 @@ Expected output:
 testfile.txt                                  100%   30     0.0KB/s   00:00
 ```
 
-> **Screenshot 19**
->
-> Show: scp command execution
-> Expected: File transfer with 100% progress
+![scp command execution](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/14_SSH%20Overview,%20SSH%20Clients/scp%20command%20execution.png)
 
 ### Step 3: Verify file on VM2
 
@@ -407,11 +341,7 @@ Expected output:
 This is a test file from VM1
 ```
 
-> **Screenshot 20**
->
-> Show: File verification on VM2
-> Expected: testfile.txt present in Name_Surname home
-> with correct content
+![File verification on VM2](https://raw.githubusercontent.com/azize-devops/EPAM-Cloud-DevOps-WCA-2026--Beginner-/main/docs/images/3_CentOS%20Linux/1_CentOS%20Linux%20Essentials/14_SSH%20Overview,%20SSH%20Clients/File%20verification%20on%20VM2.png)
 
 
 ## SSH COMMANDS REFERENCE
@@ -534,18 +464,3 @@ Solutions:
 - Ensure target directory is writable
 
 
-## SELF-REVIEW CHECKLIST
-
-- [ ] Both VMs (VM1 and VM2) are running and accessible
-- [ ] User Name_Surname created on VM2 with home directory
-- [ ] sshd service running on both VMs
-- [ ] ssh client installed on both VMs (ssh -V works)
-- [ ] Ping from VM1 to VM2 successful
-- [ ] SSH key pair generated on VM1
-- [ ] Public key copied to VM2's authorized_keys
-- [ ] SSH from VM1 to VM2 works without password
-- [ ] SSH config file created on VM1 (~/.ssh/config)
-- [ ] ssh VM2 command works (using config file)
-- [ ] Test file created on VM1
-- [ ] scp ./file VM2:~ copies file successfully
-- [ ] File present in Name_Surname's home directory on VM2
